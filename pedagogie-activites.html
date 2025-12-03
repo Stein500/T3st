@@ -34,6 +34,7 @@
             --bleu-pedagogie: #1a73e8;
             --vert-croissance: #34a853;
             --jaune-stimulant: #fbbc04;
+            --violet-creatif: #9c27b0;
             
             --bg-primary: var(--blanc);
             --bg-secondary: var(--gris-clair);
@@ -43,11 +44,14 @@
             --shadow-sm: 0 2px 12px rgba(0,0,0,0.08);
             --shadow-md: 0 8px 30px rgba(0,0,0,0.12);
             --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
+            --shadow-3d: 0 10px 40px rgba(0,0,0,0.2), 0 0 0 1px rgba(255,255,255,0.1);
             
-            --transition-fast: all 0.3s ease;
-            --transition-normal: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-fast: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-normal: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
             
             --border-radius: 20px;
+            --border-radius-lg: 30px;
             
             /* Nouvelle variable pour la galerie 16:9 */
             --gallery-border-color: #2c3e50;
@@ -70,67 +74,12 @@
             color: var(--text-primary);
             background: var(--bg-primary);
             overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* ===== PRÉLOADER 3 SECONDES ===== */
-        #preloader-pedagogie {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #ffffff;
-            z-index: 9999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        .preloader-content {
-            text-align: center;
-        }
-
-        .logo-pedagogie svg {
-            width: 100px;
-            height: 100px;
-        }
-
-        .loading-bar {
-            width: 200px;
-            height: 4px;
-            background: rgba(26, 115, 232, 0.2);
-            border-radius: 2px;
-            margin: 2rem auto;
-            overflow: hidden;
-        }
-
-        .loading-progress {
-            height: 100%;
-            background: linear-gradient(90deg, var(--bleu-pedagogie), var(--vert-croissance));
-            border-radius: 2px;
-            animation: loadingProgress 3s ease-in-out;
-            transform-origin: left;
-        }
-
-        .skip-preloader {
-            margin-top: 1.5rem;
-            background: transparent;
-            border: 2px solid var(--bleu-pedagogie);
-            color: var(--bleu-pedagogie);
-            padding: 0.5rem 1.5rem;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: var(--transition-fast);
-        }
-
-        .skip-preloader:hover {
-            background: var(--bleu-pedagogie);
-            color: white;
-        }
-
-        /* ===== ANIMATIONS ===== */
+        /* ===== ANIMATIONS AVANCÉES ===== */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -141,6 +90,16 @@
             to { transform: translateY(0); opacity: 1; }
         }
 
+        @keyframes slideInLeft {
+            from { transform: translateX(-30px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(30px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
         @keyframes float {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
@@ -149,6 +108,11 @@
         @keyframes pulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.05); }
+        }
+
+        @keyframes pulseSoft {
+            0%, 100% { transform: scale(1); box-shadow: var(--shadow-sm); }
+            50% { transform: scale(1.02); box-shadow: var(--shadow-md); }
         }
 
         @keyframes introExit {
@@ -174,6 +138,134 @@
             50% { transform: translateY(-10px) scale(1.05); }
         }
 
+        @keyframes ripple {
+            0% { transform: scale(0); opacity: 1; }
+            100% { transform: scale(4); opacity: 0; }
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes slideFromRight {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideFromLeft {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 20, 147, 0.5); }
+            50% { box-shadow: 0 0 30px rgba(255, 20, 147, 0.8); }
+        }
+
+        @keyframes fadeInScale {
+            0% { opacity: 0; transform: scale(0.95); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes slideUpFade {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== PRÉLOADER 3 SECONDES ===== */
+        #preloader-pedagogie {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .preloader-content {
+            text-align: center;
+            animation: fadeInScale 1s ease;
+        }
+
+        .logo-pedagogie svg {
+            width: 100px;
+            height: 100px;
+            animation: rotate 2s linear infinite;
+        }
+
+        .loading-bar {
+            width: 200px;
+            height: 4px;
+            background: rgba(26, 115, 232, 0.2);
+            border-radius: 2px;
+            margin: 2rem auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .loading-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--bleu-pedagogie), var(--vert-croissance));
+            border-radius: 2px;
+            animation: loadingProgress 3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-origin: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loading-progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        .skip-preloader {
+            margin-top: 1.5rem;
+            background: transparent;
+            border: 2px solid var(--bleu-pedagogie);
+            color: var(--bleu-pedagogie);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition-fast);
+            animation: pulseSoft 2s infinite;
+        }
+
+        .skip-preloader:hover {
+            background: var(--bleu-pedagogie);
+            color: white;
+            transform: translateY(-2px);
+        }
+
         /* ===== BULLES ANIMÉES EN FOND ===== */
         .bubbles-bg {
             position: fixed;
@@ -188,6 +280,7 @@
             border-radius: 50%;
             opacity: 0.15;
             animation: float 14s infinite ease-in-out;
+            transition: all 0.5s ease;
         }
         .bubble:nth-child(1) { width:100px; height:100px; background:var(--rose); top:10%; left:10%; animation-delay:0s; }
         .bubble:nth-child(2) { width:140px; height:140px; background:var(--vert); top:60%; left:75%; animation-delay:3s; }
@@ -202,6 +295,22 @@
             66% { transform:translateY(-50px) translateX(-60px) rotate(240deg); }
         }
 
+        /* ===== EFFET RIPPLE ===== */
+        .ripple-container {
+            position: relative;
+            overflow: hidden;
+            transform: translate3d(0, 0, 0);
+        }
+
+        .ripple-effect {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.7);
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
+        }
+
         /* ===== HERO PÉDAGOGIE OPTIMISÉ (GRID 50%/50%) ===== */
         .hero-pedagogie-optimized {
             display: grid;
@@ -210,6 +319,7 @@
             min-height: 500px;
             position: relative;
             background: var(--blanc);
+            overflow: hidden;
         }
 
         .hero-visual-pedagogie {
@@ -220,6 +330,12 @@
             width: 100%;
             height: 100%;
             position: relative;
+            transform: scale(1);
+            transition: transform 8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .hero-pedagogie-optimized:hover .hero-visual-pedagogie {
+            transform: scale(1.05);
         }
 
         .hero-visual-pedagogie::after {
@@ -244,6 +360,14 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            transform: translateX(0);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hero-pedagogie-optimized:hover .hero-content-pedagogie {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.92);
+            border-left-width: 8px;
         }
 
         .pedagogie-title {
@@ -253,6 +377,7 @@
             margin-bottom: 1.5rem;
             font-size: 2.5rem;
             font-weight: 800;
+            animation: slideInLeft 0.8s ease both;
         }
 
         .badges-pedagogiques {
@@ -271,12 +396,36 @@
             display: inline-block;
             margin-right: 0.5rem;
             margin-bottom: 0.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .badge-pedagogique:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 5px 15px rgba(52, 168, 83, 0.3);
+        }
+
+        .badge-pedagogique::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .badge-pedagogique:hover::before {
+            left: 100%;
         }
 
         .timeline-pedagogique {
             border-left: 3px solid var(--bleu-pedagogie);
             padding-left: 2rem;
             margin: 2rem 0;
+            animation: slideInRight 0.8s ease both 0.3s;
         }
 
         .timeline-item {
@@ -295,6 +444,13 @@
             border-radius: 50%;
             border: 3px solid white;
             box-shadow: 0 0 0 3px var(--vert-croissance);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover::before {
+            transform: scale(1.5);
+            background: var(--rose);
+            box-shadow: 0 0 0 3px var(--rose), 0 0 20px rgba(255, 20, 147, 0.5);
         }
 
         /* ===== FAÇADE PÉDAGOGIQUE ===== */
@@ -306,6 +462,7 @@
             margin: 0;
             padding: 0;
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            cursor: pointer;
         }
 
         .facade-image-pedagogie {
@@ -314,6 +471,12 @@
             object-fit: cover;
             transition: transform 10s cubic-bezier(0.4, 0, 0.2, 1);
             filter: brightness(0.95) contrast(1.05);
+            will-change: transform;
+        }
+
+        .facade-pedagogique:hover .facade-image-pedagogie {
+            transform: scale(1.08);
+            filter: brightness(1) contrast(1.1);
         }
 
         .facade-overlay-pedagogie {
@@ -333,6 +496,16 @@
             color: var(--bleu-pedagogie);
             text-align: center;
             padding: 2rem;
+            transition: all 0.5s ease;
+        }
+
+        .facade-pedagogique:hover .facade-overlay-pedagogie {
+            background: linear-gradient(
+                135deg,
+                rgba(52, 168, 83, 0.4) 0%,
+                rgba(26, 115, 232, 0.3) 50%,
+                transparent 100%
+            );
         }
 
         .facade-title-pedagogie {
@@ -341,6 +514,7 @@
             color: var(--bleu-pedagogie);
             text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
             margin-bottom: 1rem;
+            animation: bounce 2s infinite;
         }
 
         .facade-subtitle-pedagogie {
@@ -348,6 +522,13 @@
             color: var(--vert-croissance);
             max-width: 600px;
             line-height: 1.5;
+            transition: all 0.3s ease;
+        }
+
+        .facade-pedagogique:hover .facade-subtitle-pedagogie {
+            transform: translateY(-5px);
+            color: white;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
 
         .badges-facade {
@@ -367,11 +548,27 @@
 
         .section {
             padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 80%, rgba(255, 20, 147, 0.03) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(160, 255, 79, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
         }
 
         .section-header {
             text-align: center;
             margin-bottom: 3rem;
+            position: relative;
         }
 
         .section-title {
@@ -379,6 +576,26 @@
             font-weight: 800;
             margin-bottom: 1rem;
             color: var(--rose);
+            position: relative;
+            display: inline-block;
+            animation: slideUpFade 0.8s ease both;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--rose), var(--vert));
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        .section-header:hover .section-title::after {
+            width: 100px;
         }
 
         .section-subtitle {
@@ -386,6 +603,7 @@
             color: var(--text-secondary);
             max-width: 600px;
             margin: 0 auto 2rem;
+            animation: slideUpFade 0.8s ease both 0.2s;
         }
 
         .section-divider {
@@ -394,6 +612,7 @@
             background: var(--vert);
             margin: 0 auto;
             border-radius: 2px;
+            animation: slideUpFade 0.8s ease both 0.4s;
         }
 
         /* ===== HEADER ===== */
@@ -407,6 +626,8 @@
             z-index: 1000;
             transition: var(--transition-normal);
             box-shadow: var(--shadow-sm);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .header-container {
@@ -422,6 +643,12 @@
             display: flex;
             align-items: center;
             gap: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
         }
 
         .header-logo {
@@ -432,12 +659,24 @@
             padding: 8px;
             box-shadow: var(--shadow-sm);
             border: 2px solid var(--rose);
+            transition: all 0.3s ease;
+            animation: pulseSoft 3s infinite;
+        }
+
+        .logo:hover .header-logo {
+            animation: glow 2s infinite;
+            transform: rotate(5deg);
         }
 
         .logo-text h1 {
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--rose);
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover .logo-text h1 {
+            color: var(--bleu-pedagogie);
         }
 
         .logo-text p {
@@ -463,6 +702,25 @@
             padding: 0.5rem 1rem;
             border-radius: 25px;
             transition: var(--transition-fast);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--rose);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            width: 80%;
         }
 
         .nav-link:hover,
@@ -475,6 +733,9 @@
             flex-direction: column;
             cursor: pointer;
             padding: 5px;
+            background: transparent;
+            border: none;
+            z-index: 1001;
         }
 
         .nav-toggle span {
@@ -483,9 +744,10 @@
             background: var(--text-primary);
             margin: 3px 0;
             transition: var(--transition-fast);
+            border-radius: 3px;
         }
 
-        /* ===== BOUTONS ===== */
+        /* ===== BOUTONS AVEC EFFETS TACTILES ===== */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -498,49 +760,48 @@
             transition: var(--transition-normal);
             cursor: pointer;
             font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .btn:active {
+            transform: scale(0.98) translateY(2px);
         }
 
         .btn-primary {
-            background: var(--rose);
+            background: linear-gradient(135deg, var(--rose), #ff6b9d);
             color: var(--blanc);
             box-shadow: var(--shadow-md);
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
+            transform: translateY(-5px) scale(1.05);
             box-shadow: var(--shadow-lg);
-            background: var(--rose);
+            background: linear-gradient(135deg, #ff0d86, #ff6b9d);
+        }
+
+        .btn-primary:active {
+            transform: translateY(-2px) scale(0.98);
         }
 
         .btn-secondary {
-            background: var(--vert);
+            background: linear-gradient(135deg, var(--vert), #c8ff8f);
             color: var(--noir);
             box-shadow: var(--shadow-md);
         }
 
         .btn-secondary:hover {
-            background: var(--vert);
+            background: linear-gradient(135deg, #8fff00, #c8ff8f);
             color: var(--noir);
-            transform: translateY(-3px);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: var(--shadow-lg);
         }
 
-        /* ===== SECTIONS PÉDAGOGIQUES EXISTANTES ===== */
-        .section-pedagogique {
-            background: linear-gradient(to bottom, transparent, #f8f9fa 5%);
-            padding: 4rem 0;
-        }
-
-        .carte-pedagogique {
-            background: white;
-            border-radius: 12px;
-            border-left: 5px solid var(--vert-croissance);
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .carte-pedagogique:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(52, 168, 83, 0.15);
+        .btn-secondary:active {
+            transform: translateY(-2px) scale(0.98);
         }
 
         /* ===== APPROCHE PÉDAGOGIQUE ===== */
@@ -564,7 +825,10 @@
             border-top: 4px solid var(--rose);
             position: relative;
             overflow: hidden;
-            animation: slideInUp 0.8s ease both;
+            animation: slideUpFade 0.8s ease both;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            perspective: 1000px;
         }
 
         .approche-card:nth-child(1) { animation-delay: 0.1s; }
@@ -586,6 +850,7 @@
             opacity: 0.05;
             z-index: 0;
             transition: var(--transition-normal);
+            filter: blur(2px);
         }
 
         .approche-card:nth-child(1)::before { background-image: url('assets/images/pedagogie/education-bienveillante.jpg'); }
@@ -601,8 +866,14 @@
         }
 
         .approche-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-15px) rotateX(5deg);
+            box-shadow: var(--shadow-3d);
+            border-top-width: 6px;
+        }
+
+        .approche-card:hover::before {
+            opacity: 0.1;
+            transform: scale(1.1);
         }
 
         .approche-icon {
@@ -610,21 +881,34 @@
             margin-bottom: 1.5rem;
             color: var(--rose);
             transition: var(--transition-normal);
+            display: inline-block;
         }
 
         .approche-card:hover .approche-icon {
-            transform: scale(1.2);
+            transform: scale(1.3) rotate(10deg);
             animation: pulse 1s ease-in-out infinite;
+            color: var(--violet-creatif);
         }
 
         .approche-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: var(--text-primary);
+            transition: var(--transition-normal);
+        }
+
+        .approche-card:hover h3 {
+            color: var(--rose);
+            transform: translateY(-5px);
         }
 
         .approche-card p {
             color: var(--text-secondary);
+            transition: var(--transition-normal);
+        }
+
+        .approche-card:hover p {
+            color: var(--text-primary);
         }
 
         /* ===== MÉTHODES PÉDAGOGIQUES ===== */
@@ -635,6 +919,7 @@
         .methodes-tabs {
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
         }
 
         .tabs-header {
@@ -654,22 +939,45 @@
             transition: var(--transition-fast);
             font-weight: 600;
             color: var(--text-primary);
-            animation: slideInUp 0.8s ease both;
+            animation: slideUpFade 0.8s ease both;
+            position: relative;
+            overflow: hidden;
         }
 
         .tab-btn:nth-child(1) { animation-delay: 0.1s; }
         .tab-btn:nth-child(2) { animation-delay: 0.2s; }
         .tab-btn:nth-child(3) { animation-delay: 0.3s; }
 
+        .tab-btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+
+        .tab-btn:focus:not(:active)::after {
+            animation: ripple 1s ease-out;
+        }
+
         .tab-btn.active {
-            background: var(--rose);
+            background: linear-gradient(135deg, var(--rose), #ff6b9d);
             color: var(--blanc);
             border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
         }
 
         .tab-btn:hover:not(.active) {
             border-color: var(--rose);
-            transform: translateY(-2px);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: var(--shadow-sm);
         }
 
         .tab-content {
@@ -679,17 +987,37 @@
             border-radius: var(--border-radius);
             box-shadow: var(--shadow-md);
             border: 1px solid rgba(255, 182, 193, 0.2);
-            animation: fadeIn 0.5s ease;
+            animation: zoomIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-origin: top center;
         }
 
         .tab-content.active {
             display: block;
+            animation: slideUpFade 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .tab-content h3 {
             color: var(--rose);
             margin-bottom: 1.5rem;
             font-size: 1.8rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .tab-content h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--vert);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        .tab-content:hover h3::after {
+            width: 100px;
         }
 
         .tab-content ul {
@@ -701,6 +1029,11 @@
             margin-bottom: 1rem;
             padding-left: 2rem;
             position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .tab-content li:hover {
+            transform: translateX(10px);
         }
 
         .tab-content li::before {
@@ -709,6 +1042,13 @@
             left: 0;
             color: var(--rose);
             font-weight: bold;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .tab-content li:hover::before {
+            transform: scale(1.3) rotate(15deg);
+            color: var(--vert);
         }
 
         /* ===== TIMELINE INTERACTIVE ===== */
@@ -729,9 +1069,11 @@
             top: 0;
             bottom: 0;
             width: 4px;
-            background: var(--rose);
+            background: linear-gradient(to bottom, var(--rose), var(--vert));
             transform: translateX(-50%);
             z-index: 1;
+            border-radius: 2px;
+            animation: pulseSoft 2s infinite;
         }
 
         .timeline-items {
@@ -744,7 +1086,8 @@
             justify-content: center;
             align-items: center;
             margin-bottom: 4rem;
-            animation: slideInUp 0.8s ease both;
+            animation: slideUpFade 0.8s ease both;
+            cursor: pointer;
         }
 
         .timeline-item:nth-child(1) { animation-delay: 0.1s; }
@@ -768,17 +1111,19 @@
             box-shadow: var(--shadow-md);
             border: 1px solid rgba(255, 182, 193, 0.2);
             transition: var(--transition-normal);
+            transform-origin: center;
         }
 
         .timeline-item:hover .timeline-content {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-3d);
+            border-color: var(--rose);
         }
 
         .timeline-marker {
             width: 40px;
             height: 40px;
-            background: var(--rose);
+            background: linear-gradient(135deg, var(--rose), var(--violet-creatif));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -790,17 +1135,27 @@
             z-index: 3;
             position: relative;
             transition: var(--transition-normal);
+            box-shadow: 0 4px 15px rgba(255, 20, 147, 0.3);
+            animation: pulseSoft 2s infinite;
         }
 
         .timeline-item:hover .timeline-marker {
-            transform: scale(1.2);
-            animation: pulse 1s ease-in-out infinite;
+            transform: scale(1.3) rotate(360deg);
+            animation: glow 1s ease-in-out infinite;
+            box-shadow: 0 0 25px rgba(255, 20, 147, 0.6);
         }
 
         .timeline-year {
             font-weight: 800;
             color: var(--rose);
             margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            transition: var(--transition-normal);
+        }
+
+        .timeline-item:hover .timeline-year {
+            color: var(--violet-creatif);
+            transform: translateX(5px);
         }
 
         /* ===== ÉLÉGANCE, ÉLOQUENCE, BONNES MANIÈRES ===== */
@@ -828,9 +1183,15 @@
             height: 400px;
             border-radius: 50%;
             background: var(--blanc);
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-3d);
             animation: logoFloat 8s ease-in-out infinite;
             border: 2px solid rgba(255, 20, 147, 0.3);
+            transition: all 0.5s ease;
+        }
+
+        .elegance-circle:hover {
+            animation: rotate 20s linear infinite;
+            box-shadow: 0 0 60px rgba(255, 20, 147, 0.2);
         }
 
         .elegance-item {
@@ -849,35 +1210,36 @@
             cursor: pointer;
             border: 3px solid transparent;
             animation: slideInUp 0.8s ease both;
+            transform-style: preserve-3d;
+            z-index: 2;
         }
 
-        .elegance-item:nth-child(1) { animation-delay: 0.1s; }
-        .elegance-item:nth-child(2) { animation-delay: 0.2s; }
-        .elegance-item:nth-child(3) { animation-delay: 0.3s; }
-
         .elegance-item:hover {
-            transform: scale(1.1);
-            box-shadow: var(--shadow-lg);
+            transform: scale(1.2) translateZ(20px);
+            box-shadow: var(--shadow-3d);
+            z-index: 3;
         }
 
         .elegance-item.active {
             border-color: var(--rose);
-            transform: scale(1.1);
+            transform: scale(1.2) translateZ(20px);
+            animation: glow 2s infinite;
         }
 
-        .elegance-item[data-elegance="elegance"] {
+        .elegance-item:nth-child(1) { 
+            animation-delay: 0.1s;
             top: 15%;
             left: 50%;
             transform: translateX(-50%);
         }
-
-        .elegance-item[data-elegance="eloquence"] {
+        .elegance-item:nth-child(2) { 
+            animation-delay: 0.2s;
             top: 50%;
             left: 20%;
             transform: translateY(-50%);
         }
-
-        .elegance-item[data-elegance="manieres"] {
+        .elegance-item:nth-child(3) { 
+            animation-delay: 0.3s;
             top: 50%;
             right: 20%;
             transform: translateY(-50%);
@@ -892,6 +1254,7 @@
         .elegance-item:hover .elegance-icon,
         .elegance-item.active .elegance-icon {
             animation: pulse 1s ease-in-out infinite;
+            transform: scale(1.2);
         }
 
         .elegance-item[data-elegance="elegance"] .elegance-icon {
@@ -917,6 +1280,7 @@
         .elegance-item:hover h3,
         .elegance-item.active h3 {
             transform: translateY(-2px);
+            color: var(--rose);
         }
 
         .elegance-content {
@@ -928,27 +1292,73 @@
             overflow-y: auto;
             animation: slideInUp 0.8s ease 0.5s both;
             border: 1px solid rgba(255, 20, 147, 0.2);
+            transition: all 0.5s ease;
+            scrollbar-width: thin;
+            scrollbar-color: var(--rose) transparent;
+        }
+
+        .elegance-content:hover {
+            box-shadow: var(--shadow-3d);
+            transform: translateY(-5px);
+        }
+
+        .elegance-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .elegance-content::-webkit-scrollbar-track {
+            background: var(--gris-clair);
+            border-radius: 10px;
+        }
+
+        .elegance-content::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, var(--rose), var(--violet-creatif));
+            border-radius: 10px;
         }
 
         .elegance-text {
             display: none;
-            animation: fadeIn 0.5s ease;
+            animation: zoomIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .elegance-text.active {
             display: block;
+            animation: slideFromRight 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .elegance-text h3 {
             font-size: 1.8rem;
             margin-bottom: 1.5rem;
             color: var(--rose);
+            position: relative;
+            display: inline-block;
+        }
+
+        .elegance-text h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--vert);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        .elegance-text:hover h3::after {
+            width: 120px;
         }
 
         .elegance-text p {
             margin-bottom: 1.5rem;
             line-height: 1.6;
             color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .elegance-text:hover p {
+            color: var(--text-secondary);
         }
 
         .elegance-text ul {
@@ -960,24 +1370,56 @@
             margin-bottom: 0.5rem;
             position: relative;
             color: var(--text-primary);
+            transition: all 0.3s ease;
+            padding-left: 0.5rem;
+        }
+
+        .elegance-text li:hover {
+            transform: translateX(10px);
+            color: var(--rose);
         }
 
         .elegance-text li::before {
-            content: '•';
+            content: '✦';
             color: var(--rose);
             font-weight: bold;
             position: absolute;
-            left: -1rem;
+            left: -1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .elegance-text li:hover::before {
+            transform: rotate(45deg) scale(1.3);
+            color: var(--vert);
         }
 
         .elegance-quote {
             font-style: italic;
-            background: var(--gris-clair);
+            background: linear-gradient(135deg, var(--gris-clair), #f0f0f0);
             padding: 1.5rem;
             border-radius: 10px;
             border-left: 4px solid var(--vert);
             margin-top: 1.5rem;
             color: var(--text-primary);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .elegance-quote:hover {
+            transform: translateY(-3px);
+            border-left-width: 8px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .elegance-quote::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 3rem;
+            color: rgba(255, 20, 147, 0.1);
+            font-family: Georgia, serif;
         }
 
         /* ===== ACTIVITÉS INTERACTIVES ===== */
@@ -1001,7 +1443,9 @@
             border-top: 4px solid var(--rose);
             position: relative;
             overflow: hidden;
-            animation: slideInUp 0.8s ease both;
+            animation: slideUpFade 0.8s ease both;
+            cursor: pointer;
+            transform-style: preserve-3d;
         }
 
         .activity-card:nth-child(1) { animation-delay: 0.1s; }
@@ -1022,6 +1466,8 @@
             background-position: center;
             opacity: 0.05;
             z-index: 0;
+            transition: var(--transition-normal);
+            filter: blur(2px);
         }
 
         .activity-card:nth-child(1)::before { background-image: url('assets/images/activites/art-oratoire.jpg'); }
@@ -1037,8 +1483,15 @@
         }
 
         .activity-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-15px) rotateY(5deg);
+            box-shadow: var(--shadow-3d);
+            border-top-width: 6px;
+        }
+
+        .activity-card:hover::before {
+            opacity: 0.1;
+            transform: scale(1.1);
+            filter: blur(0);
         }
 
         .activity-icon {
@@ -1046,22 +1499,35 @@
             margin-bottom: 1.5rem;
             color: var(--rose);
             transition: var(--transition-normal);
+            display: inline-block;
         }
 
         .activity-card:hover .activity-icon {
-            transform: scale(1.2);
+            transform: scale(1.3) rotate(-10deg);
             animation: pulse 1s ease-in-out infinite;
+            color: var(--violet-creatif);
         }
 
         .activity-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: var(--text-primary);
+            transition: var(--transition-normal);
+        }
+
+        .activity-card:hover h3 {
+            color: var(--rose);
+            transform: translateY(-5px);
         }
 
         .activity-card p {
             color: var(--text-secondary);
             margin-bottom: 1.5rem;
+            transition: var(--transition-normal);
+        }
+
+        .activity-card:hover p {
+            color: var(--text-primary);
         }
 
         .benefits-list {
@@ -1074,6 +1540,12 @@
             margin-bottom: 0.75rem;
             padding-left: 1.5rem;
             position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .benefits-list li:hover {
+            transform: translateX(5px);
+            color: var(--rose);
         }
 
         .benefits-list li::before {
@@ -1082,35 +1554,61 @@
             left: 0;
             color: var(--rose);
             font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .activity-card:hover .benefits-list li::before {
+            color: var(--vert);
+            transform: scale(1.3);
         }
 
         .age-badge {
             display: inline-block;
-            background: var(--vert);
+            background: linear-gradient(135deg, var(--vert), #c8ff8f);
             color: var(--noir);
             padding: 0.5rem 1rem;
             border-radius: 20px;
             font-weight: 600;
             margin-top: 1rem;
             transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
         }
 
         .activity-card:hover .age-badge {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-sm);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: var(--shadow-md);
+            animation: bounce 1s ease;
         }
 
-        /* ===== GALERIE INTELLIGENTE ===== */
+        .age-badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .age-badge:hover::before {
+            left: 100%;
+        }
+
+        /* ===== GALERIE INTELLIGENTE AVEC DIAPORAMA ===== */
         .smart-gallery-section {
             background: var(--bg-secondary);
+            position: relative;
         }
 
         .gallery-tabs {
             display: flex;
             justify-content: center;
-            gap: 1rem;
             margin-bottom: 3rem;
             flex-wrap: wrap;
+            gap: 1rem;
+            position: relative;
         }
 
         .gallery-tab {
@@ -1122,17 +1620,134 @@
             cursor: pointer;
             transition: var(--transition-fast);
             box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
         }
 
         .gallery-tab.active {
-            background: var(--rose);
+            background: linear-gradient(135deg, var(--rose), #ff6b9d);
             color: var(--blanc);
             border-color: var(--rose);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
         }
 
         .gallery-tab:hover:not(.active) {
             border-color: var(--rose);
-            transform: translateY(-2px);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: var(--shadow-md);
+        }
+
+        .gallery-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gallery-slides {
+            display: flex;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 500px;
+        }
+
+        .gallery-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gallery-slide:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-slide-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 2rem;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gallery-slide:hover .gallery-slide-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow-md);
+            font-size: 1.5rem;
+            color: var(--rose);
+        }
+
+        .gallery-nav:hover {
+            background: var(--blanc);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gallery-prev {
+            left: 20px;
+        }
+
+        .gallery-next {
+            right: 20px;
+        }
+
+        .gallery-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .gallery-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-dot.active {
+            background: var(--rose);
+            transform: scale(1.3);
+            box-shadow: 0 0 10px rgba(255, 20, 147, 0.5);
+        }
+
+        .gallery-dot:hover {
+            background: var(--blanc);
+            transform: scale(1.2);
         }
 
         .gallery-grid {
@@ -1149,7 +1764,8 @@
             transition: var(--transition-normal);
             aspect-ratio: 4/3;
             cursor: pointer;
-            animation: slideInUp 0.8s ease both;
+            animation: slideUpFade 0.8s ease both;
+            transform-style: preserve-3d;
         }
 
         .gallery-item:nth-child(1) { animation-delay: 0.1s; }
@@ -1179,8 +1795,8 @@
         }
 
         .gallery-item:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-10px) scale(1.05) rotateY(5deg);
+            box-shadow: var(--shadow-3d);
         }
 
         .gallery-img {
@@ -1191,7 +1807,7 @@
         }
 
         .gallery-item:hover .gallery-img {
-            transform: scale(1.1);
+            transform: scale(1.15);
         }
 
         .gallery-caption {
@@ -1214,11 +1830,26 @@
             font-size: 1.2rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.3s ease 0.1s;
+        }
+
+        .gallery-item:hover .gallery-title {
+            transform: translateY(0);
+            opacity: 1;
         }
 
         .gallery-desc {
             font-size: 0.9rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease 0.2s;
+        }
+
+        .gallery-item:hover .gallery-desc {
             opacity: 0.9;
+            transform: translateY(0);
         }
 
         /* ===== LECTEUR VIDÉO AVANCÉ ===== */
@@ -1233,12 +1864,18 @@
             overflow: hidden;
             box-shadow: var(--shadow-lg);
             position: relative;
+            transform-style: preserve-3d;
         }
 
         .video-player {
             width: 100%;
             height: auto;
             display: block;
+            transition: filter 0.3s ease;
+        }
+
+        .video-container:hover .video-player {
+            filter: brightness(1.1);
         }
 
         .video-controls {
@@ -1246,21 +1883,24 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
             padding: 1.5rem;
             display: flex;
             align-items: center;
             gap: 1rem;
             opacity: 0;
+            transform: translateY(100%);
             transition: var(--transition-normal);
+            z-index: 10;
         }
 
         .video-container:hover .video-controls {
             opacity: 1;
+            transform: translateY(0);
         }
 
         .control-btn {
-            background: none;
+            background: rgba(255, 255, 255, 0.2);
             border: none;
             color: white;
             font-size: 1.2rem;
@@ -1268,27 +1908,51 @@
             padding: 0.5rem;
             border-radius: 50%;
             transition: var(--transition-fast);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .control-btn:hover {
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .control-btn:active {
+            transform: scale(0.95);
         }
 
         .progress-container {
             flex: 1;
             height: 5px;
-            background: rgba(255,255,255,0.3);
+            background: rgba(255, 255, 255, 0.3);
             border-radius: 5px;
             cursor: pointer;
             position: relative;
+            overflow: hidden;
         }
 
         .progress-bar {
             height: 100%;
-            background: var(--rose);
+            background: linear-gradient(90deg, var(--rose), var(--vert));
             border-radius: 5px;
             width: 0%;
             transition: width 0.1s linear;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: shimmer 2s infinite;
         }
 
         .time-display {
@@ -1296,6 +1960,8 @@
             font-size: 0.9rem;
             min-width: 100px;
             text-align: center;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 1px;
         }
 
         .volume-container {
@@ -1339,7 +2005,10 @@
             box-shadow: var(--shadow-md);
             transition: var(--transition-normal);
             border: 1px solid rgba(255, 182, 193, 0.2);
-            animation: slideInUp 0.8s ease both;
+            animation: slideUpFade 0.8s ease both;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
         }
 
         .social-card:nth-child(1) { animation-delay: 0.1s; }
@@ -1348,8 +2017,8 @@
         .social-card:nth-child(4) { animation-delay: 0.4s; }
 
         .social-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: var(--shadow-3d);
         }
 
         .social-icon {
@@ -1357,45 +2026,82 @@
             margin-bottom: 1.5rem;
             color: var(--rose);
             transition: var(--transition-normal);
+            display: inline-block;
         }
 
         .social-card:hover .social-icon {
-            transform: scale(1.2);
+            transform: scale(1.3) rotate(15deg);
             animation: pulse 1s ease-in-out infinite;
         }
+
+        .social-card:nth-child(1):hover .social-icon { color: #1877F2; }
+        .social-card:nth-child(2):hover .social-icon { color: #E4405F; }
+        .social-card:nth-child(3):hover .social-icon { color: #000000; }
+        .social-card:nth-child(4):hover .social-icon { color: #FF0000; }
 
         .social-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: var(--text-primary);
+            transition: var(--transition-normal);
+        }
+
+        .social-card:hover h3 {
+            color: var(--rose);
+            transform: translateY(-5px);
         }
 
         .social-card p {
             color: var(--text-secondary);
             margin-bottom: 1.5rem;
+            transition: var(--transition-normal);
+        }
+
+        .social-card:hover p {
+            color: var(--text-primary);
         }
 
         .social-btn {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: var(--rose);
+            background: linear-gradient(135deg, var(--rose), #ff6b9d);
             color: var(--blanc);
             padding: 0.8rem 1.5rem;
             border-radius: 25px;
             text-decoration: none;
             font-weight: 600;
             transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
         }
 
         .social-btn:hover {
-            transform: translateY(-3px);
+            transform: translateY(-3px) scale(1.05);
             box-shadow: var(--shadow-md);
+        }
+
+        .social-btn:active {
+            transform: translateY(-1px) scale(0.98);
         }
 
         /* ===== RÉSULTATS ===== */
         .resultats-section {
-            background: var(--vert);
+            background: linear-gradient(135deg, var(--vert), #c8ff8f);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resultats-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+            pointer-events: none;
         }
 
         .stats-grid {
@@ -1413,7 +2119,10 @@
             transition: var(--transition-normal);
             border: 1px solid rgba(255, 182, 193, 0.2);
             text-align: center;
-            animation: slideInUp 0.8s ease both;
+            animation: slideUpFade 0.8s ease both;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
         }
 
         .stat-item:nth-child(1) { animation-delay: 0.1s; }
@@ -1422,8 +2131,9 @@
         .stat-item:nth-child(4) { animation-delay: 0.4s; }
 
         .stat-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: var(--shadow-3d);
+            border-color: var(--rose);
         }
 
         .stat-number {
@@ -1431,44 +2141,130 @@
             font-weight: 800;
             color: var(--rose);
             margin-bottom: 0.5rem;
+            transition: var(--transition-normal);
+            position: relative;
+            display: inline-block;
+        }
+
+        .stat-item:hover .stat-number {
+            color: var(--violet-creatif);
+            transform: scale(1.2);
+        }
+
+        .stat-number::after {
+            content: '+';
+            position: absolute;
+            right: -15px;
+            top: 0;
+            font-size: 1.5rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover .stat-number::after {
+            opacity: 1;
+            transform: translateY(-5px);
         }
 
         .stat-label {
             color: var(--text-secondary);
             font-weight: 600;
+            transition: var(--transition-normal);
+        }
+
+        .stat-item:hover .stat-label {
+            color: var(--text-primary);
+            transform: translateY(5px);
         }
 
         /* ===== CTA ===== */
         .cta-section {
             background: var(--bg-primary);
+            position: relative;
         }
 
         .cta-card {
-            background: var(--bg-secondary);
+            background: linear-gradient(135deg, var(--bg-secondary), #f0f0f0);
             padding: 3rem;
             border-radius: var(--border-radius);
             text-align: center;
             box-shadow: var(--shadow-lg);
-            animation: slideInUp 0.8s ease both;
+            animation: slideUpFade 0.8s ease both;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 182, 193, 0.3);
+            transition: all 0.5s ease;
+        }
+
+        .cta-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-3d);
+            border-color: var(--rose);
+        }
+
+        .cta-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 20, 147, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+
+        .cta-card:hover::before {
+            opacity: 1;
+            animation: shimmer 2s infinite;
         }
 
         .cta-card h3 {
             color: var(--text-primary);
             margin-bottom: 1rem;
             font-size: 1.8rem;
+            position: relative;
+            z-index: 1;
+            transition: var(--transition-normal);
+        }
+
+        .cta-card:hover h3 {
+            color: var(--rose);
+            transform: translateY(-5px);
         }
 
         .cta-card p {
             color: var(--text-primary);
             opacity: 0.9;
             margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+            transition: var(--transition-normal);
+        }
+
+        .cta-card:hover p {
+            opacity: 1;
+            transform: translateY(-3px);
         }
 
         /* ===== FOOTER ===== */
         .main-footer {
-            background: var(--noir);
+            background: linear-gradient(135deg, var(--noir), #1a0f2c);
             color: var(--blanc);
             padding: 3rem 0 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .main-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--rose), var(--vert), var(--bleu-pedagogie));
         }
 
         .footer-content {
@@ -1476,12 +2272,32 @@
             grid-template-columns: 2fr 1fr 1fr 1fr;
             gap: 2rem;
             margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
         }
 
         .footer-section h4 {
             color: var(--vert);
             margin-bottom: 1rem;
             font-size: 1.1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-section h4::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--rose);
+            border-radius: 1px;
+            transition: width 0.3s ease;
+        }
+
+        .footer-section:hover h4::after {
+            width: 50px;
         }
 
         .footer-logo {
@@ -1489,6 +2305,12 @@
             align-items: center;
             gap: 1rem;
             margin-bottom: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-logo:hover {
+            transform: translateY(-5px);
         }
 
         .footer-logo-img {
@@ -1498,11 +2320,23 @@
             border-radius: 50%;
             padding: 8px;
             border: 2px solid var(--rose);
+            transition: all 0.3s ease;
+        }
+
+        .footer-logo:hover .footer-logo-img {
+            transform: rotate(15deg);
+            border-color: var(--vert);
+            animation: glow 2s infinite;
         }
 
         .footer-text h3 {
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-logo:hover .footer-text h3 {
+            color: var(--rose);
         }
 
         .footer-badges {
@@ -1514,16 +2348,20 @@
 
         .badge {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
             padding: 0.5rem 1rem;
             border-radius: 15px;
             font-size: 0.8rem;
             transition: var(--transition-normal);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
         }
 
         .badge:hover {
-            transform: translateY(-3px);
-            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px) scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
         .contact-info,
@@ -1538,11 +2376,24 @@
             display: flex;
             align-items: center;
             gap: 0.8rem;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .contact-line:hover,
+        .schedule-line:hover {
+            transform: translateX(5px);
         }
 
         .contact-line i {
             width: 20px;
             color: var(--vert);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-line:hover i {
+            transform: scale(1.3) rotate(15deg);
+            color: var(--rose);
         }
 
         .schedule-line {
@@ -1567,18 +2418,25 @@
             justify-content: center;
             width: 40px;
             height: 40px;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             color: var(--blanc);
             text-decoration: none;
             transition: var(--transition-fast);
             font-size: 1.2rem;
+            position: relative;
+            overflow: hidden;
         }
 
         .social-link-minimal:hover {
             background: var(--rose);
-            transform: translateY(-3px) scale(1.1);
+            transform: translateY(-5px) scale(1.2);
             color: var(--blanc);
+            box-shadow: 0 5px 15px rgba(255, 20, 147, 0.4);
+        }
+
+        .social-link-minimal:active {
+            transform: translateY(-2px) scale(1.1);
         }
 
         .footer-bottom {
@@ -1589,6 +2447,8 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 1rem;
+            position: relative;
+            z-index: 1;
         }
 
         .footer-legal {
@@ -1607,12 +2467,24 @@
             font-size: 0.8rem;
             opacity: 0.7;
             line-height: 1.4;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-legal:hover p {
+            opacity: 1;
         }
 
         .footer-credits p {
             font-size: 0.8rem;
             opacity: 0.7;
             text-align: right;
+            transition: all 0.3s ease;
+        }
+
+        .footer-credits:hover p {
+            opacity: 1;
+            color: var(--vert);
+            transform: translateX(-5px);
         }
 
         /* ===== RESPONSIVE DESIGN (4 BREAKPOINTS) ===== */
@@ -1632,6 +2504,17 @@
             }
             .facade-subtitle-pedagogie { 
                 font-size: 1.1rem; 
+            }
+            .elegance-circle {
+                width: 350px;
+                height: 350px;
+            }
+            .elegance-item {
+                width: 100px;
+                height: 100px;
+            }
+            .gallery-slides {
+                height: 400px;
             }
         }
 
@@ -1694,6 +2577,9 @@
                 left: 0;
                 margin: 0;
             }
+            .gallery-slides {
+                height: 350px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1706,16 +2592,19 @@
                 left: -100%;
                 width: 100%;
                 height: calc(100vh - 80px);
-                background: var(--blanc);
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
                 flex-direction: column;
                 justify-content: flex-start;
                 align-items: center;
                 padding: 2rem;
                 transition: var(--transition-normal);
                 box-shadow: var(--shadow-lg);
+                z-index: 999;
             }
             .nav-menu.active {
                 left: 0;
+                animation: slideFromRight 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             }
             .nav-toggle {
                 display: flex;
@@ -1811,6 +2700,25 @@
             .elegance-item[data-elegance="manieres"] {
                 right: 15%;
             }
+            .gallery-slides {
+                height: 300px;
+            }
+            .gallery-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            .video-controls {
+                flex-wrap: wrap;
+                padding: 1rem;
+            }
+            .time-display {
+                min-width: 80px;
+                font-size: 0.8rem;
+            }
+            .volume-slider {
+                width: 60px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1874,14 +2782,51 @@
             .stats-grid {
                 grid-template-columns: 1fr;
             }
+            .gallery-slides {
+                height: 250px;
+            }
+            .gallery-slide-overlay {
+                padding: 1rem;
+            }
+            .gallery-nav {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            .gallery-prev {
+                left: 10px;
+            }
+            .gallery-next {
+                right: 10px;
+            }
+            .video-controls {
+                gap: 0.5rem;
+            }
+            .control-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
         }
 
-        /* Animation d'entrée des éléments */
+        /* ===== ANIMATION D'ENTRÉE DES ÉLÉMENTS ===== */
         .animate-in {
-            animation: slideInUp 0.8s ease both;
+            animation: slideUpFade 0.8s ease both;
         }
 
-        /* Animations pour le menu mobile */
+        .animate-left {
+            animation: slideInLeft 0.8s ease both;
+        }
+
+        .animate-right {
+            animation: slideInRight 0.8s ease both;
+        }
+
+        .animate-zoom {
+            animation: zoomIn 0.8s ease both;
+        }
+
+        /* ===== ANIMATIONS POUR LE MENU MOBILE ===== */
         .nav-toggle.active span:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
         }
@@ -1892,6 +2837,57 @@
 
         .nav-toggle.active span:nth-child(3) {
             transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        /* ===== EFFET PARALLAXE ===== */
+        .parallax-element {
+            will-change: transform;
+            transition: transform 0.1s linear;
+        }
+
+        /* ===== TOUCH DEVICE OPTIMIZATION ===== */
+        @media (hover: hover) and (pointer: fine) {
+            .hover-effects .card:hover {
+                transform: translateY(-10px);
+            }
+        }
+
+        @media (hover: none) and (pointer: coarse) {
+            .card:active {
+                transform: scale(0.98);
+            }
+        }
+
+        /* ===== REDUCED MOTION PREFERENCE ===== */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            
+            .hero-pedagogie-optimized:hover .hero-visual-pedagogie,
+            .facade-pedagogique:hover .facade-image-pedagogie,
+            .gallery-item:hover .gallery-img,
+            .approche-card:hover,
+            .activity-card:hover,
+            .social-card:hover,
+            .stat-item:hover {
+                transform: none !important;
+            }
+            
+            .bubbles-bg,
+            .bubble,
+            .loading-progress::after,
+            .badge-pedagogique::before,
+            .age-badge::before,
+            .progress-bar::after,
+            .cta-card::before {
+                animation: none !important;
+            }
         }
     </style>
     
@@ -1936,7 +2932,7 @@
     <!-- Navigation principale -->
     <header class="main-header">
         <div class="header-container">
-            <div class="logo">
+            <div class="logo" onclick="createRipple(event)">
                 <div class="logo-image-container">
                     <img src="assets/images/logo.png" alt="Les Bulles de Joie" class="header-logo">
                 </div>
@@ -1948,18 +2944,18 @@
             
             <nav class="main-nav">
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">Accueil</a></li>
-                    <li><a href="pedagogie-activites.html" class="nav-link active">Pédagogie & Activités</a></li>
-                    <li><a href="tarifs-inscription.html" class="nav-link">Tarifs & Inscription</a></li>
-                    <li><a href="resultats.html" class="nav-link">Résultats</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="index.html" class="nav-link ripple-container" onclick="createRipple(event)">Accueil</a></li>
+                    <li><a href="pedagogie-activites.html" class="nav-link active ripple-container" onclick="createRipple(event)">Pédagogie & Activités</a></li>
+                    <li><a href="tarifs-inscription.html" class="nav-link ripple-container" onclick="createRipple(event)">Tarifs & Inscription</a></li>
+                    <li><a href="resultats.html" class="nav-link ripple-container" onclick="createRipple(event)">Résultats</a></li>
+                    <li><a href="contact.html" class="nav-link ripple-container" onclick="createRipple(event)">Contact</a></li>
                 </ul>
                 
-                <div class="nav-toggle">
+                <button class="nav-toggle" aria-label="Menu de navigation" onclick="createRipple(event)">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
             </nav>
         </div>
     </header>
@@ -1985,10 +2981,10 @@
                 </p>
                 
                 <div class="badges-pedagogiques">
-                    <span class="badge-pedagogique" style="background: var(--bleu-pedagogie);">Innovation</span>
-                    <span class="badge-pedagogique" style="background: var(--vert-croissance);">Bienveillance</span>
-                    <span class="badge-pedagogique" style="background: var(--jaune-stimulant);">Épanouissement</span>
-                    <span class="badge-pedagogique" style="background: var(--rose);">Excellence</span>
+                    <span class="badge-pedagogique ripple-container" style="background: var(--bleu-pedagogie);" onclick="createRipple(event)">Innovation</span>
+                    <span class="badge-pedagogique ripple-container" style="background: var(--vert-croissance);" onclick="createRipple(event)">Bienveillance</span>
+                    <span class="badge-pedagogique ripple-container" style="background: var(--jaune-stimulant);" onclick="createRipple(event)">Épanouissement</span>
+                    <span class="badge-pedagogique ripple-container" style="background: var(--rose);" onclick="createRipple(event)">Excellence</span>
                 </div>
                 
                 <!-- Indicateur pédagogique additionnel -->
@@ -2008,16 +3004,16 @@
         <!-- =============================== -->
         <!-- FAÇADE PÉDAGOGIQUE (BÂTIMENT) -->
         <!-- =============================== -->
-        <section class="facade-pedagogique" id="facade-pedagogie">
+        <section class="facade-pedagogique" id="facade-pedagogie" onclick="createRipple(event)">
             <div class="facade-overlay-pedagogie">
                 <h2 class="facade-title-pedagogie">Notre Environnement d'Apprentissage</h2>
                 <p class="facade-subtitle-pedagogie">
                     Des espaces spécialement conçus pour l'épanouissement et le développement des enfants
                 </p>
                 <div class="badges-facade">
-                    <span class="badge-pedagogique" style="background: var(--bleu-pedagogie);">Sécurisé</span>
-                    <span class="badge-pedagogique" style="background: var(--vert-croissance);">Éducatif</span>
-                    <span class="badge-pedagogique" style="background: var(--jaune-stimulant);">Stimulant</span>
+                    <span class="badge-pedagogique ripple-container" style="background: var(--bleu-pedagogie);" onclick="createRipple(event)">Sécurisé</span>
+                    <span class="badge-pedagogique ripple-container" style="background: var(--vert-croissance);" onclick="createRipple(event)">Éducatif</span>
+                    <span class="badge-pedagogique ripple-container" style="background: var(--jaune-stimulant);" onclick="createRipple(event)">Stimulant</span>
                 </div>
             </div>
             <img src="assets/images/pedagogie/facade-pedagogique.jpg" 
@@ -2041,7 +3037,7 @@
                 </div>
                 
                 <div class="approche-grid">
-                    <div class="approche-card">
+                    <div class="approche-card ripple-container" onclick="createRipple(event)">
                         <div class="approche-icon">
                             <i class="fas fa-heart"></i>
                         </div>
@@ -2049,7 +3045,7 @@
                         <p>Une approche respectueuse qui valorise l'enfant dans sa globalité, favorise son autonomie et cultive son estime de soi dans un climat de confiance mutuelle.</p>
                     </div>
                     
-                    <div class="approche-card">
+                    <div class="approche-card ripple-container" onclick="createRipple(event)">
                         <div class="approche-icon">
                             <i class="fas fa-child"></i>
                         </div>
@@ -2057,7 +3053,7 @@
                         <p>L'enfant est acteur de ses apprentissages. Nous respectons son rythme et valorisons ses talents uniques.</p>
                     </div>
                     
-                    <div class="approche-card">
+                    <div class="approche-card ripple-container" onclick="createRipple(event)">
                         <div class="approche-icon">
                             <i class="fas fa-crown"></i>
                         </div>
@@ -2065,7 +3061,7 @@
                         <p>Nous cultivons le savoir-être, la présentation soignée et l'aisance à l'oral pour former des enfants épanouis, confiants et distingués.</p>
                     </div>
                     
-                    <div class="approche-card">
+                    <div class="approche-card ripple-container" onclick="createRipple(event)">
                         <div class="approche-icon">
                             <i class="fas fa-gamepad"></i>
                         </div>
@@ -2073,7 +3069,7 @@
                         <p>Le jeu comme vecteur principal d'apprentissage pour développer curiosité et motivation.</p>
                     </div>
                     
-                    <div class="approche-card">
+                    <div class="approche-card ripple-container" onclick="createRipple(event)">
                         <div class="approche-icon">
                             <i class="fas fa-hands-helping"></i>
                         </div>
@@ -2081,7 +3077,7 @@
                         <p>Manipulation, expérimentation et découverte pour des apprentissages durables et significatifs.</p>
                     </div>
                     
-                    <div class="approche-card">
+                    <div class="approche-card ripple-container" onclick="createRipple(event)">
                         <div class="approche-icon">
                             <i class="fas fa-globe"></i>
                         </div>
@@ -2103,9 +3099,9 @@
                 
                 <div class="methodes-tabs">
                     <div class="tabs-header">
-                        <button class="tab-btn active" data-tab="freinet">Freinet</button>
-                        <button class="tab-btn" data-tab="active">Méthodes Actives</button>
-                        <button class="tab-btn" data-tab="bilingue">Immersion Bilingue</button>
+                        <button class="tab-btn active ripple-container" data-tab="freinet" onclick="createRipple(event)">Freinet</button>
+                        <button class="tab-btn ripple-container" data-tab="active" onclick="createRipple(event)">Méthodes Actives</button>
+                        <button class="tab-btn ripple-container" data-tab="bilingue" onclick="createRipple(event)">Immersion Bilingue</button>
                     </div>
                     
                     <div class="tab-content active" id="freinet">
@@ -2162,7 +3158,7 @@
                 <div class="timeline-container">
                     <div class="timeline-line"></div>
                     <div class="timeline-items">
-                        <div class="timeline-item">
+                        <div class="timeline-item" onclick="createRipple(event)">
                             <div class="timeline-content">
                                 <div class="timeline-year">2 mois - 3 ans</div>
                                 <h3>Éveil et Socialisation</h3>
@@ -2171,7 +3167,7 @@
                             <div class="timeline-marker">1</div>
                         </div>
                         
-                        <div class="timeline-item">
+                        <div class="timeline-item" onclick="createRipple(event)">
                             <div class="timeline-content">
                                 <div class="timeline-year">3 - 5 ans</div>
                                 <h3>Maternelle Bilingue</h3>
@@ -2180,7 +3176,7 @@
                             <div class="timeline-marker">2</div>
                         </div>
                         
-                        <div class="timeline-item">
+                        <div class="timeline-item" onclick="createRipple(event)">
                             <div class="timeline-content">
                                 <div class="timeline-year">6 - 10 ans</div>
                                 <h3>Primaire Bilingue</h3>
@@ -2189,7 +3185,7 @@
                             <div class="timeline-marker">3</div>
                         </div>
                         
-                        <div class="timeline-item">
+                        <div class="timeline-item" onclick="createRipple(event)">
                             <div class="timeline-content">
                                 <div class="timeline-year">+10 ans</div>
                                 <h3>Excellence et Ouverture</h3>
@@ -2214,19 +3210,19 @@
                 <div class="elegance-container">
                     <div class="elegance-visual">
                         <div class="elegance-circle">
-                            <div class="elegance-item" data-elegance="elegance">
+                            <div class="elegance-item ripple-container" data-elegance="elegance" onclick="createRipple(event)">
                                 <div class="elegance-icon">
                                     <i class="fas fa-crown"></i>
                                 </div>
                                 <h3>Élégance</h3>
                             </div>
-                            <div class="elegance-item" data-elegance="eloquence">
+                            <div class="elegance-item ripple-container" data-elegance="eloquence" onclick="createRipple(event)">
                                 <div class="elegance-icon">
                                     <i class="fas fa-microphone"></i>
                                 </div>
                                 <h3>Éloquence</h3>
                             </div>
-                            <div class="elegance-item" data-elegance="manieres">
+                            <div class="elegance-item ripple-container" data-elegance="manieres" onclick="createRipple(event)">
                                 <div class="elegance-icon">
                                     <i class="fas fa-handshake"></i>
                                 </div>
@@ -2290,7 +3286,7 @@
                 
                 <div class="activities-grid">
                     <!-- Art Oratoire -->
-                    <div class="activity-card">
+                    <div class="activity-card ripple-container" onclick="createRipple(event)">
                         <div class="activity-icon">
                             <i class="fas fa-microphone-alt"></i>
                         </div>
@@ -2309,7 +3305,7 @@
                     </div>
 
                     <!-- Jardinage -->
-                    <div class="activity-card">
+                    <div class="activity-card ripple-container" onclick="createRipple(event)">
                         <div class="activity-icon">
                             <i class="fas fa-seedling"></i>
                         </div>
@@ -2328,7 +3324,7 @@
                     </div>
 
                     <!-- Musique -->
-                    <div class="activity-card">
+                    <div class="activity-card ripple-container" onclick="createRipple(event)">
                         <div class="activity-icon">
                             <i class="fas fa-music"></i>
                         </div>
@@ -2347,7 +3343,7 @@
                     </div>
 
                     <!-- Danse -->
-                    <div class="activity-card">
+                    <div class="activity-card ripple-container" onclick="createRipple(event)">
                         <div class="activity-icon">
                             <i class="fas fa-child"></i>
                         </div>
@@ -2366,7 +3362,7 @@
                     </div>
 
                     <!-- Anglais -->
-                    <div class="activity-card">
+                    <div class="activity-card ripple-container" onclick="createRipple(event)">
                         <div class="activity-icon">
                             <i class="fas fa-globe"></i>
                         </div>
@@ -2385,7 +3381,7 @@
                     </div>
 
                     <!-- Créativité -->
-                    <div class="activity-card">
+                    <div class="activity-card ripple-container" onclick="createRipple(event)">
                         <div class="activity-icon">
                             <i class="fas fa-palette"></i>
                         </div>
@@ -2406,7 +3402,7 @@
             </div>
         </section>
 
-        <!-- SECTION GALERIE INTELLIGENTE -->
+        <!-- SECTION GALERIE INTELLIGENTE AVEC DIAPORAMA -->
         <section class="section smart-gallery-section">
             <div class="container">
                 <div class="section-header">
@@ -2415,16 +3411,66 @@
                     <div class="section-divider"></div>
                 </div>
                 
-                <div class="gallery-tabs">
-                    <div class="gallery-tab active" data-category="all">Toutes les photos</div>
-                    <div class="gallery-tab" data-category="creche">Crèche & Garderie</div>
-                    <div class="gallery-tab" data-category="maternelle">Maternelle</div>
-                    <div class="gallery-tab" data-category="primaire">Primaire</div>
-                    <div class="gallery-tab" data-category="activites">Activités</div>
+                <!-- Diaporama principal -->
+                <div class="gallery-container">
+                    <div class="gallery-slides" id="gallery-slides">
+                        <div class="gallery-slide">
+                            <img src="assets/images/gallery/creche-1.jpg" alt="Bébés à la crèche" loading="lazy">
+                            <div class="gallery-slide-overlay">
+                                <h3>Premiers Jeux</h3>
+                                <p>Nos tout-petits découvrent le monde</p>
+                            </div>
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="assets/images/gallery/maternelle-1.jpg" alt="Atelier peinture maternelle" loading="lazy">
+                            <div class="gallery-slide-overlay">
+                                <h3>Atelier Créatif</h3>
+                                <p>Expression artistique en maternelle</p>
+                            </div>
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="assets/images/gallery/primaire-1.jpg" alt="Cours de sciences primaire" loading="lazy">
+                            <div class="gallery-slide-overlay">
+                                <h3>Découverte Scientifique</h3>
+                                <p>Expériences passionnantes en primaire</p>
+                            </div>
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="assets/images/gallery/activites-1.jpg" alt="Spectacle de fin d'année" loading="lazy">
+                            <div class="gallery-slide-overlay">
+                                <h3>Spectacle Annuel</h3>
+                                <p>Nos talents sur scène</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="gallery-nav gallery-prev ripple-container" onclick="prevSlide()">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="gallery-nav gallery-next ripple-container" onclick="nextSlide()">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    
+                    <div class="gallery-dots" id="gallery-dots">
+                        <button class="gallery-dot active ripple-container" onclick="goToSlide(0)"></button>
+                        <button class="gallery-dot ripple-container" onclick="goToSlide(1)"></button>
+                        <button class="gallery-dot ripple-container" onclick="goToSlide(2)"></button>
+                        <button class="gallery-dot ripple-container" onclick="goToSlide(3)"></button>
+                    </div>
                 </div>
                 
+                <!-- Tabs pour filtrage -->
+                <div class="gallery-tabs">
+                    <div class="gallery-tab active ripple-container" data-category="all" onclick="createRipple(event); filterGallery('all')">Toutes les photos</div>
+                    <div class="gallery-tab ripple-container" data-category="creche" onclick="createRipple(event); filterGallery('creche')">Crèche & Garderie</div>
+                    <div class="gallery-tab ripple-container" data-category="maternelle" onclick="createRipple(event); filterGallery('maternelle')">Maternelle</div>
+                    <div class="gallery-tab ripple-container" data-category="primaire" onclick="createRipple(event); filterGallery('primaire')">Primaire</div>
+                    <div class="gallery-tab ripple-container" data-category="activites" onclick="createRipple(event); filterGallery('activites')">Activités</div>
+                </div>
+                
+                <!-- Grille de galerie -->
                 <div class="gallery-grid">
-                    <div class="gallery-item" data-category="creche">
+                    <div class="gallery-item ripple-container" data-category="creche" onclick="createRipple(event)">
                         <img src="assets/images/gallery/creche-1.jpg" alt="Bébés à la crèche" class="gallery-img" loading="lazy">
                         <div class="gallery-caption">
                             <h3 class="gallery-title">Premiers Jeux</h3>
@@ -2432,7 +3478,7 @@
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="maternelle">
+                    <div class="gallery-item ripple-container" data-category="maternelle" onclick="createRipple(event)">
                         <img src="assets/images/gallery/maternelle-1.jpg" alt="Atelier peinture maternelle" class="gallery-img" loading="lazy">
                         <div class="gallery-caption">
                             <h3 class="gallery-title">Atelier Créatif</h3>
@@ -2440,7 +3486,7 @@
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="primaire">
+                    <div class="gallery-item ripple-container" data-category="primaire" onclick="createRipple(event)">
                         <img src="assets/images/gallery/primaire-1.jpg" alt="Cours de sciences primaire" class="gallery-img" loading="lazy">
                         <div class="gallery-caption">
                             <h3 class="gallery-title">Découverte Scientifique</h3>
@@ -2448,7 +3494,7 @@
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="activites">
+                    <div class="gallery-item ripple-container" data-category="activites" onclick="createRipple(event)">
                         <img src="assets/images/gallery/activites-1.jpg" alt="Spectacle de fin d'année" class="gallery-img" loading="lazy">
                         <div class="gallery-caption">
                             <h3 class="gallery-title">Spectacle Annuel</h3>
@@ -2456,7 +3502,7 @@
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="creche">
+                    <div class="gallery-item ripple-container" data-category="creche" onclick="createRipple(event)">
                         <img src="assets/images/gallery/creche-2.jpg" alt="Sieste des tout-petits" class="gallery-img" loading="lazy">
                         <div class="gallery-caption">
                             <h3 class="gallery-title">Temps Calme</h3>
@@ -2464,7 +3510,7 @@
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="maternelle">
+                    <div class="gallery-item ripple-container" data-category="maternelle" onclick="createRipple(event)">
                         <img src="assets/images/gallery/maternelle-2.jpg" alt="Jeux en extérieur maternelle" class="gallery-img" loading="lazy">
                         <div class="gallery-caption">
                             <h3 class="gallery-title">Jeux Extérieurs</h3>
@@ -2472,7 +3518,7 @@
                         </div>
                     </div>
 
-                    <div class="gallery-item" data-category="primaire">
+                    <div class="gallery-item ripple-container" data-category="primaire" onclick="createRipple(event)">
                         <img src="assets/images/gallery/primaire-2.jpg" alt="Cours d'anglais primaire" class="gallery-img" loading="lazy">
                         <div class="gallery-caption">
                             <h3 class="gallery-title">Immersion Anglaise</h3>
@@ -2480,7 +3526,7 @@
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="activites">
+                    <div class="gallery-item ripple-container" data-category="activites" onclick="createRipple(event)">
                         <img src="assets/images/gallery/activites-2.jpg" alt="Fête de Noël" class="gallery-img" loading="lazy">
                         <div class="gallery-caption">
                             <h3 class="gallery-title">Fête de Noël</h3>
@@ -2506,22 +3552,22 @@
                         Votre navigateur ne supporte pas la lecture de vidéos.
                     </video>
                     <div class="video-controls">
-                        <button class="control-btn play-pause">
+                        <button class="control-btn play-pause ripple-container" onclick="createRipple(event)">
                             <i class="fas fa-play"></i>
                         </button>
-                        <div class="progress-container">
+                        <div class="progress-container ripple-container" onclick="createRipple(event)">
                             <div class="progress-bar"></div>
                         </div>
                         <div class="time-display">00:00 / 00:00</div>
                         <div class="volume-container">
-                            <button class="control-btn volume-btn">
+                            <button class="control-btn volume-btn ripple-container" onclick="createRipple(event)">
                                 <i class="fas fa-volume-up"></i>
                             </button>
-                            <div class="volume-slider">
+                            <div class="volume-slider ripple-container" onclick="createRipple(event)">
                                 <div class="volume-level"></div>
                             </div>
                         </div>
-                        <button class="control-btn fullscreen-btn">
+                        <button class="control-btn fullscreen-btn ripple-container" onclick="createRipple(event)">
                             <i class="fas fa-expand"></i>
                         </button>
                     </div>
@@ -2539,49 +3585,49 @@
                 </div>
                 
                 <div class="social-grid">
-                    <div class="social-card">
+                    <div class="social-card ripple-container" onclick="createRipple(event)">
                         <div class="social-icon">
                             <i class="fab fa-facebook"></i>
                         </div>
                         <h3>Facebook</h3>
                         <p>Actualités, événements et photos de nos activités quotidiennes</p>
-                        <a href="https://facebook.com/lesbullesdejoie" class="social-btn" target="_blank">
+                        <a href="https://facebook.com/lesbullesdejoie" class="social-btn ripple-container" target="_blank" onclick="createRipple(event)">
                             <i class="fab fa-facebook-f"></i>
                             Nous suivre
                         </a>
                     </div>
                     
-                    <div class="social-card">
+                    <div class="social-card ripple-container" onclick="createRipple(event)">
                         <div class="social-icon">
                             <i class="fab fa-instagram"></i>
                         </div>
                         <h3>Instagram</h3>
                         <p>Moments de vie en stories et publications quotidiennes</p>
-                        <a href="https://instagram.com/lesbullesdejoie" class="social-btn" target="_blank">
+                        <a href="https://instagram.com/lesbullesdejoie" class="social-btn ripple-container" target="_blank" onclick="createRipple(event)">
                             <i class="fab fa-instagram"></i>
                             Nous suivre
                         </a>
                     </div>
                     
-                    <div class="social-card">
+                    <div class="social-card ripple-container" onclick="createRipple(event)">
                         <div class="social-icon">
                             <i class="fab fa-tiktok"></i>
                         </div>
                         <h3>TikTok</h3>
                         <p>Vidéos courtes et amusantes de nos activités</p>
-                        <a href="https://www.tiktok.com/@cspblesbullesdejoie" class="social-btn" target="_blank">
+                        <a href="https://www.tiktok.com/@cspblesbullesdejoie" class="social-btn ripple-container" target="_blank" onclick="createRipple(event)">
                             <i class="fab fa-tiktok"></i>
                             Nous suivre
                         </a>
                     </div>
                     
-                    <div class="social-card">
+                    <div class="social-card ripple-container" onclick="createRipple(event)">
                         <div class="social-icon">
                             <i class="fab fa-youtube"></i>
                         </div>
                         <h3>YouTube</h3>
                         <p>Vidéos complètes de nos événements et activités</p>
-                        <a href="#" class="social-btn" target="_blank">
+                        <a href="#" class="social-btn ripple-container" target="_blank" onclick="createRipple(event)">
                             <i class="fab fa-youtube"></i>
                             Chaîne à venir
                         </a>
@@ -2600,29 +3646,29 @@
                 </div>
                 
                 <div class="stats-grid">
-                    <div class="stat-item">
+                    <div class="stat-item ripple-container" onclick="createRipple(event)">
                         <div class="stat-number">95%</div>
                         <div class="stat-label">Taux de Réussite</div>
                     </div>
                     
-                    <div class="stat-item">
+                    <div class="stat-item ripple-container" onclick="createRipple(event)">
                         <div class="stat-number">100%</div>
                         <div class="stat-label">Élèves Bilingues</div>
                     </div>
                     
-                    <div class="stat-item">
+                    <div class="stat-item ripple-container" onclick="createRipple(event)">
                         <div class="stat-number">98%</div>
                         <div class="stat-label">Satisfaction Parents</div>
                     </div>
                     
-                    <div class="stat-item">
+                    <div class="stat-item ripple-container" onclick="createRipple(event)">
                         <div class="stat-number">8+</div>
                         <div class="stat-label">Ans d'Expérience</div>
                     </div>
                 </div>
                 
-                <div style="margin-top: 3rem;">
-                    <a href="resultats.html" class="btn btn-primary">
+                <div style="margin-top: 3rem; text-align: center;">
+                    <a href="resultats.html" class="btn btn-primary ripple-container" onclick="createRipple(event)">
                         <i class="fas fa-chart-line"></i>
                         Voir les Résultats Détaillés
                     </a>
@@ -2640,10 +3686,10 @@
                         Contactez-nous pour plus d'informations sur nos programmes pédagogiques et activités parascolaires.
                     </p>
                     <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                        <a href="contact.html" class="btn btn-secondary">
+                        <a href="contact.html" class="btn btn-secondary ripple-container" onclick="createRipple(event)">
                             <i class="fas fa-phone"></i> Nous contacter
                         </a>
-                        <a href="tarifs-inscription.html" class="btn btn-primary">
+                        <a href="tarifs-inscription.html" class="btn btn-primary ripple-container" onclick="createRipple(event)">
                             <i class="fas fa-edit"></i> Formulaire d'inscription
                         </a>
                     </div>
@@ -2657,7 +3703,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <div class="footer-logo">
+                    <div class="footer-logo ripple-container" onclick="createRipple(event)">
                         <div class="logo-image-container">
                             <img src="assets/images/logo.png" alt="Les Bulles de Joie" class="footer-logo-img">
                         </div>
@@ -2667,22 +3713,22 @@
                         </div>
                     </div>
                     <div class="footer-badges">
-                        <span class="badge">🏆 École Certifiée</span>
-                        <span class="badge">🌍 Bilingue Français-Anglais</span>
-                        <span class="badge">👶 À partir de 2 mois</span>
+                        <span class="badge ripple-container" onclick="createRipple(event)">🏆 École Certifiée</span>
+                        <span class="badge ripple-container" onclick="createRipple(event)">🌍 Bilingue Français-Anglais</span>
+                        <span class="badge ripple-container" onclick="createRipple(event)">👶 À partir de 2 mois</span>
                     </div>
                     
                     <div class="social-links-minimal">
-                        <a href="https://facebook.com/lesbullesdejoie" class="social-link-minimal" aria-label="Facebook">
+                        <a href="https://facebook.com/lesbullesdejoie" class="social-link-minimal ripple-container" aria-label="Facebook" onclick="createRipple(event)">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="https://instagram.com/lesbullesdejoie" class="social-link-minimal" aria-label="Instagram">
+                        <a href="https://instagram.com/lesbullesdejoie" class="social-link-minimal ripple-container" aria-label="Instagram" onclick="createRipple(event)">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://www.tiktok.com/@cspblesbullesdejoie" class="social-link-minimal" aria-label="TikTok">
+                        <a href="https://www.tiktok.com/@cspblesbullesdejoie" class="social-link-minimal ripple-container" aria-label="TikTok" onclick="createRipple(event)">
                             <i class="fab fa-tiktok"></i>
                         </a>
-                        <a href="https://maps.app.goo.gl/Cz9oXhGhiR2T6czEA" class="social-link-minimal" aria-label="Google Maps">
+                        <a href="https://maps.app.goo.gl/Cz9oXhGhiR2T6czEA" class="social-link-minimal ripple-container" aria-label="Google Maps" onclick="createRipple(event)">
                             <i class="fas fa-map-marker-alt"></i>
                         </a>
                     </div>
@@ -2692,15 +3738,15 @@
                     <h4>Coordonnées</h4>
                     <div class="footer-details">
                         <div class="contact-info">
-                            <div class="contact-line">
+                            <div class="contact-line ripple-container" onclick="createRipple(event)">
                                 <i class="fas fa-map-marker-alt"></i>
                                 <span>Parakou - Zongo, Bénin</span>
                             </div>
-                            <div class="contact-line">
+                            <div class="contact-line ripple-container" onclick="createRipple(event)">
                                 <i class="fas fa-envelope"></i>
                                 <span>lesbullesdejoie@gmail.com</span>
                             </div>
-                            <div class="contact-line">
+                            <div class="contact-line ripple-container" onclick="createRipple(event)">
                                 <i class="fas fa-phone"></i>
                                 <span>+229 01 97 91 94 52</span>
                             </div>
@@ -2712,7 +3758,7 @@
                     <h4>Horaires</h4>
                     <div class="footer-details">
                         <div class="schedule-info">
-                            <div class="schedule-line">
+                            <div class="schedule-line ripple-container" onclick="createRipple(event)">
                                 <strong>Secrétariat - renseignements:</strong>
                                 <span>Lundi au Vendredi :08h à 17h</span>
                             </div>
@@ -2746,19 +3792,21 @@
         
         function skipPreloader() {
             preloaderSkippedPedagogie = true;
-            document.getElementById('preloader-pedagogie').style.opacity = '0';
-            document.getElementById('preloader-pedagogie').style.transition = 'opacity 0.5s';
+            const preloader = document.getElementById('preloader-pedagogie');
+            preloader.style.opacity = '0';
+            preloader.style.transition = 'opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
             setTimeout(() => {
-                document.getElementById('preloader-pedagogie').style.display = 'none';
+                preloader.style.display = 'none';
             }, 500);
         }
         
         window.addEventListener('load', function() {
             if (!preloaderSkippedPedagogie) {
                 setTimeout(() => {
-                    document.getElementById('preloader-pedagogie').style.opacity = '0';
+                    const preloader = document.getElementById('preloader-pedagogie');
+                    preloader.style.opacity = '0';
                     setTimeout(() => {
-                        document.getElementById('preloader-pedagogie').style.display = 'none';
+                        preloader.style.display = 'none';
                     }, 500);
                 }, preloaderDurationPedagogie);
             }
@@ -2766,7 +3814,197 @@
             // Initialiser les éléments interactifs pédagogiques
             initPedagogieInteractions();
             filtrerVideosPresentationPedagogie();
+            initGallerySlider();
         });
+
+        // ========================
+        // EFFET RIPPLE
+        // ========================
+        function createRipple(event) {
+            const element = event.currentTarget;
+            if (!element.classList.contains('ripple-container')) return;
+            
+            const ripple = document.createElement('span');
+            const rect = element.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = event.clientX - rect.left - size / 2;
+            const y = event.clientY - rect.top - size / 2;
+            
+            ripple.style.cssText = `
+                width: ${size}px;
+                height: ${size}px;
+                left: ${x}px;
+                top: ${y}px;
+                background: rgba(255, 255, 255, 0.7);
+            `;
+            
+            ripple.classList.add('ripple-effect');
+            element.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+            
+            // Effet sonore tactile (optionnel)
+            if (window.AudioContext || window.webkitAudioContext) {
+                try {
+                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    const oscillator = audioContext.createOscillator();
+                    const gainNode = audioContext.createGain();
+                    
+                    oscillator.connect(gainNode);
+                    gainNode.connect(audioContext.destination);
+                    
+                    oscillator.frequency.value = 200;
+                    oscillator.type = 'sine';
+                    gainNode.gain.value = 0.1;
+                    
+                    oscillator.start();
+                    gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.1);
+                    oscillator.stop(audioContext.currentTime + 0.1);
+                } catch (e) {
+                    // Audio non supporté
+                }
+            }
+        }
+
+        // ========================
+        // DIAPORAMA GALERIE
+        // ========================
+        let currentSlide = 0;
+        let slideInterval;
+        const slides = document.querySelectorAll('.gallery-slide');
+        const dots = document.querySelectorAll('.gallery-dot');
+        const totalSlides = slides.length;
+
+        function initGallerySlider() {
+            if (slides.length === 0) return;
+            
+            // Afficher la première slide
+            updateSlide();
+            
+            // Démarrer l'auto-play
+            startAutoPlay();
+            
+            // Ajouter les événements tactiles pour mobile
+            const gallerySlides = document.getElementById('gallery-slides');
+            let startX = 0;
+            let endX = 0;
+            
+            gallerySlides.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+                clearInterval(slideInterval);
+            });
+            
+            gallerySlides.addEventListener('touchend', (e) => {
+                endX = e.changedTouches[0].clientX;
+                handleSwipe();
+                startAutoPlay();
+            });
+            
+            gallerySlides.addEventListener('mousedown', (e) => {
+                startX = e.clientX;
+                clearInterval(slideInterval);
+            });
+            
+            gallerySlides.addEventListener('mouseup', (e) => {
+                endX = e.clientX;
+                handleSwipe();
+                startAutoPlay();
+            });
+            
+            function handleSwipe() {
+                const threshold = 50;
+                const diff = startX - endX;
+                
+                if (Math.abs(diff) > threshold) {
+                    if (diff > 0) {
+                        nextSlide();
+                    } else {
+                        prevSlide();
+                    }
+                }
+            }
+        }
+
+        function startAutoPlay() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(() => {
+                nextSlide();
+            }, 5000);
+        }
+
+        function goToSlide(n) {
+            currentSlide = (n + totalSlides) % totalSlides;
+            updateSlide();
+            createRipple({ currentTarget: dots[n] });
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlide();
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlide();
+        }
+
+        function updateSlide() {
+            const gallerySlides = document.getElementById('gallery-slides');
+            gallerySlides.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Mettre à jour les dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+            
+            // Animation d'entrée
+            slides[currentSlide].style.animation = 'zoomIn 0.5s ease';
+            setTimeout(() => {
+                slides[currentSlide].style.animation = '';
+            }, 500);
+        }
+
+        // ========================
+        // FILTRE GALERIE
+        // ========================
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            const tabs = document.querySelectorAll('.gallery-tab');
+            
+            // Mettre à jour les onglets actifs
+            tabs.forEach(tab => {
+                tab.classList.toggle('active', tab.dataset.category === category);
+            });
+            
+            // Filtrer les éléments
+            items.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 50);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+            
+            // Animation de réorganisation
+            if (category !== 'all') {
+                const filteredItems = Array.from(items).filter(item => item.dataset.category === category);
+                filteredItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.style.transform = 'scale(1)';
+                    }, index * 100);
+                });
+            }
+        }
 
         // ========================
         // FILTRAGE VIDÉOS PÉDAGOGIE-ACTIVITES
@@ -2806,7 +4044,6 @@
                             // Remplacer par une vidéo d'activités pédagogiques
                             source.setAttribute('src', 'assets/videos/atelier-creatif.mp4');
                             video.setAttribute('poster', 'assets/images/video-poster-activites.jpg');
-                            console.log('Vidéo de présentation filtrée et remplacée (pédagogie)');
                         }
                     }
                 });
@@ -2817,33 +4054,247 @@
         // INTERACTIONS PÉDAGOGIQUES
         // ========================
         function initPedagogieInteractions() {
-            // Animation des cartes pédagogiques
-            const cartesPedagogie = document.querySelectorAll('.approche-card, .activity-card, .carte-pedagogique');
-            cartesPedagogie.forEach(carte => {
-                carte.addEventListener('mouseenter', function() {
-                    if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
-                        this.style.transform = 'translateY(-8px)';
-                    }
-                });
+            // Effet de parallaxe sur les bulles
+            const bubbles = document.querySelectorAll('.bubble');
+            window.addEventListener('mousemove', (e) => {
+                const mouseX = e.clientX / window.innerWidth;
+                const mouseY = e.clientY / window.innerHeight;
                 
-                carte.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
+                bubbles.forEach((bubble, index) => {
+                    const speed = 0.5 + (index * 0.1);
+                    const x = (mouseX * speed * 100) - 50;
+                    const y = (mouseY * speed * 100) - 50;
+                    bubble.style.transform = `translate(${x}px, ${y}px)`;
                 });
             });
-            
-            // Animation de la façade pédagogique
-            const facadeImagePedagogie = document.querySelector('.facade-image-pedagogie');
-            if (facadeImagePedagogie) {
-                facadeImagePedagogie.addEventListener('mouseenter', function() {
-                    if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
-                        this.style.transform = 'scale(1.04)';
+
+            // Animation de la façade pédagogique au scroll
+            const facade = document.querySelector('.facade-pedagogique');
+            if (facade) {
+                window.addEventListener('scroll', () => {
+                    const rect = facade.getBoundingClientRect();
+                    const isInView = rect.top < window.innerHeight && rect.bottom > 0;
+                    
+                    if (isInView) {
+                        const scrollPercent = (rect.top / window.innerHeight) * 100;
+                        const scale = 1 + (scrollPercent * 0.01);
+                        facade.style.transform = `scale(${Math.min(scale, 1.05)})`;
                     }
                 });
+            }
+
+            // Effet de suivi de souris sur les cartes
+            const cards = document.querySelectorAll('.approche-card, .activity-card, .social-card');
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    const rotateY = ((x - centerX) / centerX) * 5;
+                    const rotateX = ((centerY - y) / centerY) * 5;
+                    
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+                });
                 
-                facadeImagePedagogie.addEventListener('mouseleave', function() {
-                    this.style.transform = 'scale(1)';
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+                    setTimeout(() => {
+                        card.style.transform = '';
+                    }, 300);
+                });
+            });
+
+            // Animation des badges au survol
+            const badges = document.querySelectorAll('.badge-pedagogique, .age-badge');
+            badges.forEach(badge => {
+                badge.addEventListener('mouseenter', () => {
+                    badge.style.transform = 'translateY(-3px) scale(1.05)';
+                });
+                
+                badge.addEventListener('mouseleave', () => {
+                    badge.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Effet de vibration sur les icônes
+            const icons = document.querySelectorAll('.approche-icon, .activity-icon, .social-icon');
+            icons.forEach(icon => {
+                icon.addEventListener('mouseenter', () => {
+                    icon.style.animation = 'pulse 0.5s ease';
+                });
+                
+                icon.addEventListener('mouseleave', () => {
+                    icon.style.animation = '';
+                });
+            });
+
+            // Effet de profondeur 3D pour les sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.addEventListener('mousemove', (e) => {
+                    const rect = section.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    const moveX = (x - centerX) / centerX * 10;
+                    const moveY = (y - centerY) / centerY * 10;
+                    
+                    section.style.backgroundPosition = `${50 + moveX}% ${50 + moveY}%`;
+                });
+                
+                section.addEventListener('mouseleave', () => {
+                    section.style.backgroundPosition = 'center';
+                });
+            });
+        }
+
+        // ========================
+        // LECTEUR VIDÉO AVANCÉ
+        // ========================
+        function initVideoPlayer() {
+            const video = document.querySelector('.video-player');
+            const playPauseBtn = document.querySelector('.play-pause');
+            const progressBar = document.querySelector('.progress-bar');
+            const progressContainer = document.querySelector('.progress-container');
+            const timeDisplay = document.querySelector('.time-display');
+            const volumeBtn = document.querySelector('.volume-btn');
+            const volumeSlider = document.querySelector('.volume-slider');
+            const volumeLevel = document.querySelector('.volume-level');
+            const fullscreenBtn = document.querySelector('.fullscreen-btn');
+            const videoContainer = document.querySelector('.video-container');
+
+            if (!video || !playPauseBtn) return;
+
+            let isPlaying = false;
+            let isDragging = false;
+
+            // Lecture/Pause
+            playPauseBtn.addEventListener('click', (e) => {
+                createRipple(e);
+                if (isPlaying) {
+                    video.pause();
+                    playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                } else {
+                    video.play();
+                    playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                }
+                isPlaying = !isPlaying;
+            });
+
+            // Mise à jour de la barre de progression
+            video.addEventListener('timeupdate', () => {
+                if (!isDragging) {
+                    const progress = (video.currentTime / video.duration) * 100;
+                    progressBar.style.width = `${progress}%`;
+                    
+                    // Mise à jour du temps affiché
+                    const currentTime = formatTime(video.currentTime);
+                    const duration = formatTime(video.duration);
+                    timeDisplay.textContent = `${currentTime} / ${duration}`;
+                }
+            });
+
+            // Clic sur la barre de progression
+            progressContainer.addEventListener('click', (e) => {
+                createRipple(e);
+                const rect = progressContainer.getBoundingClientRect();
+                const percent = (e.clientX - rect.left) / rect.width;
+                video.currentTime = percent * video.duration;
+            });
+
+            // Drag de la barre de progression
+            progressContainer.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                updateProgress(e);
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (isDragging) {
+                    updateProgress(e);
+                }
+            });
+
+            document.addEventListener('mouseup', () => {
+                isDragging = false;
+            });
+
+            function updateProgress(e) {
+                const rect = progressContainer.getBoundingClientRect();
+                const percent = (e.clientX - rect.left) / rect.width;
+                const newTime = percent * video.duration;
+                
+                video.currentTime = newTime;
+                progressBar.style.width = `${percent * 100}%`;
+                
+                const currentTime = formatTime(video.currentTime);
+                const duration = formatTime(video.duration);
+                timeDisplay.textContent = `${currentTime} / ${duration}`;
+            }
+
+            function formatTime(seconds) {
+                const mins = Math.floor(seconds / 60);
+                const secs = Math.floor(seconds % 60);
+                return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+            }
+
+            // Contrôle du volume
+            if (volumeBtn && volumeSlider && volumeLevel) {
+                volumeBtn.addEventListener('click', (e) => {
+                    createRipple(e);
+                    if (video.volume > 0) {
+                        video.volume = 0;
+                        volumeBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                        volumeLevel.style.width = '0%';
+                    } else {
+                        video.volume = 1;
+                        volumeBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+                        volumeLevel.style.width = '100%';
+                    }
+                });
+
+                volumeSlider.addEventListener('click', (e) => {
+                    createRipple(e);
+                    const rect = volumeSlider.getBoundingClientRect();
+                    const percent = (e.clientX - rect.left) / rect.width;
+                    video.volume = percent;
+                    volumeLevel.style.width = `${percent * 100}%`;
+                    
+                    if (percent === 0) {
+                        volumeBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                    } else {
+                        volumeBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+                    }
                 });
             }
+
+            // Plein écran
+            if (fullscreenBtn) {
+                fullscreenBtn.addEventListener('click', (e) => {
+                    createRipple(e);
+                    if (!document.fullscreenElement) {
+                        videoContainer.requestFullscreen().catch(err => {
+                            console.log(`Erreur lors du passage en plein écran: ${err.message}`);
+                        });
+                    } else {
+                        document.exitFullscreen();
+                    }
+                });
+            }
+
+            // Réinitialiser lorsque la vidéo se termine
+            video.addEventListener('ended', () => {
+                isPlaying = false;
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                progressBar.style.width = '0%';
+                timeDisplay.textContent = '00:00 / ' + formatTime(video.duration);
+            });
         }
 
         // ========================
@@ -2880,9 +4331,76 @@
         // Vérifier au chargement et au redimensionnement
         window.addEventListener('load', function() {
             verifierVisibilitePedagogie();
+            initVideoPlayer();
         });
         
         window.addEventListener('resize', verifierVisibilitePedagogie);
+
+        // ========================
+        // NAVIGATION MOBILE
+        // ========================
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (navToggle) {
+            navToggle.addEventListener('click', (e) => {
+                createRipple(e);
+                navToggle.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                
+                // Animation d'entrée du menu
+                if (navMenu.classList.contains('active')) {
+                    const navItems = navMenu.querySelectorAll('li');
+                    navItems.forEach((item, index) => {
+                        item.style.animationDelay = `${index * 0.1}s`;
+                        item.classList.add('animate-left');
+                    });
+                } else {
+                    navMenu.querySelectorAll('li').forEach(item => {
+                        item.classList.remove('animate-left');
+                    });
+                }
+            });
+        }
+
+        // Fermer le menu mobile au clic sur un lien
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                createRipple(e);
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // ========================
+        // SCROLL ANIMATIONS
+        // ========================
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                        
+                        // Animation spécifique selon le type d'élément
+                        if (entry.target.classList.contains('timeline-item')) {
+                            entry.target.classList.add('animate-left');
+                        } else if (entry.target.classList.contains('section-title')) {
+                            entry.target.classList.add('animate-zoom');
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            // Observer les éléments à animer
+            document.querySelectorAll('.approche-card, .gallery-item, .activity-card, .timeline-item, .social-card, .stat-item, .section-title, .section-subtitle, .section-divider').forEach(el => {
+                observer.observe(el);
+            });
+        }
 
         // ========================
         // GESTIONNAIRE DE LA PAGE PÉDAGOGIE & ACTIVITÉS
@@ -2895,43 +4413,25 @@
             init() {
                 this.setupNavigation();
                 this.setupTabs();
-                this.setupGallery();
-                this.setupVideoPlayer();
-                this.setupScrollAnimations();
-                this.setupInteractiveElements();
                 this.setupEleganceInteractions();
+                this.setupInteractiveElements();
+                initScrollAnimations();
             }
 
             // Configuration de la navigation
             setupNavigation() {
-                const navToggle = document.querySelector('.nav-toggle');
-                const navMenu = document.querySelector('.nav-menu');
-                
-                if (navToggle) {
-                    navToggle.addEventListener('click', () => {
-                        navToggle.classList.toggle('active');
-                        navMenu.classList.toggle('active');
-                    });
-                }
-
-                // Fermer le menu mobile au clic sur un lien
-                document.querySelectorAll('.nav-link').forEach(link => {
-                    link.addEventListener('click', () => {
-                        navToggle.classList.remove('active');
-                        navMenu.classList.remove('active');
-                    });
-                });
-
                 // Gestion du header au scroll
                 let lastScrollY = window.scrollY;
                 const header = document.querySelector('.main-header');
 
                 window.addEventListener('scroll', () => {
                     if (window.scrollY > 100) {
-                        header.style.background = 'var(--blanc)';
+                        header.style.background = 'rgba(255, 255, 255, 0.95)';
+                        header.style.backdropFilter = 'blur(10px)';
                         header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
                     } else {
                         header.style.background = 'var(--blanc)';
+                        header.style.backdropFilter = 'blur(10px)';
                         header.style.boxShadow = 'none';
                     }
 
@@ -2945,7 +4445,9 @@
                 const tabContents = document.querySelectorAll('.tab-content');
 
                 tabBtns.forEach(btn => {
-                    btn.addEventListener('click', () => {
+                    btn.addEventListener('click', (e) => {
+                        createRipple(e);
+                        
                         // Retirer la classe active de tous les boutons et contenus
                         tabBtns.forEach(b => b.classList.remove('active'));
                         tabContents.forEach(c => c.classList.remove('active'));
@@ -2953,178 +4455,15 @@
                         // Ajouter la classe active au bouton cliqué
                         btn.classList.add('active');
 
-                        // Afficher le contenu correspondant
+                        // Afficher le contenu correspondant avec animation
                         const tabId = btn.getAttribute('data-tab');
-                        document.getElementById(tabId).classList.add('active');
-                    });
-                });
-            }
-
-            // Configuration de la galerie intelligente
-            setupGallery() {
-                const tabs = document.querySelectorAll('.gallery-tab');
-                const items = document.querySelectorAll('.gallery-item');
-                
-                tabs.forEach(tab => {
-                    tab.addEventListener('click', () => {
-                        // Retirer la classe active de tous les onglets
-                        tabs.forEach(t => t.classList.remove('active'));
-                        // Ajouter la classe active à l'onglet cliqué
-                        tab.classList.add('active');
+                        const targetContent = document.getElementById(tabId);
+                        targetContent.classList.add('active');
                         
-                        const category = tab.getAttribute('data-category');
-                        
-                        // Filtrer les éléments de la galerie
-                        items.forEach(item => {
-                            if (category === 'all' || item.getAttribute('data-category') === category) {
-                                item.style.display = 'block';
-                                setTimeout(() => {
-                                    item.style.opacity = '1';
-                                    item.style.transform = 'scale(1)';
-                                }, 50);
-                            } else {
-                                item.style.opacity = '0';
-                                item.style.transform = 'scale(0.8)';
-                                setTimeout(() => {
-                                    item.style.display = 'none';
-                                }, 300);
-                            }
-                        });
+                        // Animation d'entrée
+                        targetContent.style.animation = 'slideUpFade 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
                     });
                 });
-            }
-
-            // Configuration du lecteur vidéo avancé
-            setupVideoPlayer() {
-                const video = document.querySelector('.video-player');
-                const playPauseBtn = document.querySelector('.play-pause');
-                const progressBar = document.querySelector('.progress-bar');
-                const progressContainer = document.querySelector('.progress-container');
-                const timeDisplay = document.querySelector('.time-display');
-                const volumeBtn = document.querySelector('.volume-btn');
-                const volumeSlider = document.querySelector('.volume-slider');
-                const volumeLevel = document.querySelector('.volume-level');
-                const fullscreenBtn = document.querySelector('.fullscreen-btn');
-                const videoContainer = document.querySelector('.video-container');
-
-                let isPlaying = false;
-                let isDragging = false;
-
-                if (!video || !playPauseBtn) return;
-
-                // Lecture/Pause
-                playPauseBtn.addEventListener('click', () => {
-                    if (isPlaying) {
-                        video.pause();
-                        playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
-                    } else {
-                        video.play();
-                        playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
-                    }
-                    isPlaying = !isPlaying;
-                });
-
-                // Mise à jour de la barre de progression
-                video.addEventListener('timeupdate', () => {
-                    if (!isDragging) {
-                        const progress = (video.currentTime / video.duration) * 100;
-                        progressBar.style.width = `${progress}%`;
-                        
-                        // Mise à jour du temps affiché
-                        const currentTime = this.formatTime(video.currentTime);
-                        const duration = this.formatTime(video.duration);
-                        timeDisplay.textContent = `${currentTime} / ${duration}`;
-                    }
-                });
-
-                // Clic sur la barre de progression
-                progressContainer.addEventListener('click', (e) => {
-                    const rect = progressContainer.getBoundingClientRect();
-                    const percent = (e.clientX - rect.left) / rect.width;
-                    video.currentTime = percent * video.duration;
-                });
-
-                // Drag de la barre de progression
-                progressContainer.addEventListener('mousedown', (e) => {
-                    isDragging = true;
-                    this.updateProgress(e, video, progressContainer, progressBar);
-                });
-
-                document.addEventListener('mousemove', (e) => {
-                    if (isDragging) {
-                        this.updateProgress(e, video, progressContainer, progressBar);
-                    }
-                });
-
-                document.addEventListener('mouseup', () => {
-                    isDragging = false;
-                });
-
-                // Contrôle du volume
-                if (volumeBtn && volumeSlider && volumeLevel) {
-                    volumeBtn.addEventListener('click', () => {
-                        if (video.volume > 0) {
-                            video.volume = 0;
-                            volumeBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
-                            volumeLevel.style.width = '0%';
-                        } else {
-                            video.volume = 1;
-                            volumeBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
-                            volumeLevel.style.width = '100%';
-                        }
-                    });
-
-                    volumeSlider.addEventListener('click', (e) => {
-                        const rect = volumeSlider.getBoundingClientRect();
-                        const percent = (e.clientX - rect.left) / rect.width;
-                        video.volume = percent;
-                        volumeLevel.style.width = `${percent * 100}%`;
-                        
-                        if (percent === 0) {
-                            volumeBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
-                        } else {
-                            volumeBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
-                        }
-                    });
-                }
-
-                // Plein écran
-                if (fullscreenBtn) {
-                    fullscreenBtn.addEventListener('click', () => {
-                        if (!document.fullscreenElement) {
-                            videoContainer.requestFullscreen().catch(err => {
-                                console.log(`Erreur lors du passage en plein écran: ${err.message}`);
-                            });
-                        } else {
-                            document.exitFullscreen();
-                        }
-                    });
-                }
-
-                // Réinitialiser lorsque la vidéo se termine
-                video.addEventListener('ended', () => {
-                    isPlaying = false;
-                    playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
-                });
-            }
-
-            updateProgress(e, video, container, progressBar) {
-                const rect = container.getBoundingClientRect();
-                const percent = (e.clientX - rect.left) / rect.width;
-                const newTime = percent * video.duration;
-                
-                video.currentTime = newTime;
-                progressBar.style.width = `${percent * 100}%`;
-                
-                const currentTime = this.formatTime(video.currentTime);
-                const duration = this.formatTime(video.duration);
-                document.querySelector('.time-display').textContent = `${currentTime} / ${duration}`;
-            }
-
-            formatTime(seconds) {
-                const mins = Math.floor(seconds / 60);
-                const secs = Math.floor(seconds % 60);
-                return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
             }
 
             // Configuration de l'interactivité pour la section élégance
@@ -3133,7 +4472,8 @@
                 const eleganceTexts = document.querySelectorAll('.elegance-text');
                 
                 eleganceItems.forEach(item => {
-                    item.addEventListener('click', () => {
+                    item.addEventListener('click', (e) => {
+                        createRipple(e);
                         const eleganceType = item.getAttribute('data-elegance');
                         
                         // Retirer la classe active de tous les éléments
@@ -3143,10 +4483,11 @@
                         // Ajouter la classe active à l'élément cliqué
                         item.classList.add('active');
                         
-                        // Afficher le texte correspondant
+                        // Afficher le texte correspondant avec animation
                         const targetText = document.getElementById(`${eleganceType}-text`);
                         if (targetText) {
                             targetText.classList.add('active');
+                            targetText.style.animation = 'slideFromRight 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
                         }
                     });
                 });
@@ -3157,39 +4498,29 @@
                 }
             }
 
-            // Animations au scroll
-            setupScrollAnimations() {
-                const observerOptions = {
-                    threshold: 0.1,
-                    rootMargin: '0px 0px -50px 0px'
-                };
-
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('animate-in');
-                        }
-                    });
-                }, observerOptions);
-
-                // Observer les éléments à animer
-                document.querySelectorAll('.approche-card, .gallery-item, .activity-card, .timeline-item, .social-card, .stat-item, .tab-btn').forEach(el => {
-                    observer.observe(el);
-                });
-            }
-
             // Configuration des éléments interactifs
             setupInteractiveElements() {
-                // Animation des cartes au survol
-                const cards = document.querySelectorAll('.approche-card, .activity-card, .timeline-content, .social-card, .stat-item');
-                
-                cards.forEach(card => {
-                    card.addEventListener('mouseenter', () => {
-                        card.style.transform = 'translateY(-5px)';
+                // Effet de zoom sur les images de la galerie
+                const galleryImages = document.querySelectorAll('.gallery-img');
+                galleryImages.forEach(img => {
+                    img.addEventListener('mouseenter', () => {
+                        img.style.transform = 'scale(1.1)';
                     });
                     
-                    card.addEventListener('mouseleave', () => {
-                        card.style.transform = 'translateY(0)';
+                    img.addEventListener('mouseleave', () => {
+                        img.style.transform = 'scale(1)';
+                    });
+                });
+
+                // Effet de vibration sur les boutons
+                const buttons = document.querySelectorAll('.btn, .gallery-tab, .tab-btn');
+                buttons.forEach(btn => {
+                    btn.addEventListener('mouseenter', () => {
+                        btn.style.animation = 'pulse 0.5s ease';
+                    });
+                    
+                    btn.addEventListener('mouseleave', () => {
+                        btn.style.animation = '';
                     });
                 });
             }
@@ -3205,6 +4536,28 @@
                 heroImage.style.backgroundImage = `url('assets/images/pedagogie/activites-pedagogiques.jpg')`;
             }
         });
+
+        // ========================
+        // REDUCED MOTION SUPPORT
+        // ========================
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.documentElement.style.setProperty('--transition-fast', 'none');
+            document.documentElement.style.setProperty('--transition-normal', 'none');
+            document.documentElement.style.setProperty('--transition-smooth', 'none');
+            
+            const style = document.createElement('style');
+            style.textContent = `
+                *,
+                *::before,
+                *::after {
+                    animation-duration: 0.01ms !important;
+                    animation-iteration-count: 1 !important;
+                    transition-duration: 0.01ms !important;
+                    scroll-behavior: auto !important;
+                }
+            `;
+            document.head.appendChild(style);
+        }
     </script>
 </body>
 </html>
