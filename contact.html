@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Inscription | Digit-School Process 2025</title>
+    
+    <!-- SEO Meta -->
+    <meta name="description" content="Contactez l'école Les Bulles de Joie pour participer à la conférence Digit-School Process 2025. Formulaire d'inscription et informations pratiques.">
+    <meta name="keywords" content="inscription conférence numérique, contact école Parakou, formulaire participation, informations pratiques, Les Bulles de Joie">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* Contact Hero */
+        .contact-hero {
+            background: linear-gradient(135deg, 
+                rgba(0, 168, 150, 0.95) 0%, 
+                rgba(45, 59, 139, 0.9) 100%),
+                url('./assets/images/hero.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 140px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40a40 40 0 1 1 80 0 40 40 0 1 1-80 0z' fill='none' fill-rule='evenodd' stroke='%23ffffff' stroke-opacity='0.1' stroke-width='2'/%3E%3C/svg%3E");
+        }
+        
+        .contact-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #FFFFFF, #A0FFE6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Contact Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+        
+        .contact-form-section, .contact-info-section {
+            background: white;
+            border-radius: var(--border-radius-xl);
+            padding: 3rem;
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .contact-form-section {
+            border-top: 6px solid var(--secondary);
+        }
+        
+        .contact-info-section {
+            border-top: 6px solid var(--primary);
+        }
+        
+        /* Formulaire */
+        .form-group {
+            margin-bottom: 2rem;
+        }
+        
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid var(--gray);
+            border-radius: var(--border-radius);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: var(--transition);
+            background: var(--light);
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(45, 59, 139, 0.1);
+            outline: none;
+        }
+        
+        .form-control.error {
+            border-color: var(--danger);
+            background: rgba(220, 53, 69, 0.05);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        .form-check {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        
+        .form-check input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--primary);
+        }
+        
+        /* Informations Contact */
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid var(--gray-light);
+        }
+        
+        .contact-info-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .contact-info-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .contact-info-content h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Map Section */
+        .map-section {
+            background: var(--gray-light);
+        }
+        
+        .map-container {
+            border-radius: var(--border-radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+            height: 400px;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            background: white;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--gray);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        
+        .faq-item.active {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            background: var(--gray-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .faq-question:hover {
+            background: var(--primary-light);
+            color: white;
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 1.5rem;
+            max-height: 500px;
+        }
+        
+        .faq-toggle {
+            color: var(--primary);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+            color: var(--accent);
+        }
+        
+        /* Logo styles */
+        .logo-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+        
+        .logo-brand img {
+            height: 50px;
+            width: auto;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-text .main {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+        
+        .logo-text .sub {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            color: var(--gray-dark);
+        }
+        
+        /* Footer logo */
+        .footer-logo {
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo img {
+            height: 40px;
+            width: auto;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .contact-form-section, .contact-info-section {
+                padding: 2.5rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .contact-hero {
+                padding: 120px 0 40px;
+            }
+            
+            .contact-title {
+                font-size: 2.5rem;
+            }
+            
+            .contact-info-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .contact-info-icon {
+                margin: 0 auto;
+            }
+            
+            .map-container {
+                height: 300px;
+            }
+            
+            .logo-brand img {
+                height: 40px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .contact-form-section, .contact-info-section {
+                padding: 2rem;
+            }
+            
+            .contact-title {
+                font-size: 2rem;
+            }
+            
+            .faq-question {
+                padding: 1.25rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo-brand">
+                <img src="./assets/images/logo.png" alt="Logo de Digit-School Process">
+                <div class="logo-text">
+                    <div class="main">Digit-School Process</div>
+                    <div class="sub">Contact & Inscription</div>
+                </div>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu mobile">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="main-nav" aria-label="Navigation principale">
+                <ul class="nav-list" id="navList">
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a href="definitions.html" class="nav-link"><i class="fas fa-book"></i> Définitions</a></li>
+                    <li><a href="avantages-risques.html" class="nav-link"><i class="fas fa-balance-scale"></i> Analyse</a></li>
+                    <li><a href="precautions-lois.html" class="nav-link"><i class="fas fa-shield-alt"></i> Cadre Légal</a></li>
+                    <li><a href="technologies.html" class="nav-link"><i class="fas fa-robot"></i> Technologies</a></li>
+                    <li><a href="programme.html" class="nav-link"><i class="fas fa-calendar-alt"></i> Programme</a></li>
+                    <li><a href="contact.html" class="nav-link active"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="contact-hero" id="hero">
+        <div class="container">
+            <h1 class="contact-title">Contact & Inscription</h1>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.9); max-width: 800px; margin: 0 auto 2rem;">
+                Rejoignez la conférence Digit-School Process 2025 organisée par l'école "Les Bulles de Joie"
+            </p>
+            <div class="conference-badge" style="background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3);">
+                <i class="fas fa-calendar-check"></i> Inscriptions ouvertes jusqu'au 15 novembre 2025
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Formulaire d'Inscription -->
+                <div class="contact-form-section animate-fade-in-up">
+                    <div class="section-title" style="text-align: left; margin-bottom: 2rem;">
+                        <h2 style="color: var(--secondary);">Formulaire d'Inscription</h2>
+                        <p class="section-subtitle" style="text-align: left; margin: 0;">
+                            Remplissez ce formulaire pour participer à la conférence
+                        </p>
+                    </div>
+                    
+                    <form id="registrationForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName" class="form-label">Prénom *</label>
+                                <input type="text" id="firstName" name="firstName" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="lastName" class="form-label">Nom *</label>
+                                <input type="text" id="lastName" name="lastName" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email *</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Téléphone *</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="institution" class="form-label">Établissement/Organisation *</label>
+                            <input type="text" id="institution" name="institution" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="role" class="form-label">Fonction *</label>
+                            <select id="role" name="role" class="form-control" required>
+                                <option value="">Sélectionnez votre fonction</option>
+                                <option value="enseignant">Enseignant(e)</option>
+                                <option value="directeur">Directeur/Chef d'établissement</option>
+                                <option value="parent">Parent d'élève</option>
+                                <option value="etudiant">Étudiant/Élève</option>
+                                <option value="expert">Expert/Consultant</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="package" class="form-label">Type d'inscription *</label>
+                            <select id="package" name="package" class="form-control" required>
+                                <option value="">Choisissez votre formule</option>
+                                <option value="standard">Participation Standard - 5 000 FCFA</option>
+                                <option value="etudiant">Tarif Étudiant/Enseignant - 2 500 FCFA</option>
+                                <option value="groupe">Pack Établissement (10 personnes) - 40 000 FCFA</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message additionnel (optionnel)</label>
+                            <textarea id="message" name="message" class="form-control" rows="4" placeholder="Vos questions ou besoins spécifiques..."></textarea>
+                        </div>
+                        
+                        <div class="form-check">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">Je souhaite recevoir les actualités sur les événements futurs</label>
+                        </div>
+                        
+                        <div class="form-check">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">J'accepte les <a href="#terms-modal" style="color: var(--primary);">conditions générales</a> *</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-lg btn-block mt-4">
+                            <i class="fas fa-paper-plane"></i> Envoyer mon inscription
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Informations de Contact -->
+                <div class="contact-info-section animate-fade-in-up">
+                    <div class="section-title" style="text-align: left; margin-bottom: 2rem;">
+                        <h2 style="color: var(--primary);">Contactez-nous</h2>
+                        <p class="section-subtitle" style="text-align: left; margin: 0;">
+                            École Les Bulles de Joie - Organisateur de la conférence
+                        </p>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h4>Adresse</h4>
+                            <p>Parakou - Zongo 2, Bénin<br>
+                            Boîte Postale : 123</p>
+                            <a href="https://maps.app.goo.gl/Cz9oXhGhiR2T6czEA" target="_blank" class="btn btn-outline btn-sm mt-2">
+                                <i class="fas fa-directions"></i> Voir sur Google Maps
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h4>Téléphone</h4>
+                            <p>+229 01 97 91 94 52</p>
+                            <p style="font-size: 0.9rem; color: var(--gray-dark);">
+                                Service admissions : Français & Anglais
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h4>Email</h4>
+                            <p><a href="mailto:lesbullesdejoie@gmail.com">lesbullesdejoie@gmail.com</a></p>
+                            <p><a href="mailto:codjosamuelstein@gmail.com">codjosamuelstein@gmail.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h4>Horaires d'ouverture</h4>
+                            <p><strong>Lundi à Vendredi :</strong> 7h30 - 18h30<br>
+                            <strong>Samedi :</strong> 8h00 - 13h00</p>
+                            <p style="font-size: 0.9rem; color: var(--accent);">
+                                Période Noël spéciale : 07h30 - 18h30
+                                (du 01/12/2024 au 31/12/2024)
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-hashtag"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h4>Réseaux sociaux</h4>
+                            <div class="social-icons" style="justify-content: flex-start;">
+                                <a href="https://facebook.com/lesbullesdejoie" target="_blank" aria-label="Facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://instagram.com/lesbullesdejoie" target="_blank" aria-label="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="https://www.tiktok.com/@cspblesbullesdejoie" target="_blank" aria-label="TikTok">
+                                    <i class="fab fa-tiktok"></i>
+                                </a>
+                                <a href="https://les-bulles-de-joie.onrender.com/" target="_blank" aria-label="Site web">
+                                    <i class="fas fa-globe"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section map-section" id="location">
+        <div class="container">
+            <div class="section-title">
+                <h2>Localisation</h2>
+                <p class="section-subtitle">L'école "Les Bulles de Joie" à Parakou, lieu de la conférence</p>
+            </div>
+            
+            <div class="map-container animate-fade-in-up">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15798.22480329228!2d2.6283!3d9.3376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMjAnMTUuNCJOIDLCsDM3JzQxLjkiRQ!5e0!3m2!1sfr!2sbj!4v1647456789012!5m2!1sfr!2sbj" 
+                    width="100%" 
+                    height="400" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="https://maps.app.goo.gl/Cz9oXhGhiR2T6czEA" target="_blank" class="btn btn-secondary">
+                    <i class="fas fa-external-link-alt"></i> Ouvrir dans Google Maps
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Questions Fréquentes</h2>
+                <p class="section-subtitle">Trouvez rapidement des réponses à vos questions</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item animate-fade-in-up">
+                    <div class="faq-question">
+                        <span>Comment payer mon inscription à la conférence ?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Plusieurs moyens de paiement sont acceptés :</p>
+                        <ul class="list-check">
+                            <li><strong>Sur place :</strong> Paiement en espèces ou par carte bancaire à l'école</li>
+                            <li><strong>Mobile Money :</strong> MTN Mobile Money ou Moov Flooz au 01 97 91 94 52</li>
+                            <li><strong>Transfert bancaire :</strong> Détails fournis après inscription</li>
+                            <li><strong>En ligne :</strong> Paiement sécurisé via notre plateforme</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-fade-in-up">
+                    <div class="faq-question">
+                        <span>Puis-je annuler mon inscription et me faire rembourser ?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Oui, selon les conditions suivantes :</p>
+                        <ul class="list-check">
+                            <li><strong>30 jours avant l'événement :</strong> Remboursement à 100%</li>
+                            <li><strong>15 à 30 jours avant :</strong> Remboursement à 50%</li>
+                            <li><strong>Moins de 15 jours avant :</strong> Pas de remboursement, mais transfert possible</li>
+                            <li><strong>Transfert :</strong> Vous pouvez transférer votre place à une autre personne</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-fade-in-up">
+                    <div class="faq-question">
+                        <span>L'école propose-t-elle des solutions d'hébergement ?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Pour les participants venant de loin, nous proposons :</p>
+                        <ul class="list-check">
+                            <li><strong>Liste d'hôtels partenaires :</strong> Tarifs préférentiels sur présentation de l'inscription</li>
+                            <li><strong>Hébergement chez l'habitant :</strong> Solution économique et authentique</li>
+                            <li><strong>Résidence étudiante :</strong> Disponible à proximité de l'école</li>
+                            <li><strong>Transport :</strong> Navettes depuis les hôtels partenaires vers l'école</li>
+                        </ul>
+                        <p class="mt-2"><a href="assets/documents/liste-hotels.pdf" target="_blank">Télécharger la liste des hébergements recommandés</a></p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-fade-in-up">
+                    <div class="faq-question">
+                        <span>Quels sont les agréments de l'école "Les Bulles de Joie" ?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Notre école est pleinement agréée par le Ministère de l'Éducation :</p>
+                        <ul class="list-check">
+                            <li><strong>2021 :</strong> N°018/MASM/DC/SGM/DGAS/DFEA/SA/021SGG21</li>
+                            <li><strong>2022 :</strong> N°045/MEMP/DC/SGM/DPP/SP/0223SGG22</li>
+                            <li><strong>Programme :</strong> Bilingue Français-Anglais</li>
+                            <li><strong>Niveaux :</strong> Crèche (dès 2 mois), Garderie, Maternelle, Primaire</li>
+                            <li><strong>Note :</strong> 4.9/5 sur 127 avis</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-fade-in-up">
+                    <div class="faq-question">
+                        <span>Que comprend l'inscription à la conférence ?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Votre inscription inclut :</p>
+                        <ul class="list-check">
+                            <li>Accès à toutes les sessions plénières</li>
+                            <li>Participation à 2 ateliers pratiques au choix</li>
+                            <li>Kit participant (badge, documents, stylo)</li>
+                            <li>Pauses-café et déjeuner inclus</li>
+                            <li>Certificat de participation nominatif</li>
+                            <li>Accès aux ressources numériques post-conférence</li>
+                            <li>Photos souvenir de l'événement</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="./assets/images/logo-white.png" alt="Logo blanc de Digit-School Process">
+                    </div>
+                    <h4 class="footer-title">Digit-School Process 2025</h4>
+                    <p style="opacity: 0.9; line-height: 1.6;">
+                        Organisé par l'école "Les Bulles de Joie"<br>
+                        Slogan : "Amour • Travail • Rigueur • Créativité"
+                    </p>
+                    <div class="social-icons">
+                        <a href="https://facebook.com/lesbullesdejoie" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/lesbullesdejoie" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@cspblesbullesdejoie" target="_blank" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://les-bulles-de-joie.onrender.com/" target="_blank" aria-label="Site web">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                        <a href="https://wa.me/2290197919452" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact Rapide</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:+2290197919452"><i class="fas fa-phone"></i> +229 01 97 91 94 52</a></li>
+                        <li><a href="mailto:lesbullesdejoie@gmail.com"><i class="fas fa-envelope"></i> lesbullesdejoie@gmail.com</a></li>
+                        <li><a href="mailto:codjosamuelstein@gmail.com"><i class="fas fa-user-tie"></i> codjosamuelstein@gmail.com</a></li>
+                        <li><span><i class="fas fa-map-marker-alt"></i> Parakou - Zongo 2, Bénin</span></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Navigation Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="#registrationForm"><i class="fas fa-user-plus"></i> Formulaire d'inscription</a></li>
+                        <li><a href="#location"><i class="fas fa-map-marker-alt"></i> Localisation</a></li>
+                        <li><a href="#faq"><i class="fas fa-question-circle"></i> Questions fréquentes</a></li>
+                        <li><a href="programme.html"><i class="fas fa-calendar-check"></i> Programme détaillé</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Informations École</h4>
+                    <ul class="footer-links">
+                        <li><span><i class="fas fa-school"></i> École privée agréée</span></li>
+                        <li><span><i class="fas fa-users"></i> ~350 élèves</span></li>
+                        <li><span><i class="fas fa-star"></i> 4.9/5 (127 avis)</span></li>
+                        <li><span><i class="fas fa-language"></i> Bilingue Français-Anglais</span></li>
+                        <li><span><i class="fas fa-calendar-alt"></i> Fondée en 2017</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span class="current-year">2025</span> Digit-School Process | Organisé par l'école "Les Bulles de Joie" | Parakou, Bénin</p>
+                <p>Agréments : 2021 N°018/MASM/DC/SGM/DGAS/DFEA/SA/021SGG21 | 2022 N°045/MEMP/DC/SGM/DPP/SP/0223SGG22</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Scripts spécifiques à la page contact
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gestion du formulaire d'inscription
+            const registrationForm = document.getElementById('registrationForm');
+            
+            if (registrationForm) {
+                registrationForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Validation
+                    let isValid = true;
+                    const requiredFields = this.querySelectorAll('[required]');
+                    
+                    requiredFields.forEach(field => {
+                        if (!field.value.trim()) {
+                            isValid = false;
+                            field.classList.add('error');
+                        } else {
+                            field.classList.remove('error');
+                        }
+                    });
+                    
+                    if (!this.querySelector('#terms').checked) {
+                        isValid = false;
+                        alert('Veuillez accepter les conditions générales.');
+                    }
+                    
+                    if (isValid) {
+                        // Simulation d'envoi
+                        const submitBtn = this.querySelector('button[type="submit"]');
+                        const originalText = submitBtn.innerHTML;
+                        
+                        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Traitement en cours...';
+                        submitBtn.disabled = true;
+                        
+                        setTimeout(() => {
+                            submitBtn.innerHTML = '<i class="fas fa-check"></i> Inscription validée !';
+                            submitBtn.classList.add('success');
+                            submitBtn.style.background = 'linear-gradient(135deg, var(--success), #28a745)';
+                            
+                            // Réinitialiser après 3 secondes
+                            setTimeout(() => {
+                                registrationForm.reset();
+                                submitBtn.innerHTML = originalText;
+                                submitBtn.classList.remove('success');
+                                submitBtn.disabled = false;
+                                submitBtn.style.background = '';
+                                
+                                // Afficher message de confirmation
+                                alert('Votre inscription a été enregistrée avec succès !\n\nNous vous enverrons un email de confirmation avec les détails de paiement dans les 24 heures.\n\nÀ bientôt à la conférence !');
+                            }, 3000);
+                        }, 2000);
+                    } else {
+                        alert('Veuillez remplir correctement tous les champs obligatoires.');
+                    }
+                });
+            }
+            
+            // Gestion de la FAQ
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', function() {
+                    // Fermer tous les autres items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Ouvrir/fermer l'item courant
+                    item.classList.toggle('active');
+                });
+            });
+            
+            // Animation des éléments
+            const contactItems = document.querySelectorAll('.contact-info-item');
+            contactItems.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.1}s`;
+            });
+            
+            // Initialiser les tooltips
+            const tooltips = document.querySelectorAll('[title]');
+            tooltips.forEach(element => {
+                element.setAttribute('data-tooltip', element.getAttribute('title'));
+                element.removeAttribute('title');
+            });
+        });
+    </script>
+</body>
+</html>

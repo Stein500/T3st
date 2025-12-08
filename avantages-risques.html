@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse Systémique | Avantages & Risques - Digit-School Process 2025</title>
+    
+    <!-- SEO Meta -->
+    <meta name="description" content="Analyse approfondie des avantages transformateurs et des risques potentiels du numérique éducatif. Approche équilibrée pour une intégration responsable.">
+    <meta name="keywords" content="avantages numérique éducatif, risques technologies éducation, analyse systémique, transformation digitale école, équilibre numérique">
+    <meta name="author" content="Digit-School Process 2025">
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
+    
+    <style>
+        /* Hero Section améliorée */
+        .analysis-hero {
+            background: linear-gradient(135deg, 
+                rgba(74, 0, 224, 0.95) 0%, 
+                rgba(142, 45, 226, 0.9) 100%),
+                url('./assets/images/about.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 140px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .analysis-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('./assets/images/logo-white.png') no-repeat center;
+            background-size: 400px;
+            opacity: 0.05;
+        }
+        
+        .analysis-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        /* Analysis Grid amélioré */
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 4rem auto;
+            max-width: 1400px;
+            padding: 0 2rem;
+            position: relative;
+        }
+        
+        .analysis-grid::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 2px;
+            height: 90%;
+            background: linear-gradient(to bottom, transparent, var(--gray), transparent);
+        }
+        
+        .advantages-section, .risks-section {
+            background: white;
+            border-radius: var(--border-radius-xl);
+            padding: 3rem;
+            box-shadow: var(--shadow-hard);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .advantages-section:hover, .risks-section:hover {
+            transform: translateY(-5px);
+        }
+        
+        .advantages-section {
+            border-top: 6px solid var(--success);
+        }
+        
+        .risks-section {
+            border-top: 6px solid var(--danger);
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid;
+        }
+        
+        .advantages-section .section-header {
+            border-color: var(--success);
+        }
+        
+        .risks-section .section-header {
+            border-color: var(--danger);
+        }
+        
+        .section-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .advantages-section:hover .section-icon {
+            transform: rotate(10deg) scale(1.1);
+        }
+        
+        .risks-section:hover .section-icon {
+            transform: rotate(-10deg) scale(1.1);
+        }
+        
+        .advantages-section .section-icon {
+            background: linear-gradient(135deg, var(--success), #66BB6A);
+            box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);
+        }
+        
+        .risks-section .section-icon {
+            background: linear-gradient(135deg, var(--danger), #EF5350);
+            box-shadow: 0 10px 20px rgba(244, 67, 54, 0.3);
+        }
+        
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .advantages-section .section-header h2 {
+            color: var(--success);
+        }
+        
+        .risks-section .section-header h2 {
+            color: var(--danger);
+        }
+        
+        /* Items améliorés */
+        .advantage-item, .risk-item {
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-radius: var(--border-radius-lg);
+            border-left: 5px solid;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .advantage-item {
+            border-left-color: var(--success);
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.05), rgba(76, 175, 80, 0.02));
+        }
+        
+        .risk-item {
+            border-left-color: var(--danger);
+            background: linear-gradient(135deg, rgba(244, 67, 54, 0.05), rgba(244, 67, 54, 0.02));
+        }
+        
+        .advantage-item:hover, .risk-item:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-hard);
+        }
+        
+        .advantage-item::before, .risk-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 70%, rgba(255,255,255,0.1) 70%);
+            z-index: 0;
+        }
+        
+        .item-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .item-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: white;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .advantage-item:hover .item-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .risk-item:hover .item-icon {
+            transform: scale(1.1) rotate(-5deg);
+        }
+        
+        .advantage-item .item-icon {
+            background: linear-gradient(135deg, var(--success), #66BB6A);
+        }
+        
+        .risk-item .item-icon {
+            background: linear-gradient(135deg, var(--danger), #EF5350);
+        }
+        
+        .item-header h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        
+        .advantage-item .item-header h3 {
+            color: var(--success);
+        }
+        
+        .risk-item .item-header h3 {
+            color: var(--danger);
+        }
+        
+        .item-content {
+            color: var(--dark);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .item-impact {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 0.5rem;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+        
+        .advantage-item:hover .item-impact {
+            background: rgba(76, 175, 80, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .risk-item:hover .item-impact {
+            background: rgba(244, 67, 54, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .advantage-item .item-impact {
+            background: rgba(76, 175, 80, 0.1);
+            color: var(--success);
+            border: 1px solid rgba(76, 175, 80, 0.2);
+        }
+        
+        .risk-item .item-impact {
+            background: rgba(244, 67, 54, 0.1);
+            color: var(--danger);
+            border: 1px solid rgba(244, 67, 54, 0.2);
+        }
+        
+        /* Balance Section améliorée */
+        .balance-section {
+            background: linear-gradient(135deg, var(--gray-light), white);
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .balance-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('./assets/images/logo.png') no-repeat;
+            background-size: 300px;
+            background-position: right -50px bottom -50px;
+            opacity: 0.03;
+        }
+        
+        .balance-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .balance-card {
+            background: white;
+            border-radius: var(--border-radius-xl);
+            padding: 3rem;
+            box-shadow: var(--shadow-hard);
+            text-align: center;
+            border-top: 6px solid var(--warning);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .balance-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 60%, rgba(255, 193, 7, 0.05) 60%);
+        }
+        
+        .balance-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--warning), #FFD54F);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            margin: 0 auto 2rem;
+            box-shadow: var(--shadow-medium);
+            transition: all 0.3s ease;
+        }
+        
+        .balance-card:hover .balance-icon {
+            transform: scale(1.1) rotate(15deg);
+        }
+        
+        .balance-card h2 {
+            color: var(--warning);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .balance-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .stat-box {
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            background: var(--gray-light);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-box:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .stat-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-box:nth-child(1) .stat-value {
+            color: var(--success);
+        }
+        
+        .stat-box:nth-child(2) .stat-value {
+            color: var(--warning);
+        }
+        
+        .stat-box:nth-child(3) .stat-value {
+            color: var(--danger);
+        }
+        
+        /* Recommendations améliorées */
+        .recommendations-section {
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .recommendations-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('./assets/images/logo-white.png') no-repeat center;
+            background-size: 400px;
+            opacity: 0.05;
+        }
+        
+        .recommendations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .recommendation-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .recommendation-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .recommendation-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent);
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.3s ease;
+        }
+        
+        .recommendation-card:hover::before {
+            transform: scaleY(1);
+        }
+        
+        .recommendation-card h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        /* Logo amélioré */
+        .logo-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .logo-img {
+            height: 50px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+        
+        .logo-brand:hover .logo-img {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-text .main {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+        
+        .logo-text .sub {
+            font-size: 0.8rem;
+            color: var(--gray-dark);
+            font-weight: 500;
+        }
+        
+        /* Responsive amélioré */
+        @media (max-width: 1200px) {
+            .analysis-grid {
+                gap: 2rem;
+                padding: 0 1rem;
+            }
+            
+            .advantages-section, .risks-section {
+                padding: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .analysis-grid {
+                grid-template-columns: 1fr;
+                margin: 2rem auto;
+            }
+            
+            .analysis-grid::before {
+                display: none;
+            }
+            
+            .balance-stats {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .analysis-hero {
+                padding: 120px 0 40px;
+                background-attachment: scroll;
+            }
+            
+            .analysis-title {
+                font-size: 2.5rem;
+            }
+            
+            .advantages-section, .risks-section {
+                padding: 2rem;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .section-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
+            }
+            
+            .advantage-item, .risk-item {
+                padding: 1.5rem;
+            }
+            
+            .balance-card {
+                padding: 2rem;
+            }
+            
+            .balance-icon {
+                width: 80px;
+                height: 80px;
+                font-size: 2.5rem;
+            }
+            
+            .stat-box {
+                padding: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .analysis-title {
+                font-size: 2rem;
+            }
+            
+            .item-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.75rem;
+            }
+            
+            .balance-card {
+                padding: 1.5rem;
+            }
+            
+            .recommendations-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .recommendation-card {
+                padding: 1.5rem;
+            }
+        }
+        
+        /* Animation pour les items */
+        .advantage-item, .risk-item {
+            animation: slideInLeft 0.5s ease-out;
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Effet de comparaison interactive */
+        .comparison-toggle {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .toggle-btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .toggle-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header amélioré -->
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo-brand">
+                <img src="./assets/images/logo.png" alt="Logo de Digit-School Process" class="logo-img">
+                <div class="logo-text">
+                    <div class="main">Digit-School Process</div>
+                    <div class="sub">Analyse Systémique</div>
+                </div>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu mobile">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="main-nav" aria-label="Navigation principale">
+                <ul class="nav-list" id="navList">
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a href="definitions.html" class="nav-link"><i class="fas fa-book"></i> Définitions</a></li>
+                    <li><a href="avantages-risques.html" class="nav-link active"><i class="fas fa-balance-scale"></i> Analyse</a></li>
+                    <li><a href="precautions-lois.html" class="nav-link"><i class="fas fa-shield-alt"></i> Cadre Légal</a></li>
+                    <li><a href="technologies.html" class="nav-link"><i class="fas fa-robot"></i> Technologies</a></li>
+                    <li><a href="programme.html" class="nav-link"><i class="fas fa-calendar-alt"></i> Programme</a></li>
+                    <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section améliorée -->
+    <section class="analysis-hero">
+        <div class="container">
+            <h1 class="analysis-title">Analyse Systémique</h1>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.95); max-width: 800px; margin: 0 auto 2rem;">
+                Approche équilibrée et réaliste des avantages transformateurs et risques potentiels 
+                du numérique éducatif
+            </p>
+            <div class="conference-badge" style="background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(10px);">
+                <i class="fas fa-chart-pie"></i> Approche holistique et data-driven
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Analysis Grid amélioré -->
+    <div class="analysis-grid">
+        <!-- Avantages -->
+        <section class="advantages-section animate-fade-in-up">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <div>
+                    <h2>Avantages Transformateurs</h2>
+                    <p>Opportunités et bénéfices du numérique éducatif</p>
+                </div>
+            </div>
+            
+            <!-- Avantage 1 -->
+            <article class="advantage-item">
+                <div class="item-header">
+                    <div class="item-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Personnalisation des Apprentissages</h3>
+                </div>
+                <div class="item-content">
+                    Adaptation du rythme et du contenu d'apprentissage aux besoins spécifiques de chaque élève. 
+                    Les plateformes d'adaptive learning analysent les performances en temps réel et proposent 
+                    des parcours individualisés, réduisant ainsi le décrochage scolaire de 30 à 40%.
+                </div>
+                <div class="item-impact">Impact : Élevé sur la réussite scolaire</div>
+            </article>
+            
+            <!-- Avantage 2 -->
+            <article class="advantage-item">
+                <div class="item-header">
+                    <div class="item-icon">
+                        <i class="fas fa-globe-africa"></i>
+                    </div>
+                    <h3>Accès aux Ressources Mondiales</h3>
+                </div>
+                <div class="item-content">
+                    Démocratisation de l'accès à des ressources éducatives de qualité mondiale, indépendamment 
+                    de la localisation géographique. Les MOOC, bibliothèques numériques et plateformes 
+                    éducatives internationales rendent le savoir universellement accessible.
+                </div>
+                <div class="item-impact">Impact : Transformation de l'accès au savoir</div>
+            </article>
+            
+            <!-- Avantage 3 -->
+            <article class="advantage-item">
+                <div class="item-header">
+                    <div class="item-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Évaluation Formative Continue</h3>
+                </div>
+                <div class="item-content">
+                    Feedback instantané et analyse détaillée des progrès des apprenants. Les outils numériques 
+                    permettent un suivi fin des compétences, identifient les difficultés précoces et orientent 
+                    les interventions pédagogiques de manière proactive.
+                </div>
+                <div class="item-impact">Impact : Amélioration des performances de 25%</div>
+            </article>
+            
+            <!-- Avantage 4 -->
+            <article class="advantage-item">
+                <div class="item-header">
+                    <div class="item-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Collaboration Élargie</h3>
+                </div>
+                <div class="item-content">
+                    Développement de compétences collaboratives à travers des projets transclasses, 
+                    interétablissements et internationaux. Les plateformes numériques facilitent le travail 
+                    d'équipe, la co-création et l'apprentissage par les pairs à grande échelle.
+                </div>
+                <div class="item-impact">Impact : Développement des soft skills</div>
+            </article>
+            
+            <!-- Avantage 5 -->
+            <article class="advantage-item">
+                <div class="item-header">
+                    <div class="item-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Créativité et Innovation</h3>
+                </div>
+                <div class="item-content">
+                    Stimulation de la créativité par des outils de production multimédia, de programmation 
+                    et de design. Le numérique transforme les apprenants de consommateurs passifs en créateurs 
+                    actifs de contenus et de solutions.
+                </div>
+                <div class="item-impact">Impact : Essentiel pour l'économie créative</div>
+            </article>
+            
+            <!-- Avantage 6 -->
+            <article class="advantage-item">
+                <div class="item-header">
+                    <div class="item-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Gain de Temps Pédagogique</h3>
+                </div>
+                <div class="item-content">
+                    Automatisation des tâches administratives et pédagogiques répétitives, permettant aux 
+                    enseignants de se concentrer sur l'accompagnement personnalisé des élèves. Les outils 
+                    de correction automatique et de gestion de classe libèrent jusqu'à 20% du temps enseignant.
+                </div>
+                <div class="item-impact">Impact : Optimisation des ressources humaines</div>
+            </article>
+        </section>
+        
+        <!-- Risques -->
+        <section class="risks-section animate-fade-in-up">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div>
+                    <h2>Risques Potentiels</h2>
+                    <p>Défis et précautions nécessaires</p>
+                </div>
+            </div>
+            
+            <!-- Risque 1 -->
+            <article class="risk-item">
+                <div class="item-header">
+                    <div class="item-icon">
+                        <i class="fas fa-user-slash"></i>
+                    </div>
+                    <h3>Fracture Numérique</h3>
+                </div>
+                <div class="item-content">
+                    Accentuation des inégalités sociales par manque d'accès équitable aux équipements, 
+                    à la connectivité et aux compétences numériques. Cette fracture peut creuser l'écart 
+                    entre zones urbaines et rurales, et entre familles de différents niveaux socio-économiques.
+                </div>
+                <div class="item-impact">Risque : Exclusion sociale</div>
+            </article>
+            
+            <!-- Risque 2 -->
+            <article class="risk-item">
+                <div class="item-header">
+                    <div class="item-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Surexposition aux Écrans</h3>
+                </div>
+                <div class="item-content">
+                    Augmentation du temps passé devant les écrans avec des impacts potentiels sur la santé 
+                    visuelle, le sommeil, l'attention et le développement socio-affectif. L'OMS recommande 
+                    de limiter à 1 heure par jour pour les enfants de 6 à 12 ans.
+                </div>
+                <div class="item-impact">Risque : Santé physique et mentale</div>
+            </article>
+            
+            <!-- Risque 3 -->
+            <article class="risk-item">
+                <div class="item-header">
+                    <div class="item-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Protection des Données</h3>
+                </div>
+                <div class="item-content">
+                    Collecte massive de données personnelles des mineurs sans garanties suffisantes de 
+                    sécurité et de confidentialité. Vulnérabilité aux fuites de données, usurpation 
+                    d'identité et exploitation commerciale des informations.
+                </div>
+                <div class="item-impact">Risque : Vie privée et sécurité</div>
+            </article>
+            
+            <!-- Risque 4 -->
+            <article class="risk-item">
+                <div class="item-header">
+                    <div class="item-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Dépendance Technologique</h3>
+                </div>
+                <div class="item-content">
+                    Développement d'une relation de dépendance aux outils numériques, affectant les capacités 
+                    de concentration profonde, de mémoire et de pensée critique. Risque de perte des 
+                    compétences traditionnelles de recherche et d'analyse.
+                </div>
+                <div class="item-impact">Risque : Autonomie cognitive</div>
+            </article>
+            
+            <!-- Risque 5 -->
+            <article class="risk-item">
+                <div class="item-header">
+                    <div class="item-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Déshumanisation de l'Éducation</h3>
+                </div>
+                <div class="item-content">
+                    Réduction des interactions humaines directes au profit des interfaces numériques, 
+                    affectant le développement des compétences sociales et émotionnelles. Le lien 
+                    pédagogique enseignant-élève risque d'être appauvri.
+                </div>
+                <div class="item-impact">Risque : Qualité relationnelle</div>
+            </article>
+            
+            <!-- Risque 6 -->
+            <article class="risk-item">
+                <div class="item-header">
+                    <div class="item-icon">
+                        <i class="fas fa-euro-sign"></i>
+                    </div>
+                    <h3>Coûts et Maintenance</h3>
+                </div>
+                <div class="item-content">
+                    Investissements initiaux substantiels en équipements, infrastructures et formation, 
+                    avec des coûts récurrents de maintenance, de mise à jour et de renouvellement. 
+                    Risque d'obsolescence rapide des technologies et de dépendance aux fournisseurs.
+                </div>
+                <div class="item-impact">Risque : Soutenabilité économique</div>
+            </article>
+        </section>
+    </div>
+
+    <!-- Balance Section améliorée -->
+    <section class="balance-section">
+        <div class="balance-container">
+            <div class="balance-card animate-fade-in-up">
+                <div class="balance-icon">
+                    <i class="fas fa-scale-balanced"></i>
+                </div>
+                <h2>Approche Équilibrée</h2>
+                <p class="section-subtitle">
+                    Le numérique éducatif n'est ni une panacée ni un danger absolu, 
+                    mais un outil puissant nécessitant une intégration réfléchie
+                </p>
+                
+                <div class="balance-stats">
+                    <div class="stat-box">
+                        <div class="stat-value">75%</div>
+                        <div class="stat-label">Amélioration de l'engagement</div>
+                        <p style="font-size: 0.9rem; color: var(--gray-dark); margin-top: 0.5rem;">
+                            Avec une intégration bien conçue
+                        </p>
+                    </div>
+                    
+                    <div class="stat-box">
+                        <div class="stat-value">40%</div>
+                        <div class="stat-label">Réduction des inégalités</div>
+                        <p style="font-size: 0.9rem; color: var(--gray-dark); margin-top: 0.5rem;">
+                            Si l'accès est universel
+                        </p>
+                    </div>
+                    
+                    <div class="stat-box">
+                        <div class="stat-value">60%</div>
+                        <div class="stat-label">Gain de temps enseignant</div>
+                        <p style="font-size: 0.9rem; color: var(--gray-dark); margin-top: 0.5rem;">
+                            Pour l'accompagnement personnalisé
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="alert alert-info" style="text-align: left; margin-top: 2rem; background: rgba(33, 150, 243, 0.1); border-color: rgba(33, 150, 243, 0.2);">
+                    <h4><i class="fas fa-lightbulb"></i> Principe de Précaution Intelligente</h4>
+                    <p>
+                        Une intégration réussie du numérique éducatif repose sur un équilibre entre 
+                        innovation technologique et préservation des valeurs éducatives fondamentales. 
+                        Il ne s'agit pas de remplacer l'humain par la machine, mais d'utiliser la technologie 
+                        pour amplifier les capacités humaines et enrichir les expériences d'apprentissage.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommendations améliorées -->
+    <section class="section recommendations-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Recommandations Stratégiques</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.95);">
+                    Pour une intégration responsable et efficace du numérique éducatif
+                </p>
+            </div>
+            
+            <div class="recommendations-grid">
+                <div class="recommendation-card animate-fade-in-up">
+                    <h3><i class="fas fa-handshake"></i> Approche Progressive</h3>
+                    <p>
+                        Déploiement par phases avec évaluation continue. Commencer par des projets pilotes 
+                        avant généralisation, en mesurant systématiquement les impacts pédagogiques.
+                    </p>
+                </div>
+                
+                <div class="recommendation-card animate-fade-in-up">
+                    <h3><i class="fas fa-users-cog"></i> Formation Continue</h3>
+                    <p>
+                        Programme de formation obligatoire pour tous les enseignants, combinant compétences 
+                        techniques, pédagogie numérique et éducation aux médias.
+                    </p>
+                </div>
+                
+                <div class="recommendation-card animate-fade-in-up">
+                    <h3><i class="fas fa-universal-access"></i> Accessibilité Universelle</h3>
+                    <p>
+                        Garantir l'accès équitable pour tous les apprenants, avec des mesures spécifiques 
+                        pour les populations défavorisées et les élèves à besoins particuliers.
+                    </p>
+                </div>
+                
+                <div class="recommendation-card animate-fade-in-up">
+                    <h3><i class="fas fa-shield-virus"></i> Charte Éthique</h3>
+                    <p>
+                        Élaboration et adoption d'une charte éthique encadrant l'usage du numérique éducatif, 
+                        avec des comités de surveillance indépendants.
+                    </p>
+                </div>
+                
+                <div class="recommendation-card animate-fade-in-up">
+                    <h3><i class="fas fa-hand-holding-usd"></i> Modèle Économique Durable</h3>
+                    <p>
+                        Développement de modèles de financement mixtes (public-privé) garantissant la 
+                        pérennité des investissements numériques sans commercialisation excessive.
+                    </p>
+                </div>
+                
+                <div class="recommendation-card animate-fade-in-up">
+                    <h3><i class="fas fa-chart-network"></i> Écosystème Intégré</h3>
+                    <p>
+                        Création d'un écosystème numérique cohérent interconnectant tous les acteurs 
+                        (établissements, familles, collectivités) autour d'objectifs partagés.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="precautions-lois.html" class="btn btn-secondary btn-lg" style="background: var(--accent); border-color: var(--accent);">
+                    <i class="fas fa-arrow-right"></i> Voir le cadre légal et les précautions
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer amélioré -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="./assets/images/logo-white.png" alt="Logo de Digit-School Process" style="height: 60px; margin-bottom: 1rem;">
+                    </div>
+                    <h4 class="footer-title">Digit-School Process 2025</h4>
+                    <p style="opacity: 0.9; line-height: 1.6;">
+                        Organisé par l'école "Les Bulles de Joie"<br>
+                        Slogan : "Amour • Travail • Rigueur • Créativité"
+                    </p>
+                    <div class="social-icons">
+                        <a href="https://facebook.com/lesbullesdejoie" target="_blank" aria-label="Facebook" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/lesbullesdejoie" target="_blank" aria-label="Instagram" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@cspblesbullesdejoie" target="_blank" aria-label="TikTok" class="social-icon">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://les-bulles-de-joie.onrender.com/" target="_blank" aria-label="Site web" class="social-icon">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                        <a href="https://wa.me/2290197919452" target="_blank" aria-label="WhatsApp" class="social-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact Rapide</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:+2290197919452"><i class="fas fa-phone"></i> +229 01 97 91 94 52</a></li>
+                        <li><a href="mailto:lesbullesdejoie@gmail.com"><i class="fas fa-envelope"></i> lesbullesdejoie@gmail.com</a></li>
+                        <li><a href="mailto:codjosamuelstein@gmail.com"><i class="fas fa-user-tie"></i> codjosamuelstein@gmail.com</a></li>
+                        <li><span><i class="fas fa-map-marker-alt"></i> Parakou - Zongo 2, Bénin</span></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Accueil</a></li>
+                        <li><a href="definitions.html"><i class="fas fa-chevron-right"></i> Définitions</a></li>
+                        <li><a href="precautions-lois.html"><i class="fas fa-chevron-right"></i> Cadre Légal</a></li>
+                        <li><a href="technologies.html"><i class="fas fa-chevron-right"></i> Technologies</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Informations École</h4>
+                    <ul class="footer-links">
+                        <li><span><i class="fas fa-school"></i> École privée agréée</span></li>
+                        <li><span><i class="fas fa-users"></i> ~350 élèves</span></li>
+                        <li><span><i class="fas fa-star"></i> 4.9/5 (127 avis)</span></li>
+                        <li><span><i class="fas fa-language"></i> Bilingue Français-Anglais</span></li>
+                        <li><span><i class="fas fa-calendar-alt"></i> Fondée en 2017</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span class="current-year">2025</span> Digit-School Process | Organisé par l'école "Les Bulles de Joie" | Parakou, Bénin</p>
+                <p>Agréments : 2021 N°018/MASM/DC/SGM/DGAS/DFEA/SA/021SGG21 | 2022 N°045/MEMP/DC/SGM/DPP/SP/0223SGG22</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Page-specific scripts améliorés
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate items with delay
+            const advantageItems = document.querySelectorAll('.advantage-item');
+            const riskItems = document.querySelectorAll('.risk-item');
+            
+            advantageItems.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.1}s`;
+                item.style.animation = `slideInLeft 0.5s ease-out ${index * 0.1}s both`;
+            });
+            
+            riskItems.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.1}s`;
+                item.style.animation = `slideInLeft 0.5s ease-out ${index * 0.1}s both`;
+            });
+            
+            // Animate recommendation cards
+            const recommendationCards = document.querySelectorAll('.recommendation-card');
+            recommendationCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+            
+            // Interactive stats
+            const statBoxes = document.querySelectorAll('.stat-box');
+            statBoxes.forEach(box => {
+                box.addEventListener('mouseenter', function() {
+                    const value = this.querySelector('.stat-value');
+                    const originalText = value.textContent;
+                    
+                    if (originalText.includes('%')) {
+                        const number = parseInt(originalText);
+                        let current = 0;
+                        const increment = number / 20;
+                        
+                        const counter = setInterval(() => {
+                            current += increment;
+                            value.textContent = Math.round(current) + '%';
+                            
+                            if (current >= number) {
+                                value.textContent = originalText;
+                                clearInterval(counter);
+                            }
+                        }, 30);
+                    }
+                });
+            });
+            
+            // Effet de parallaxe pour l'héros
+            window.addEventListener('scroll', function() {
+                const hero = document.querySelector('.analysis-hero');
+                if (hero) {
+                    const scrolled = window.pageYOffset;
+                    const rate = scrolled * -0.5;
+                    hero.style.backgroundPosition = `center ${rate}px`;
+                }
+            });
+            
+            // Animation des pourcentages au scroll
+            const observerOptions = {
+                threshold: 0.5,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const valueElement = entry.target.querySelector('.stat-value');
+                        if (valueElement) {
+                            const originalText = valueElement.textContent;
+                            if (originalText.includes('%')) {
+                                const number = parseInt(originalText);
+                                let current = 0;
+                                const increment = number / 20;
+                                
+                                const counter = setInterval(() => {
+                                    current += increment;
+                                    valueElement.textContent = Math.round(current) + '%';
+                                    
+                                    if (current >= number) {
+                                        valueElement.textContent = originalText;
+                                        clearInterval(counter);
+                                    }
+                                }, 30);
+                            }
+                        }
+                    }
+                });
+            }, observerOptions);
+            
+            // Observer les boîtes de statistiques
+            statBoxes.forEach(box => observer.observe(box));
+            
+            // Mise à jour automatique de l'année dans le footer
+            const yearElement = document.querySelector('.current-year');
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
+</body>
+</html>

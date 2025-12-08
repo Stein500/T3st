@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technologies Éducatives | IA & Innovation - Digit-School Process 2025</title>
+    
+    <!-- SEO Meta -->
+    <meta name="description" content="Panorama des technologies éducatives innovantes : IA, réalité augmentée, plateformes LMS, outils collaboratifs et solutions adaptées au contexte béninois.">
+    <meta name="keywords" content="technologies éducatives, IA éducation, réalité virtuelle école, plateformes LMS, outils numériques enseignement, innovation pédagogique">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* Page-specific styles */
+        .tech-hero {
+            background: linear-gradient(135deg, 
+                rgba(255, 107, 53, 0.95) 0%, 
+                rgba(255, 158, 109, 0.9) 100%),
+                url('./assets/images/hero.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 140px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tech-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(45, 59, 139, 0.1) 0%, transparent 40%),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px);
+        }
+        
+        .tech-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #FFFFFF, #FFE8A0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Technologies Grid */
+        .tech-categories {
+            background: white;
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .category-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-medium);
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            border-top: 5px solid var(--primary);
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hard);
+            border-color: var(--primary);
+        }
+        
+        .category-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 25px rgba(45, 59, 139, 0.2);
+        }
+        
+        .category-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+        }
+        
+        .tech-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+        
+        .tech-list li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.75rem;
+            position: relative;
+            color: var(--dark);
+        }
+        
+        .tech-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .tech-example {
+            background: var(--gray-light);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-top: 1.5rem;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .tech-example h4 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* Solutions Béninoises */
+        .solutions-section {
+            background: linear-gradient(135deg, var(--gray-light), white);
+        }
+        
+        .solution-tabs {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-hard);
+        }
+        
+        .solution-tab-headers {
+            display: flex;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            overflow-x: auto;
+        }
+        
+        .solution-tab-header {
+            flex: 1;
+            padding: 1.5rem;
+            text-align: center;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            background: none;
+            white-space: nowrap;
+            min-width: 200px;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .solution-tab-header:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .solution-tab-header.active {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border-bottom-color: var(--accent);
+        }
+        
+        .solution-tab-content {
+            display: none;
+            padding: 3rem;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .solution-tab-content.active {
+            display: block;
+        }
+        
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .solution-card {
+            background: var(--gray-light);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            border: 1px solid var(--gray);
+            transition: var(--transition);
+        }
+        
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--primary);
+        }
+        
+        .solution-card h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .solution-features {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+        
+        .solution-features li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+        
+        .solution-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+        }
+        
+        /* Roadmap d'Adoption */
+        .roadmap-section {
+            background: white;
+        }
+        
+        .roadmap-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .roadmap-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+        }
+        
+        .roadmap-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+        
+        .roadmap-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+        
+        .roadmap-phase {
+            flex: 1;
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-medium);
+            border: 2px solid var(--primary-light);
+            position: relative;
+        }
+        
+        .roadmap-phase::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .roadmap-item:nth-child(odd) .roadmap-phase::before {
+            right: -40px;
+        }
+        
+        .roadmap-item:nth-child(even) .roadmap-phase::before {
+            left: -40px;
+        }
+        
+        .roadmap-phase h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .roadmap-phase .duration {
+            display: inline-block;
+            background: rgba(45, 59, 139, 0.1);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        /* Comparatif des Solutions */
+        .comparison-section {
+            background: linear-gradient(135deg, var(--gray-light), white);
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 1.5rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .comparison-table td {
+            padding: 1.25rem;
+            border-bottom: 1px solid var(--gray);
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table tr:hover {
+            background: var(--gray-light);
+        }
+        
+        .tech-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .badge-free {
+            background: rgba(76, 175, 80, 0.1);
+            color: var(--success);
+        }
+        
+        .badge-paid {
+            background: rgba(33, 150, 243, 0.1);
+            color: var(--info);
+        }
+        
+        .badge-open {
+            background: rgba(255, 193, 7, 0.1);
+            color: var(--warning);
+        }
+        
+        /* Logo styles */
+        .logo-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+        
+        .logo-brand img {
+            height: 50px;
+            width: auto;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-text .main {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+        
+        .logo-text .sub {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            color: var(--gray-dark);
+        }
+        
+        /* Footer logo */
+        .footer-logo {
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo img {
+            height: 40px;
+            width: auto;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .solution-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .roadmap-container::before {
+                left: 30px;
+            }
+            
+            .roadmap-item {
+                flex-direction: row !important;
+                margin-left: 60px;
+            }
+            
+            .roadmap-phase::before {
+                left: -40px !important;
+                right: auto !important;
+            }
+            
+            .comparison-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .tech-hero {
+                padding: 120px 0 40px;
+            }
+            
+            .tech-title {
+                font-size: 2.5rem;
+            }
+            
+            .solution-tab-headers {
+                flex-direction: column;
+            }
+            
+            .solution-tab-header {
+                min-width: auto;
+                text-align: left;
+                padding: 1rem 1.5rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                border-right: none;
+            }
+            
+            .solution-tab-content {
+                padding: 2rem;
+            }
+            
+            .roadmap-phase {
+                padding: 1.5rem;
+            }
+            
+            .logo-brand img {
+                height: 40px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .category-card {
+                padding: 2rem;
+            }
+            
+            .tech-title {
+                font-size: 2rem;
+            }
+            
+            .solution-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo-brand">
+                <img src="./assets/images/logo.png" alt="Logo de Digit-School Process">
+                <div class="logo-text">
+                    <div class="main">Digit-School Process</div>
+                    <div class="sub">Technologies Éducatives</div>
+                </div>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu mobile">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="main-nav" aria-label="Navigation principale">
+                <ul class="nav-list" id="navList">
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a href="definitions.html" class="nav-link"><i class="fas fa-book"></i> Définitions</a></li>
+                    <li><a href="avantages-risques.html" class="nav-link"><i class="fas fa-balance-scale"></i> Analyse</a></li>
+                    <li><a href="precautions-lois.html" class="nav-link"><i class="fas fa-shield-alt"></i> Cadre Légal</a></li>
+                    <li><a href="technologies.html" class="nav-link active"><i class="fas fa-robot"></i> Technologies</a></li>
+                    <li><a href="programme.html" class="nav-link"><i class="fas fa-calendar-alt"></i> Programme</a></li>
+                    <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="tech-hero">
+        <div class="container">
+            <h1 class="tech-title">Technologies Éducatives</h1>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.9); max-width: 800px; margin: 0 auto 2rem;">
+                Panorama des technologies innovantes pour transformer l'enseignement et l'apprentissage au Bénin
+            </p>
+            <p style="font-size: 1.1rem; opacity: 0.8;">
+                De l'intelligence artificielle aux plateformes collaboratives : découvrez les outils qui façonnent l'éducation de demain
+            </p>
+        </div>
+    </section>
+
+    <!-- Catégories de Technologies -->
+    <section class="section tech-categories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Catégories de Technologies Éducatives</h2>
+                <p class="section-subtitle">Classification des outils numériques selon leur fonction pédagogique</p>
+            </div>
+            
+            <div class="category-grid">
+                <div class="category-card animate-fade-in-up">
+                    <div class="category-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Intelligence Artificielle Éducative</h3>
+                    <p>
+                        Systèmes adaptatifs qui personnalisent les parcours d'apprentissage, fournissent 
+                        un feedback immédiat et assistent les enseignants dans leurs tâches pédagogiques.
+                    </p>
+                    
+                    <ul class="tech-list">
+                        <li>Tuteurs intelligents et assistants pédagogiques</li>
+                        <li>Outils d'évaluation automatique et feedback adaptatif</li>
+                        <li>Analyse prédictive des difficultés d'apprentissage</li>
+                        <li>Génération automatique d'exercices et de contenu</li>
+                        <li>Reconnaissance vocale et traitement du langage naturel</li>
+                    </ul>
+                    
+                    <div class="tech-example">
+                        <h4><i class="fas fa-lightbulb"></i> Exemple concret :</h4>
+                        <p>
+                            <strong>Adaptive Learning Platform</strong> - Système qui ajuste la difficulté 
+                            des exercices en temps réel selon les performances de l'élève, identifie 
+                            les lacunes et propose des ressources de remédiation ciblées.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="category-card animate-fade-in-up">
+                    <div class="category-icon">
+                        <i class="fas fa-vr-cardboard"></i>
+                    </div>
+                    <h3>Réalité Augmentée & Virtuelle</h3>
+                    <p>
+                        Technologies immersives permettant d'explorer des concepts abstraits, de visiter 
+                        des lieux inaccessibles et de pratiquer des compétences dans des environnements simulés.
+                    </p>
+                    
+                    <ul class="tech-list">
+                        <li>Simulations scientifiques et historiques</li>
+                        <li>Visites virtuelles de musées et sites historiques</li>
+                        <li>Manipulation d'objets 3D en réalité augmentée</li>
+                        <li>Entraînement à des gestes techniques complexes</li>
+                        <li>Création de mondes éducatifs interactifs</li>
+                    </ul>
+                    
+                    <div class="tech-example">
+                        <h4><i class="fas fa-lightbulb"></i> Exemple concret :</h4>
+                        <p>
+                            <strong>VR Biology Lab</strong> - Laboratoire virtuel où les élèves peuvent 
+                            disséquer des organes, observer des cellules en 3D et réaliser des expériences 
+                            sans risque ni équipement coûteux.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="category-card animate-fade-in-up">
+                    <div class="category-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Plateformes LMS & Environnements Numériques</h3>
+                    <p>
+                        Systèmes de gestion de l'apprentissage qui structurent les parcours pédagogiques, 
+                        distribuent les ressources et facilitent les interactions entre enseignants et apprenants.
+                    </p>
+                    
+                    <ul class="tech-list">
+                        <li>Plateformes open source (Moodle, Chamilo)</li>
+                        <li>Solutions cloud (Google Classroom, Microsoft Teams Éducation)</li>
+                        <li>Environnements numériques de travail (ENT)</li>
+                        <li>Systèmes de gestion de contenus éducatifs</li>
+                        <li>Portfolios numériques d'apprentissage</li>
+                    </ul>
+                    
+                    <div class="tech-example">
+                        <h4><i class="fas fa-lightbulb"></i> Exemple concret :</h4>
+                        <p>
+                            <strong>Moodle Localisé</strong> - Instance de Moodle adaptée au contexte 
+                            béninois, avec contenus en langues nationales, modules spécifiques pour 
+                            les programmes locaux et interface simplifiée pour faible débit.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="category-card animate-fade-in-up">
+                    <div class="category-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Gamification & Apprentissage par le Jeu</h3>
+                    <p>
+                        Application des mécaniques de jeu dans des contextes éducatifs pour augmenter 
+                        la motivation, l'engagement et la rétention des connaissances.
+                    </p>
+                    
+                    <ul class="tech-list">
+                        <li>Jeux éducatifs sérieux (serious games)</li>
+                        <li>Systèmes de badges et de récompenses</li>
+                        <li>Classements et défis collaboratifs</li>
+                        <li>Événements et compétitions éducatives</li>
+                        <li>Éléments narratifs dans les parcours d'apprentissage</li>
+                    </ul>
+                    
+                    <div class="tech-example">
+                        <h4><i class="fas fa-lightbulb"></i> Exemple concret :</h4>
+                        <p>
+                            <strong>MathQuest</strong> - Jeu éducatif où les élèves résolvent des 
+                            problèmes mathématiques pour avancer dans une aventure, débloquer des 
+                            compétences et collaborer avec leurs camarades.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="category-card animate-fade-in-up">
+                    <div class="category-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Outils Collaboratifs & Réseaux Sociaux Éducatifs</h3>
+                    <p>
+                        Plateformes facilitant le travail d'équipe, le partage de connaissances 
+                        et la construction collective de savoirs, localement et globalement.
+                    </p>
+                    
+                    <ul class="tech-list">
+                        <li>Outils de co-création de documents (Padlet, Miro)</li>
+                        <li>Forums et communautés d'apprentissage</li>
+                        <li>Outils de vidéoconférence éducative</li>
+                        <li>Plateformes de mentorat et de tutorat</li>
+                        <li>Réseaux sociaux éducatifs sécurisés</li>
+                    </ul>
+                    
+                    <div class="tech-example">
+                        <h4><i class="fas fa-lightbulb"></i> Exemple concret :</h4>
+                        <p>
+                            <strong>EduConnect</strong> - Réseau social éducatif béninois permettant 
+                            aux élèves de différentes écoles de collaborer sur des projets, 
+                            échanger des ressources et participer à des défis nationaux.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="category-card animate-fade-in-up">
+                    <div class="category-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Analytics & Pilotage Pédagogique</h3>
+                    <p>
+                        Outils d'analyse des données d'apprentissage permettant un suivi individualisé, 
+                        une évaluation formative continue et un pilotage éclairé des stratégies pédagogiques.
+                    </p>
+                    
+                    <ul class="tech-list">
+                        <li>Tableaux de bord de suivi des élèves</li>
+                        <li>Outils d'analyse des traces d'apprentissage</li>
+                        <li>Systèmes d'alerte précoce pour les décrocheurs</li>
+                        <li>Visualisation des progrès et compétences</li>
+                        <li>Analytics prédictif pour l'orientation</li>
+                    </ul>
+                    
+                    <div class="tech-example">
+                        <h4><i class="fas fa-lightbulb"></i> Exemple concret :</h4>
+                        <p>
+                            <strong>EduAnalytics Benin</strong> - Plateforme qui agrège les données 
+                            d'apprentissage de multiples sources, identifie les tendances et 
+                            fournit des recommandations personnalisées aux enseignants et directeurs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Adaptées au Bénin -->
+    <section class="section solutions-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Solutions Adaptées au Contexte Béninois</h2>
+                <p class="section-subtitle">Technologies accessibles, abordables et pertinentes pour les écoles béninoises</p>
+            </div>
+            
+            <div class="solution-tabs">
+                <div class="solution-tab-headers">
+                    <button class="solution-tab-header active" data-solution-tab="lowtech">
+                        <i class="fas fa-mobile-alt"></i> Solutions Basse Technologie
+                    </button>
+                    <button class="solution-tab-header" data-solution-tab="offline">
+                        <i class="fas fa-wifi-slash"></i> Solutions Hors Ligne
+                    </button>
+                    <button class="solution-tab-header" data-solution-tab="local">
+                        <i class="fas fa-flag"></i> Solutions Locales
+                    </button>
+                    <button class="solution-tab-header" data-solution-tab="cost">
+                        <i class="fas fa-coins"></i> Solutions Abordables
+                    </button>
+                </div>
+                
+                <!-- Tab 1: Basse Technologie -->
+                <div class="solution-tab-content active" id="lowtech">
+                    <h3 style="color: var(--primary); margin-bottom: 2rem;">
+                        <i class="fas fa-mobile-alt"></i> Solutions Optimisées pour Faibles Spécifications
+                    </h3>
+                    
+                    <div class="solution-grid">
+                        <div class="solution-card">
+                            <h4><i class="fas fa-sms"></i> Apprentissage par SMS</h4>
+                            <p>
+                                Plateforme permettant de diffuser des leçons courtes, des quiz et 
+                                des rappels par SMS, accessible même avec les téléphones les plus basiques.
+                            </p>
+                            <ul class="solution-features">
+                                <li>Fonctionne sur tous les téléphones</li>
+                                <li>Coût très réduit (SMS local)</li>
+                                <li>Pas besoin d'internet</li>
+                                <li>Interface simple et intuitive</li>
+                                <li>Contenus en langues nationales</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="solution-card">
+                            <h4><i class="fas fa-broadcast-tower"></i> Radio Éducative Interactive</h4>
+                            <p>
+                                Programmes radio éducatifs avec interaction par SMS ou appel vocal, 
+                                permettant une éducation à distance même dans les zones non couvertes.
+                            </p>
+                            <ul class="solution-features">
+                                <li>Couverture nationale par radio</li>
+                                <li>Interaction par téléphone basique</li>
+                                <li>Coûts d'équipement minimaux</li>
+                                <li>Format audio adapté à l'oralité</li>
+                                <li>Rediffusion en podcast</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="solution-card">
+                            <h4><i class="fas fa-sd-card"></i> Contenus sur Cartes Mémoire</h4>
+                            <p>
+                                Bibliothèques éducatives complètes sur cartes SD, transférables entre 
+                                appareils, fonctionnant sans connexion internet continue.
+                            </p>
+                            <ul class="solution-features">
+                                <li>Pas besoin de connexion permanente</li>
+                                <li>Coût unique de la carte mémoire</li>
+                                <li>Partage facile entre élèves</li>
+                                <li>Mise à jour périodique possible</li>
+                                <li>Compatibilité avec smartphones bas de gamme</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tab 2: Hors Ligne -->
+                <div class="solution-tab-content" id="offline">
+                    <h3 style="color: var(--primary); margin-bottom: 2rem;">
+                        <i class="fas fa-wifi-slash"></i> Solutions Fonctionnant sans Internet Permanent
+                    </h3>
+                    
+                    <div class="solution-grid">
+                        <div class="solution-card">
+                            <h4><i class="fas fa-server"></i> Serveur Local Éducatif</h4>
+                            <p>
+                                Serveur Raspberry Pi hébergeant une plateforme éducative complète 
+                                accessible via le réseau local de l'école, sans besoin d'internet.
+                            </p>
+                            <ul class="solution-features">
+                                <li>Coût matériel inférieur à 100€</li>
+                                <li>Fonctionne sur courant faible</li>
+                                <li>Réseau WiFi local gratuit</li>
+                                <li>Contenus préchargés et personnalisables</li>
+                                <li>Maintenance technique simple</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="solution-card">
+                            <h4><i class="fas fa-sync-alt"></i> Synchronisation Périodique</h4>
+                            <p>
+                                Applications mobiles permettant de télécharger des contenus lors 
+                                de brèves connexions et de les consulter ensuite hors ligne.
+                            </p>
+                            <ul class="solution-features">
+                                <li>Utilisation internet minimale</li>
+                                <li>Téléchargement par batch optimisé</li>
+                                <li>Compression des données pour économiser</li>
+                                <li>Gestion intelligente du cache</li>
+                                <li>Synchronisation lors des connexions WiFi gratuites</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="solution-card">
+                            <h4><i class="fas fa-satellite-dish"></i> Réseau Mesh Communautaire</h4>
+                            <p>
+                                Réseau décentralisé où chaque appareil relaie le signal, permettant 
+                                de couvrir une communauté scolaire sans infrastructure centrale coûteuse.
+                            </p>
+                            <ul class="solution-features">
+                                <li>Pas d'infrastructure centrale coûteuse</li>
+                                <li>Résilience aux pannes</li>
+                                <li>Extension progressive du réseau</li>
+                                <li>Partage de connexion quand disponible</li>
+                                <li>Contrôle communautaire du réseau</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tab 3: Solutions Locales -->
+                <div class="solution-tab-content" id="local">
+                    <h3 style="color: var(--primary); margin-bottom: 2rem;">
+                        <i class="fas fa-flag"></i> Technologies Développées Localement
+                    </h3>
+                    
+                    <div class="solution-grid">
+                        <div class="solution-card">
+                            <h4><i class="fas fa-language"></i> Plateformes en Langues Nationales</h4>
+                            <p>
+                                Solutions éducatives développées spécifiquement pour les langues 
+                                béninoises (Fon, Yoruba, Bariba, Dendi), avec interfaces et contenus adaptés.
+                            </p>
+                            <ul class="solution-features">
+                                <li>Interfaces dans les langues locales</li>
+                                <li>Contenus culturellement pertinents</li>
+                                <li>Reconnaissance vocale pour les langues nationales</li>
+                                <li>Communauté de traduction participative</li>
+                                <li>Adaptation aux réalités béninoises</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="solution-card">
+                            <h4><i class="fas fa-users-cog"></i> Fab Labs Éducatifs</h4>
+                            <p>
+                                Ateliers de fabrication numérique permettant aux élèves de concevoir 
+                                et produire leurs propres outils éducatifs avec des moyens locaux.
+                            </p>
+                            <ul class="solution-features">
+                                <li>Réutilisation de matériaux locaux</li>
+                                <li>Développement de compétences techniques</li>
+                                <li>Création d'outils adaptés aux besoins spécifiques</li>
+                                <li>Économie circulaire dans l'éducation</li>
+                                <li>Innovation ascendante (bottom-up)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="solution-card">
+                            <h4><i class="fas fa-handshake"></i> Co-développement avec les Communautés</h4>
+                            <p>
+                                Méthodologie impliquant enseignants, élèves et parents dans la conception 
+                                des outils numériques éducatifs pour garantir leur pertinence et adoption.
+                            </p>
+                            <ul class="solution-features">
+                                <li>Design thinking participatif</li>
+                                <li>Tests utilisateurs dans les écoles réelles</li>
+                                <li>Adaptation continue basée sur les retours</li>
+                                <li>Formation des enseignants comme co-créateurs</li>
+                                <li>Modèles économiques solidaires</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tab 4: Solutions Abordables -->
+                <div class="solution-tab-content" id="cost">
+                    <h3 style="color: var(--primary); margin-bottom: 2rem;">
+                        <i class="fas fa-coins"></i> Technologies à Coût Maîtrisé
+                    </h3>
+                    
+                    <div class="solution-grid">
+                        <div class="solution-card">
+                            <h4><i class="fas fa-recycle"></i> Réemploi d'Équipements</h4>
+                            <p>
+                                Programme de reconditionnement d'ordinateurs et tablettes d'occasion 
+                                pour les écoles, avec garantie et maintenance assurée localement.
+                            </p>
+                            <ul class="solution-features">
+                                <li>Coût réduit de 70% par rapport au neuf</li>
+                                <li>Création d'emplois locaux de maintenance</li>
+                                <li>Allongement de la durée de vie des équipements</li>
+                                <li>Formation des techniciens scolaires</li>
+                                <li>Économie circulaire appliquée au numérique éducatif</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="solution-card">
+                            <h4><i class="fas fa-hand-holding-usd"></i> Modèles de Financement Innovants</h4>
+                            <p>
+                                Approches créatives pour financer l'équipement numérique des écoles : 
+                                location avec option d'achat, micro-crédits, partenariats public-privé.
+                            </p>
+                            <ul class="solution-features">
+                                <li>Location d'équipements avec maintenance incluse</li>
+                                <li>Micro-paiements pour les familles</li>
+                                <li>Partenariats avec entreprises locales</li>
+                                <li>Financement participatif communautaire</li>
+                                <li>Échanges de services contre équipements</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="solution-card">
+                            <h4><i class="fas fa-solar-panel"></i> Solutions Énergétiques Adaptées</h4>
+                            <p>
+                                Systèmes d'alimentation électrique adaptés aux contraintes locales : 
+                                panneaux solaires, batteries longue autonomie, optimisation énergétique.
+                            </p>
+                            <ul class="solution-features">
+                                <li>Panneaux solaires pour écoles non connectées</li>
+                                <li>Batteries optimisées pour l'autonomie</li>
+                                <li>Équipements basse consommation</li>
+                                <li>Gestion intelligente de l'énergie</li>
+                                <li>Formation à l'entretien des systèmes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap d'Adoption -->
+    <section class="section roadmap-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Roadmap d'Adoption Technologique</h2>
+                <p class="section-subtitle">Feuille de route progressive pour l'intégration des technologies en milieu scolaire béninois</p>
+            </div>
+            
+            <div class="roadmap-container">
+                <div class="roadmap-item animate-fade-in-up">
+                    <div class="roadmap-phase">
+                        <h4><i class="fas fa-calendar-check"></i> Phase 1 : Sensibilisation et Formation</h4>
+                        <div class="duration">Mois 1-3</div>
+                        <p>
+                            Formation des enseignants aux bases du numérique, sensibilisation des parents, 
+                            évaluation des infrastructures existantes et des besoins spécifiques.
+                        </p>
+                        <ul class="tech-list">
+                            <li>Ateliers d'initiation au numérique</li>
+                            <li>Évaluation des compétences existantes</li>
+                            <li>Visites d'écoles modèles</li>
+                            <li>Création de comités numériques</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="roadmap-item animate-fade-in-up">
+                    <div class="roadmap-phase">
+                        <h4><i class="fas fa-tools"></i> Phase 2 : Infrastructure de Base</h4>
+                        <div class="duration">Mois 4-6</div>
+                        <p>
+                            Mise en place des infrastructures minimales : équipement, connexion, 
+                            sécurité de base. Déploiement de solutions simples et robustes.
+                        </p>
+                        <ul class="tech-list">
+                            <li>Installation de bornes WiFi</li>
+                            <li>Acquisition d'équipements reconditionnés</li>
+                            <li>Mise en place de serveurs locaux</li>
+                            <li>Sécurisation des réseaux</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="roadmap-item animate-fade-in-up">
+                    <div class="roadmap-phase">
+                        <h4><i class="fas fa-chalkboard-teacher"></i> Phase 3 : Intégration Pédagogique</h4>
+                        <div class="duration">Mois 7-12</div>
+                        <p>
+                            Intégration progressive des outils numériques dans les pratiques pédagogiques, 
+                            avec accompagnement personnalisé des enseignants.
+                        </p>
+                        <ul class="tech-list">
+                            <li>Utilisation de plateformes LMS simples</li>
+                            <li>Création de ressources numériques de base</li>
+                            <li>Expérimentation de méthodes hybrides</li>
+                            <li>Évaluation formative numérique</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="roadmap-item animate-fade-in-up">
+                    <div class="roadmap-phase">
+                        <h4><i class="fas fa-rocket"></i> Phase 4 : Innovation et Créativité</h4>
+                        <div class="duration">Mois 13-24</div>
+                        <p>
+                            Développement de projets numériques créatifs, utilisation de technologies 
+                            avancées, participation à des réseaux éducatifs nationaux et internationaux.
+                        </p>
+                        <ul class="tech-list">
+                            <li>Projets inter-écoles par visioconférence</li>
+                            <li>Création de contenus multimédias</li>
+                            <li>Expérimentation de réalité augmentée</li>
+                            <li>Participation à des concours numériques</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparatif des Solutions -->
+    <section class="section comparison-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Comparatif des Solutions Technologiques</h2>
+                <p class="section-subtitle">Analyse comparative des différentes options disponibles pour les écoles béninoises</p>
+            </div>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Type de Solution</th>
+                        <th>Avantages</th>
+                        <th>Limitations</th>
+                        <th>Coût Estimé</th>
+                        <th>Niveau de Complexité</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>SMS Éducatif</strong></td>
+                        <td>Très accessible, fonctionne partout, coût minimal</td>
+                        <td>Contenus limités, pas de multimédias</td>
+                        <td><span class="tech-badge badge-free">Très bas</span></td>
+                        <td><span class="tech-badge badge-open">Très simple</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Plateforme LMS Open Source</strong></td>
+                        <td>Gratuite, personnalisable, communauté active</td>
+                        <td>Nécessite maintenance technique</td>
+                        <td><span class="tech-badge badge-free">Gratuit</span></td>
+                        <td><span class="tech-badge badge-paid">Moyen</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Solutions Cloud (Google/MS)</strong></td>
+                        <td>Facile à utiliser, maintenance incluse, collaborative</td>
+                        <td>Dépendance aux fournisseurs, données à l'étranger</td>
+                        <td><span class="tech-badge badge-free">Gratuit de base</span></td>
+                        <td><span class="tech-badge badge-open">Simple</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Serveur Local (Raspberry Pi)</strong></td>
+                        <td>Autonome, pas d'abonnement, contrôle total</td>
+                        <td>Maintenance locale nécessaire, capacité limitée</td>
+                        <td><span class="tech-badge badge-paid">100-200€</span></td>
+                        <td><span class="tech-badge badge-paid">Élevé</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Équipements Reconditionnés</strong></td>
+                        <td>Coût réduit, écologique, maintenance locale possible</td>
+                        <td>Durée de vie limitée, performances variables</td>
+                        <td><span class="tech-badge badge-free">30-50% du neuf</span></td>
+                        <td><span class="tech-badge badge-open">Variable</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Réseau Mesh Communautaire</strong></td>
+                        <td>Résilient, évolutif, contrôle communautaire</td>
+                        <td>Déploiement complexe, coordination nécessaire</td>
+                        <td><span class="tech-badge badge-paid">Variable</span></td>
+                        <td><span class="tech-badge badge-paid">Élevé</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="./assets/images/logo-white.png" alt="Logo blanc de Digit-School Process">
+                    </div>
+                    <h4 class="footer-title">Digit-School Process 2025</h4>
+                    <p style="opacity: 0.9; line-height: 1.6;">
+                        Organisé par l'école "Les Bulles de Joie"<br>
+                        Slogan : "Amour • Travail • Rigueur • Créativité"
+                    </p>
+                    <div class="social-icons">
+                        <a href="https://facebook.com/lesbullesdejoie" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/lesbullesdejoie" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@cspblesbullesdejoie" target="_blank" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://les-bulles-de-joie.onrender.com/" target="_blank" aria-label="Site web">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                        <a href="https://wa.me/2290197919452" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact Rapide</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:+2290197919452"><i class="fas fa-phone"></i> +229 01 97 91 94 52</a></li>
+                        <li><a href="mailto:lesbullesdejoie@gmail.com"><i class="fas fa-envelope"></i> lesbullesdejoie@gmail.com</a></li>
+                        <li><a href="mailto:codjosamuelstein@gmail.com"><i class="fas fa-user-tie"></i> codjosamuelstein@gmail.com</a></li>
+                        <li><span><i class="fas fa-map-marker-alt"></i> Parakou - Zongo 2, Bénin</span></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Navigation Technologie</h4>
+                    <ul class="footer-links">
+                        <li><a href="#tech-categories"><i class="fas fa-robot"></i> Catégories de technologies</a></li>
+                        <li><a href="#solutions"><i class="fas fa-mobile-alt"></i> Solutions adaptées</a></li>
+                        <li><a href="#roadmap"><i class="fas fa-road"></i> Roadmap d'adoption</a></li>
+                        <li><a href="#comparison"><i class="fas fa-balance-scale"></i> Comparatif des solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Ressources Technologiques</h4>
+                    <ul class="footer-links">
+                        <li><a href="assets/documents/guide-technologies.pdf" target="_blank"><i class="fas fa-download"></i> Guide des technologies</a></li>
+                        <li><a href="assets/documents/catalogue-solutions.pdf" target="_blank"><i class="fas fa-book"></i> Catalogue de solutions</a></li>
+                        <li><a href="assets/documents/fiches-pratiques.pdf" target="_blank"><i class="fas fa-file-alt"></i> Fiches pratiques</a></li>
+                        <li><a href="assets/documents/contacts-fournisseurs.pdf" target="_blank"><i class="fas fa-address-book"></i> Contacts fournisseurs</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span class="current-year">2025</span> Digit-School Process | Organisé par l'école "Les Bulles de Joie" | Parakou, Bénin</p>
+                <p>Les technologies présentées sont testées et validées dans des écoles pilotes au Bénin.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Solution Tabs System
+        document.addEventListener('DOMContentLoaded', function() {
+            const solutionTabHeaders = document.querySelectorAll('.solution-tab-header');
+            const solutionTabContents = document.querySelectorAll('.solution-tab-content');
+            
+            solutionTabHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-solution-tab');
+                    
+                    // Remove active class from all headers and contents
+                    solutionTabHeaders.forEach(h => h.classList.remove('active'));
+                    solutionTabContents.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked header and corresponding content
+                    this.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Animate elements with delay
+            const categoryCards = document.querySelectorAll('.category-card');
+            const solutionCards = document.querySelectorAll('.solution-card');
+            const roadmapItems = document.querySelectorAll('.roadmap-item');
+            
+            categoryCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+            
+            solutionCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+            
+            roadmapItems.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.2}s`;
+            });
+        });
+    </script>
+</body>
+</html>
