@@ -45,27 +45,21 @@
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <!-- CSS Principal (Style Propre pour Définitions : Minimaliste, Bleu-Clair/Vert Pastel) -->
+    <!-- CSS Principal -->
     <style>
-        /* ===== VARIABLES CSS SPÉCIFIQUES À CETTE PAGE ===== */
+        /* ===== VARIABLES CSS ===== */
         :root {
-            /* Palette Calme : Bleu clair pour clarté, vert pastel pour croissance, gris doux */
-            --primary: #3B82F6; /* Bleu ciel moderne */
-            --primary-light: #60A5FA;
-            --secondary: #A7F3D0; /* Vert pastel */
-            --accent: #06B6D4; /* Cyan pour focus */
+            --primary: #4F46E5;
+            --primary-light: #6366F1;
+            --secondary: #10B981;
+            --accent: #8B5CF6;
             --gold: #F59E0B;
-            --success: #10B981;
-            
-            /* Couleurs système (même que base) */
             --light: #FFFFFF;
             --gray-light: #F8FAFC;
             --gray: #E2E8F0;
             --gray-dark: #64748B;
             --dark: #0F172A;
             --darkest: #020617;
-            
-            /* Typo & Espacements (hérités) */
             --font-heading: 'Poppins', sans-serif;
             --font-body: 'Inter', sans-serif;
             --border-radius: 12px;
@@ -73,8 +67,6 @@
             --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1);
             --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
             --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-            
-            /* Header (hérité) */
             --header-height: 80px;
             --header-scrolled-height: 70px;
         }
@@ -86,34 +78,36 @@
             --gray-dark: #94A3B8;
             --dark: #F1F5F9;
             --darkest: #FFFFFF;
-            --secondary: #047857; /* Vert sombre pour dark */
         }
 
-        /* ===== RESET & BASE (hérité) ===== */
+        /* ===== RESET & BASE ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         ::selection { background: var(--accent); color: var(--light); }
         html { scroll-behavior: smooth; scroll-padding-top: var(--header-height); font-size: 16px; }
-        body { font-family: var(--font-body); font-size: 1rem; line-height: 1.6; font-weight: 400; color: var(--dark); background-color: var(--light); overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        body { font-family: var(--font-body); font-size: 1rem; line-height: 1.6; color: var(--dark); background: var(--light); overflow-x: hidden; }
 
-        /* ===== TYPO (hérité) ===== */
+        /* ===== TYPOGRAPHIE ===== */
         h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
-        h1 { font-size: clamp(2.5rem, 5vw, 4rem); color: var(--primary); text-align: center; }
-        h2 { font-size: clamp(1.875rem, 4vw, 2.75rem); color: var(--primary); position: relative; display: inline-block; }
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+        h2 { font-size: clamp(1.875rem, 4vw, 2.75rem); position: relative; display: inline-block; }
         h2::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 60px; height: 4px; background: linear-gradient(90deg, var(--secondary), var(--accent)); border-radius: 2px; }
-        h3 { font-size: clamp(1.25rem, 3vw, 1.875rem); color: var(--primary); }
-        p { margin-bottom: 1rem; font-size: 1rem; line-height: 1.6; }
+        p { margin-bottom: 1rem; line-height: 1.6; }
         a { color: var(--primary); text-decoration: none; transition: all 0.3s ease; }
-        a:hover { color: var(--accent); text-decoration: underline; }
+        a:hover { color: var(--accent); }
 
-        /* ===== LAYOUT (hérité) ===== */
+        /* ===== LAYOUT ===== */
         .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
         .section { padding: 4rem 0; }
         .section-title { text-align: center; margin-bottom: 3rem; }
-        .section-subtitle { font-size: 1.125rem; color: var(--gray-dark); max-width: 700px; margin: 0.75rem auto 0; font-weight: 400; }
+        .section-subtitle { color: var(--gray-dark); max-width: 700px; margin: 0.75rem auto 0; }
 
-        /* ===== HEADER & FOOTER (IDENTIQUES À LA PAGE PRÉCÉDENTE) ===== */
-        .main-header { position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height); background: var(--light); border-bottom: 1px solid var(--gray); z-index: 1000; transition: all 0.4s ease; box-shadow: var(--shadow-md); }
-        .main-header.scrolled { height: var(--header-scrolled-height); backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.95); }
+        /* ===== HEADER HARMONISÉ (identique à index.html) ===== */
+        .main-header {
+            position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height);
+            background: var(--light); border-bottom: 1px solid var(--gray); z-index: 1000;
+            transition: all 0.4s ease; box-shadow: var(--shadow-md);
+        }
+        .main-header.scrolled { height: var(--header-scrolled-height); backdrop-filter: blur(10px); }
         [data-theme="dark"] .main-header.scrolled { background: rgba(15, 23, 42, 0.95); }
         .header-container { display: flex; justify-content: space-between; align-items: center; height: 100%; }
         .logo-brand { display: flex; align-items: center; gap: 1rem; text-decoration: none; }
@@ -122,85 +116,229 @@
         .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
         .logo-text .main { font-family: var(--font-heading); font-weight: 700; font-size: 1.25rem; color: var(--primary); }
         .logo-text .sub { font-size: 0.75rem; color: var(--accent); font-weight: 600; }
+        
         .main-nav-actions { display: flex; align-items: center; gap: 1rem; }
         .theme-toggle { background: none; border: 1px solid var(--gray); color: var(--dark); padding: 0.5rem; border-radius: 50%; cursor: pointer; transition: all 0.3s ease; font-size: 1.1rem; }
         .theme-toggle:hover { background: var(--gray-light); border-color: var(--primary); }
+        .mobile-menu-btn { display: none; background: none; border: none; color: var(--primary); font-size: 1.5rem; cursor: pointer; padding: 0.5rem; }
+        
         .main-nav { display: flex; align-items: center; }
         .nav-list { display: flex; list-style: none; gap: 1.5rem; }
-        .nav-link { font-family: var(--font-heading); font-weight: 600; font-size: 0.95rem; color: var(--dark); padding: 0.75rem 1rem; border-radius: var(--border-radius); transition: all 0.3s ease; white-space: nowrap; position: relative; }
+        .nav-link { font-family: var(--font-heading); font-weight: 600; font-size: 0.95rem; color: var(--dark); padding: 0.75rem 1rem; border-radius: var(--border-radius); transition: all 0.3s ease; }
         .nav-link:hover { background: var(--gray-light); color: var(--primary); transform: translateY(-2px); }
         .nav-link.active { background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: var(--light); }
         .nav-link i { margin-right: 0.5rem; }
-        .mobile-menu-btn { display: none; background: none; border: none; color: var(--primary); font-size: 1.5rem; cursor: pointer; padding: 0.5rem; z-index: 1001; transition: transform 0.3s ease; }
-        .mobile-menu-btn:hover { transform: rotate(90deg); }
-        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.75rem; padding: 1rem 2rem; font-family: var(--font-heading); font-weight: 600; font-size: 0.95rem; border: none; border-radius: var(--border-radius); cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: var(--light); position: relative; overflow: hidden; }
-        .btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition: left 0.5s; }
-        .btn:hover::before { left: 100%; }
-        .btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: var(--shadow-lg); }
-        .btn-secondary { background: linear-gradient(135deg, var(--secondary), var(--success)); }
-        .btn-outline { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
-        .btn-outline:hover { background: var(--primary); color: var(--light); }
+        
         .menu-overlay { display: none; position: fixed; top: var(--header-height); left: 0; width: 100%; height: calc(100vh - var(--header-height)); background: rgba(0, 0, 0, 0.6); z-index: 999; backdrop-filter: blur(5px); transition: opacity 0.3s ease; }
         .menu-overlay.active { display: block; opacity: 1; }
 
-        /* ===== HERO SPÉCIFIQUE : Minimaliste avec Focus sur Concepts ===== */
-        .hero { min-height: 70vh; padding: calc(var(--header-height) + 2rem) 0 4rem; background: linear-gradient(135deg, #EFF6FF 0%, #E0F2FE 100%); color: var(--dark); display: flex; align-items: center; position: relative; overflow: hidden; }
-        .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: radial-gradient(circle at 30% 70%, rgba(59, 130, 246, 0.05) 1px, transparent 1px); background-size: 80px 80px; opacity: 0.5; }
+        /* ===== BOUTONS ===== */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 0.75rem;
+            padding: 1rem 2rem; font-family: var(--font-heading); font-weight: 600;
+            border: none; border-radius: var(--border-radius); cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--light); position: relative; overflow: hidden;
+        }
+        .btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition: left 0.5s; }
+        .btn:hover::before { left: 100%; }
+        .btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: var(--shadow-lg); }
+        .btn-secondary { background: linear-gradient(135deg, var(--secondary), #059669); }
+        .btn-outline { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
+        .btn-outline:hover { background: var(--primary); color: var(--light); }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 70vh; padding: calc(var(--header-height) + 2rem) 0 4rem;
+            background: linear-gradient(135deg, #EFF6FF 0%, #E0F2FE 100%); color: var(--dark);
+            display: flex; align-items: center; position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(circle at 30% 70%, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+            background-size: 80px 80px; opacity: 0.5;
+        }
         .hero-content { text-align: center; max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
         .hero-title { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; color: var(--primary); }
         .hero-title span { display: block; font-size: 0.4em; font-weight: 300; margin-top: 1rem; opacity: 0.8; letter-spacing: 1px; text-transform: uppercase; color: var(--gray-dark); }
         .hero-subtitle { font-size: 1.25rem; margin-bottom: 2.5rem; line-height: 1.6; font-weight: 300; max-width: 800px; margin-left: auto; margin-right: auto; color: var(--gray-dark); }
         .hero-actions { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
 
-        /* ===== SECTION DÉFINITIONS : Cartes Élégantes avec Effets Subtils ===== */
+        /* ===== SECTION DÉFINITIONS ===== */
         .definitions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
-        .definition-card { background: var(--light); border-radius: var(--border-radius-lg); padding: 2.5rem 2rem; border-left: 4px solid var(--secondary); box-shadow: var(--shadow-sm); transition: all 0.4s ease; position: relative; overflow: hidden; }
-        .definition-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, transparent, rgba(167, 243, 208, 0.1)); opacity: 0; transition: opacity 0.3s ease; }
+        .definition-card {
+            background: var(--light); border-radius: var(--border-radius-lg); padding: 2.5rem 2rem;
+            border-left: 4px solid var(--secondary); box-shadow: var(--shadow-sm);
+            transition: all 0.4s ease; position: relative; overflow: hidden;
+        }
+        .definition-card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, transparent, rgba(16, 185, 129, 0.1));
+            opacity: 0; transition: opacity 0.3s ease;
+        }
         .definition-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-left-color: var(--accent); }
         .definition-card:hover::before { opacity: 1; }
-        .definition-icon { width: 60px; height: 60px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--light); font-size: 1.5rem; margin-bottom: 1.5rem; transition: transform 0.3s ease; }
+        .definition-icon {
+            width: 60px; height: 60px; background: var(--secondary); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--light); font-size: 1.5rem; margin-bottom: 1.5rem; transition: transform 0.3s ease;
+        }
         .definition-card:hover .definition-icon { transform: scale(1.1) rotate(5deg); }
         .definition-term { font-size: 1.5rem; color: var(--primary); margin-bottom: 1rem; font-weight: 600; }
         .definition-text { color: var(--gray-dark); line-height: 1.6; margin-bottom: 1rem; }
-        .definition-example { font-style: italic; color: var(--success); margin-bottom: 1.5rem; padding: 1rem; background: rgba(16, 185, 129, 0.05); border-radius: var(--border-radius); border-left: 3px solid var(--success); }
+        .definition-example {
+            font-style: italic; color: var(--success); margin-bottom: 1.5rem; padding: 1rem;
+            background: rgba(16, 185, 129, 0.05); border-radius: var(--border-radius);
+            border-left: 3px solid var(--success);
+        }
         .definition-source { font-size: 0.875rem; color: var(--gray); display: flex; align-items: center; gap: 0.5rem; }
 
-        /* ===== NAVIGATION RAPIDE ADAPTÉE ===== */
-        .quick-nav-def { display: flex; justify-content: center; gap: 2rem; margin-top: 3rem; flex-wrap: wrap; }
-        .quick-nav-link { padding: 0.75rem 1.5rem; background: var(--gray-light); border-radius: var(--border-radius); transition: all 0.3s ease; }
-        .quick-nav-link:hover { background: var(--secondary); color: var(--light); }
+        /* ===== NOUVELLE SECTION : APPLICATIONS CONCRÈTES POUR DÉBUTANTS ===== */
+        .applications-section { background: var(--gray-light); }
+        .applications-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+        .application-card {
+            background: var(--light); border-radius: var(--border-radius-lg); padding: 2.5rem 2rem;
+            box-shadow: var(--shadow-md); transition: all 0.4s ease; border-top: 4px solid var(--gold);
+            display: flex; flex-direction: column; height: 100%;
+        }
+        .application-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+        .application-category {
+            display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;
+            padding-bottom: 1rem; border-bottom: 1px solid var(--gray);
+        }
+        .category-icon {
+            width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: var(--border-radius); display: flex; align-items: center;
+            justify-content: center; color: var(--light); font-size: 1.25rem;
+        }
+        .category-title { font-size: 1.25rem; color: var(--primary); font-weight: 600; }
+        .tool-item {
+            background: rgba(244, 246, 250, 0.8); border-radius: var(--border-radius);
+            padding: 1.25rem; margin-bottom: 1rem; transition: all 0.3s ease;
+        }
+        .tool-item:hover { background: rgba(79, 70, 229, 0.05); }
+        .tool-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+        .tool-name { font-weight: 600; color: var(--dark); }
+        .tool-difficulty { display: flex; gap: 0.25rem; }
+        .tool-difficulty i { color: var(--gold); font-size: 0.875rem; }
+        .tool-desc { color: var(--gray-dark); font-size: 0.9rem; line-height: 1.5; margin-bottom: 1rem; }
+        .tool-link {
+            display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary);
+            font-size: 0.875rem; font-weight: 600; text-decoration: none;
+        }
+        .tool-link:hover { color: var(--accent); }
+        .tool-tag {
+            display: inline-block; padding: 0.25rem 0.75rem; background: rgba(16, 185, 129, 0.1);
+            color: var(--secondary); border-radius: 20px; font-size: 0.75rem; font-weight: 600;
+            margin-top: 0.75rem;
+        }
 
-        /* ===== STATS ADAPTÉES POUR DÉFINITIONS ===== */
-        .stats-def { background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%); color: var(--light); text-align: center; }
+        /* ===== TABLEAU COMPARATIF ===== */
+        .comparison-table {
+            width: 100%; border-collapse: collapse; margin: 2rem 0; box-shadow: var(--shadow-sm);
+            border-radius: var(--border-radius); overflow: hidden;
+        }
+        .comparison-table th, .comparison-table td {
+            padding: 1.25rem; text-align: left; border-bottom: 1px solid var(--gray);
+        }
+        .comparison-table th {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--light); font-weight: 600;
+        }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:hover td { background: rgba(79, 70, 229, 0.03); }
+        .cost-badge {
+            padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.875rem; font-weight: 600;
+        }
+        .cost-free { background: rgba(16, 185, 129, 0.15); color: var(--secondary); }
+        .cost-low { background: rgba(245, 158, 11, 0.15); color: var(--gold); }
+        .cost-medium { background: rgba(239, 68, 68, 0.15); color: #EF4444; }
+
+        /* ===== RESSOURCES PRATIQUES ===== */
+        .resources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .resource-card {
+            background: var(--light); border-radius: var(--border-radius-lg); padding: 2rem;
+            box-shadow: var(--shadow-md); transition: all 0.3s ease; border: 1px solid var(--gray);
+        }
+        .resource-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+        .resource-icon { font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem; }
+        .resource-download {
+            display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1rem;
+            padding: 0.75rem 1.5rem; background: var(--primary); color: var(--light);
+            border-radius: var(--border-radius); text-decoration: none; font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .resource-download:hover { background: var(--primary-light); transform: translateY(-2px); }
+
+        /* ===== STATISTIQUES ===== */
+        .stats-def {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            color: var(--light); text-align: center;
+        }
         .stats-grid-def { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
-        .stat-item-def { padding: 2rem; background: rgba(255, 255, 255, 0.1); border-radius: var(--border-radius-lg); backdrop-filter: blur(10px); }
+        .stat-item-def {
+            padding: 2rem; background: rgba(255, 255, 255, 0.1); border-radius: var(--border-radius-lg);
+            backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);
+        }
         .stat-value-def { font-size: 3rem; font-weight: 800; color: var(--gold); }
         .stat-label-def { font-size: 1.125rem; font-weight: 600; }
 
-        /* ===== FOOTER (IDENTIQUE) ===== */
-        .main-footer { background: var(--darkest); color: var(--light); padding: 4rem 0 2rem; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2.5rem; margin-bottom: 2.5rem; }
+        /* ===== FOOTER HARMONISÉ (identique à index.html) ===== */
+        .main-footer {
+            background: var(--darkest); color: var(--light); padding: 4rem 0 2rem;
+        }
+        .footer-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem; margin-bottom: 2.5rem;
+        }
         .footer-section { display: flex; flex-direction: column; }
         .footer-logo img { height: 45px; width: auto; margin-bottom: 1.5rem; filter: brightness(0) invert(1); }
-        .footer-title { font-size: 1.25rem; color: var(--light); margin-bottom: 1.5rem; position: relative; padding-bottom: 0.75rem; }
-        .footer-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: linear-gradient(90deg, var(--secondary), var(--accent)); }
+        .footer-title {
+            font-size: 1.25rem; color: var(--light); margin-bottom: 1.5rem;
+            position: relative; padding-bottom: 0.75rem;
+        }
+        .footer-title::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 40px; height: 3px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+        }
         .footer-links { list-style: none; }
         .footer-links li { margin-bottom: 0.75rem; }
-        .footer-links a, .footer-links span { color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: all 0.3s ease; display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem; }
+        .footer-links a, .footer-links span {
+            color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: all 0.3s ease;
+            display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem;
+        }
         .footer-links a:hover { color: var(--light); transform: translateX(5px); }
         .footer-links i { width: 18px; color: var(--secondary); font-size: 1rem; transition: color 0.3s ease; }
         .footer-links a:hover i { color: var(--accent); }
         .social-icons { display: flex; gap: 1rem; margin-top: 1.5rem; }
-        .social-icon { width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--light); text-decoration: none; transition: all 0.3s ease; font-size: 1rem; }
+        .social-icon {
+            width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; color: var(--light);
+            text-decoration: none; transition: all 0.3s ease; font-size: 1rem;
+        }
         .social-icon:hover { background: var(--accent); transform: translateY(-3px) rotate(10deg); box-shadow: var(--shadow-md); }
-        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.875rem; color: rgba(255, 255, 255, 0.6); }
+        .footer-bottom {
+            text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.875rem; color: rgba(255, 255, 255, 0.6);
+        }
         .footer-bottom p { margin-bottom: 0.75rem; }
 
-        /* ===== RESPONSIVE (hérité et adapté) ===== */
-        @media (max-width: 992px) { .nav-list { gap: 1rem; } .nav-link { padding: 0.5rem 0.75rem; font-size: 0.9rem; } }
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .nav-list { gap: 1rem; }
+            .nav-link { padding: 0.5rem 0.75rem; font-size: 0.9rem; }
+            .definitions-grid, .applications-grid, .resources-grid { grid-template-columns: repeat(2, 1fr); }
+        }
         @media (max-width: 768px) {
             .mobile-menu-btn { display: block; }
-            .main-nav { position: fixed; top: var(--header-height); left: -100%; width: 300px; height: calc(100vh - var(--header-height)); background: var(--light); flex-direction: column; justify-content: flex-start; padding: 2rem; transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: 1000; box-shadow: var(--shadow-lg); overflow-y: auto; }
+            .main-nav {
+                position: fixed; top: var(--header-height); left: -100%; width: 300px;
+                height: calc(100vh - var(--header-height)); background: var(--light);
+                flex-direction: column; justify-content: flex-start; padding: 2rem;
+                transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: 1000;
+                box-shadow: var(--shadow-lg); overflow-y: auto;
+            }
             .main-nav.active { left: 0; }
             .nav-list { flex-direction: column; width: 100%; gap: 0; }
             .nav-list li { width: 100%; border-bottom: 1px solid var(--gray); }
@@ -211,15 +349,15 @@
             .hero-actions .btn { width: 100%; max-width: 350px; margin: 0.5rem 0; }
             .hero-title { font-size: 2.25rem; }
             .hero-subtitle { font-size: 1.125rem; padding: 0 1rem; }
-            .definitions-grid { grid-template-columns: 1fr; }
-            .quick-nav-def { flex-direction: column; align-items: center; }
+            .definitions-grid, .applications-grid, .resources-grid { grid-template-columns: 1fr; }
+            .comparison-table { display: block; overflow-x: auto; }
         }
         @media (max-width: 576px) {
             .container { padding: 0 1rem; }
             .section { padding: 3rem 0; }
             h1 { font-size: 2rem; } h2 { font-size: 1.75rem; } h3 { font-size: 1.375rem; }
             .hero { padding: calc(var(--header-height) + 1rem) 0 3rem; min-height: auto; }
-            .definition-card { padding: 2rem 1.5rem; }
+            .definition-card, .application-card, .resource-card { padding: 2rem 1.5rem; }
             .stats-grid-def { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
             .stat-item-def { padding: 1.5rem 1rem; }
             .stat-value-def { font-size: 2.25rem; }
@@ -228,7 +366,7 @@
     </style>
 </head>
 <body>
-    <!-- Header (Identique) -->
+    <!-- Header Harmonisé -->
     <header class="main-header">
         <div class="container header-container">
             <a href="index.html" class="logo-brand">
@@ -263,7 +401,7 @@
         </div>
     </header>
 
-    <!-- Hero Section Adaptée -->
+    <!-- Hero Section -->
     <section class="hero" id="hero">
         <div class="container">
             <div class="hero-content" data-aos="fade-up">
@@ -279,6 +417,9 @@
                 <div class="hero-actions">
                     <a href="#definitions" class="btn btn-lg">
                         <i class="fas fa-book-open"></i> Explorer les Termes
+                    </a>
+                    <a href="#applications" class="btn btn-lg btn-secondary">
+                        <i class="fas fa-tools"></i> Applications Concrètes
                     </a>
                 </div>
             </div>
@@ -390,16 +531,331 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- NOUVELLE SECTION : Applications Concrètes pour Débutants -->
+    <section class="section applications-section" id="applications">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Applications Concrètes pour Débutants</h2>
+                <p class="section-subtitle">Outils pratiques et accessibles pour commencer votre transformation numérique</p>
+            </div>
             
-            <div class="quick-nav-def" data-aos="fade-up" data-aos-delay="700">
-                <a href="avantages-risques.html" class="quick-nav-link btn-outline">→ Analyse Stratégique</a>
-                <a href="technologies.html" class="quick-nav-link btn-outline">→ Technologies Avancées</a>
-                <a href="index.html" class="quick-nav-link btn-outline">← Retour Accueil</a>
+            <div class="applications-grid">
+                <!-- Catégorie 1 : Plateformes Éducatives Gratuites -->
+                <div class="application-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="application-category">
+                        <div class="category-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="category-title">Plateformes Éducatives Gratuites</div>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-header">
+                            <div class="tool-name">Kahoot!</div>
+                            <div class="tool-difficulty">
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="tool-desc">Créez des quiz interactifs en classe. Idéal pour les évaluations ludiques.</p>
+                        <a href="https://kahoot.com" target="_blank" class="tool-link">
+                            <i class="fas fa-external-link-alt"></i> Visiter Kahoot
+                        </a>
+                        <div class="tool-tag">Gratuit</div>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-header">
+                            <div class="tool-name">LearningApps</div>
+                            <div class="tool-difficulty">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="tool-desc">Créez des exercices interactifs sans connaissances en programmation.</p>
+                        <a href="https://learningapps.org" target="_blank" class="tool-link">
+                            <i class="fas fa-external-link-alt"></i> Visiter LearningApps
+                        </a>
+                        <div class="tool-tag">Gratuit</div>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-header">
+                            <div class="tool-name">Canva Éducation</div>
+                            <div class="tool-difficulty">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="tool-desc">Créez des supports visuels professionnels pour vos cours.</p>
+                        <a href="https://www.canva.com/education/" target="_blank" class="tool-link">
+                            <i class="fas fa-external-link-alt"></i> Visiter Canva Éducation
+                        </a>
+                        <div class="tool-tag">Gratuit pour enseignants</div>
+                    </div>
+                </div>
+                
+                <!-- Catégorie 2 : IA pour l'Éducation Primaire -->
+                <div class="application-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="application-category">
+                        <div class="category-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="category-title">IA pour l'Éducation Primaire</div>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-header">
+                            <div class="tool-name">ChatGPT pour enseignants</div>
+                            <div class="tool-difficulty">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="tool-desc">Générez des idées d'activités, corrigez des textes, traduisez vers les langues locales.</p>
+                        <a href="https://chat.openai.com" target="_blank" class="tool-link">
+                            <i class="fas fa-external-link-alt"></i> Visiter ChatGPT
+                        </a>
+                        <div class="tool-tag">Version gratuite disponible</div>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-header">
+                            <div class="tool-name">Image IA (DALL-E, Leonardo)</div>
+                            <div class="tool-difficulty">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="tool-desc">Créez des illustrations pour vos leçons et personnages éducatifs.</p>
+                        <a href="https://openai.com/dall-e-3" target="_blank" class="tool-link">
+                            <i class="fas fa-external-link-alt"></i> Visiter DALL-E
+                        </a>
+                        <div class="tool-tag">Crédits gratuits disponibles</div>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-header">
+                            <div class="tool-name">Lalilo (Lecture)</div>
+                            <div class="tool-difficulty">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="tool-desc">Plateforme d'apprentissage de la lecture adaptative pour le primaire.</p>
+                        <a href="https://www.lalilo.com" target="_blank" class="tool-link">
+                            <i class="fas fa-external-link-alt"></i> Visiter Lalilo
+                        </a>
+                        <div class="tool-tag">Gratuit pour enseignants</div>
+                    </div>
+                </div>
+                
+                <!-- Catégorie 3 : Outils Hors Ligne pour le Bénin -->
+                <div class="application-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="application-category">
+                        <div class="category-icon">
+                            <i class="fas fa-wifi-slash"></i>
+                        </div>
+                        <div class="category-title">Outils Hors Ligne</div>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-header">
+                            <div class="tool-name">RACHEL</div>
+                            <div class="tool-difficulty">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="tool-desc">Ressources éducatives hors ligne (Wikipedia, Khan Academy, eBooks).</p>
+                        <a href="https://worldpossible.org/rachel/" target="_blank" class="tool-link">
+                            <i class="fas fa-external-link-alt"></i> Visiter RACHEL
+                        </a>
+                        <div class="tool-tag">Matériel ~200$</div>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-header">
+                            <div class="tool-name">KA-Lite</div>
+                            <div class="tool-difficulty">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="tool-desc">Khan Academy hors ligne (Mathématiques, Sciences en français).</p>
+                        <a href="https://learningequality.org/ka-lite/" target="_blank" class="tool-link">
+                            <i class="fas fa-external-link-alt"></i> Visiter KA-Lite
+                        </a>
+                        <div class="tool-tag">Gratuit</div>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-header">
+                            <div class="tool-name">Moodle Mobile avec cache</div>
+                            <div class="tool-difficulty">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="tool-desc">Synchronisez vos cours pour travail en zones faible connectivité.</p>
+                        <a href="https://download.moodle.org/mobile/" target="_blank" class="tool-link">
+                            <i class="fas fa-external-link-alt"></i> Télécharger Moodle Mobile
+                        </a>
+                        <div class="tool-tag">Gratuit</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Adaptées -->
+    <!-- Tableau Comparatif -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Tableau Comparatif des Outils</h2>
+                <p class="section-subtitle">Choisissez l'outil adapté à vos besoins et ressources</p>
+            </div>
+            
+            <table class="comparison-table" data-aos="fade-up">
+                <thead>
+                    <tr>
+                        <th>Outil</th>
+                        <th>Coût</th>
+                        <th>Difficulté</th>
+                        <th>Usage au Bénin</th>
+                        <th>Lien</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Kahoot!</strong></td>
+                        <td><span class="cost-badge cost-free">Gratuit</span></td>
+                        <td>⭐☆☆☆☆</td>
+                        <td>Quiz en classe, évaluations</td>
+                        <td><a href="https://kahoot.com" target="_blank">kahoot.com</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Canva Éducation</strong></td>
+                        <td><span class="cost-badge cost-free">Gratuit</span></td>
+                        <td>⭐⭐☆☆☆</td>
+                        <td>Affiches pédagogiques</td>
+                        <td><a href="https://www.canva.com/education/" target="_blank">canva.com/education</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Google Classroom</strong></td>
+                        <td><span class="cost-badge cost-free">Gratuit</span></td>
+                        <td>⭐⭐☆☆☆</td>
+                        <td>Gestion de classe</td>
+                        <td><a href="https://classroom.google.com" target="_blank">classroom.google.com</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>RACHEL</strong></td>
+                        <td><span class="cost-badge cost-medium">~200$</span></td>
+                        <td>⭐⭐⭐☆☆</td>
+                        <td>Bibliothèque offline</td>
+                        <td><a href="https://worldpossible.org/rachel/" target="_blank">worldpossible.org/rachel</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Moodle Mobile</strong></td>
+                        <td><span class="cost-badge cost-free">Gratuit</span></td>
+                        <td>⭐⭐⭐⭐☆</td>
+                        <td>Cours hors ligne</td>
+                        <td><a href="https://download.moodle.org/mobile/" target="_blank">download.moodle.org/mobile</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>ChatGPT</strong></td>
+                        <td><span class="cost-badge cost-low">Version gratuite</span></td>
+                        <td>⭐⭐☆☆☆</td>
+                        <td>Génération contenu, correction</td>
+                        <td><a href="https://chat.openai.com" target="_blank">chat.openai.com</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Ressources Pratiques -->
+    <section class="section" style="background: var(--gray-light);">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Ressources Pratiques Téléchargeables</h2>
+                <p class="section-subtitle">Guides pas-à-pas pour débutants</p>
+            </div>
+            
+            <div class="resources-grid">
+                <div class="resource-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="resource-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Guide Démarrage Google Classroom</h3>
+                    <p>10 pages pour créer votre première classe numérique en moins d'une heure.</p>
+                    <a href="#" class="resource-download">
+                        <i class="fas fa-download"></i> Télécharger PDF (2.1 MB)
+                    </a>
+                </div>
+                
+                <div class="resource-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="resource-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3>Créer son Premier Quiz Interactif</h3>
+                    <p>5 pages avec captures d'écran pour maîtriser Kahoot! en 30 minutes.</p>
+                    <a href="#" class="resource-download">
+                        <i class="fas fa-download"></i> Télécharger PDF (1.5 MB)
+                    </a>
+                </div>
+                
+                <div class="resource-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="resource-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>IA pour Enseignants : Premiers Pas</h3>
+                    <p>12 pages d'exemples concrets d'utilisation de ChatGPT en classe.</p>
+                    <a href="#" class="resource-download">
+                        <i class="fas fa-download"></i> Télécharger PDF (3.2 MB)
+                    </a>
+                </div>
+            </div>
+            
+            <div class="quick-nav-def" data-aos="fade-up" data-aos-delay="400" style="margin-top: 3rem;">
+                <a href="avantages-risques.html" class="btn btn-outline">→ Analyse Stratégique</a>
+                <a href="technologies.html" class="btn btn-outline">→ Technologies Avancées</a>
+                <a href="index.html" class="btn btn-outline">← Retour Accueil</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistiques -->
     <section class="section stats-def">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
@@ -416,8 +872,8 @@
                 </div>
                 
                 <div class="stat-item-def" data-aos="fade-up" data-aos-delay="200">
-                    <div class="stat-value-def counter" data-target="20">0+</div>
-                    <div class="stat-label-def">Références Expertes</div>
+                    <div class="stat-value-def counter" data-target="12">0+</div>
+                    <div class="stat-label-def">Outils Pratiques</div>
                 </div>
                 
                 <div class="stat-item-def" data-aos="fade-up" data-aos-delay="300">
@@ -428,7 +884,7 @@
         </div>
     </section>
 
-    <!-- Footer (Identique) -->
+    <!-- Footer Harmonisé -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
@@ -499,7 +955,7 @@
         </div>
     </footer>
 
-    <!-- Scripts (Identiques) -->
+    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -563,7 +1019,7 @@
                                     counter.textContent = Math.floor(current);
                                     requestAnimationFrame(updateCounter);
                                 } else {
-                                    counter.textContent = target + (target === 100 ? '%' : target === 20 ? '+' : '');
+                                    counter.textContent = target + (target === 100 ? '%' : target === 12 ? '+' : '');
                                 }
                             };
                             updateCounter();
