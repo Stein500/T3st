@@ -3,1058 +3,467 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clarification Conceptuelle | Digit-School Process 2025</title>
+    <title>Définitions | Digit-School Process 2025</title>
     
     <!-- SEO Meta -->
-    <meta name="description" content="Définitions précises des concepts numériques fondamentaux : informatique, données, technologies, IA, transformation digitale, littératie numérique.">
-    <meta name="keywords" content="définitions numérique, concepts informatiques, IA définition, données numériques, technologies éducatives, transformation digitale">
-    <meta name="author" content="Digit-School Process 2025">
+    <meta name="description" content="Définitions clés sur l'éducation numérique, l'IA en éducation, la transformation digitale et l'innovation pédagogique pour l'excellence éducative au Bénin.">
+    <meta name="keywords" content="définitions éducation numérique, IA pédagogique, transformation digitale, innovation éducation, Digit-School Process">
+    <meta name="author" content="Digit-School Process 2025 - Comité Scientifique d'Excellence">
+    <meta name="robots" content="index, follow">
     
-    <!-- Fonts & Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Définitions Clés | Digit-School Process 2025">
+    <meta property="og:description" content="Maîtrisez les concepts essentiels de l'éducation numérique et de l'innovation pédagogique.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./assets/images/social-preview-definitions.jpg">
+    <meta property="og:url" content="https://digit-school-process.bj/definitions.html">
+    <meta property="og:locale" content="fr_BJ">
     
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Définitions | Digit-School Process 2025">
+    <meta name="twitter:description" content="Concepts clés pour l'excellence numérique éducative.">
+    <meta name="twitter:image" content="./assets/images/social-preview-definitions.jpg">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://digit-school-process.bj/definitions.html">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
-    <link rel="apple-touch-icon" href="./assets/images/logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
     
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- CSS Principal (Style Propre pour Définitions : Minimaliste, Bleu-Clair/Vert Pastel) -->
     <style>
-        /* Page-specific styles */
-        .definitions-hero {
-            background: linear-gradient(135deg, 
-                rgba(0, 168, 150, 0.95) 0%, 
-                rgba(45, 59, 139, 0.9) 100%),
-                url('./assets/images/hero.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 140px 0 60px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .definitions-hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, rgba(0, 168, 150, 0.7), rgba(45, 59, 139, 0.7));
-            z-index: 1;
-        }
-        
-        .definitions-hero .container {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .definitions-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
-            margin-bottom: 1rem;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-        
-        /* Concepts Grid - Amélioré */
-        .concepts-section {
-            background: linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .concepts-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 300px;
-            height: 300px;
-            background: url('./assets/images/logo.png') no-repeat;
-            background-size: contain;
-            opacity: 0.03;
-            transform: translate(100px, -100px);
-        }
-        
-        .concepts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .concept-card {
-            background: white;
-            border-radius: var(--border-radius-xl);
-            padding: 2.5rem;
-            box-shadow: var(--shadow-medium);
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid var(--gray);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            transform-style: preserve-3d;
-        }
-        
-        .concept-card:hover {
-            transform: translateY(-10px) rotateX(5deg);
-            box-shadow: var(--shadow-hard);
-        }
-        
-        .concept-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 6px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--primary), var(--secondary), var(--accent));
-        }
-        
-        .concept-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, transparent 50%, rgba(0, 168, 150, 0.1) 50%);
-            transition: all 0.3s ease;
-        }
-        
-        .concept-card:hover::after {
-            width: 150px;
-            height: 150px;
-        }
-        
-        .concept-header {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .concept-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2.2rem;
-            flex-shrink: 0;
-            box-shadow: var(--shadow-medium);
-            transition: transform 0.3s ease;
-        }
-        
-        .concept-card:hover .concept-icon {
-            transform: scale(1.1) rotate(5deg);
-        }
-        
-        .concept-title-wrapper {
-            flex-grow: 1;
-        }
-        
-        .concept-title {
-            font-size: 1.6rem;
-            color: var(--primary);
-            margin-bottom: 0.25rem;
-            font-weight: 700;
-        }
-        
-        .concept-subtitle {
-            color: var(--secondary);
-            font-style: italic;
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-        
-        .concept-definition {
-            color: var(--dark);
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .concept-details {
-            background: linear-gradient(135deg, var(--gray-light), white);
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            border-left: 4px solid var(--accent);
-            margin-top: auto;
-            position: relative;
-            z-index: 2;
-        }
-        
-        /* Importance Section - Améliorée */
-        .importance-section {
-            background: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .importance-section::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 400px;
-            height: 400px;
-            background: url('./assets/images/logo.png') no-repeat;
-            background-size: contain;
-            opacity: 0.02;
-            transform: translate(-50%, -50%);
-        }
-        
-        .importance-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .importance-card {
-            background: white;
-            border-radius: var(--border-radius-lg);
-            padding: 2.5rem;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            box-shadow: var(--shadow-soft);
-        }
-        
-        .importance-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: var(--shadow-hard);
-        }
-        
-        .importance-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent 60%, rgba(0, 168, 150, 0.05) 60%);
-            z-index: 0;
-        }
-        
-        .importance-card h3 {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .importance-card h3 i {
-            color: var(--secondary);
-            font-size: 1.2rem;
-        }
-        
-        /* Diagramme amélioré */
-        .diagram-section {
-            background: linear-gradient(135deg, var(--primary-dark), var(--secondary-dark));
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .diagram-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('./assets/images/logo-white.png') no-repeat center;
-            background-size: 400px;
-            opacity: 0.05;
-        }
-        
-        .diagram-container {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .diagram {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
-            position: relative;
-        }
-        
-        .diagram-node {
-            background: rgba(255, 255, 255, 0.95);
-            color: var(--primary);
-            padding: 1.5rem 2rem;
-            border-radius: var(--border-radius);
-            font-weight: 600;
-            text-align: center;
-            box-shadow: var(--shadow-medium);
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-        
-        .diagram-node:hover {
-            border-color: var(--accent);
-            transform: scale(1.05);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-        }
-        
-        .diagram-node.main {
-            background: linear-gradient(135deg, var(--accent), var(--accent-light));
-            color: white;
-            font-size: 1.2rem;
-            border: 2px solid white;
-        }
-        
-        .diagram-connector {
-            width: 2px;
-            height: 30px;
-            background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.5), transparent);
-        }
-        
-        /* Glossaire amélioré */
-        .glossaire-section {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            position: relative;
-        }
-        
-        .glossaire-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .glossaire-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .glossaire-item {
-            background: white;
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            border-left: 4px solid var(--primary-light);
-            box-shadow: var(--shadow-soft);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .glossaire-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hard);
-            border-left-color: var(--accent);
-        }
-        
-        .glossaire-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-        
-        .glossaire-item:hover::before {
-            transform: scaleX(1);
-        }
-        
-        .glossaire-term {
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .glossaire-def {
-            color: var(--dark);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            position: relative;
-            z-index: 1;
-        }
-        
-        /* Responsive amélioré */
-        @media (max-width: 1200px) {
-            .concepts-grid {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .concepts-grid {
-                grid-template-columns: 1fr;
-            }
+        /* ===== VARIABLES CSS SPÉCIFIQUES À CETTE PAGE ===== */
+        :root {
+            /* Palette Calme : Bleu clair pour clarté, vert pastel pour croissance, gris doux */
+            --primary: #3B82F6; /* Bleu ciel moderne */
+            --primary-light: #60A5FA;
+            --secondary: #A7F3D0; /* Vert pastel */
+            --accent: #06B6D4; /* Cyan pour focus */
+            --gold: #F59E0B;
+            --success: #10B981;
             
-            .glossaire-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
+            /* Couleurs système (même que base) */
+            --light: #FFFFFF;
+            --gray-light: #F8FAFC;
+            --gray: #E2E8F0;
+            --gray-dark: #64748B;
+            --dark: #0F172A;
+            --darkest: #020617;
             
-            .concepts-section::before {
-                display: none;
-            }
+            /* Typo & Espacements (hérités) */
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            
+            /* Header (hérité) */
+            --header-height: 80px;
+            --header-scrolled-height: 70px;
         }
-        
+
+        [data-theme="dark"] {
+            --light: #0F172A;
+            --gray-light: #1E293B;
+            --gray: #334155;
+            --gray-dark: #94A3B8;
+            --dark: #F1F5F9;
+            --darkest: #FFFFFF;
+            --secondary: #047857; /* Vert sombre pour dark */
+        }
+
+        /* ===== RESET & BASE (hérité) ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        ::selection { background: var(--accent); color: var(--light); }
+        html { scroll-behavior: smooth; scroll-padding-top: var(--header-height); font-size: 16px; }
+        body { font-family: var(--font-body); font-size: 1rem; line-height: 1.6; font-weight: 400; color: var(--dark); background-color: var(--light); overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+        /* ===== TYPO (hérité) ===== */
+        h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); color: var(--primary); text-align: center; }
+        h2 { font-size: clamp(1.875rem, 4vw, 2.75rem); color: var(--primary); position: relative; display: inline-block; }
+        h2::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 60px; height: 4px; background: linear-gradient(90deg, var(--secondary), var(--accent)); border-radius: 2px; }
+        h3 { font-size: clamp(1.25rem, 3vw, 1.875rem); color: var(--primary); }
+        p { margin-bottom: 1rem; font-size: 1rem; line-height: 1.6; }
+        a { color: var(--primary); text-decoration: none; transition: all 0.3s ease; }
+        a:hover { color: var(--accent); text-decoration: underline; }
+
+        /* ===== LAYOUT (hérité) ===== */
+        .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+        .section { padding: 4rem 0; }
+        .section-title { text-align: center; margin-bottom: 3rem; }
+        .section-subtitle { font-size: 1.125rem; color: var(--gray-dark); max-width: 700px; margin: 0.75rem auto 0; font-weight: 400; }
+
+        /* ===== HEADER & FOOTER (IDENTIQUES À LA PAGE PRÉCÉDENTE) ===== */
+        .main-header { position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height); background: var(--light); border-bottom: 1px solid var(--gray); z-index: 1000; transition: all 0.4s ease; box-shadow: var(--shadow-md); }
+        .main-header.scrolled { height: var(--header-scrolled-height); backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.95); }
+        [data-theme="dark"] .main-header.scrolled { background: rgba(15, 23, 42, 0.95); }
+        .header-container { display: flex; justify-content: space-between; align-items: center; height: 100%; }
+        .logo-brand { display: flex; align-items: center; gap: 1rem; text-decoration: none; }
+        .logo-img { height: 45px; width: auto; transition: transform 0.3s ease; }
+        .logo-brand:hover .logo-img { transform: scale(1.05); }
+        .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+        .logo-text .main { font-family: var(--font-heading); font-weight: 700; font-size: 1.25rem; color: var(--primary); }
+        .logo-text .sub { font-size: 0.75rem; color: var(--accent); font-weight: 600; }
+        .main-nav-actions { display: flex; align-items: center; gap: 1rem; }
+        .theme-toggle { background: none; border: 1px solid var(--gray); color: var(--dark); padding: 0.5rem; border-radius: 50%; cursor: pointer; transition: all 0.3s ease; font-size: 1.1rem; }
+        .theme-toggle:hover { background: var(--gray-light); border-color: var(--primary); }
+        .main-nav { display: flex; align-items: center; }
+        .nav-list { display: flex; list-style: none; gap: 1.5rem; }
+        .nav-link { font-family: var(--font-heading); font-weight: 600; font-size: 0.95rem; color: var(--dark); padding: 0.75rem 1rem; border-radius: var(--border-radius); transition: all 0.3s ease; white-space: nowrap; position: relative; }
+        .nav-link:hover { background: var(--gray-light); color: var(--primary); transform: translateY(-2px); }
+        .nav-link.active { background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: var(--light); }
+        .nav-link i { margin-right: 0.5rem; }
+        .mobile-menu-btn { display: none; background: none; border: none; color: var(--primary); font-size: 1.5rem; cursor: pointer; padding: 0.5rem; z-index: 1001; transition: transform 0.3s ease; }
+        .mobile-menu-btn:hover { transform: rotate(90deg); }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.75rem; padding: 1rem 2rem; font-family: var(--font-heading); font-weight: 600; font-size: 0.95rem; border: none; border-radius: var(--border-radius); cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: var(--light); position: relative; overflow: hidden; }
+        .btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition: left 0.5s; }
+        .btn:hover::before { left: 100%; }
+        .btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: var(--shadow-lg); }
+        .btn-secondary { background: linear-gradient(135deg, var(--secondary), var(--success)); }
+        .btn-outline { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
+        .btn-outline:hover { background: var(--primary); color: var(--light); }
+        .menu-overlay { display: none; position: fixed; top: var(--header-height); left: 0; width: 100%; height: calc(100vh - var(--header-height)); background: rgba(0, 0, 0, 0.6); z-index: 999; backdrop-filter: blur(5px); transition: opacity 0.3s ease; }
+        .menu-overlay.active { display: block; opacity: 1; }
+
+        /* ===== HERO SPÉCIFIQUE : Minimaliste avec Focus sur Concepts ===== */
+        .hero { min-height: 70vh; padding: calc(var(--header-height) + 2rem) 0 4rem; background: linear-gradient(135deg, #EFF6FF 0%, #E0F2FE 100%); color: var(--dark); display: flex; align-items: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: radial-gradient(circle at 30% 70%, rgba(59, 130, 246, 0.05) 1px, transparent 1px); background-size: 80px 80px; opacity: 0.5; }
+        .hero-content { text-align: center; max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+        .hero-title { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; color: var(--primary); }
+        .hero-title span { display: block; font-size: 0.4em; font-weight: 300; margin-top: 1rem; opacity: 0.8; letter-spacing: 1px; text-transform: uppercase; color: var(--gray-dark); }
+        .hero-subtitle { font-size: 1.25rem; margin-bottom: 2.5rem; line-height: 1.6; font-weight: 300; max-width: 800px; margin-left: auto; margin-right: auto; color: var(--gray-dark); }
+        .hero-actions { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+
+        /* ===== SECTION DÉFINITIONS : Cartes Élégantes avec Effets Subtils ===== */
+        .definitions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+        .definition-card { background: var(--light); border-radius: var(--border-radius-lg); padding: 2.5rem 2rem; border-left: 4px solid var(--secondary); box-shadow: var(--shadow-sm); transition: all 0.4s ease; position: relative; overflow: hidden; }
+        .definition-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, transparent, rgba(167, 243, 208, 0.1)); opacity: 0; transition: opacity 0.3s ease; }
+        .definition-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-left-color: var(--accent); }
+        .definition-card:hover::before { opacity: 1; }
+        .definition-icon { width: 60px; height: 60px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--light); font-size: 1.5rem; margin-bottom: 1.5rem; transition: transform 0.3s ease; }
+        .definition-card:hover .definition-icon { transform: scale(1.1) rotate(5deg); }
+        .definition-term { font-size: 1.5rem; color: var(--primary); margin-bottom: 1rem; font-weight: 600; }
+        .definition-text { color: var(--gray-dark); line-height: 1.6; margin-bottom: 1rem; }
+        .definition-example { font-style: italic; color: var(--success); margin-bottom: 1.5rem; padding: 1rem; background: rgba(16, 185, 129, 0.05); border-radius: var(--border-radius); border-left: 3px solid var(--success); }
+        .definition-source { font-size: 0.875rem; color: var(--gray); display: flex; align-items: center; gap: 0.5rem; }
+
+        /* ===== NAVIGATION RAPIDE ADAPTÉE ===== */
+        .quick-nav-def { display: flex; justify-content: center; gap: 2rem; margin-top: 3rem; flex-wrap: wrap; }
+        .quick-nav-link { padding: 0.75rem 1.5rem; background: var(--gray-light); border-radius: var(--border-radius); transition: all 0.3s ease; }
+        .quick-nav-link:hover { background: var(--secondary); color: var(--light); }
+
+        /* ===== STATS ADAPTÉES POUR DÉFINITIONS ===== */
+        .stats-def { background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%); color: var(--light); text-align: center; }
+        .stats-grid-def { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+        .stat-item-def { padding: 2rem; background: rgba(255, 255, 255, 0.1); border-radius: var(--border-radius-lg); backdrop-filter: blur(10px); }
+        .stat-value-def { font-size: 3rem; font-weight: 800; color: var(--gold); }
+        .stat-label-def { font-size: 1.125rem; font-weight: 600; }
+
+        /* ===== FOOTER (IDENTIQUE) ===== */
+        .main-footer { background: var(--darkest); color: var(--light); padding: 4rem 0 2rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2.5rem; margin-bottom: 2.5rem; }
+        .footer-section { display: flex; flex-direction: column; }
+        .footer-logo img { height: 45px; width: auto; margin-bottom: 1.5rem; filter: brightness(0) invert(1); }
+        .footer-title { font-size: 1.25rem; color: var(--light); margin-bottom: 1.5rem; position: relative; padding-bottom: 0.75rem; }
+        .footer-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: linear-gradient(90deg, var(--secondary), var(--accent)); }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 0.75rem; }
+        .footer-links a, .footer-links span { color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: all 0.3s ease; display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem; }
+        .footer-links a:hover { color: var(--light); transform: translateX(5px); }
+        .footer-links i { width: 18px; color: var(--secondary); font-size: 1rem; transition: color 0.3s ease; }
+        .footer-links a:hover i { color: var(--accent); }
+        .social-icons { display: flex; gap: 1rem; margin-top: 1.5rem; }
+        .social-icon { width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--light); text-decoration: none; transition: all 0.3s ease; font-size: 1rem; }
+        .social-icon:hover { background: var(--accent); transform: translateY(-3px) rotate(10deg); box-shadow: var(--shadow-md); }
+        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.875rem; color: rgba(255, 255, 255, 0.6); }
+        .footer-bottom p { margin-bottom: 0.75rem; }
+
+        /* ===== RESPONSIVE (hérité et adapté) ===== */
+        @media (max-width: 992px) { .nav-list { gap: 1rem; } .nav-link { padding: 0.5rem 0.75rem; font-size: 0.9rem; } }
         @media (max-width: 768px) {
-            .definitions-hero {
-                padding: 120px 0 40px;
-                background-attachment: scroll;
-            }
-            
-            .definitions-title {
-                font-size: 2.5rem;
-            }
-            
-            .concept-header {
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
-            }
-            
-            .concept-icon {
-                width: 70px;
-                height: 70px;
-                font-size: 1.8rem;
-            }
-            
-            .importance-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .importance-card {
-                padding: 2rem;
-            }
-            
-            .diagram-node {
-                padding: 1rem 1.5rem;
-                font-size: 0.9rem;
-            }
+            .mobile-menu-btn { display: block; }
+            .main-nav { position: fixed; top: var(--header-height); left: -100%; width: 300px; height: calc(100vh - var(--header-height)); background: var(--light); flex-direction: column; justify-content: flex-start; padding: 2rem; transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: 1000; box-shadow: var(--shadow-lg); overflow-y: auto; }
+            .main-nav.active { left: 0; }
+            .nav-list { flex-direction: column; width: 100%; gap: 0; }
+            .nav-list li { width: 100%; border-bottom: 1px solid var(--gray); }
+            .nav-link { padding: 1.25rem 1rem; font-size: 1.1rem; display: flex; align-items: center; width: 100%; border-radius: 0; }
+            .nav-link i { width: 24px; text-align: center; margin-right: 1rem; font-size: 1.2rem; }
+            .nav-link:hover { background: linear-gradient(90deg, var(--primary), var(--primary-light)); color: var(--light); }
+            .hero-actions { flex-direction: column; align-items: center; }
+            .hero-actions .btn { width: 100%; max-width: 350px; margin: 0.5rem 0; }
+            .hero-title { font-size: 2.25rem; }
+            .hero-subtitle { font-size: 1.125rem; padding: 0 1rem; }
+            .definitions-grid { grid-template-columns: 1fr; }
+            .quick-nav-def { flex-direction: column; align-items: center; }
         }
-        
-        @media (max-width: 480px) {
-            .concept-card {
-                padding: 1.5rem;
-            }
-            
-            .definitions-title {
-                font-size: 2rem;
-            }
-            
-            .glossaire-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .glossaire-item {
-                padding: 1.25rem;
-            }
-        }
-        
-        /* Animation pour les cartes */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        .concept-card:hover {
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        /* Style pour le header amélioré */
-        .logo-brand {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        .logo-img {
-            height: 50px;
-            width: auto;
-            transition: transform 0.3s ease;
-        }
-        
-        .logo-brand:hover .logo-img {
-            transform: scale(1.1) rotate(5deg);
-        }
-        
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .logo-text .main {
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--primary);
-        }
-        
-        .logo-text .sub {
-            font-size: 0.8rem;
-            color: var(--gray-dark);
-            font-weight: 500;
+        @media (max-width: 576px) {
+            .container { padding: 0 1rem; }
+            .section { padding: 3rem 0; }
+            h1 { font-size: 2rem; } h2 { font-size: 1.75rem; } h3 { font-size: 1.375rem; }
+            .hero { padding: calc(var(--header-height) + 1rem) 0 3rem; min-height: auto; }
+            .definition-card { padding: 2rem 1.5rem; }
+            .stats-grid-def { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+            .stat-item-def { padding: 1.5rem 1rem; }
+            .stat-value-def { font-size: 2.25rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Header amélioré -->
+    <!-- Header (Identique) -->
     <header class="main-header">
         <div class="container header-container">
             <a href="index.html" class="logo-brand">
-                <img src="./assets/images/logo.png" alt="Logo de Digit-School Process" class="logo-img">
+                <img src="./assets/images/logo-premium.png" alt="Logo Digit-School Process 2025" class="logo-img">
                 <div class="logo-text">
                     <div class="main">Digit-School Process</div>
-                    <div class="sub">Clarification Conceptuelle</div>
+                    <div class="sub">Excellence 2025</div>
                 </div>
             </a>
             
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu mobile">
-                <i class="fas fa-bars"></i>
-            </button>
+            <div class="main-nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Basculer le mode sombre">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu mobile">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
             
-            <nav class="main-nav" aria-label="Navigation principale">
-                <ul class="nav-list" id="navList">
+            <nav class="main-nav" aria-label="Navigation principale" id="mainNav">
+                <ul class="nav-list">
                     <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Accueil</a></li>
                     <li><a href="definitions.html" class="nav-link active"><i class="fas fa-book"></i> Définitions</a></li>
                     <li><a href="avantages-risques.html" class="nav-link"><i class="fas fa-balance-scale"></i> Analyse</a></li>
                     <li><a href="precautions-lois.html" class="nav-link"><i class="fas fa-shield-alt"></i> Cadre Légal</a></li>
                     <li><a href="technologies.html" class="nav-link"><i class="fas fa-robot"></i> Technologies</a></li>
-                    <li><a href="programme.html" class="nav-link"><i class="fas fa-calendar-alt"></i> Programme</a></li>
                     <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
             </nav>
+            
+            <div class="menu-overlay" id="menuOverlay"></div>
         </div>
     </header>
 
-    <!-- Hero amélioré -->
-    <section class="definitions-hero">
+    <!-- Hero Section Adaptée -->
+    <section class="hero" id="hero">
         <div class="container">
-            <h1 class="definitions-title">Clarification Conceptuelle</h1>
-            <p class="section-subtitle" style="color: rgba(255,255,255,0.95); max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">
-                Comprendre les fondements terminologiques et sémantiques de la transformation numérique éducative
-            </p>
-            <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 1.5rem 2rem; border-radius: var(--border-radius); display: inline-block; border: 1px solid rgba(255,255,255,0.2);">
-                <p style="font-size: 1.1rem; margin: 0; color: white;">
-                    <i class="fas fa-lightbulb" style="color: var(--accent); margin-right: 10px;"></i>
-                    Une base lexicale solide précède toute réflexion stratégique
+            <div class="hero-content" data-aos="fade-up">
+                <h1 class="hero-title">
+                    Définitions Clés
+                    <span>Concepts Essentiels du Numérique Éducatif</span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Plongez dans le lexique fondamental de l'éducation numérique. Ces définitions, enrichies d'exemples concrets, posent les bases pour une compréhension stratégique de la transformation éducative au Bénin et en Afrique.
                 </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Concepts Fondamentaux améliorés -->
-    <section class="section concepts-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Concepts Fondamentaux</h2>
-                <p class="section-subtitle">Définitions précises des termes essentiels du numérique éducatif</p>
-            </div>
-            
-            <div class="concepts-grid">
-                <!-- Informatique -->
-                <article class="concept-card animate-fade-in-up">
-                    <div class="concept-header">
-                        <div class="concept-icon">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                        <div class="concept-title-wrapper">
-                            <h3 class="concept-title">Informatique</h3>
-                            <div class="concept-subtitle">Science du traitement automatique de l'information</div>
-                        </div>
-                    </div>
-                    
-                    <p class="concept-definition">
-                        Discipline scientifique et technique qui traite du traitement automatique de l'information 
-                        par l'exécution de programmes informatiques hébergés par des dispositifs matériels (ordinateurs, 
-                        smartphones, serveurs). Elle englobe la conception, la mise en œuvre et l'utilisation des systèmes 
-                        informatiques, combinant aspects théoriques (algorithmique, complexité) et pratiques (développement, 
-                        architecture). L'informatique constitue le socle technologique de la transformation digitale.
-                    </p>
-                    
-                    <div class="concept-details">
-                        <h4><i class="fas fa-microscope"></i> Dimensions clés :</h4>
-                        <ul>
-                            <li><strong>Algorithmique :</strong> Art de concevoir des méthodes de résolution de problèmes</li>
-                            <li><strong>Architecture :</strong> Organisation matérielle des systèmes informatiques</li>
-                            <li><strong>Programmation :</strong> Traduction d'algorithmes en langage exécutable</li>
-                            <li><strong>Systèmes d'information :</strong> Gestion des données et flux informationnels</li>
-                            <li><strong>Réseaux :</strong> Interconnexion des systèmes pour la communication</li>
-                        </ul>
-                    </div>
-                </article>
-
-                <!-- Données Numériques -->
-                <article class="concept-card animate-fade-in-up">
-                    <div class="concept-header">
-                        <div class="concept-icon">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <div class="concept-title-wrapper">
-                            <h3 class="concept-title">Données Numériques</h3>
-                            <div class="concept-subtitle">Matériau brut de l'ère informationnelle</div>
-                        </div>
-                    </div>
-                    
-                    <p class="concept-definition">
-                        Représentations discrètes et formalisées d'informations, exprimées sous forme numérique 
-                        (binaire) et susceptibles d'être traitées automatiquement. Les données acquièrent de la valeur 
-                        lorsqu'elles sont organisées, contextualisées et interprétées, se transformant alors en 
-                        connaissances exploitables. Elles constituent le carburant essentiel de l'intelligence 
-                        artificielle et des systèmes décisionnels modernes. La gestion éthique des données est 
-                        devenue un enjeu civilisationnel majeur.
-                    </p>
-                    
-                    <div class="concept-details">
-                        <h4><i class="fas fa-layer-group"></i> Typologie des données :</h4>
-                        <ul>
-                            <li><strong>Données structurées :</strong> Tableaux, bases de données relationnelles</li>
-                            <li><strong>Données non structurées :</strong> Textes, images, vidéos, audio</li>
-                            <li><strong>Métadonnées :</strong> Données sur les données (date, auteur, format)</li>
-                            <li><strong>Open Data :</strong> Données publiques librement accessibles</li>
-                            <li><strong>Big Data :</strong> Volumes massifs de données nécessitant des traitements spécifiques</li>
-                        </ul>
-                    </div>
-                </article>
-
-                <!-- Technologies Numériques -->
-                <article class="concept-card animate-fade-in-up">
-                    <div class="concept-header">
-                        <div class="concept-icon">
-                            <i class="fas fa-microchip"></i>
-                        </div>
-                        <div class="concept-title-wrapper">
-                            <h3 class="concept-title">Technologies Numériques</h3>
-                            <div class="concept-subtitle">Ensemble des outils, systèmes et méthodes de traitement numérique</div>
-                        </div>
-                    </div>
-                    
-                    <p class="concept-definition">
-                        Concaténation d'outils, de techniques, de systèmes et de savoir-faire permettant la création, 
-                        le traitement, le stockage et la transmission d'informations sous forme numérique. Cette notion 
-                        dépasse le simple aspect matériel pour inclure les dimensions logicielles, méthodologiques et 
-                        organisationnelles nécessaires à l'exploitation optimale des potentialités numériques dans un 
-                        contexte donné. Les technologies numériques évoluent exponentiellement, nécessitant une veille 
-                        constante et une adaptation permanente.
-                    </p>
-                    
-                    <div class="concept-details">
-                        <h4><i class="fas fa-tools"></i> Catégories technologiques :</h4>
-                        <ul>
-                            <li><strong>Matériel (Hardware) :</strong> Ordinateurs, tablettes, serveurs, réseaux</li>
-                            <li><strong>Logiciel (Software) :</strong> Systèmes d'exploitation, applications, plateformes</li>
-                            <li><strong>Infrastructure :</strong> Cloud computing, centres de données, réseaux</li>
-                            <li><strong>Interfaces :</strong> Expérience utilisateur, accessibilité, ergonomie</li>
-                            <li><strong>Connectivité :</strong> Internet, réseaux sans fil, protocoles de communication</li>
-                        </ul>
-                    </div>
-                </article>
-
-                <!-- Intelligence Artificielle -->
-                <article class="concept-card animate-fade-in-up">
-                    <div class="concept-header">
-                        <div class="concept-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <div class="concept-title-wrapper">
-                            <h3 class="concept-title">Intelligence Artificielle (IA)</h3>
-                            <div class="concept-subtitle">Discipline visant à créer des systèmes capables de tâches cognitives</div>
-                        </div>
-                    </div>
-                    
-                    <p class="concept-definition">
-                        Champ interdisciplinaire des sciences cognitives et de l'informatique qui vise à développer 
-                        des systèmes capables d'accomplir des tâches nécessitant habituellement l'intelligence humaine. 
-                        L'IA moderne repose principalement sur l'apprentissage automatique (Machine Learning) et 
-                        l'apprentissage profond (Deep Learning), permettant aux systèmes d'améliorer leurs performances 
-                        par l'expérience sans être explicitement programmés pour chaque situation. L'IA éducative 
-                        représente une révolution pédagogique majeure, permettant la personnalisation des apprentissages.
-                    </p>
-                    
-                    <div class="concept-details">
-                        <h4><i class="fas fa-robot"></i> Sous-domaines de l'IA :</h4>
-                        <ul>
-                            <li><strong>IA Symbolique :</strong> Systèmes experts, raisonnement logique</li>
-                            <li><strong>Machine Learning :</strong> Apprentissage statistique à partir de données</li>
-                            <li><strong>Deep Learning :</strong> Réseaux neuronaux artificiels complexes</li>
-                            <li><strong>Traitement du Langage Naturel :</strong> Compréhension et génération de langage</li>
-                            <li><strong>Vision par ordinateur :</strong> Analyse et interprétation d'images</li>
-                        </ul>
-                    </div>
-                </article>
-
-                <!-- Transformation Digitale -->
-                <article class="concept-card animate-fade-in-up">
-                    <div class="concept-header">
-                        <div class="concept-icon">
-                            <i class="fas fa-sync-alt"></i>
-                        </div>
-                        <div class="concept-title-wrapper">
-                            <h3 class="concept-title">Transformation Digitale</h3>
-                            <div class="concept-subtitle">Processus d'intégration stratégique des technologies numériques</div>
-                        </div>
-                    </div>
-                    
-                    <p class="concept-definition">
-                        Processus stratégique et organisationnel d'adoption et d'intégration des technologies numériques 
-                        dans tous les aspects d'une organisation, modifiant fondamentalement ses opérations, sa culture 
-                        et sa proposition de valeur. Dans le contexte éducatif, cela implique une refonte des pratiques 
-                        pédagogiques, des modèles d'apprentissage et des systèmes de gestion scolaire. La transformation 
-                        digitale n'est pas un projet technologique mais un projet humain nécessitant un changement de 
-                        paradigme culturel et organisationnel.
-                    </p>
-                    
-                    <div class="concept-details">
-                        <h4><i class="fas fa-project-diagram"></i> Dimensions de la transformation :</h4>
-                        <ul>
-                            <li><strong>Culturelle :</strong> Changement des mentalités et pratiques</li>
-                            <li><strong>Organisationnelle :</strong> Restructuration des processus et rôles</li>
-                            <li><strong>Technologique :</strong> Déploiement d'infrastructures et outils adaptés</li>
-                            <li><strong>Pédagogique :</strong> Innovation dans les méthodes d'enseignement-apprentissage</li>
-                            <li><strong>Économique :</strong> Nouveaux modèles de financement et de valorisation</li>
-                        </ul>
-                    </div>
-                </article>
-
-                <!-- Littératie Numérique -->
-                <article class="concept-card animate-fade-in-up">
-                    <div class="concept-header">
-                        <div class="concept-icon">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <div class="concept-title-wrapper">
-                            <h3 class="concept-title">Littératie Numérique</h3>
-                            <div class="concept-subtitle">Compétence fondamentale du citoyen du XXIᵉ siècle</div>
-                        </div>
-                    </div>
-                    
-                    <p class="concept-definition">
-                        Ensemble de connaissances, d'aptitudes et d'attitudes nécessaires pour utiliser efficacement, 
-                        de manière critique et créative, les technologies numériques dans divers contextes (personnel, 
-                        professionnel, éducatif). Elle dépasse la simple maîtrise technique pour inclure la compréhension 
-                        des enjeux éthiques, sociaux et politiques du numérique. La littératie numérique constitue 
-                        désormais une compétence de base au même titre que la lecture, l'écriture et le calcul, 
-                        essentielle pour la participation active dans la société numérique.
-                    </p>
-                    
-                    <div class="concept-details">
-                        <h4><i class="fas fa-check-circle"></i> Composantes essentielles :</h4>
-                        <ul>
-                            <li><strong>Technique :</strong> Maîtrise des outils et plateformes</li>
-                            <li><strong>Critique :</strong> Évaluation de l'information, discernement</li>
-                            <li><strong>Créative :</strong> Production de contenu numérique</li>
-                            <li><strong>Éthique :</strong> Respect des droits, responsabilité digitale</li>
-                            <li><strong>Sécurité :</strong> Protection des données et identité numérique</li>
-                        </ul>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Importance Stratégique améliorée -->
-    <section class="section importance-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Importance Stratégique du Numérique en Éducation</h2>
-                <p class="section-subtitle">Pourquoi le numérique représente-t-il un enjeu majeur pour l'éducation contemporaine ?</p>
-            </div>
-            
-            <div class="importance-grid">
-                <div class="importance-card animate-fade-in-up">
-                    <h3><i class="fas fa-bullseye"></i> Impératif Économique</h3>
-                    <p>
-                        Préparation des apprenants aux métiers du futur et développement d'une économie numérique 
-                        compétitive. Le numérique représente 15% du PIB mondial et croît trois fois plus vite 
-                        que l'économie traditionnelle. Les compétences numériques deviennent indispensables sur 
-                        le marché du travail, avec 85% des métiers de 2030 n'existant pas encore aujourd'hui.
-                    </p>
-                </div>
                 
-                <div class="importance-card animate-fade-in-up">
-                    <h3><i class="fas fa-universal-access"></i> Équité et Accessibilité</h3>
-                    <p>
-                        Réduction des disparités géographiques et sociales par l'accès à des ressources éducatives 
-                        de qualité pour tous. Les plateformes numériques démocratisent l'accès au savoir, permettant 
-                        aux élèves des zones rurales de bénéficier des mêmes opportunités que ceux des centres urbains. 
-                        L'éducation numérique favorise l'inclusion des apprenants à besoins spécifiques.
-                    </p>
-                </div>
-                
-                <div class="importance-card animate-fade-in-up">
-                    <h3><i class="fas fa-lightbulb"></i> Innovation Pédagogique</h3>
-                    <p>
-                        Transformation des pratiques enseignantes et diversification des modalités d'apprentissage 
-                        (personnalisation, collaboration, immersion). Le numérique permet des approches pédagogiques 
-                        jusqu'alors impossibles : apprentissage par projet à distance, réalité virtuelle pour 
-                        l'immersion historique ou scientifique, simulations interactives complexes.
-                    </p>
-                </div>
-                
-                <div class="importance-card animate-fade-in-up">
-                    <h3><i class="fas fa-globe-africa"></i> Connectivité Globale</h3>
-                    <p>
-                        Intégration dans les réseaux de connaissances mondiaux et développement de compétences 
-                        interculturelles. Le numérique abolit les frontières géographiques dans l'éducation, 
-                        permettant des collaborations internationales, des échanges culturels et l'accès aux 
-                        meilleures ressources éducatives mondiales. Cette connectivité prépare les apprenants 
-                        à la citoyenneté mondiale.
-                    </p>
-                </div>
-                
-                <div class="importance-card animate-fade-in-up">
-                    <h3><i class="fas fa-chart-line"></i> Suivi et Évaluation</h3>
-                    <p>
-                        Amélioration du suivi individualisé des apprenants et de l'évaluation formative continue. 
-                        Les outils numériques permettent un feedback immédiat, une analyse fine des difficultés 
-                        et des progrès, et l'adaptation des parcours d'apprentissage en fonction des besoins 
-                        spécifiques de chaque élève.
-                    </p>
-                </div>
-                
-                <div class="importance-card animate-fade-in-up">
-                    <h3><i class="fas fa-shield-alt"></i> Résilience Éducative</h3>
-                    <p>
-                        Préparation aux crises et continuité pédagogique en toutes circonstances. La pandémie 
-                        de COVID-19 a démontré l'importance cruciale des solutions numériques pour assurer la 
-                        continuité éducative lors des fermetures d'établissements. Le numérique constitue une 
-                        assurance contre les disruptions éducatives futures.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Diagramme Conceptuel amélioré -->
-    <section class="section diagram-section">
-        <div class="container">
-            <div class="section-title">
-                <h2 class="diagram-title">Écosystème Numérique Éducatif</h2>
-                <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Articulation des concepts fondamentaux</p>
-            </div>
-            
-            <div class="diagram-container">
-                <div class="diagram">
-                    <div class="diagram-node main">
-                        <i class="fas fa-seedling"></i> Écosystème Numérique Éducatif
-                    </div>
-                    
-                    <div class="diagram-connector"></div>
-                    
-                    <div class="diagram-node">
-                        <i class="fas fa-cogs"></i> Infrastructure Technologique<br>
-                        <small>Matériel, réseaux, serveurs</small>
-                    </div>
-                    
-                    <div class="diagram-connector"></div>
-                    
-                    <div class="diagram-node">
-                        <i class="fas fa-brain"></i> Intelligence Artificielle<br>
-                        <small>Personnalisation, adaptation</small>
-                    </div>
-                    
-                    <div class="diagram-connector"></div>
-                    
-                    <div class="diagram-node">
-                        <i class="fas fa-users"></i> Communauté Éducative<br>
-                        <small>Apprenants, enseignants, parents</small>
-                    </div>
-                    
-                    <div class="diagram-connector"></div>
-                    
-                    <div class="diagram-node">
-                        <i class="fas fa-graduation-cap"></i> Compétences Numériques<br>
-                        <small>Littératie, pensée computationnelle</small>
-                    </div>
-                    
-                    <div class="diagram-connector"></div>
-                    
-                    <div class="diagram-node main">
-                        <i class="fas fa-rocket"></i> Transformation Pédagogique<br>
-                        <small>Innovation, efficacité, équité</small>
-                    </div>
-                </div>
-                
-                <div class="text-center mt-4">
-                    <div class="alert" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);">
-                        <i class="fas fa-info-circle"></i> Chaque composant interagit avec les autres pour former un écosystème cohérent et performant
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Glossaire amélioré -->
-    <section class="section glossaire-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Glossaire des Termes Clés</h2>
-                <p class="section-subtitle">Lexique numérique essentiel pour une compréhension approfondie</p>
-            </div>
-            
-            <div class="glossaire-container">
-                <div class="glossaire-grid">
-                    <div class="glossaire-item animate-fade-in-up">
-                        <div class="glossaire-term">Algorithmie</div>
-                        <div class="glossaire-def">Science de la conception et de l'analyse des algorithmes, méthodes de résolution de problèmes par séquences d'instructions.</div>
-                    </div>
-                    
-                    <div class="glossaire-item animate-fade-in-up">
-                        <div class="glossaire-term">Big Data</div>
-                        <div class="glossaire-def">Traitement d'ensembles de données massifs et complexes nécessitant des outils et méthodes spécifiques d'analyse.</div>
-                    </div>
-                    
-                    <div class="glossaire-item animate-fade-in-up">
-                        <div class="glossaire-term">Cloud Computing</div>
-                        <div class="glossaire-def">Prestation de services informatiques (serveurs, stockage, logiciels) via Internet, permettant un accès à la demande.</div>
-                    </div>
-                    
-                    <div class="glossaire-item animate-fade-in-up">
-                        <div class="glossaire-term">Cybersécurité</div>
-                        <div class="glossaire-def">Protection des systèmes informatiques contre les accès non autorisés, les attaques et les dommages.</div>
-                    </div>
-                    
-                    <div class="glossaire-item animate-fade-in-up">
-                        <div class="glossaire-term">Data Science</div>
-                        <div class="glossaire-def">Science extraiant des connaissances et des insights à partir de données structurées et non structurées.</div>
-                    </div>
-                    
-                    <div class="glossaire-item animate-fade-in-up">
-                        <div class="glossaire-term">E-learning</div>
-                        <div class="glossaire-def">Apprentissage via des ressources électroniques et médias numériques, souvent à distance.</div>
-                    </div>
-                    
-                    <div class="glossaire-item animate-fade-in-up">
-                        <div class="glossaire-term">Fracture Numérique</div>
-                        <div class="glossaire-def">Écart entre ceux qui ont un accès effectif aux technologies numériques et ceux qui en sont exclus.</div>
-                    </div>
-                    
-                    <div class="glossaire-item animate-fade-in-up">
-                        <div class="glossaire-term">IoT (Internet des Objets)</div>
-                        <div class="glossaire-def">Interconnexion via Internet d'objets physiques équipés de capteurs et de logiciels pour collecter et échanger des données.</div>
-                    </div>
-                    
-                    <div class="glossaire-item animate-fade-in-up">
-                        <div class="glossaire-term">MOOC</div>
-                        <div class="glossaire-def">Cours en ligne ouverts et massifs, accessibles gratuitement à un large public via Internet.</div>
-                    </div>
-                    
-                    <div class="glossaire-item animate-fade-in-up">
-                        <div class="glossaire-term">NFT (Token Non Fongible)</div>
-                        <div class="glossaire-def">Actif numérique unique vérifiable par blockchain, représentant la propriété d'un objet numérique.</div>
-                    </div>
-                    
-                    <div class="glossaire-item animate-fade-in-up">
-                        <div class="glossaire-term">Open Source</div>
-                        <div class="glossaire-def">Logiciel dont le code source est accessible et modifiable librement, favorisant la collaboration et l'innovation.</div>
-                    </div>
-                    
-                    <div class="glossaire-item animate-fade-in-up">
-                        <div class="glossaire-term">RGPD</div>
-                        <div class="glossaire-def">Règlement général sur la protection des données, cadre juridique européen pour la protection des données personnelles.</div>
-                    </div>
-                    
-                    <div class="glossaire-item animate-fade-in-up">
-                        <div class="glossaire-term">UI/UX Design</div>
-                        <div class="glossaire-def">Conception d'interface utilisateur (UI) et d'expérience utilisateur (UX) pour les applications et sites web.</div>
-                    </div>
-                    
-                    <div class="glossaire-item animate-fade-in-up">
-                        <div class="glossaire-term">Virtualisation</div>
-                        <div class="glossaire-def">Création de versions virtuelles de ressources physiques (serveurs, stockage, réseaux) pour une utilisation optimale.</div>
-                    </div>
-                    
-                    <div class="glossaire-item animate-fade-in-up">
-                        <div class="glossaire-term">Web 3.0</div>
-                        <div class="glossaire-def">Troisième génération du web, décentralisée, basée sur la blockchain et axée sur la propriété des données.</div>
-                    </div>
-                    
-                    <div class="glossaire-item animate-fade-in-up">
-                        <div class="glossaire-term">Zero Trust</div>
-                        <div class="glossaire-def">Modèle de sécurité qui ne fait confiance à aucun utilisateur ou dispositif à l'intérieur ou à l'extérieur du réseau.</div>
-                    </div>
-                </div>
-                
-                <div class="text-center mt-4">
-                    <a href="#" class="btn btn-primary" onclick="event.preventDefault(); alert('Téléchargement simulé - Le fichier PDF serait disponible ici');">
-                        <i class="fas fa-download"></i> Télécharger le glossaire complet (PDF)
+                <div class="hero-actions">
+                    <a href="#definitions" class="btn btn-lg">
+                        <i class="fas fa-book-open"></i> Explorer les Termes
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer amélioré -->
+    <!-- Section Définitions Principale -->
+    <section class="section" id="definitions">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Glossaire de l'Excellence Numérique</h2>
+                <p class="section-subtitle">Termes pivots pour guider votre parcours vers l'innovation pédagogique</p>
+            </div>
+            
+            <div class="definitions-grid">
+                <div class="definition-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="definition-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="definition-term">Éducation Numérique</h3>
+                    <p class="definition-text">
+                        L'éducation numérique englobe l'apprentissage en ligne, l'utilisation d'outils pédagogiques numériques et l'intégration de technologies éducatives pour enrichir l'expérience d'apprentissage.
+                    </p>
+                    <div class="definition-example">
+                        Exemple : Une plateforme en ligne comme Moodle permet aux élèves d'accéder à des cours interactifs depuis n'importe où, favorisant l'inclusion éducative au Bénin.
+                    </div>
+                    <div class="definition-source">
+                        <i class="fas fa-external-link-alt"></i> Source : BestCertifs
+                    </div>
+                </div>
+                
+                <div class="definition-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="definition-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="definition-term">Innovation Pédagogique Numérique (IPN)</h3>
+                    <p class="definition-text">
+                        L'innovation pédagogique numérique désigne les nouveaux outils disponibles mais aussi les processus complexes s'appuyant sur ces outils pour transformer les pratiques d'enseignement.
+                    </p>
+                    <div class="definition-example">
+                        Exemple : L'utilisation de la gamification via des apps comme Kahoot pour rendre les leçons plus engageantes et adaptatives.
+                    </div>
+                    <div class="definition-source">
+                        <i class="fas fa-external-link-alt"></i> Source : HAL & IGAENR
+                    </div>
+                </div>
+                
+                <div class="definition-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="definition-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3 class="definition-term">Transformation Numérique en Éducation</h3>
+                    <p class="definition-text">
+                        La transformation numérique dans l'enseignement supérieur suscite un large intérêt, notamment concernant l'intégration des technologies émergentes telles que l'IA et la réalité virtuelle.
+                    </p>
+                    <div class="definition-example">
+                        Exemple : La stratégie numérique 2023-2027 du Ministère de l'Éducation, axée sur la gouvernance, les compétences et l'IA éthique.
+                    </div>
+                    <div class="definition-source">
+                        <i class="fas fa-external-link-alt"></i> Source : Ministère de l'Éducation Nationale
+                    </div>
+                </div>
+                
+                <div class="definition-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="definition-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="definition-term">Intelligence Artificielle en Éducation</h3>
+                    <p class="definition-text">
+                        L'intelligence artificielle (IA) transforme profondément le domaine de l'enseignement supérieur en soutenant des projets innovants et éthiques pour une personnalisation de l'apprentissage.
+                    </p>
+                    <div class="definition-example">
+                        Exemple : Des outils comme ChatGPT pour générer des plans de leçons adaptés, ou des systèmes de tutorat intelligent pour les élèves en difficulté.
+                    </div>
+                    <div class="definition-source">
+                        <i class="fas fa-external-link-alt"></i> Source : Guide Québec sur l'IA
+                    </div>
+                </div>
+                
+                <div class="definition-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="definition-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="definition-term">Modèle d'Intégration du Numérique</h3>
+                    <p class="definition-text">
+                        Différents modèles d'intégration du numérique permettent de penser l'intégration des outils numériques en éducation dans une perspective systémique et pédagogique.
+                    </p>
+                    <div class="definition-example">
+                        Exemple : Le modèle TPACK (Technological Pedagogical Content Knowledge) pour aligner technologie, pédagogie et contenu.
+                    </div>
+                    <div class="definition-source">
+                        <i class="fas fa-external-link-alt"></i> Source : Revue Médiations
+                    </div>
+                </div>
+                
+                <div class="definition-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="definition-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="definition-term">Technologie au Service de l'Éducation</h3>
+                    <p class="definition-text">
+                        Le déploiement et l'usage responsables, éclairés et stratégiques des technologies au service de l'éducation pour un impact positif et inclusif.
+                    </p>
+                    <div class="definition-example">
+                        Exemple : Initiatives comme celles du GPE pour des outils numériques accessibles en Afrique, favorisant l'équité éducative.
+                    </div>
+                    <div class="definition-source">
+                        <i class="fas fa-external-link-alt"></i> Source : Global Partnership for Education
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quick-nav-def" data-aos="fade-up" data-aos-delay="700">
+                <a href="avantages-risques.html" class="quick-nav-link btn-outline">→ Analyse Stratégique</a>
+                <a href="technologies.html" class="quick-nav-link btn-outline">→ Technologies Avancées</a>
+                <a href="index.html" class="quick-nav-link btn-outline">← Retour Accueil</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Adaptées -->
+    <section class="section stats-def">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2 style="color: var(--light);">Fondations Conceptuelles</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">
+                    Ces définitions ancrent notre vision d'une éducation transformative
+                </p>
+            </div>
+            
+            <div class="stats-grid-def">
+                <div class="stat-item-def" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-value-def counter" data-target="6">0</div>
+                    <div class="stat-label-def">Termes Clés</div>
+                </div>
+                
+                <div class="stat-item-def" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-value-def counter" data-target="20">0+</div>
+                    <div class="stat-label-def">Références Expertes</div>
+                </div>
+                
+                <div class="stat-item-def" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-value-def counter" data-target="100">0%</div>
+                    <div class="stat-label-def">Impact Théorique</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Identique) -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="./assets/images/logo-white.png" alt="Logo de Digit-School Process" style="height: 60px; margin-bottom: 1rem;">
+                        <img src="./assets/images/logo-premium-white.png" alt="Logo Digit-School Process 2025 Blanc">
                     </div>
                     <h4 class="footer-title">Digit-School Process 2025</h4>
-                    <p style="opacity: 0.9; line-height: 1.6;">
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 0.95rem;">
                         Organisé par l'école "Les Bulles de Joie"<br>
-                        Slogan : "Amour • Travail • Rigueur • Créativité"
+                        <span style="color: var(--gold); font-weight: 600;">
+                            Amour • Travail • Rigueur • Créativité • Excellence
+                        </span>
                     </p>
                     <div class="social-icons">
-                        <a href="https://facebook.com/lesbullesdejoie" target="_blank" aria-label="Facebook" class="social-icon">
+                        <a href="https://facebook.com/lesbullesdejoie" target="_blank" aria-label="Facebook Les Bulles de Joie" class="social-icon">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="https://instagram.com/lesbullesdejoie" target="_blank" aria-label="Instagram" class="social-icon">
+                        <a href="https://instagram.com/lesbullesdejoie" target="_blank" aria-label="Instagram Les Bulles de Joie" class="social-icon">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://www.tiktok.com/@cspblesbullesdejoie" target="_blank" aria-label="TikTok" class="social-icon">
+                        <a href="https://www.tiktok.com/@cspblesbullesdejoie" target="_blank" aria-label="TikTok Les Bulles de Joie" class="social-icon">
                             <i class="fab fa-tiktok"></i>
                         </a>
-                        <a href="https://les-bulles-de-joie.onrender.com/" target="_blank" aria-label="Site web" class="social-icon">
+                        <a href="https://les-bulles-de-joie.onrender.com/" target="_blank" aria-label="Site web Les Bulles de Joie" class="social-icon">
                             <i class="fas fa-globe"></i>
-                        </a>
-                        <a href="https://wa.me/2290197919452" target="_blank" aria-label="WhatsApp" class="social-icon">
-                            <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
                 </div>
                 
                 <div class="footer-section">
-                    <h4 class="footer-title">Contact Rapide</h4>
+                    <h4 class="footer-title">Contact</h4>
                     <ul class="footer-links">
                         <li><a href="tel:+2290197919452"><i class="fas fa-phone"></i> +229 01 97 91 94 52</a></li>
                         <li><a href="mailto:lesbullesdejoie@gmail.com"><i class="fas fa-envelope"></i> lesbullesdejoie@gmail.com</a></li>
-                        <li><a href="mailto:codjosamuelstein@gmail.com"><i class="fas fa-user-tie"></i> codjosamuelstein@gmail.com</a></li>
                         <li><span><i class="fas fa-map-marker-alt"></i> Parakou - Zongo 2, Bénin</span></li>
                     </ul>
                 </div>
@@ -1063,105 +472,128 @@
                     <h4 class="footer-title">Navigation</h4>
                     <ul class="footer-links">
                         <li><a href="index.html"><i class="fas fa-chevron-right"></i> Accueil</a></li>
-                        <li><a href="avantages-risques.html"><i class="fas fa-chevron-right"></i> Analyse</a></li>
-                        <li><a href="technologies.html"><i class="fas fa-chevron-right"></i> Technologies Éducatives</a></li>
-                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Scientifique</a></li>
+                        <li><a href="definitions.html"><i class="fas fa-chevron-right"></i> Définitions</a></li>
+                        <li><a href="avantages-risques.html"><i class="fas fa-chevron-right"></i> Analyse Stratégique</a></li>
+                        <li><a href="precautions-lois.html"><i class="fas fa-chevron-right"></i> Cadre Légal</a></li>
+                        <li><a href="technologies.html"><i class="fas fa-chevron-right"></i> Technologies</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4 class="footer-title">Informations École</h4>
+                    <h4 class="footer-title">École d'Excellence</h4>
                     <ul class="footer-links">
-                        <li><span><i class="fas fa-school"></i> École privée agréée</span></li>
-                        <li><span><i class="fas fa-users"></i> ~350 élèves</span></li>
-                        <li><span><i class="fas fa-star"></i> 4.9/5 (127 avis)</span></li>
+                        <li><span><i class="fas fa-school"></i> Institution Agréée</span></li>
+                        <li><span><i class="fas fa-users"></i> 350+ Élèves</span></li>
+                        <li><span><i class="fas fa-star"></i> 4.9/5 Excellence Académique</span></li>
                         <li><span><i class="fas fa-language"></i> Bilingue Français-Anglais</span></li>
-                        <li><span><i class="fas fa-calendar-alt"></i> Fondée en 2017</span></li>
+                        <li><span><i class="fas fa-award"></i> Prix d'Excellence 2023</span></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; <span class="current-year">2025</span> Digit-School Process | Organisé par l'école "Les Bulles de Joie" | Parakou, Bénin</p>
+                <p>&copy; 2025 Digit-School Process | Événement organisé par "Les Bulles de Joie" | Parakou, Bénin</p>
                 <p>Agréments : 2021 N°018/MASM/DC/SGM/DGAS/DFEA/SA/021SGG21 | 2022 N°045/MEMP/DC/SGM/DPP/SP/0223SGG22</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="js/main.js"></script>
-    
+    <!-- Scripts (Identiques) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Page-specific scripts améliorés
         document.addEventListener('DOMContentLoaded', function() {
-            // Animate concept cards with delay
-            const conceptCards = document.querySelectorAll('.concept-card');
-            conceptCards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.1}s`;
+            AOS.init({ duration: 800, once: false, offset: 100, easing: 'ease-out-cubic', mirror: true });
+
+            // Dark Mode
+            const themeToggle = document.getElementById('themeToggle');
+            const html = document.documentElement;
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            html.setAttribute('data-theme', currentTheme);
+            themeToggle.querySelector('i').className = currentTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            themeToggle.addEventListener('click', () => {
+                const newTheme = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+                html.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                themeToggle.querySelector('i').className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
             });
-            
-            // Animate glossary items
-            const glossaryItems = document.querySelectorAll('.glossaire-item');
-            glossaryItems.forEach((item, index) => {
-                item.style.animationDelay = `${index * 0.05}s`;
-            });
-            
-            // Animate importance cards
-            const importanceCards = document.querySelectorAll('.importance-card');
-            importanceCards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.1}s`;
-            });
-            
-            // Diagram interaction amélioré
-            const diagramNodes = document.querySelectorAll('.diagram-node');
-            diagramNodes.forEach(node => {
-                node.addEventListener('mouseenter', function() {
-                    this.style.transform = 'scale(1.05)';
-                    this.style.boxShadow = '0 15px 40px rgba(0,0,0,0.2)';
-                    this.style.zIndex = '10';
+
+            // Menu Mobile
+            const mobileBtn = document.getElementById('mobileMenuBtn');
+            const nav = document.getElementById('mainNav');
+            const overlay = document.getElementById('menuOverlay');
+            function toggleMenu() {
+                nav.classList.toggle('active');
+                overlay.classList.toggle('active');
+                mobileBtn.innerHTML = nav.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+                document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+            }
+            mobileBtn.addEventListener('click', toggleMenu);
+            overlay.addEventListener('click', toggleMenu);
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('active');
+                    overlay.classList.remove('active');
+                    mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    document.body.style.overflow = '';
                 });
-                
-                node.addEventListener('mouseleave', function() {
-                    this.style.transform = 'scale(1)';
-                    this.style.boxShadow = 'var(--shadow-medium)';
-                    this.style.zIndex = '1';
-                });
             });
-            
-            // Effet de parallaxe léger pour l'héros
-            window.addEventListener('scroll', function() {
-                const hero = document.querySelector('.definitions-hero');
-                if (hero) {
-                    const scrolled = window.pageYOffset;
-                    const rate = scrolled * -0.5;
-                    hero.style.backgroundPosition = `center ${rate}px`;
-                }
+
+            // Header Scroll
+            const header = document.querySelector('.main-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) header.classList.add('scrolled');
+                else header.classList.remove('scrolled');
             });
-            
-            // Animation au scroll pour les éléments
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-fade-in-up');
+
+            // Compteurs
+            const counters = document.querySelectorAll('.counter');
+            if (counters.length) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const counter = entry.target;
+                            const target = parseInt(counter.dataset.target);
+                            const duration = 1500;
+                            const step = target / (duration / 16);
+                            let current = 0;
+                            const updateCounter = () => {
+                                current += step;
+                                if (current < target) {
+                                    counter.textContent = Math.floor(current);
+                                    requestAnimationFrame(updateCounter);
+                                } else {
+                                    counter.textContent = target + (target === 100 ? '%' : target === 20 ? '+' : '');
+                                }
+                            };
+                            updateCounter();
+                            observer.unobserve(counter);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                counters.forEach(counter => observer.observe(counter));
+            }
+
+            // Smooth Scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                 });
-            }, observerOptions);
-            
-            // Observer les cartes
-            document.querySelectorAll('.concept-card, .importance-card, .glossaire-item').forEach(el => {
-                observer.observe(el);
             });
-            
-            // Mise à jour automatique de l'année dans le footer
-            const yearElement = document.querySelector('.current-year');
-            if (yearElement) {
-                yearElement.textContent = new Date().getFullYear();
-            }
+
+            // Resize Menu
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    nav.classList.remove('active');
+                    overlay.classList.remove('active');
+                    mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    document.body.style.overflow = '';
+                }
+            });
         });
     </script>
 </body>
