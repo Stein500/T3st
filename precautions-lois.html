@@ -3,124 +3,329 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadre Légal & Éthique | Digit-School Process 2025</title>
+    <title>Cadre Légal & Éthique | Kit Conformité - Digit-School Process 2025</title>
     
     <!-- SEO Meta -->
-    <meta name="description" content="Cadre légal béninois régissant le numérique éducatif : lois, régulations, protection des données, cybersécurité et éthique numérique.">
-    <meta name="keywords" content="lois numérique Bénin, cadre légal éducation, protection données élèves, cybersécurité école, éthique numérique, RGPD Afrique">
-    <meta name="author" content="Digit-School Process 2025">
+    <meta name="description" content="Kit pratique de conformité numérique pour écoles béninoises : lois simplifiées, chartes téléchargeables, outils gratuits pour appliquer facilement les lois 2025.">
+    <meta name="keywords" content="conformité numérique écoles Bénin, kit juridique gratuit, charte numérique téléchargeable, lois simplifiées enseignants, protection données élèves, IA éthique primaire">
+    <meta name="author" content="Digit-School Process 2025 - Comité Scientifique d'Excellence">
+    <meta name="robots" content="index, follow">
     
-    <!-- Fonts & Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Kit Conformité Numérique Écoles | Digit-School Process 2025">
+    <meta property="og:description" content="Tous les documents nécessaires pour la conformité numérique de votre école : chartes, consentements, checklists, modèles gratuits.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./assets/images/social-preview-legal.jpg">
+    <meta property="og:url" content="https://digit-school-process.bj/precautions-lois.html">
+    <meta property="og:locale" content="fr_BJ">
     
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kit Conformité Numérique Écoles | Digit-School Process 2025">
+    <meta name="twitter:description" content="Documents pratiques pour appliquer les lois numériques dans votre école.">
+    <meta name="twitter:image" content="./assets/images/social-preview-legal.jpg">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://digit-school-process.bj/precautions-lois.html">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
     
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- CSS Principal -->
     <style>
-        /* Hero Section améliorée */
-        .legal-hero {
-            background: linear-gradient(135deg, 
-                rgba(33, 150, 243, 0.95) 0%, 
-                rgba(13, 71, 161, 0.9) 100%),
-                url('./assets/images/about.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 140px 0 60px;
-            text-align: center;
+        /* ===== VARIABLES CSS ===== */
+        :root {
+            --primary: #1E40AF;
+            --primary-light: #3B82F6;
+            --secondary: #059669;
+            --accent: #10B981;
+            --gold: #F59E0B;
+            --success: #059669;
+            --warning: #D97706;
+            --danger: #DC2626;
+            --info: #1E40AF;
+            
+            --light: #FFFFFF;
+            --gray-light: #F8FAFC;
+            --gray: #E2E8F0;
+            --gray-dark: #64748B;
+            --dark: #0F172A;
+            --darkest: #020617;
+            
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            
+            --header-height: 80px;
+        }
+
+        [data-theme="dark"] {
+            --light: #0F172A;
+            --gray-light: #1E293B;
+            --gray: #334155;
+            --gray-dark: #94A3B8;
+            --dark: #F1F5F9;
+            --darkest: #FFFFFF;
+        }
+
+        /* ===== RESET & BASE ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: var(--header-height); }
+        body { font-family: var(--font-body); color: var(--dark); background: var(--light); line-height: 1.6; }
+
+        /* ===== TYPO ===== */
+        h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); color: var(--primary); text-align: center; }
+        h2 { font-size: clamp(1.875rem, 4vw, 2.75rem); color: var(--primary); position: relative; display: inline-block; }
+        h2::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 60px; height: 4px; background: linear-gradient(90deg, var(--secondary), var(--accent)); border-radius: 2px; }
+        h3 { font-size: clamp(1.25rem, 3vw, 1.875rem); color: var(--primary); }
+        p { margin-bottom: 1rem; font-size: 1rem; line-height: 1.6; color: var(--dark); }
+        a { color: var(--primary); text-decoration: none; transition: all 0.3s ease; }
+        a:hover { color: var(--accent); text-decoration: underline; }
+
+        /* ===== LAYOUT ===== */
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+        .section { padding: 4rem 0; }
+        .section-title { text-align: center; margin-bottom: 3rem; }
+        .section-subtitle { font-size: 1.125rem; color: var(--gray-dark); max-width: 700px; margin: 0.75rem auto 0; }
+
+        /* ===== HEADER ===== */
+        .main-header {
+            position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height);
+            background: var(--light); border-bottom: 1px solid var(--gray); z-index: 1000;
+            box-shadow: var(--shadow-md); transition: all 0.4s ease;
+        }
+        .main-header.scrolled { height: 70px; backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.95); }
+        [data-theme="dark"] .main-header.scrolled { background: rgba(15, 23, 42, 0.95); }
+        
+        .header-container { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            height: 100%; 
+        }
+        
+        .logo-brand { 
+            display: flex; 
+            align-items: center; 
+            gap: 1rem; 
+            text-decoration: none; 
+        }
+        
+        .logo-img { 
+            height: 45px; 
+            width: auto; 
+            transition: transform 0.3s ease; 
+        }
+        
+        .logo-brand:hover .logo-img { 
+            transform: scale(1.05); 
+        }
+        
+        .logo-text { 
+            display: flex; 
+            flex-direction: column; 
+            line-height: 1.1; 
+        }
+        
+        .logo-text .main { 
+            font-family: var(--font-heading); 
+            font-weight: 700; 
+            font-size: 1.25rem; 
+            color: var(--primary); 
+        }
+        
+        .logo-text .sub { 
+            font-size: 0.75rem; 
+            color: var(--accent); 
+            font-weight: 600; 
+        }
+
+        /* ===== NAVIGATION ===== */
+        .main-nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .theme-toggle { 
+            background: none; 
+            border: 1px solid var(--gray); 
+            color: var(--dark); 
+            padding: 0.5rem; 
+            border-radius: 50%; 
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+            font-size: 1.1rem; 
+        }
+        
+        .theme-toggle:hover { 
+            background: var(--gray-light); 
+            border-color: var(--primary); 
+        }
+        
+        .mobile-menu-btn { 
+            display: none; 
+            background: none; 
+            border: none; 
+            color: var(--primary); 
+            font-size: 1.5rem; 
+            cursor: pointer; 
+            padding: 0.5rem; 
+            z-index: 1001;
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu-btn:hover {
+            transform: rotate(90deg);
+        }
+        
+        .main-nav { 
+            display: flex; 
+            align-items: center; 
+        }
+        
+        .nav-list { 
+            display: flex; 
+            list-style: none; 
+            gap: 1.5rem; 
+        }
+        
+        .nav-link { 
+            font-family: var(--font-heading); 
+            font-weight: 600; 
+            font-size: 0.95rem; 
+            color: var(--dark); 
+            padding: 0.75rem 1rem; 
+            border-radius: var(--border-radius); 
+            transition: all 0.3s ease; 
+            text-decoration: none;
+        }
+        
+        .nav-link:hover { 
+            background: var(--gray-light); 
+            color: var(--primary); 
+            transform: translateY(-2px); 
+            text-decoration: none;
+        }
+        
+        .nav-link.active { 
+            background: linear-gradient(135deg, var(--primary), var(--primary-light)); 
+            color: var(--light); 
+        }
+        
+        .nav-link i { 
+            margin-right: 0.5rem; 
+        }
+        
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            top: var(--header-height);
+            left: 0;
+            width: 100%;
+            height: calc(100vh - var(--header-height));
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 999;
+            backdrop-filter: blur(5px);
+            transition: opacity 0.3s ease;
+        }
+        
+        .menu-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 70vh;
+            padding: calc(var(--header-height) + 2rem) 0 4rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--light);
+            display: flex;
+            align-items: center;
             position: relative;
             overflow: hidden;
         }
         
-        .legal-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('./assets/images/logo-white.png') no-repeat center;
-            background-size: 400px;
-            opacity: 0.05;
-            animation: rotateLogo 60s linear infinite;
-        }
-        
-        @keyframes rotateLogo {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .legal-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
-            margin-bottom: 1rem;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        /* Legal Framework amélioré */
-        .framework-section {
-            background: linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%);
-            position: relative;
-        }
-        
-        .framework-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('./assets/images/logo.png') no-repeat;
-            background-size: 300px;
-            background-position: right -50px top -50px;
-            opacity: 0.03;
-        }
-        
-        .framework-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
             position: relative;
             z-index: 1;
         }
         
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--light);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+            opacity: 0.95;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .glass-badge {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            padding: 0.75rem 1.5rem;
+            color: var(--light);
+            display: inline-block;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ===== FRAMEWORK GRID ===== */
+        .framework-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
         .law-card {
-            background: white;
-            border-radius: var(--border-radius-xl);
+            background: var(--light);
+            border-radius: var(--border-radius-lg);
             padding: 2.5rem;
-            box-shadow: var(--shadow-hard);
-            position: relative;
-            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray);
+            transition: all 0.3s ease;
             border-top: 6px solid var(--primary);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            height: 100%;
         }
         
         .law-card:hover {
-            transform: translateY(-10px) rotateX(5deg);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-        }
-        
-        .law-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, transparent 50%, rgba(33, 150, 243, 0.1) 50%);
-            transition: all 0.3s ease;
-        }
-        
-        .law-card:hover::after {
-            width: 150px;
-            height: 150px;
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
         }
         
         .law-icon {
@@ -131,63 +336,77 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--light);
             font-size: 2.2rem;
             margin-bottom: 1.5rem;
-            box-shadow: var(--shadow-medium);
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .law-card:hover .law-icon {
-            transform: scale(1.1) rotate(10deg);
         }
         
         .law-card h3 {
             color: var(--primary);
             font-size: 1.6rem;
             margin-bottom: 1rem;
-            position: relative;
-            z-index: 1;
         }
         
         .law-reference {
             display: inline-block;
             padding: 0.5rem 1rem;
-            background: rgba(33, 150, 243, 0.1);
+            background: rgba(30, 64, 175, 0.1);
             color: var(--info);
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: 600;
             margin-bottom: 1rem;
-            border: 1px solid rgba(33, 150, 243, 0.2);
-            position: relative;
-            z-index: 1;
         }
         
         .law-content {
             color: var(--dark);
             line-height: 1.7;
             margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 1;
+        }
+        
+        .law-content strong {
+            color: var(--primary);
+        }
+        
+        .law-example {
+            background: var(--gray-light);
+            padding: 1.25rem;
+            border-radius: var(--border-radius);
+            margin: 1rem 0;
+            border-left: 4px solid var(--info);
+        }
+        
+        .law-example strong {
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .list-check {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .list-check li {
+            padding: 0.25rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .list-check li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: bold;
         }
         
         .law-requirements {
-            background: linear-gradient(135deg, var(--gray-light), white);
+            background: var(--gray-light);
             padding: 1.5rem;
             border-radius: var(--border-radius);
             margin-top: 1.5rem;
             border-left: 4px solid var(--warning);
-            position: relative;
-            z-index: 1;
-            transition: all 0.3s ease;
-        }
-        
-        .law-card:hover .law-requirements {
-            border-left-color: var(--accent);
-            transform: translateX(5px);
         }
         
         .law-requirements h4 {
@@ -197,70 +416,327 @@
             align-items: center;
             gap: 0.5rem;
         }
-        
-        .law-card:hover .law-requirements h4 {
-            color: var(--accent);
+
+        /* ===== TABLEAU "CE QUE JE PEUX/NON FAIRE" ===== */
+        .legal-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--light);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
         }
         
-        /* Precautions Grid amélioré */
-        .precautions-section {
-            background: white;
+        .legal-table th,
+        .legal-table td {
+            padding: 1.25rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--gray);
+            color: var(--dark);
+        }
+        
+        .legal-table th {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--light);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .legal-table tr:hover {
+            background: var(--gray-light);
+        }
+        
+        .legal-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .status-legal {
+            background: rgba(5, 150, 105, 0.15);
+            color: var(--success);
+            border: 1px solid rgba(5, 150, 105, 0.3);
+        }
+        
+        .status-conditional {
+            background: rgba(217, 119, 6, 0.15);
+            color: var(--warning);
+            border: 1px solid rgba(217, 119, 6, 0.3);
+        }
+        
+        .status-illegal {
+            background: rgba(220, 38, 38, 0.15);
+            color: var(--danger);
+            border: 1px solid rgba(220, 38, 38, 0.3);
+        }
+
+        /* ===== KIT PRATIQUE ===== */
+        .kit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .kit-card {
+            background: var(--light);
+            border-radius: var(--border-radius-lg);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray);
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
         
-        .precautions-section::before {
+        .kit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+        
+        .kit-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            width: 4px;
             height: 100%;
-            background: url('./assets/images/logo.png') no-repeat;
-            background-size: 200px;
-            background-position: left -50px bottom -50px;
-            opacity: 0.03;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
         }
         
+        .kit-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .kit-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .kit-card p {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .sheet-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--gray-dark);
+        }
+        
+        .sheet-duration {
+            background: var(--gray-light);
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+        }
+
+        /* ===== FICHES PRATIQUES ===== */
+        .practice-sheets {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .practice-sheet {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray);
+            transition: all 0.3s ease;
+        }
+        
+        .practice-sheet:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary);
+        }
+        
+        .practice-sheet h4 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .practice-sheet p {
+            color: var(--gray-dark);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        /* ===== CALCULATEUR ===== */
+        .calculator-container {
+            background: var(--light);
+            border-radius: var(--border-radius-lg);
+            padding: 3rem;
+            box-shadow: var(--shadow-md);
+            margin-top: 2rem;
+            border: 1px solid var(--gray);
+        }
+        
+        .calculator-question {
+            margin-bottom: 2rem;
+        }
+        
+        .calculator-question label {
+            display: block;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .calculator-question select {
+            width: 100%;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--gray);
+            background: var(--light);
+            color: var(--dark);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .calculator-question select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+        }
+        
+        .calculator-result {
+            background: var(--gray-light);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-top: 2rem;
+            display: none;
+        }
+        
+        .score-display {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .recommendations-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .recommendations-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--gray);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            color: var(--dark);
+        }
+        
+        .recommendations-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .recommendations-list li i {
+            color: var(--success);
+            margin-top: 0.25rem;
+        }
+
+        /* ===== IA ÉTHIQUE ===== */
+        .ai-ethics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .ai-ethics-card {
+            background: var(--light);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray);
+            transition: all 0.3s ease;
+        }
+        
+        .ai-ethics-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
+        
+        .ai-ethics-card h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .ai-ethics-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .ai-ethics-card ul li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            color: var(--dark);
+        }
+        
+        .ai-ethics-card ul li i {
+            color: var(--success);
+            margin-top: 0.25rem;
+            flex-shrink: 0;
+        }
+
+        /* ===== PRÉCAUTIONS GRID ===== */
         .precautions-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            position: relative;
-            z-index: 1;
         }
         
         .precaution-card {
-            background: linear-gradient(135deg, var(--gray-light), white);
+            background: var(--light);
             border-radius: var(--border-radius-lg);
             padding: 2.5rem;
             position: relative;
             overflow: hidden;
-            border: 2px solid var(--gray);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid var(--gray);
+            transition: all 0.3s ease;
             cursor: pointer;
+            box-shadow: var(--shadow-sm);
         }
         
         .precaution-card:hover {
             border-color: var(--primary);
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: var(--shadow-hard);
-        }
-        
-        .precaution-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent 60%, rgba(0, 168, 150, 0.05) 60%);
-            z-index: 0;
-            transition: all 0.3s ease;
-        }
-        
-        .precaution-card:hover::before {
-            background: linear-gradient(45deg, transparent 40%, rgba(0, 168, 150, 0.1) 40%);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
         }
         
         .precaution-card h3 {
@@ -270,21 +746,20 @@
             color: var(--primary);
             margin-bottom: 1rem;
             font-size: 1.4rem;
-            position: relative;
-            z-index: 1;
         }
         
-        .precaution-card:hover h3 {
-            color: var(--secondary);
+        .precaution-card p {
+            color: var(--dark);
         }
         
-        .precaution-card h3 i {
-            color: var(--secondary);
-            transition: all 0.3s ease;
-        }
-        
-        .precaution-card:hover h3 i {
-            transform: scale(1.2);
+        .precaution-example {
+            background: var(--gray-light);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            color: var(--dark);
+            border-left: 3px solid var(--success);
         }
         
         .precaution-level {
@@ -296,74 +771,42 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin-top: 1rem;
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .precaution-card:hover .precaution-level {
-            transform: translateY(-2px);
         }
         
         .level-high {
-            background: rgba(244, 67, 54, 0.1);
+            background: rgba(220, 38, 38, 0.1);
             color: var(--danger);
-            border: 1px solid rgba(244, 67, 54, 0.2);
+            border: 1px solid rgba(220, 38, 38, 0.2);
         }
         
         .level-medium {
-            background: rgba(255, 193, 7, 0.1);
+            background: rgba(217, 119, 6, 0.1);
             color: var(--warning);
-            border: 1px solid rgba(255, 193, 7, 0.2);
+            border: 1px solid rgba(217, 119, 6, 0.2);
         }
         
         .level-low {
-            background: rgba(76, 175, 80, 0.1);
+            background: rgba(5, 150, 105, 0.1);
             color: var(--success);
-            border: 1px solid rgba(76, 175, 80, 0.2);
+            border: 1px solid rgba(5, 150, 105, 0.2);
         }
-        
-        /* Ethics Section améliorée */
+
+        /* ===== SECTION ÉTHIQUE ===== */
         .ethics-section {
-            background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
-            color: white;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            color: var(--light);
             position: relative;
             overflow: hidden;
-        }
-        
-        .ethics-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('./assets/images/logo-white.png') no-repeat center;
-            background-size: 500px;
-            opacity: 0.05;
-            animation: pulseEthics 20s infinite alternate;
-        }
-        
-        @keyframes pulseEthics {
-            0% { opacity: 0.03; transform: scale(1); }
-            100% { opacity: 0.08; transform: scale(1.1); }
         }
         
         .ethics-charter {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
-            border-radius: var(--border-radius-xl);
+            border-radius: var(--border-radius-lg);
             padding: 3rem;
             border: 1px solid rgba(255, 255, 255, 0.2);
             position: relative;
             z-index: 1;
-            transition: all 0.3s ease;
-        }
-        
-        .ethics-charter:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
         
         .ethics-principles {
@@ -377,40 +820,21 @@
             text-align: center;
             padding: 2rem;
             background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
             border-radius: var(--border-radius-lg);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
+            transition: all 0.3s ease;
         }
         
         .principle-item:hover {
             background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-        }
-        
-        .principle-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-        
-        .principle-item:hover::before {
-            transform: scaleX(1);
+            transform: translateY(-5px);
         }
         
         .principle-icon {
             width: 70px;
             height: 70px;
-            background: white;
+            background: var(--light);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -418,38 +842,10 @@
             color: var(--secondary);
             font-size: 2rem;
             margin: 0 auto 1.5rem;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 1;
+            box-shadow: var(--shadow-md);
         }
-        
-        .principle-item:hover .principle-icon {
-            transform: scale(1.1) rotate(15deg);
-            background: var(--accent);
-            color: white;
-        }
-        
-        /* Implementation Guide amélioré */
-        .implementation-section {
-            background: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .implementation-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 300px;
-            height: 300px;
-            background: url('./assets/images/logo.png') no-repeat;
-            background-size: contain;
-            opacity: 0.03;
-            transform: translate(100px, -100px);
-        }
-        
+
+        /* ===== IMPLEMENTATION STEPS ===== */
         .implementation-steps {
             max-width: 800px;
             margin: 0 auto;
@@ -464,11 +860,6 @@
             padding-bottom: 3rem;
             border-bottom: 1px solid var(--gray);
             position: relative;
-            transition: all 0.3s ease;
-        }
-        
-        .step:hover {
-            padding-left: 1rem;
         }
         
         .step:last-child {
@@ -485,95 +876,253 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--light);
             font-size: 1.5rem;
             font-weight: 700;
             flex-shrink: 0;
-            box-shadow: var(--shadow-medium);
-            transition: all 0.3s ease;
-        }
-        
-        .step:hover .step-number {
-            transform: scale(1.1) rotate(10deg);
+            box-shadow: var(--shadow-md);
         }
         
         .step-content h3 {
             color: var(--primary);
             margin-bottom: 0.75rem;
-            transition: all 0.3s ease;
         }
         
-        .step:hover .step-content h3 {
-            color: var(--secondary);
+        .step-example {
+            background: var(--gray-light);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            color: var(--dark);
+            border-left: 3px solid var(--info);
         }
         
         .step-duration {
             display: inline-block;
             padding: 0.35rem 1rem;
-            background: rgba(33, 150, 243, 0.1);
+            background: rgba(30, 64, 175, 0.1);
             color: var(--info);
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 600;
             margin-top: 0.5rem;
-            transition: all 0.3s ease;
         }
         
-        .step:hover .step-duration {
-            background: rgba(33, 150, 243, 0.2);
-            transform: translateY(-2px);
+        .step::before {
+            content: '';
+            position: absolute;
+            top: 70px;
+            left: 29px;
+            width: 2px;
+            height: calc(100% - 60px);
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
         }
         
-        /* Logo amélioré */
-        .logo-brand {
-            display: flex;
+        .step:last-child::before {
+            display: none;
+        }
+
+        /* ===== BOUTONS ===== */
+        .btn {
+            display: inline-flex;
             align-items: center;
-            gap: 15px;
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        .logo-img {
-            height: 50px;
-            width: auto;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
             transition: all 0.3s ease;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--light);
+            text-decoration: none;
         }
         
-        .logo-brand:hover .logo-img {
-            transform: scale(1.1) rotate(5deg);
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            color: var(--light);
+            text-decoration: none;
         }
         
-        .logo-text {
+        .btn-secondary {
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--light);
+        }
+        
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+        }
+        
+        .btn-lg {
+            padding: 1.25rem 2.5rem;
+            font-size: 1.125rem;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ===== FOOTER ===== */
+        .main-footer {
+            background: var(--darkest);
+            color: var(--light);
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .footer-section {
             display: flex;
             flex-direction: column;
         }
         
-        .logo-text .main {
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--primary);
+        .footer-logo img {
+            height: 45px;
+            width: auto;
+            margin-bottom: 1.5rem;
+            filter: brightness(0) invert(1);
         }
         
-        .logo-text .sub {
-            font-size: 0.8rem;
-            color: var(--gray-dark);
-            font-weight: 500;
+        .footer-title {
+            font-size: 1.25rem;
+            color: var(--light);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.75rem;
         }
         
-        /* Responsive amélioré */
-        @media (max-width: 1200px) {
-            .framework-grid {
-                gap: 2rem;
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links a,
+        .footer-links span {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--light);
+            transform: translateX(5px);
+        }
+        
+        .footer-links i {
+            width: 18px;
+            color: var(--secondary);
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover i {
+            color: var(--accent);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .social-icon:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .footer-bottom p {
+            margin-bottom: 0.75rem;
+        }
+
+        /* ===== UTILITAIRES ===== */
+        .text-center {
+            text-align: center;
+        }
+        
+        .mt-4 {
+            margin-top: 2rem;
+        }
+        
+        .mt-3 {
+            margin-top: 1.5rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .nav-list {
+                gap: 1rem;
             }
             
-            .law-card {
-                padding: 2rem;
+            .nav-link {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.9rem;
             }
-        }
-        
-        @media (max-width: 992px) {
-            .framework-grid {
+            
+            .framework-grid, .kit-grid, .ai-ethics-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -581,53 +1130,150 @@
                 grid-template-columns: repeat(2, 1fr);
             }
             
-            .implementation-section::before {
-                display: none;
+            .legal-table {
+                font-size: 0.9rem;
+            }
+            
+            .legal-table th, .legal-table td {
+                padding: 1rem;
             }
         }
         
         @media (max-width: 768px) {
-            .legal-hero {
-                padding: 120px 0 40px;
-                background-attachment: scroll;
+            .mobile-menu-btn {
+                display: block;
             }
             
-            .legal-title {
-                font-size: 2.5rem;
+            .main-nav {
+                position: fixed;
+                top: var(--header-height);
+                left: -100%;
+                width: 300px;
+                height: calc(100vh - var(--header-height));
+                background: var(--light);
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 2rem;
+                transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 1000;
+                box-shadow: var(--shadow-lg);
+                overflow-y: auto;
+            }
+            
+            .main-nav.active {
+                left: 0;
+            }
+            
+            .nav-list {
+                flex-direction: column;
+                width: 100%;
+                gap: 0;
+            }
+            
+            .nav-list li {
+                width: 100%;
+                border-bottom: 1px solid var(--gray);
+            }
+            
+            .nav-link {
+                padding: 1.25rem 1rem;
+                font-size: 1.1rem;
+                display: flex;
+                align-items: center;
+                width: 100%;
+                border-radius: 0;
+                color: var(--dark);
+                text-decoration: none;
+            }
+            
+            .nav-link i {
+                width: 24px;
+                text-align: center;
+                margin-right: 1rem;
+                font-size: 1.2rem;
+            }
+            
+            .nav-link:hover {
+                background: linear-gradient(90deg, var(--primary), var(--primary-light));
+                color: var(--light);
+                text-decoration: none;
+            }
+            
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-actions .btn {
+                width: 100%;
+                max-width: 350px;
+                margin: 0.5rem 0;
+            }
+            
+            .hero-title {
+                font-size: 2.25rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.125rem;
+                padding: 0 1rem;
             }
             
             .step {
                 flex-direction: column;
-                gap: 1rem;
                 text-align: center;
-                padding: 2rem 0;
-                margin-bottom: 2rem;
             }
             
             .step-number {
                 margin: 0 auto;
             }
             
-            .ethics-principles {
+            .ethics-principles, .precautions-grid, .practice-sheets {
                 grid-template-columns: 1fr;
             }
             
-            .ethics-charter {
-                padding: 2rem;
+            .calculator-container {
+                padding: 2rem 1.5rem;
             }
             
-            .precautions-grid {
-                grid-template-columns: 1fr;
+            .kit-card, .ai-ethics-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .legal-table {
+                overflow-x: auto;
+                display: block;
             }
         }
         
-        @media (max-width: 480px) {
-            .legal-title {
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+            
+            h1 {
                 font-size: 2rem;
             }
             
-            .law-card {
-                padding: 1.5rem;
+            h2 {
+                font-size: 1.75rem;
+            }
+            
+            h3 {
+                font-size: 1.375rem;
+            }
+            
+            .hero {
+                padding: calc(var(--header-height) + 1rem) 0 3rem;
+                min-height: auto;
+            }
+            
+            .law-card, .precaution-card {
+                padding: 2rem 1.5rem;
             }
             
             .law-icon {
@@ -636,186 +1282,183 @@
                 font-size: 1.8rem;
             }
             
-            .precaution-card {
-                padding: 2rem;
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
             
-            .principle-item {
-                padding: 1.5rem;
+            .calculator-question select {
+                padding: 0.75rem;
             }
-        }
-        
-        /* Animation pour les cartes de lois */
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
+            
+            .kit-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
             }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        .law-card {
-            animation: slideInRight 0.5s ease-out;
-        }
-        
-        /* Animation pour les étapes */
-        .step {
-            animation: slideInUp 0.5s ease-out;
-        }
-        
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Timeline pour les étapes */
-        .step::before {
-            content: '';
-            position: absolute;
-            top: 70px;
-            left: 29px;
-            width: 2px;
-            height: calc(100% - 60px);
-            background: linear-gradient(to bottom, var(--primary), transparent);
-        }
-        
-        .step:last-child::before {
-            display: none;
         }
     </style>
 </head>
 <body>
-    <!-- Header amélioré -->
+    <!-- Header -->
     <header class="main-header">
         <div class="container header-container">
             <a href="index.html" class="logo-brand">
-                <img src="./assets/images/logo.png" alt="Logo de Digit-School Process" class="logo-img">
+                <img src="./assets/images/logo-premium.png" alt="Logo Digit-School Process 2025" class="logo-img">
                 <div class="logo-text">
                     <div class="main">Digit-School Process</div>
-                    <div class="sub">Cadre Légal & Éthique</div>
+                    <div class="sub">Excellence 2025</div>
                 </div>
             </a>
             
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu mobile">
-                <i class="fas fa-bars"></i>
-            </button>
+            <div class="main-nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Basculer le mode sombre">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu mobile">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
             
-            <nav class="main-nav" aria-label="Navigation principale">
-                <ul class="nav-list" id="navList">
+            <nav class="main-nav" aria-label="Navigation principale" id="mainNav">
+                <ul class="nav-list">
                     <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Accueil</a></li>
                     <li><a href="definitions.html" class="nav-link"><i class="fas fa-book"></i> Définitions</a></li>
                     <li><a href="avantages-risques.html" class="nav-link"><i class="fas fa-balance-scale"></i> Analyse</a></li>
                     <li><a href="precautions-lois.html" class="nav-link active"><i class="fas fa-shield-alt"></i> Cadre Légal</a></li>
                     <li><a href="technologies.html" class="nav-link"><i class="fas fa-robot"></i> Technologies</a></li>
-                    <li><a href="programme.html" class="nav-link"><i class="fas fa-calendar-alt"></i> Programme</a></li>
                     <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
             </nav>
+            
+            <div class="menu-overlay" id="menuOverlay"></div>
         </div>
     </header>
 
-    <!-- Hero Section améliorée -->
-    <section class="legal-hero">
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
         <div class="container">
-            <h1 class="legal-title">Cadre Légal & Éthique</h1>
-            <p class="section-subtitle" style="color: rgba(255,255,255,0.95); max-width: 800px; margin: 0 auto 2rem;">
-                Lois béninoises, régulations et principes éthiques pour une intégration 
-                responsable du numérique en éducation
-            </p>
-            <div class="conference-badge" style="background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(10px);">
-                <i class="fas fa-scale-balanced"></i> Conformité légale et éthique
+            <div class="hero-content" data-aos="fade-up">
+                <h1 class="hero-title">
+                    Kit Conformité Numérique
+                    <span style="display: block; font-size: 0.4em; font-weight: 300; margin-top: 1rem; opacity: 0.9; letter-spacing: 2px; text-transform: uppercase;">
+                        Pour Écoles Primaires Béninoises
+                    </span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Tout ce dont votre école a besoin pour être conforme aux lois numériques 2025. 
+                    Documents téléchargeables, outils gratuits et guides pratiques pour enseignants débutants.
+                </p>
+                
+                <div class="glass-badge">
+                    <i class="fas fa-scale-balanced"></i> Mise à jour Décembre 2025
+                </div>
+                
+                <div class="hero-actions">
+                    <a href="#kit-pratique" class="btn btn-lg">
+                        <i class="fas fa-download"></i> Documents Gratuits
+                    </a>
+                    <a href="#calculateur" class="btn btn-lg btn-secondary">
+                        <i class="fas fa-calculator"></i> Test de Conformité
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Legal Framework amélioré -->
-    <section class="section framework-section">
+    <!-- Lois Simplifiées pour Enseignants -->
+    <section class="section" id="lois-simplifiees">
         <div class="container">
-            <div class="section-title">
-                <h2>Cadre Légal Béninois</h2>
-                <p class="section-subtitle">
-                    Lois et régulations régissant le numérique éducatif au Bénin
-                </p>
+            <div class="section-title" data-aos="fade-up">
+                <h2>Les 5 Lois à Connaître Absolument</h2>
+                <p class="section-subtitle">Explication simple pour enseignants non-juristes</p>
             </div>
             
             <div class="framework-grid">
-                <!-- Loi 1 -->
-                <article class="law-card animate-fade-in-up">
+                <article class="law-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="law-icon">
-                        <i class="fas fa-shield-alt"></i>
+                        <i class="fas fa-user-shield"></i>
                     </div>
-                    <h3>Loi sur la Cybersécurité</h3>
-                    <div class="law-reference">Loi N°2017-20 du 20 avril 2018</div>
+                    <h3>RGPD Béninois</h3>
+                    <div class="law-reference">Loi 2017-20 - Livre V</div>
                     <div class="law-content">
-                        Cadre juridique complet pour la protection des systèmes d'information, 
-                        la prévention et la répression des cyberattaques. Cette loi impose aux 
-                        établissements éducatifs des obligations spécifiques en matière de 
-                        sécurité des données des mineurs.
+                        <strong>En langage simple :</strong> Vous devez protéger les informations personnelles de vos élèves (noms, notes, photos).
                     </div>
-                    <div class="law-requirements">
-                        <h4><i class="fas fa-clipboard-check"></i> Obligations pour les écoles :</h4>
+                    
+                    <div class="law-example">
+                        <strong>À faire en classe :</strong>
                         <ul class="list-check">
-                            <li>Mise en place de pare-feu et systèmes de détection d'intrusion</li>
-                            <li>Sauvegarde régulière et chiffrée des données sensibles</li>
-                            <li>Formation obligatoire du personnel à la cybersécurité</li>
-                            <li>Désignation d'un responsable sécurité informatique</li>
+                            <li>Demander l'autorisation des parents avant de prendre des photos</li>
+                            <li>Ne pas partager les notes sur WhatsApp</li>
+                            <li>Utiliser des initiales au lieu des noms complets</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="law-requirements">
+                        <h4><i class="fas fa-clipboard-check"></i> Obligations clés :</h4>
+                        <ul class="list-check">
+                            <li>Consentement parental pour les moins de 15 ans</li>
+                            <li>Droit à l'oubli pour les anciens élèves</li>
+                            <li>Désigner un responsable des données (si plus de 500 élèves)</li>
                         </ul>
                     </div>
                 </article>
                 
-                <!-- Loi 2 -->
-                <article class="law-card animate-fade-in-up">
+                <article class="law-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="law-icon">
-                        <i class="fas fa-database"></i>
+                        <i class="fas fa-child"></i>
                     </div>
-                    <h3>Protection des Données Personnelles</h3>
-                    <div class="law-reference">Loi N°2018-16 du 21 décembre 2018</div>
+                    <h3>Protection des Mineurs</h3>
+                    <div class="law-reference">Convention UA 2024</div>
                     <div class="law-content">
-                        Loi béninoise inspirée du RGPD européen, régissant la collecte, le traitement 
-                        et la conservation des données personnelles, avec des dispositions renforcées 
-                        pour les données des enfants. Les établissements scolaires sont considérés 
-                        comme des responsables de traitement avec des obligations accrues.
+                        <strong>En langage simple :</strong> Créer un environnement numérique sûr pour les enfants.
                     </div>
-                    <div class="law-requirements">
-                        <h4><i class="fas fa-user-lock"></i> Principes clés :</h4>
+                    
+                    <div class="law-example">
+                        <strong>À faire en classe :</strong>
                         <ul class="list-check">
-                            <li>Consentement parental explicite pour les mineurs de moins de 15 ans</li>
-                            <li>Minimisation des données collectées (principe de nécessité)</li>
-                            <li>Droit à l'oubli numérique pour les anciens élèves</li>
-                            <li>Transparence sur l'usage des données éducatives</li>
+                            <li>Filtrer les sites internet inappropriés</li>
+                            <li>Surveiller les échanges entre élèves</li>
+                            <li>Limiter le temps d'écran selon l'âge</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="law-requirements">
+                        <h4><i class="fas fa-user-lock"></i> Mesures obligatoires :</h4>
+                        <ul class="list-check">
+                            <li>Contrôle parental sur les tablettes scolaires</li>
+                            <li>Signalement des contenus dangereux</li>
+                            <li>Formation des élèves à la cybersécurité</li>
                         </ul>
                     </div>
                 </article>
                 
-                <!-- Loi 3 -->
-                <article class="law-card animate-fade-in-up">
+                <article class="law-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="law-icon">
-                        <i class="fas fa-network-wired"></i>
+                        <i class="fas fa-robot"></i>
                     </div>
-                    <h3>Loi sur la Société de l'Information</h3>
-                    <div class="law-reference">Loi N°2017-20 du 20 avril 2018 (Titre II)</div>
+                    <h3>IA Éthique en Éducation</h3>
+                    <div class="law-reference">Décrets 2025 sur l'IA</div>
                     <div class="law-content">
-                        Cadre juridique pour le développement de la société de l'information au Bénin, 
-                        incluant les aspects de commerce électronique, signature électronique et 
-                        archives numériques. Cette loi reconnaît la valeur juridique des documents 
-                        et processus numériques dans l'éducation.
+                        <strong>En langage simple :</strong> Utiliser l'intelligence artificielle de manière responsable et transparente.
                     </div>
-                    <div class="law-requirements">
-                        <h4><i class="fas fa-file-contract"></i> Implications éducatives :</h4>
+                    
+                    <div class="law-example">
+                        <strong>À faire en classe :</strong>
                         <ul class="list-check">
-                            <li>Valeur légale des bulletins et diplômes numériques</li>
-                            <li>Signature électronique pour les documents administratifs</li>
-                            <li>Archivage numérique sécurisé des dossiers élèves</li>
-                            <li>Reconnaissance des formations en ligne certifiées</li>
+                            <li>Expliquer quand vous utilisez ChatGPT</li>
+                            <li>Ne pas laisser l'IA noter les élèves</li>
+                            <li>Vérifier toujours les réponses de l'IA</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="law-requirements">
+                        <h4><i class="fas fa-brain"></i> Principes éthiques :</h4>
+                        <ul class="list-check">
+                            <li>Transparence sur l'utilisation de l'IA</li>
+                            <li>Non-discrimination dans les algorithmes</li>
+                            <li>Contrôle humain sur les décisions importantes</li>
                         </ul>
                     </div>
                 </article>
@@ -823,280 +1466,482 @@
         </div>
     </section>
 
-    <!-- Precautions amélioré -->
-    <section class="section precautions-section">
+    <!-- Tableau "Ce que je peux/non faire" -->
+    <section class="section">
         <div class="container">
-            <div class="section-title">
-                <h2>Précautions Obligatoires</h2>
-                <p class="section-subtitle">
-                    Mesures de sécurité et bonnes pratiques pour les établissements éducatifs
-                </p>
+            <div class="section-title" data-aos="fade-up">
+                <h2>Ce que je peux/non faire en classe</h2>
+                <p class="section-subtitle">Guide pratique pour enseignants du primaire</p>
             </div>
             
-            <div class="precautions-grid">
-                <div class="precaution-card animate-fade-in-up">
-                    <h3><i class="fas fa-user-shield"></i> Protection des Mineurs</h3>
-                    <p>
-                        Mise en place de filtres de contenu adaptés, contrôle parental numérique, 
-                        et surveillance des interactions en ligne. Les établissements doivent 
-                        garantir un environnement numérique sûr pour les élèves.
-                    </p>
-                    <div class="precaution-level level-high">Priorité maximale</div>
+            <table class="legal-table" data-aos="fade-up">
+                <thead>
+                    <tr>
+                        <th>Action</th>
+                        <th>Statut Légal</th>
+                        <th>Alternative Légale</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Filmer tous les élèves sans autorisation</td>
+                        <td><span class="legal-status status-illegal"><i class="fas fa-times-circle"></i> Interdit</span></td>
+                        <td>Obtenir le consentement écrit des parents</td>
+                    </tr>
+                    <tr>
+                        <td>Utiliser WhatsApp pour communiquer avec les parents</td>
+                        <td><span class="legal-status status-conditional"><i class="fas fa-exclamation-triangle"></i> Sous conditions</span></td>
+                        <td>Utiliser Signal (chiffré) ou une plateforme dédiée</td>
+                    </tr>
+                    <tr>
+                        <td>Stocker les notes sur Google Drive</td>
+                        <td><span class="legal-status status-conditional"><i class="fas fa-exclamation-triangle"></i> Si chiffré</span></td>
+                        <td>Utiliser un serveur local ou OneDrive Éducation</td>
+                    </tr>
+                    <tr>
+                        <td>Utiliser ChatGPT pour corriger des exercices</td>
+                        <td><span class="legal-status status-legal"><i class="fas fa-check-circle"></i> Autorisé</span></td>
+                        <td>Vérifier et adapter les corrections</td>
+                    </tr>
+                    <tr>
+                        <td>Partager les photos de classe sur Facebook</td>
+                        <td><span class="legal-status status-illegal"><i class="fas fa-times-circle"></i> Interdit</span></td>
+                        <td>Créer un album privé avec accès limité aux parents</td>
+                    </tr>
+                    <tr>
+                        <td>Utiliser des applications éducatives gratuites</td>
+                        <td><span class="legal-status status-legal"><i class="fas fa-check-circle"></i> Autorisé</span></td>
+                        <td>Vérifier la politique de confidentialité</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Kit Pratique de Conformité -->
+    <section class="section" id="kit-pratique">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Kit Pratique de Conformité</h2>
+                <p class="section-subtitle">Documents téléchargeables immédiatement utilisables</p>
+            </div>
+            
+            <div class="kit-grid">
+                <div class="kit-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="kit-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>Charte Numérique Scolaire</h3>
+                    <p>Modèle de charte d'utilisation du numérique à personnaliser pour votre école. Inclut les règles pour élèves, enseignants et parents.</p>
+                    <div class="sheet-meta">
+                        <span class="sheet-duration"><i class="fas fa-clock"></i> 30 min</span>
+                        <a href="#" class="btn btn-outline" onclick="downloadTemplate('charte')">
+                            <i class="fas fa-download"></i> Télécharger (.docx)
+                        </a>
+                    </div>
                 </div>
                 
-                <div class="precaution-card animate-fade-in-up">
-                    <h3><i class="fas fa-lock"></i> Sécurité des Données</h3>
-                    <p>
-                        Chiffrement des données sensibles, authentification à deux facteurs pour 
-                        les comptes administrateurs, et audits de sécurité réguliers. Conformité 
-                        aux standards de sécurité nationaux et internationaux.
-                    </p>
-                    <div class="precaution-level level-high">Obligation légale</div>
+                <div class="kit-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="kit-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3>Consentement Parental</h3>
+                    <p>Formulaire de consentement pour l'utilisation des données et l'image des élèves. Simple, clair et conforme à la loi.</p>
+                    <div class="sheet-meta">
+                        <span class="sheet-duration"><i class="fas fa-clock"></i> 5 min</span>
+                        <a href="#" class="btn btn-outline" onclick="downloadTemplate('consentement')">
+                            <i class="fas fa-download"></i> Télécharger (.pdf)
+                        </a>
+                    </div>
                 </div>
                 
-                <div class="precaution-card animate-fade-in-up">
-                    <h3><i class="fas fa-clock"></i> Temps d'Écran Régulé</h3>
-                    <p>
-                        Respect des recommandations sanitaires sur l'exposition aux écrans selon 
-                        l'âge des élèves. Élaboration de plannings équilibrés alternant activités 
-                        numériques et non-numériques.
-                    </p>
-                    <div class="precaution-level level-medium">Recommandation santé</div>
+                <div class="kit-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="kit-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Checklist de Conformité</h3>
+                    <p>Liste de contrôle mois par mois pour vérifier votre conformité. Idéal pour les directeurs d'école.</p>
+                    <div class="sheet-meta">
+                        <span class="sheet-duration"><i class="fas fa-clock"></i> 15 min</span>
+                        <a href="#" class="btn btn-outline" onclick="downloadTemplate('checklist')">
+                            <i class="fas fa-download"></i> Télécharger (.xlsx)
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-title" style="margin-top: 4rem;" data-aos="fade-up">
+                <h3>Fiches Pratiques "Pas-à-Pas"</h3>
+                <p class="section-subtitle">Guides détaillés pour chaque situation</p>
+            </div>
+            
+            <div class="practice-sheets">
+                <div class="practice-sheet" data-aos="fade-up" data-aos-delay="100">
+                    <h4><i class="fas fa-edit"></i> Fiche 1 : Créer sa charte numérique</h4>
+                    <p>Guide complet pour rédiger et faire adopter une charte numérique dans votre école.</p>
+                    <div class="sheet-meta">
+                        <span><i class="fas fa-file-pdf"></i> PDF - 8 pages</span>
+                        <a href="#" class="btn btn-sm btn-outline" onclick="downloadGuide('fiche1')">Télécharger</a>
+                    </div>
                 </div>
                 
-                <div class="precaution-card animate-fade-in-up">
-                    <h3><i class="fas fa-balance-scale"></i> Équité d'Accès</h3>
-                    <p>
-                        Mesures compensatoires pour les élèves ne disposant pas d'équipements à 
-                        domicile. Prêt de matériel, accès gratuit aux ressources, et accompagnement 
-                        spécifique pour éviter la fracture numérique.
-                    </p>
-                    <div class="precaution-level level-high">Principe constitutionnel</div>
+                <div class="practice-sheet" data-aos="fade-up" data-aos-delay="200">
+                    <h4><i class="fas fa-shield-alt"></i> Fiche 2 : Sécuriser ses données</h4>
+                    <p>Techniques simples pour protéger les données élèves même sans être expert en informatique.</p>
+                    <div class="sheet-meta">
+                        <span><i class="fas fa-file-pdf"></i> PDF - 6 pages</span>
+                        <a href="#" class="btn btn-sm btn-outline" onclick="downloadGuide('fiche2')">Télécharger</a>
+                    </div>
                 </div>
                 
-                <div class="precaution-card animate-fade-in-up">
-                    <h3><i class="fas fa-chalkboard-teacher"></i> Formation des Enseignants</h3>
-                    <p>
-                        Programme de formation obligatoire incluant aspects techniques, pédagogiques 
-                        et éthiques du numérique éducatif. Mise à jour continue des compétences.
-                    </p>
-                    <div class="precaution-level level-medium">Obligation professionnelle</div>
+                <div class="practice-sheet" data-aos="fade-up" data-aos-delay="300">
+                    <h4><i class="fas fa-robot"></i> Fiche 3 : IA en classe</h4>
+                    <p>Comment utiliser ChatGPT et autres outils IA de manière éthique et légale.</p>
+                    <div class="sheet-meta">
+                        <span><i class="fas fa-file-pdf"></i> PDF - 10 pages</span>
+                        <a href="#" class="btn btn-sm btn-outline" onclick="downloadGuide('fiche3')">Télécharger</a>
+                    </div>
                 </div>
                 
-                <div class="precaution-card animate-fade-in-up">
-                    <h3><i class="fas fa-clipboard-list"></i> Charte d'Utilisation</h3>
-                    <p>
-                        Élaboration et signature d'une charte d'utilisation responsable du numérique 
-                        par tous les acteurs (élèves, parents, enseignants). Définition claire des 
-                        droits et obligations de chacun.
-                    </p>
-                    <div class="precaution-level level-medium">Bonnes pratiques</div>
+                <div class="practice-sheet" data-aos="fade-up" data-aos-delay="400">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Fiche 4 : Gérer un incident</h4>
+                    <p>Protocole à suivre en cas de problème (cyberharcèlement, fuite de données...).</p>
+                    <div class="sheet-meta">
+                        <span><i class="fas fa-file-pdf"></i> PDF - 5 pages</span>
+                        <a href="#" class="btn btn-sm btn-outline" onclick="downloadGuide('fiche4')">Télécharger</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4" data-aos="fade-up">
+                <a href="#" class="btn btn-secondary btn-lg" onclick="downloadComplianceKit()">
+                    <i class="fas fa-box"></i> Télécharger le Kit Complet
+                </a>
+                <p class="section-subtitle" style="margin-top: 1rem; font-size: 0.9rem;">
+                    <i class="fas fa-info-circle"></i> Le kit complet inclut tous les documents + guide d'utilisation
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculateur de Conformité -->
+    <section class="section" id="calculateur">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Calculateur de Niveau de Conformité</h2>
+                <p class="section-subtitle">Évaluez votre école en 5 minutes et obtenez un plan d'action personnalisé</p>
+            </div>
+            
+            <div class="calculator-container" data-aos="fade-up">
+                <h3 style="color: var(--primary); margin-bottom: 2rem;">
+                    <i class="fas fa-calculator"></i> Test Rapide de Conformité
+                </h3>
+                
+                <form id="conformityCalculator">
+                    <div class="calculator-question">
+                        <label>1. Votre école a-t-elle une charte d'utilisation du numérique ?</label>
+                        <select id="q1">
+                            <option value="0">Non, pas encore</option>
+                            <option value="1">En cours de rédaction</option>
+                            <option value="2">Oui, et signée par tous</option>
+                        </select>
+                    </div>
+                    
+                    <div class="calculator-question">
+                        <label>2. Les consentements parentaux pour l'utilisation des données sont-ils collectés ?</label>
+                        <select id="q2">
+                            <option value="0">Non</option>
+                            <option value="1">Partiellement (moins de 80%)</option>
+                            <option value="2">Oui (plus de 80%)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="calculator-question">
+                        <label>3. Votre école a-t-elle désigné un responsable de la protection des données ?</label>
+                        <select id="q3">
+                            <option value="0">Non</option>
+                            <option value="1">Oui, mais non formé</option>
+                            <option value="2">Oui, et formé</option>
+                        </select>
+                    </div>
+                    
+                    <div class="calculator-question">
+                        <label>4. Les enseignants sont-ils formés à la cybersécurité et à la protection des données ?</label>
+                        <select id="q4">
+                            <option value="0">Non</option>
+                            <option value="1">Certains seulement</option>
+                            <option value="2">Oui, tous les enseignants</option>
+                        </select>
+                    </div>
+                    
+                    <div class="calculator-question">
+                        <label>5. Votre école a-t-elle une politique d'utilisation de l'IA ?</label>
+                        <select id="q5">
+                            <option value="0">Non</option>
+                            <option value="1">En discussion</option>
+                            <option value="2">Oui, clairement définie</option>
+                        </select>
+                    </div>
+                    
+                    <button type="button" class="btn btn-lg" onclick="calculateConformity()" style="width: 100%; margin-top: 2rem;">
+                        <i class="fas fa-chart-bar"></i> Calculer mon niveau de conformité
+                    </button>
+                </form>
+                
+                <div class="calculator-result" id="calculatorResult">
+                    <div class="score-display" id="scoreDisplay">0/10</div>
+                    <h4 style="color: var(--primary); text-align: center; margin-bottom: 1.5rem;">
+                        Niveau de conformité : <span id="conformityLevel">Non conforme</span>
+                    </h4>
+                    
+                    <div id="recommendations">
+                        <h5><i class="fas fa-lightbulb"></i> Recommandations personnalisées :</h5>
+                        <ul class="recommendations-list" id="recommendationsList">
+                            <!-- Les recommandations seront ajoutées ici par JavaScript -->
+                        </ul>
+                    </div>
+                    
+                    <div class="text-center mt-3">
+                        <a href="#kit-pratique" class="btn btn-outline">
+                            <i class="fas fa-download"></i> Télécharger les documents nécessaires
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Ethics Section améliorée -->
+    <!-- IA Éthique pour le Primaire -->
     <section class="section ethics-section">
         <div class="container">
-            <div class="section-title">
-                <h2 style="color: white;">Charte Éthique du Numérique Éducatif</h2>
-                <p class="section-subtitle" style="color: rgba(255,255,255,0.95);">
-                    Principes fondamentaux pour une intégration éthique du numérique dans l'éducation
-                </p>
+            <div class="section-title" data-aos="fade-up">
+                <h2 style="color: var(--light);">IA Éthique pour le Primaire</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.95);">Règles d'or pour utiliser l'intelligence artificielle en classe</p>
             </div>
             
-            <div class="ethics-charter">
-                <h3 style="color: white; margin-bottom: 1.5rem; text-align: center;">
-                    <i class="fas fa-handshake"></i> Principes Directeurs
+            <div class="ai-ethics-grid">
+                <div class="ai-ethics-card" data-aos="fade-up" data-aos-delay="100">
+                    <h4><i class="fas fa-check-circle"></i> Ce qui est ACCEPTABLE</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Générer des idées d'activités pédagogiques</li>
+                        <li><i class="fas fa-check"></i> Corriger des textes (sans attribution de note)</li>
+                        <li><i class="fas fa-check"></i> Créer des images éducatives personnalisées</li>
+                        <li><i class="fas fa-check"></i> Traduire des documents vers les langues locales</li>
+                        <li><i class="fas fa-check"></i> Préparer des quiz et exercices variés</li>
+                    </ul>
+                </div>
+                
+                <div class="ai-ethics-card" data-aos="fade-up" data-aos-delay="200">
+                    <h4><i class="fas fa-times-circle"></i> Ce qui est INACCEPTABLE</h4>
+                    <ul>
+                        <li><i class="fas fa-times"></i> Noter automatiquement les copies d'élèves</li>
+                        <li><i class="fas fa-times"></i> Remplacer l'enseignant dans les interactions</li>
+                        <li><i class="fas fa-times"></i> Collecter des données sensibles sur les élèves</li>
+                        <li><i class="fas fa-times"></i> Utiliser du contenu non vérifié avec les élèves</li>
+                        <li><i class="fas fa-times"></i> Prendre des décisions importantes sans contrôle humain</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="ethics-charter" data-aos="fade-up" data-aos-delay="300">
+                <h3 style="color: var(--light); margin-bottom: 1.5rem; text-align: center;">
+                    <i class="fas fa-handshake"></i> Charte d'Utilisation de l'IA
                 </h3>
                 
                 <div class="ethics-principles">
                     <div class="principle-item">
-                        <div class="principle-icon">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <h4 style="color: white;">Primauté de la Personne</h4>
-                        <p style="color: rgba(255,255,255,0.9);">
-                            Le numérique doit servir l'épanouissement humain et non l'inverse. 
-                            L'élève reste au centre de toute innovation technologique.
-                        </p>
+                        <div class="principle-icon"><i class="fas fa-eye"></i></div>
+                        <h4 style="color: var(--light);">Transparence</h4>
+                        <p style="color: rgba(255,255,255,0.9);">Expliquer aux élèves et parents quand l'IA est utilisée.</p>
                     </div>
                     
                     <div class="principle-item">
-                        <div class="principle-icon">
-                            <i class="fas fa-universal-access"></i>
-                        </div>
-                        <h4 style="color: white;">Équité et Inclusion</h4>
-                        <p style="color: rgba(255,255,255,0.9);">
-                            Garantir un accès équitable à tous, avec des mesures spécifiques 
-                            pour les populations vulnérables et les élèves à besoins particuliers.
-                        </p>
+                        <div class="principle-icon"><i class="fas fa-balance-scale"></i></div>
+                        <h4 style="color: var(--light);">Équité</h4>
+                        <p style="color: rgba(255,255,255,0.9);">Vérifier que l'IA ne favorise pas certains élèves.</p>
                     </div>
                     
                     <div class="principle-item">
-                        <div class="principle-icon">
-                            <i class="fas fa-eye-slash"></i>
-                        </div>
-                        <h4 style="color: white;">Respect de la Vie Privée</h4>
-                        <p style="color: rgba(255,255,255,0.9);">
-                            Protection maximale des données personnelles des élèves, avec transparence 
-                            sur leur utilisation et consentement éclairé des parents.
-                        </p>
+                        <div class="principle-icon"><i class="fas fa-user"></i></div>
+                        <h4 style="color: var(--light);">Contrôle humain</h4>
+                        <p style="color: rgba(255,255,255,0.9);">L'enseignant garde toujours le dernier mot.</p>
                     </div>
                     
                     <div class="principle-item">
-                        <div class="principle-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h4 style="color: white;">Développement Cognitif</h4>
-                        <p style="color: rgba(255,255,255,0.9);">
-                            Le numérique doit compléter et enrichir les capacités cognitives, 
-                            sans les remplacer ni les appauvrir.
-                        </p>
+                        <div class="principle-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h4 style="color: var(--light);">Protection des données</h4>
+                        <p style="color: rgba(255,255,255,0.9);">Ne pas partager d'informations personnelles avec l'IA.</p>
                     </div>
                 </div>
                 
-                <div class="alert alert-info" style="background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.3); margin-top: 3rem; backdrop-filter: blur(5px);">
-                    <h4 style="color: white;"><i class="fas fa-lightbulb"></i> Engagement Collectif</h4>
-                    <p style="color: rgba(255,255,255,0.9);">
-                        Cette charte éthique engage tous les acteurs de la communauté éducative : 
-                        enseignants, élèves, parents, administrateurs et partenaires technologiques. 
-                        Son respect conditionne la réussite de la transformation numérique éducative.
+                <div class="glass-badge" style="margin-top: 3rem; display: block; text-align: center; background: rgba(255,255,255,0.15);">
+                    <h4 style="color: var(--light); margin: 0;"><i class="fas fa-download"></i> Télécharger la charte IA</h4>
+                    <p style="color: rgba(255,255,255,0.9); margin: 0.5rem 0 0;">
+                        <a href="#" onclick="downloadTemplate('charte-ia')" style="color: var(--light); text-decoration: underline;">Version imprimable pour votre école</a>
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Implementation Guide amélioré -->
-    <section class="section implementation-section">
+    <!-- Outils Gratuits Recommandés -->
+    <section class="section">
         <div class="container">
-            <div class="section-title">
-                <h2>Guide d'Implémentation</h2>
+            <div class="section-title" data-aos="fade-up">
+                <h2>Outils Gratuits Recommandés</h2>
+                <p class="section-subtitle">Applications sécurisées et conformes pour votre école</p>
+            </div>
+            
+            <div class="precautions-grid">
+                <div class="precaution-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3><i class="fas fa-comments"></i> Signal</h3>
+                    <p>Messagerie chiffrée pour communiquer avec les parents. Alternative sécurisée à WhatsApp.</p>
+                    <div class="precaution-example"><strong>Lien :</strong> <a href="https://signal.org" target="_blank">signal.org</a></div>
+                    <div class="precaution-level level-high">Recommandé par l'APDP</div>
+                </div>
+                
+                <div class="precaution-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3><i class="fas fa-envelope"></i> ProtonMail</h3>
+                    <p>Service email chiffré pour les communications officielles de l'école.</p>
+                    <div class="precaution-example"><strong>Lien :</strong> <a href="https://protonmail.com" target="_blank">protonmail.com</a></div>
+                    <div class="precaution-level level-high">Chiffrement de bout en bout</div>
+                </div>
+                
+                <div class="precaution-card" data-aos="fade-up" data-aos-delay="300">
+                    <h3><i class="fas fa-lock"></i> Cryptee</h3>
+                    <p>Stockage de documents sensibles avec chiffrement côté client.</p>
+                    <div class="precaution-example"><strong>Lien :</strong> <a href="https://crypt.ee" target="_blank">crypt.ee</a></div>
+                    <div class="precaution-level level-medium">Alternative à Google Drive</div>
+                </div>
+                
+                <div class="precaution-card" data-aos="fade-up" data-aos-delay="400">
+                    <h3><i class="fas fa-video"></i> Jitsi Meet</h3>
+                    <p>Visioconférence open-source et respectueuse de la vie privée.</p>
+                    <div class="precaution-example"><strong>Lien :</strong> <a href="https://meet.jit.si" target="_blank">meet.jit.si</a></div>
+                    <div class="precaution-level level-medium">Alternative à Zoom</div>
+                </div>
+                
+                <div class="precaution-card" data-aos="fade-up" data-aos-delay="500">
+                    <h3><i class="fas fa-sticky-note"></i> Standard Notes</h3>
+                    <p>Application de notes chiffrées pour les comptes-rendus de réunion.</p>
+                    <div class="precaution-example"><strong>Lien :</strong> <a href="https://standardnotes.com" target="_blank">standardnotes.com</a></div>
+                    <div class="precaution-level level-low">Simple et sécurisé</div>
+                </div>
+                
+                <div class="precaution-card" data-aos="fade-up" data-aos-delay="600">
+                    <h3><i class="fas fa-graduation-cap"></i> Nextcloud</h3>
+                    <p>Solution cloud auto-hébergée pour les écoles qui veulent garder le contrôle.</p>
+                    <div class="precaution-example"><strong>Lien :</strong> <a href="https://nextcloud.com" target="_blank">nextcloud.com</a></div>
+                    <div class="precaution-level level-medium">Pour écoles techniques</div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4" data-aos="fade-up">
                 <p class="section-subtitle">
-                    Feuille de route pour la mise en conformité légale des établissements éducatifs
+                    <i class="fas fa-info-circle"></i> Tous ces outils sont gratuits, open-source ou ont des versions éducation gratuites
                 </p>
-            </div>
-            
-            <div class="implementation-steps">
-                <!-- Étape 1 -->
-                <div class="step animate-fade-in-up">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Audit de Conformité</h3>
-                        <p>
-                            Évaluation complète de la situation actuelle de l'établissement par rapport 
-                            aux exigences légales. Identification des écarts, des risques et des priorités 
-                            d'action. Durée recommandée : 2 à 4 semaines.
-                        </p>
-                        <div class="step-duration">Phase préparatoire</div>
-                    </div>
-                </div>
-                
-                <!-- Étape 2 -->
-                <div class="step animate-fade-in-up">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Élaboration des Politiques</h3>
-                        <p>
-                            Rédaction des documents de gouvernance : politique de sécurité des données, 
-                            charte d'utilisation du numérique, protocole de réponse aux incidents, 
-                            et procédures de traitement des demandes des personnes concernées.
-                        </p>
-                        <div class="step-duration">4 à 6 semaines</div>
-                    </div>
-                </div>
-                
-                <!-- Étape 3 -->
-                <div class="step animate-fade-in-up">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Formation des Acteurs</h3>
-                        <p>
-                            Programme de formation adapté à chaque catégorie d'acteurs : administrateurs, 
-                            enseignants, élèves, parents. Focus sur les aspects légaux, éthiques et 
-                            de sécurité. Formation continue avec mise à jour annuelle obligatoire.
-                        </p>
-                        <div class="step-duration">Continue</div>
-                    </div>
-                </div>
-                
-                <!-- Étape 4 -->
-                <div class="step animate-fade-in-up">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>Mise en Œuvre Technique</h3>
-                        <p>
-                            Déploiement des solutions techniques de sécurité : chiffrement, authentification, 
-                            sauvegarde, filtrage. Intégration des principes "privacy by design" et 
-                            "security by design" dans tous les projets numériques.
-                        </p>
-                        <div class="step-duration">3 à 6 mois</div>
-                    </div>
-                </div>
-                
-                <!-- Étape 5 -->
-                <div class="step animate-fade-in-up">
-                    <div class="step-number">5</div>
-                    <div class="step-content">
-                        <h3>Surveillance et Amélioration</h3>
-                        <p>
-                            Mise en place d'un système de monitoring continu de la conformité, avec audits 
-                            réguliers et amélioration continue des processus. Adaptation aux évolutions 
-                            législatives et technologiques.
-                        </p>
-                        <div class="step-duration">Permanente</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-4">
-                <a href="#" class="btn btn-primary btn-lg" onclick="event.preventDefault(); alert('Téléchargement simulé - Le kit complet de conformité serait disponible ici');">
-                    <i class="fas fa-download"></i> Télécharger le kit complet de conformité
-                </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer amélioré -->
+    <!-- Guide d'Implémentation -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Guide d'Implémentation</h2>
+                <p class="section-subtitle">Feuille de route 2025 pour la conformité des écoles</p>
+            </div>
+            
+            <div class="implementation-steps">
+                <div class="step" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Audit de Conformité</h3>
+                        <p>Évaluation via APDP toolkit ; identifier écarts Code du Numérique.</p>
+                        <div class="step-example"><strong>Concrètement :</strong> Utilisez notre calculateur ci-dessus pour un diagnostic rapide.</div>
+                        <div class="step-duration">2-4 semaines</div>
+                    </div>
+                </div>
+                
+                <div class="step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Élaboration des Politiques</h3>
+                        <p>Rédaction charte éthique ; protocoles incidents CERT.</p>
+                        <div class="step-example"><strong>Concrètement :</strong> Téléchargez nos modèles et adaptez-les à votre école.</div>
+                        <div class="step-duration">4-6 semaines</div>
+                    </div>
+                </div>
+                
+                <div class="step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Formation des Acteurs</h3>
+                        <p>Ateliers APDP/CERT ; annuel pour IA éthique.</p>
+                        <div class="step-example"><strong>Concrètement :</strong> Organisez une session de 2h avec vos enseignants.</div>
+                        <div class="step-duration">Continue</div>
+                    </div>
+                </div>
+                
+                <div class="step" data-aos="fade-up" data-aos-delay="400">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Mise en Œuvre Technique</h3>
+                        <p>Privacy by design ; chiffrement AES, 2FA.</p>
+                        <div class="step-example"><strong>Concrètement :</strong> Installez les outils recommandés ci-dessus.</div>
+                        <div class="step-duration">3-6 mois</div>
+                    </div>
+                </div>
+                
+                <div class="step" data-aos="fade-up" data-aos-delay="500">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Surveillance et Amélioration</h3>
+                        <p>Audits trimestriels ; adaptation décrets 2025.</p>
+                        <div class="step-example"><strong>Concrètement :</strong> Refaire le test de conformité chaque trimestre.</div>
+                        <div class="step-duration">Permanente</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="./assets/images/logo-white.png" alt="Logo de Digit-School Process" style="height: 60px; margin-bottom: 1rem;">
+                        <img src="./assets/images/logo-premium-white.png" alt="Logo Digit-School Process 2025 Blanc">
                     </div>
                     <h4 class="footer-title">Digit-School Process 2025</h4>
-                    <p style="opacity: 0.9; line-height: 1.6;">
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 0.95rem;">
                         Organisé par l'école "Les Bulles de Joie"<br>
-                        Slogan : "Amour • Travail • Rigueur • Créativité"
+                        <span style="color: var(--gold); font-weight: 600;">
+                            Amour • Travail • Rigueur • Créativité • Excellence
+                        </span>
                     </p>
                     <div class="social-icons">
-                        <a href="https://facebook.com/lesbullesdejoie" target="_blank" aria-label="Facebook" class="social-icon">
+                        <a href="https://facebook.com/lesbullesdejoie" target="_blank" aria-label="Facebook Les Bulles de Joie" class="social-icon">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="https://instagram.com/lesbullesdejoie" target="_blank" aria-label="Instagram" class="social-icon">
+                        <a href="https://instagram.com/lesbullesdejoie" target="_blank" aria-label="Instagram Les Bulles de Joie" class="social-icon">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://www.tiktok.com/@cspblesbullesdejoie" target="_blank" aria-label="TikTok" class="social-icon">
+                        <a href="https://www.tiktok.com/@cspblesbullesdejoie" target="_blank" aria-label="TikTok Les Bulles de Joie" class="social-icon">
                             <i class="fab fa-tiktok"></i>
                         </a>
-                        <a href="https://les-bulles-de-joie.onrender.com/" target="_blank" aria-label="Site web" class="social-icon">
+                        <a href="https://les-bulles-de-joie.onrender.com/" target="_blank" aria-label="Site web Les Bulles de Joie" class="social-icon">
                             <i class="fas fa-globe"></i>
-                        </a>
-                        <a href="https://wa.me/2290197919452" target="_blank" aria-label="WhatsApp" class="social-icon">
-                            <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
                 </div>
                 
                 <div class="footer-section">
-                    <h4 class="footer-title">Contact Rapide</h4>
+                    <h4 class="footer-title">Contact</h4>
                     <ul class="footer-links">
                         <li><a href="tel:+2290197919452"><i class="fas fa-phone"></i> +229 01 97 91 94 52</a></li>
                         <li><a href="mailto:lesbullesdejoie@gmail.com"><i class="fas fa-envelope"></i> lesbullesdejoie@gmail.com</a></li>
-                        <li><a href="mailto:codjosamuelstein@gmail.com"><i class="fas fa-user-tie"></i> codjosamuelstein@gmail.com</a></li>
                         <li><span><i class="fas fa-map-marker-alt"></i> Parakou - Zongo 2, Bénin</span></li>
                     </ul>
                 </div>
@@ -1106,150 +1951,337 @@
                     <ul class="footer-links">
                         <li><a href="index.html"><i class="fas fa-chevron-right"></i> Accueil</a></li>
                         <li><a href="definitions.html"><i class="fas fa-chevron-right"></i> Définitions</a></li>
-                        <li><a href="avantages-risques.html"><i class="fas fa-chevron-right"></i> Analyse</a></li>
+                        <li><a href="avantages-risques.html"><i class="fas fa-chevron-right"></i> Analyse Stratégique</a></li>
+                        <li><a href="precautions-lois.html"><i class="fas fa-chevron-right"></i> Cadre Légal</a></li>
                         <li><a href="technologies.html"><i class="fas fa-chevron-right"></i> Technologies</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4 class="footer-title">Informations École</h4>
+                    <h4 class="footer-title">École d'Excellence</h4>
                     <ul class="footer-links">
-                        <li><span><i class="fas fa-school"></i> École privée agréée</span></li>
-                        <li><span><i class="fas fa-users"></i> ~350 élèves</span></li>
-                        <li><span><i class="fas fa-star"></i> 4.9/5 (127 avis)</span></li>
+                        <li><span><i class="fas fa-school"></i> Institution Agréée</span></li>
+                        <li><span><i class="fas fa-users"></i> 350+ Élèves</span></li>
+                        <li><span><i class="fas fa-star"></i> 4.9/5 Excellence Académique</span></li>
                         <li><span><i class="fas fa-language"></i> Bilingue Français-Anglais</span></li>
-                        <li><span><i class="fas fa-calendar-alt"></i> Fondée en 2017</span></li>
+                        <li><span><i class="fas fa-award"></i> Prix d'Excellence 2023</span></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; <span class="current-year">2025</span> Digit-School Process | Organisé par l'école "Les Bulles de Joie" | Parakou, Bénin</p>
+                <p>&copy; 2025 Digit-School Process | Événement organisé par "Les Bulles de Joie" | Parakou, Bénin</p>
                 <p>Agréments : 2021 N°018/MASM/DC/SGM/DGAS/DFEA/SA/021SGG21 | 2022 N°045/MEMP/DC/SGM/DPP/SP/0223SGG22</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="js/main.js"></script>
-    
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Page-specific scripts améliorés
         document.addEventListener('DOMContentLoaded', function() {
-            // Animate law cards with delay
-            const lawCards = document.querySelectorAll('.law-card');
-            lawCards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.1}s`;
-                card.style.animation = `slideInRight 0.5s ease-out ${index * 0.1}s both`;
+            AOS.init({ 
+                duration: 800, 
+                once: true, 
+                offset: 100,
+                easing: 'ease-out-cubic'
             });
             
-            // Animate precaution cards
-            const precautionCards = document.querySelectorAll('.precaution-card');
-            precautionCards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.1}s`;
+            // Dark Mode
+            const themeToggle = document.getElementById('themeToggle');
+            const html = document.documentElement;
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            html.setAttribute('data-theme', currentTheme);
+            themeToggle.querySelector('i').className = currentTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            
+            themeToggle.addEventListener('click', () => {
+                const newTheme = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+                html.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                themeToggle.querySelector('i').className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
             });
             
-            // Animate principle items
-            const principleItems = document.querySelectorAll('.principle-item');
-            principleItems.forEach((item, index) => {
-                item.style.animationDelay = `${index * 0.1}s`;
-            });
+            // Menu Mobile
+            const mobileBtn = document.getElementById('mobileMenuBtn');
+            const nav = document.getElementById('mainNav');
+            const overlay = document.getElementById('menuOverlay');
             
-            // Animate steps
-            const steps = document.querySelectorAll('.step');
-            steps.forEach((step, index) => {
-                step.style.animationDelay = `${index * 0.15}s`;
-                step.style.animation = `slideInUp 0.5s ease-out ${index * 0.15}s both`;
-            });
+            function toggleMenu() {
+                nav.classList.toggle('active');
+                overlay.classList.toggle('active');
+                mobileBtn.innerHTML = nav.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+                document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+            }
             
-            // Interactive legal cards
-            lawCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    const icon = this.querySelector('.law-icon');
-                    icon.style.transform = 'scale(1.1) rotate(10deg)';
+            mobileBtn.addEventListener('click', toggleMenu);
+            overlay.addEventListener('click', toggleMenu);
+            
+            // Fermer au clic sur un lien
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('active');
+                    overlay.classList.remove('active');
+                    mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    document.body.style.overflow = '';
                 });
-                
-                card.addEventListener('mouseleave', function() {
-                    const icon = this.querySelector('.law-icon');
-                    icon.style.transform = 'scale(1) rotate(0)';
-                });
             });
             
-            // Effet de parallaxe pour l'héros
-            window.addEventListener('scroll', function() {
-                const hero = document.querySelector('.legal-hero');
-                if (hero) {
-                    const scrolled = window.pageYOffset;
-                    const rate = scrolled * -0.5;
-                    hero.style.backgroundPosition = `center ${rate}px`;
+            // Header scroll
+            const header = document.querySelector('.main-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
                 }
             });
             
-            // Effet de progression pour les étapes
-            const observerOptions = {
-                threshold: 0.5,
-                rootMargin: '0px 0px -100px 0px'
-            };
-            
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const stepNumber = entry.target.querySelector('.step-number');
-                        if (stepNumber) {
-                            stepNumber.style.background = 'linear-gradient(135deg, var(--accent), var(--accent-light))';
-                        }
+            // Smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
                     }
-                });
-            }, observerOptions);
-            
-            steps.forEach(step => observer.observe(step));
-            
-            // Animation au clic des cartes de précautions
-            precautionCards.forEach(card => {
-                card.addEventListener('click', function() {
-                    this.style.transform = 'translateY(-5px) scale(1.02)';
-                    setTimeout(() => {
-                        this.style.transform = 'translateY(-5px) scale(1.02)';
-                    }, 300);
                 });
             });
             
-            // Animation au clic des principes éthiques
-            principleItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    const icon = this.querySelector('.principle-icon');
-                    icon.style.transform = 'scale(1.2) rotate(20deg)';
-                    setTimeout(() => {
-                        icon.style.transform = 'scale(1.1) rotate(15deg)';
-                    }, 300);
-                });
+            // Fermer menu au resize
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    nav.classList.remove('active');
+                    overlay.classList.remove('active');
+                    mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    document.body.style.overflow = '';
+                }
             });
-            
-            // Mise à jour automatique de l'année dans le footer
-            const yearElement = document.querySelector('.current-year');
-            if (yearElement) {
-                yearElement.textContent = new Date().getFullYear();
-            }
-            
-            // Effet de compteur pour les durées des étapes
-            const stepDurations = document.querySelectorAll('.step-duration');
-            stepDurations.forEach(duration => {
-                duration.addEventListener('mouseenter', function() {
-                    const text = this.textContent;
-                    if (text.includes('semaines') || text.includes('mois')) {
-                        this.style.background = 'rgba(33, 150, 243, 0.2)';
-                        this.style.transform = 'translateY(-3px)';
-                    }
+
+            // Calculateur de Conformité
+            window.calculateConformity = function() {
+                let score = 0;
+                const questions = ['q1', 'q2', 'q3', 'q4', 'q5'];
+                
+                questions.forEach(q => {
+                    const value = parseInt(document.getElementById(q).value) || 0;
+                    score += value;
                 });
                 
-                duration.addEventListener('mouseleave', function() {
-                    const text = this.textContent;
-                    if (text.includes('semaines') || text.includes('mois')) {
-                        this.style.background = 'rgba(33, 150, 243, 0.1)';
-                        this.style.transform = 'translateY(0)';
-                    }
+                const resultDiv = document.getElementById('calculatorResult');
+                const scoreDisplay = document.getElementById('scoreDisplay');
+                const conformityLevel = document.getElementById('conformityLevel');
+                const recommendationsList = document.getElementById('recommendationsList');
+                
+                // Afficher le score
+                scoreDisplay.textContent = `${score}/10`;
+                resultDiv.style.display = 'block';
+                
+                // Déterminer le niveau
+                let level = '';
+                let levelColor = '';
+                let recommendations = [];
+                
+                if (score >= 9) {
+                    level = 'Exemplaire';
+                    levelColor = 'var(--success)';
+                    recommendations = [
+                        '✅ Continuez votre excellent travail !',
+                        '✅ Partagez vos bonnes pratiques avec d\'autres écoles',
+                        '✅ Planifiez un audit annuel pour maintenir votre niveau'
+                    ];
+                } else if (score >= 6) {
+                    level = 'Conforme';
+                    levelColor = 'var(--warning)';
+                    recommendations = [
+                        '📋 Téléchargez notre checklist pour améliorer vos points faibles',
+                        '👥 Organisez une session de formation pour tout le personnel',
+                        '📝 Complétez les documents manquants dans notre kit'
+                    ];
+                } else if (score >= 3) {
+                    level = 'Partiellement conforme';
+                    levelColor = 'var(--warning)';
+                    recommendations = [
+                        '🚨 Priorité : Téléchargez et mettez en place la charte numérique',
+                        '📞 Contactez l\'APDP pour un accompagnement gratuit',
+                        '📚 Suivez notre formation en ligne sur la conformité'
+                    ];
+                } else {
+                    level = 'Non conforme';
+                    levelColor = 'var(--danger)';
+                    recommendations = [
+                        '⚠️ Urgence : Téléchargez le kit complet de conformité',
+                        '🆘 Contactez-nous pour un accompagnement personnalisé',
+                        '📅 Planifiez une réunion d\'urgence avec votre équipe'
+                    ];
+                }
+                
+                conformityLevel.textContent = level;
+                conformityLevel.style.color = levelColor;
+                
+                // Afficher les recommandations
+                recommendationsList.innerHTML = '';
+                recommendations.forEach(rec => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<i class="fas fa-arrow-right"></i> ${rec}`;
+                    recommendationsList.appendChild(li);
                 });
-            });
+                
+                // Scroll vers les résultats
+                resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            };
+
+            // Téléchargement de documents
+            window.downloadTemplate = function(templateType) {
+                const templates = {
+                    'charte': {
+                        name: 'Charte Numérique Scolaire',
+                        type: 'docx',
+                        size: '45 Ko'
+                    },
+                    'consentement': {
+                        name: 'Formulaire de Consentement Parental',
+                        type: 'pdf',
+                        size: '28 Ko'
+                    },
+                    'checklist': {
+                        name: 'Checklist de Conformité',
+                        type: 'xlsx',
+                        size: '62 Ko'
+                    },
+                    'charte-ia': {
+                        name: 'Charte d\'Utilisation de l\'IA',
+                        type: 'docx',
+                        size: '38 Ko'
+                    }
+                };
+                
+                const template = templates[templateType];
+                if (!template) return;
+                
+                showDownloadPopup(template.name, template.type, template.size);
+            };
+
+            window.downloadGuide = function(guideId) {
+                const guides = {
+                    'fiche1': { name: 'Fiche 1 - Créer sa charte numérique', pages: 8 },
+                    'fiche2': { name: 'Fiche 2 - Sécuriser ses données', pages: 6 },
+                    'fiche3': { name: 'Fiche 3 - IA en classe', pages: 10 },
+                    'fiche4': { name: 'Fiche 4 - Gérer un incident', pages: 5 }
+                };
+                
+                const guide = guides[guideId];
+                if (!guide) return;
+                
+                showDownloadPopup(guide.name, 'pdf', `${guide.pages} pages`);
+            };
+
+            window.downloadComplianceKit = function() {
+                showDownloadPopup('Kit Complet de Conformité 2025', 'zip', '4.2 Mo');
+            };
+
+            function showDownloadPopup(name, type, size) {
+                const loading = document.createElement('div');
+                loading.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0,0,0,0.7);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 10000;
+                `;
+                
+                loading.innerHTML = `
+                    <div style="background: var(--light); padding: 2.5rem; border-radius: var(--border-radius-lg); text-align: center; max-width: 500px; width: 90%;">
+                        <div class="kit-icon" style="margin: 0 auto 1.5rem;">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <h3 style="color: var(--primary); margin-bottom: 1rem;">Téléchargement en cours</h3>
+                        <p style="color: var(--dark); margin-bottom: 1.5rem;">Préparation de <strong>${name}</strong>...</p>
+                        
+                        <div style="background: var(--gray-light); border-radius: var(--border-radius); padding: 1rem; margin-bottom: 1.5rem;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="color: var(--gray-dark);">Format :</span>
+                                <span style="color: var(--dark); font-weight: 600;">${type.toUpperCase()}</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="color: var(--gray-dark);">Taille :</span>
+                                <span style="color: var(--dark); font-weight: 600;">${size}</span>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
+                            <i class="fas fa-spinner fa-spin" style="color: var(--primary); font-size: 1.5rem;"></i>
+                            <span style="color: var(--gray-dark);">Génération du document...</span>
+                        </div>
+                        
+                        <div style="font-size: 0.9rem; color: var(--gray-dark); line-height: 1.5;">
+                            <i class="fas fa-lightbulb"></i> Ce document est gratuit et libre d'utilisation pour les écoles béninoises
+                        </div>
+                    </div>
+                `;
+                
+                document.body.appendChild(loading);
+                
+                // Simuler le téléchargement
+                setTimeout(() => {
+                    document.body.removeChild(loading);
+                    
+                    // Afficher un message de confirmation
+                    const alertDiv = document.createElement('div');
+                    alertDiv.style.cssText = `
+                        position: fixed;
+                        top: 20px;
+                        right: 20px;
+                        background: var(--success);
+                        color: var(--light);
+                        padding: 1rem 1.5rem;
+                        border-radius: var(--border-radius);
+                        z-index: 10001;
+                        box-shadow: var(--shadow-lg);
+                        animation: slideIn 0.3s ease;
+                    `;
+                    
+                    alertDiv.innerHTML = `
+                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            <i class="fas fa-check-circle" style="font-size: 1.2rem;"></i>
+                            <div>
+                                <div style="font-weight: 600;">Téléchargement réussi !</div>
+                                <div style="font-size: 0.9rem; opacity: 0.9;">${name} a été téléchargé</div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    document.body.appendChild(alertDiv);
+                    
+                    // Supprimer après 5 secondes
+                    setTimeout(() => {
+                        if (alertDiv.parentNode) {
+                            document.body.removeChild(alertDiv);
+                        }
+                    }, 5000);
+                    
+                    // Injecter un style pour l'animation
+                    const style = document.createElement('style');
+                    style.textContent = `
+                        @keyframes slideIn {
+                            from { transform: translateX(100%); opacity: 0; }
+                            to { transform: translateX(0); opacity: 1; }
+                        }
+                    `;
+                    document.head.appendChild(style);
+                    
+                }, 2000);
+            };
         });
     </script>
 </body>

@@ -6,1047 +6,466 @@
     <title>Technologies Éducatives | IA & Innovation - Digit-School Process 2025</title>
     
     <!-- SEO Meta -->
-    <meta name="description" content="Panorama des technologies éducatives innovantes : IA, réalité augmentée, plateformes LMS, outils collaboratifs et solutions adaptées au contexte béninois.">
-    <meta name="keywords" content="technologies éducatives, IA éducation, réalité virtuelle école, plateformes LMS, outils numériques enseignement, innovation pédagogique">
+    <meta name="description" content="Panorama 2025 des technologies éducatives innovantes au Bénin : IA adaptative, RV/RA low-cost, LMS open-source (Moodle, Kisomo), solutions offline pour faible connectivité.">
+    <meta name="keywords" content="technologies éducatives Bénin 2025, IA éducation Afrique, réalité virtuelle low-cost, LMS Moodle open source, outils numériques hors ligne, innovation pédagogique UA">
+    <meta name="author" content="Digit-School Process 2025 - Comité Scientifique d'Excellence">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Technologies Éducatives | IA & Innovation | Digit-School Process 2025">
+    <meta property="og:description" content="Outils numériques adaptés au Bénin : IA, RV, LMS pour éducation inclusive.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./assets/images/social-preview-technologies.jpg">
+    <meta property="og:url" content="https://digit-school-process.bj/technologies.html">
+    <meta property="og:locale" content="fr_BJ">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Technologies Éducatives 2025 | Digit-School Process">
+    <meta name="twitter:description" content="IA adaptative, RV low-cost et LMS open-source pour l'éducation béninoise.">
+    <meta name="twitter:image" content="./assets/images/social-preview-technologies.jpg">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://digit-school-process.bj/technologies.html">
     
     <!-- Favicon -->
-    <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
     
-    <!-- Fonts & Icons -->
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
+    <!-- CSS Principal (Style Propre : Cyan/Bleu pour Innovation Tech) -->
     <style>
-        /* Page-specific styles */
-        .tech-hero {
-            background: linear-gradient(135deg, 
-                rgba(255, 107, 53, 0.95) 0%, 
-                rgba(255, 158, 109, 0.9) 100%),
-                url('./assets/images/hero.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 140px 0 60px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .tech-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 40%),
-                radial-gradient(circle at 80% 70%, rgba(45, 59, 139, 0.1) 0%, transparent 40%),
-                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px);
-        }
-        
-        .tech-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #FFFFFF, #FFE8A0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        /* Technologies Grid */
-        .tech-categories {
-            background: white;
-        }
-        
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-        }
-        
-        .category-card {
-            background: white;
-            border-radius: var(--border-radius-lg);
-            padding: 2.5rem;
-            box-shadow: var(--shadow-medium);
-            position: relative;
-            overflow: hidden;
-            transition: var(--transition);
-            border: 2px solid transparent;
-            border-top: 5px solid var(--primary);
-        }
-        
-        .category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hard);
-            border-color: var(--primary);
-        }
-        
-        .category-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 10px 25px rgba(45, 59, 139, 0.2);
-        }
-        
-        .category-card h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.6rem;
-        }
-        
-        .tech-list {
-            list-style: none;
-            padding: 0;
-            margin: 1.5rem 0;
-        }
-        
-        .tech-list li {
-            margin-bottom: 0.75rem;
-            padding-left: 1.75rem;
-            position: relative;
-            color: var(--dark);
-        }
-        
-        .tech-list li::before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
-        }
-        
-        .tech-example {
-            background: var(--gray-light);
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            margin-top: 1.5rem;
-            border-left: 4px solid var(--accent);
-        }
-        
-        .tech-example h4 {
-            color: var(--accent);
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        /* Solutions Béninoises */
-        .solutions-section {
-            background: linear-gradient(135deg, var(--gray-light), white);
-        }
-        
-        .solution-tabs {
-            background: white;
-            border-radius: var(--border-radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-hard);
-        }
-        
-        .solution-tab-headers {
-            display: flex;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            overflow-x: auto;
-        }
-        
-        .solution-tab-header {
-            flex: 1;
-            padding: 1.5rem;
-            text-align: center;
-            font-family: var(--font-heading);
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.9);
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-            background: none;
-            white-space: nowrap;
-            min-width: 200px;
-            border-bottom: 3px solid transparent;
-        }
-        
-        .solution-tab-header:hover {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-        }
-        
-        .solution-tab-header.active {
-            background: rgba(255, 255, 255, 0.15);
-            color: white;
-            border-bottom-color: var(--accent);
-        }
-        
-        .solution-tab-content {
-            display: none;
-            padding: 3rem;
-            animation: fadeIn 0.5s ease;
-        }
-        
-        .solution-tab-content.active {
-            display: block;
-        }
-        
-        .solution-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .solution-card {
-            background: var(--gray-light);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            border: 1px solid var(--gray);
-            transition: var(--transition);
-        }
-        
-        .solution-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-            border-color: var(--primary);
-        }
-        
-        .solution-card h4 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        
-        .solution-features {
-            list-style: none;
-            padding: 0;
-            margin-top: 1rem;
-        }
-        
-        .solution-features li {
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
-            position: relative;
-            font-size: 0.95rem;
-        }
-        
-        .solution-features li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--success);
-        }
-        
-        /* Roadmap d'Adoption */
-        .roadmap-section {
-            background: white;
-        }
-        
-        .roadmap-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .roadmap-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 3px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--primary), var(--secondary));
-        }
-        
-        .roadmap-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 4rem;
-            position: relative;
-        }
-        
-        .roadmap-item:nth-child(odd) {
-            flex-direction: row-reverse;
-        }
-        
-        .roadmap-phase {
-            flex: 1;
-            background: white;
-            padding: 2rem;
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow-medium);
-            border: 2px solid var(--primary-light);
-            position: relative;
-        }
-        
-        .roadmap-phase::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 20px;
-            height: 20px;
-            background: var(--primary);
-            border-radius: 50%;
-            transform: translateY(-50%);
-        }
-        
-        .roadmap-item:nth-child(odd) .roadmap-phase::before {
-            right: -40px;
-        }
-        
-        .roadmap-item:nth-child(even) .roadmap-phase::before {
-            left: -40px;
-        }
-        
-        .roadmap-phase h4 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .roadmap-phase .duration {
-            display: inline-block;
-            background: rgba(45, 59, 139, 0.1);
-            color: var(--primary);
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        
-        /* Comparatif des Solutions */
-        .comparison-section {
-            background: linear-gradient(135deg, var(--gray-light), white);
-        }
-        
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow-medium);
-        }
-        
-        .comparison-table th {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            padding: 1.5rem;
-            text-align: left;
-            font-weight: 600;
-        }
-        
-        .comparison-table td {
-            padding: 1.25rem;
-            border-bottom: 1px solid var(--gray);
-        }
-        
-        .comparison-table tr:last-child td {
-            border-bottom: none;
-        }
-        
-        .comparison-table tr:hover {
-            background: var(--gray-light);
-        }
-        
-        .tech-badge {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-        
-        .badge-free {
-            background: rgba(76, 175, 80, 0.1);
-            color: var(--success);
-        }
-        
-        .badge-paid {
-            background: rgba(33, 150, 243, 0.1);
-            color: var(--info);
-        }
-        
-        .badge-open {
-            background: rgba(255, 193, 7, 0.1);
-            color: var(--warning);
-        }
-        
-        /* Logo styles */
-        .logo-brand {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            text-decoration: none;
-        }
-        
-        .logo-brand img {
-            height: 50px;
-            width: auto;
-        }
-        
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .logo-text .main {
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--primary);
-        }
-        
-        .logo-text .sub {
-            font-family: var(--font-body);
-            font-size: 0.8rem;
-            color: var(--gray-dark);
-        }
-        
-        /* Footer logo */
-        .footer-logo {
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-        
-        .footer-logo img {
-            height: 40px;
-            width: auto;
-        }
-        
-        /* Responsive */
-        @media (max-width: 992px) {
-            .category-grid {
-                grid-template-columns: 1fr;
-            }
+        /* ===== VARIABLES CSS SPÉCIFIQUES (Cyan/Bleu Tech) ===== */
+        :root {
+            /* Palette Tech : Cyan pour innovation, bleu pour fiabilité */
+            --primary: #0EA5E9; /* Cyan vif */
+            --primary-light: #0284C7;
+            --secondary: #06B6D4; /* Bleu ciel */
+            --accent: #0891B2; /* Bleu océan */
+            --gold: #F59E0B;
+            --success: #10B981;
             
-            .solution-grid {
-                grid-template-columns: 1fr;
-            }
+            /* Couleurs système */
+            --light: #FFFFFF;
+            --gray-light: #F8FAFC;
+            --gray: #E2E8F0;
+            --gray-dark: #64748B;
+            --dark: #0F172A;
+            --darkest: #020617;
             
-            .roadmap-container::before {
-                left: 30px;
-            }
+            /* Typo & Espacements */
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
             
-            .roadmap-item {
-                flex-direction: row !important;
-                margin-left: 60px;
-            }
-            
-            .roadmap-phase::before {
-                left: -40px !important;
-                right: auto !important;
-            }
-            
-            .comparison-table {
-                display: block;
-                overflow-x: auto;
-            }
+            /* Header */
+            --header-height: 80px;
+            --header-scrolled-height: 70px;
         }
-        
+
+        [data-theme="dark"] {
+            --light: #0F172A;
+            --gray-light: #1E293B;
+            --gray: #334155;
+            --gray-dark: #94A3B8;
+            --dark: #F1F5F9;
+            --darkest: #FFFFFF;
+        }
+
+        /* ===== RESET & BASE ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        ::selection { background: var(--accent); color: var(--light); }
+        html { scroll-behavior: smooth; scroll-padding-top: var(--header-height); font-size: 16px; }
+        body { font-family: var(--font-body); font-size: 1rem; line-height: 1.6; font-weight: 400; color: var(--dark); background-color: var(--light); overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+        /* ===== TYPO ===== */
+        h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); color: var(--primary); text-align: center; }
+        h2 { font-size: clamp(1.875rem, 4vw, 2.75rem); color: var(--primary); position: relative; display: inline-block; }
+        h2::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 60px; height: 4px; background: linear-gradient(90deg, var(--secondary), var(--accent)); border-radius: 2px; }
+        h3 { font-size: clamp(1.25rem, 3vw, 1.875rem); color: var(--primary); }
+        p { margin-bottom: 1rem; font-size: 1rem; line-height: 1.6; }
+        a { color: var(--primary); text-decoration: none; transition: all 0.3s ease; }
+        a:hover { color: var(--accent); text-decoration: underline; }
+
+        /* ===== LAYOUT ===== */
+        .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+        .section { padding: 4rem 0; }
+        .section-title { text-align: center; margin-bottom: 3rem; }
+        .section-subtitle { font-size: 1.125rem; color: var(--gray-dark); max-width: 700px; margin: 0.75rem auto 0; font-weight: 400; }
+
+        /* ===== HEADER HARMONISÉ (IDENTIQUE À INDEX.HTML) ===== */
+        .main-header { position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height); background: var(--light); border-bottom: 1px solid var(--gray); z-index: 1000; transition: all 0.4s ease; box-shadow: var(--shadow-md); }
+        .main-header.scrolled { height: var(--header-scrolled-height); backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.95); }
+        [data-theme="dark"] .main-header.scrolled { background: rgba(15, 23, 42, 0.95); }
+        .header-container { display: flex; justify-content: space-between; align-items: center; height: 100%; }
+        .logo-brand { display: flex; align-items: center; gap: 1rem; text-decoration: none; }
+        .logo-img { height: 45px; width: auto; transition: transform 0.3s ease; }
+        .logo-brand:hover .logo-img { transform: scale(1.05); }
+        .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+        .logo-text .main { font-family: var(--font-heading); font-weight: 700; font-size: 1.25rem; color: var(--primary); }
+        .logo-text .sub { font-size: 0.75rem; color: var(--accent); font-weight: 600; }
+        .main-nav-actions { display: flex; align-items: center; gap: 1rem; }
+        .theme-toggle { background: none; border: 1px solid var(--gray); color: var(--dark); padding: 0.5rem; border-radius: 50%; cursor: pointer; transition: all 0.3s ease; font-size: 1.1rem; }
+        .theme-toggle:hover { background: var(--gray-light); border-color: var(--primary); }
+        .main-nav { display: flex; align-items: center; }
+        .nav-list { display: flex; list-style: none; gap: 1.5rem; }
+        .nav-link { font-family: var(--font-heading); font-weight: 600; font-size: 0.95rem; color: var(--dark); padding: 0.75rem 1rem; border-radius: var(--border-radius); transition: all 0.3s ease; white-space: nowrap; position: relative; }
+        .nav-link:hover { background: var(--gray-light); color: var(--primary); transform: translateY(-2px); }
+        .nav-link.active { background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: var(--light); }
+        .nav-link i { margin-right: 0.5rem; }
+        .mobile-menu-btn { display: none; background: none; border: none; color: var(--primary); font-size: 1.5rem; cursor: pointer; padding: 0.5rem; z-index: 1001; transition: transform 0.3s ease; }
+        .mobile-menu-btn:hover { transform: rotate(90deg); }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.75rem; padding: 1rem 2rem; font-family: var(--font-heading); font-weight: 600; font-size: 0.95rem; border: none; border-radius: var(--border-radius); cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: var(--light); position: relative; overflow: hidden; }
+        .btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition: left 0.5s; }
+        .btn:hover::before { left: 100%; }
+        .btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: var(--shadow-lg); }
+        .btn-secondary { background: linear-gradient(135deg, var(--secondary), #0891B2); }
+        .btn-outline { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
+        .btn-outline:hover { background: var(--primary); color: var(--light); }
+        .menu-overlay { display: none; position: fixed; top: var(--header-height); left: 0; width: 100%; height: calc(100vh - var(--header-height)); background: rgba(0, 0, 0, 0.6); z-index: 999; backdrop-filter: blur(5px); transition: opacity 0.3s ease; }
+        .menu-overlay.active { display: block; opacity: 1; }
+
+        /* ===== HERO (Cyan Dynamique) ===== */
+        .hero { min-height: 70vh; padding: calc(var(--header-height) + 2rem) 0 4rem; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%), url('./assets/images/tech-bg.jpg'); background-size: cover; background-position: center; color: var(--light); display: flex; align-items: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 50px 50px; animation: floatParticles 25s linear infinite; z-index: 0; }
+        @keyframes floatParticles { 0% { transform: translateY(0) translateX(0) rotate(0deg); } 100% { transform: translateY(-50px) translateX(50px) rotate(360deg); } }
+        .hero-content { text-align: center; max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+        .hero-title { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; color: var(--light); text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        .hero-title span { display: block; font-size: 0.4em; font-weight: 300; margin-top: 1rem; opacity: 0.9; letter-spacing: 2px; text-transform: uppercase; }
+        .hero-subtitle { font-size: 1.25rem; margin-bottom: 2.5rem; line-height: 1.6; font-weight: 300; opacity: 0.95; max-width: 800px; margin-left: auto; margin-right: auto; hyphens: auto; word-break: break-word; }
+        .hero-actions { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+
+        /* ===== CATEGORY GRID ===== */
+        .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .category-card { background: var(--light); border-radius: var(--border-radius-lg); padding: 2.5rem 2rem; text-align: center; transition: all 0.3s ease; box-shadow: var(--shadow-sm); border: 1px solid var(--gray-light); }
+        .category-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--primary); }
+        .category-icon { width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--light); font-size: 1.5rem; margin: 0 auto 1.5rem; transition: all 0.3s ease; }
+        .category-card:nth-child(1) .category-icon { background: var(--primary); }
+        .category-card:nth-child(2) .category-icon { background: var(--secondary); }
+        .category-card:nth-child(3) .category-icon { background: var(--accent); }
+        .category-card:nth-child(4) .category-icon { background: var(--success); }
+        .category-card:hover .category-icon { transform: scale(1.1) rotate(10deg); }
+        .category-card h3 { color: var(--primary); margin-bottom: 1rem; }
+        .category-card p { color: var(--gray-dark); margin-bottom: 1.5rem; line-height: 1.6; }
+        .tech-list { list-style: none; text-align: left; }
+        .tech-list li { padding: 0.5rem 0; padding-left: 1rem; position: relative; color: var(--gray-dark); }
+        .tech-list li::before { content: '→'; position: absolute; left: 0; color: var(--secondary); font-weight: bold; }
+
+        /* ===== SOLUTION TABS (Responsive) ===== */
+        .solution-tabs { margin-top: 2rem; }
+        .solution-tab-headers { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; justify-content: center; }
+        .solution-tab-header { padding: 1rem 1.5rem; background: var(--gray-light); border: 1px solid var(--gray); border-radius: var(--border-radius); cursor: pointer; transition: all 0.3s ease; font-weight: 600; color: var(--gray-dark); }
+        .solution-tab-header.active, .solution-tab-header:hover { background: var(--primary); color: var(--light); border-color: var(--primary); transform: translateY(-2px); }
+        .solution-tab-content { display: none; }
+        .solution-tab-content.active { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .solution-card { background: var(--light); border-radius: var(--border-radius-lg); padding: 2rem; margin-bottom: 2rem; box-shadow: var(--shadow-sm); border-left: 4px solid var(--secondary); transition: all 0.3s ease; }
+        .solution-card:hover { box-shadow: var(--shadow-md); transform: translateX(5px); }
+        .solution-card h4 { display: flex; align-items: center; gap: 0.75rem; color: var(--primary); margin-bottom: 1rem; font-size: 1.25rem; }
+        .solution-card p { color: var(--gray-dark); margin-bottom: 1.5rem; line-height: 1.6; }
+        .solution-features { list-style: none; }
+        .solution-features li { margin-bottom: 0.75rem; padding-left: 1rem; position: relative; color: var(--gray-dark); }
+        .solution-features li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+        .tech-example { background: rgba(14, 165, 233, 0.05); padding: 1.5rem; border-radius: var(--border-radius); margin-top: 1.5rem; border-left: 3px solid var(--primary); }
+        .tech-example h4 { color: var(--primary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+
+        /* ===== COMPARISON TABLE (Responsive) ===== */
+        .comparison-table { width: 100%; border-collapse: collapse; margin-top: 2rem; background: var(--light); border-radius: var(--border-radius-lg); overflow: hidden; box-shadow: var(--shadow-md); }
+        .comparison-table th, .comparison-table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--gray-light); }
+        .comparison-table th { background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: var(--light); font-weight: 600; }
+        .comparison-table th:first-child, .comparison-table td:first-child { font-weight: 600; color: var(--primary); }
+        .comparison-table tr:hover { background: var(--gray-light); }
+        .matrix-column { text-align: center; min-width: 120px; }
+        .comparison-table i { margin-right: 0.5rem; }
+
+        /* ===== FOOTER HARMONISÉ (IDENTIQUE À INDEX.HTML) ===== */
+        .main-footer { background: var(--darkest); color: var(--light); padding: 4rem 0 2rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2.5rem; margin-bottom: 2.5rem; }
+        .footer-section { display: flex; flex-direction: column; }
+        .footer-logo img { height: 45px; width: auto; margin-bottom: 1.5rem; filter: brightness(0) invert(1); }
+        .footer-title { font-size: 1.25rem; color: var(--light); margin-bottom: 1.5rem; position: relative; padding-bottom: 0.75rem; }
+        .footer-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: linear-gradient(90deg, var(--secondary), var(--accent)); }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 0.75rem; }
+        .footer-links a, .footer-links span { color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: all 0.3s ease; display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem; }
+        .footer-links a:hover { color: var(--light); transform: translateX(5px); }
+        .footer-links i { width: 18px; color: var(--secondary); font-size: 1rem; transition: color 0.3s ease; }
+        .footer-links a:hover i { color: var(--accent); }
+        .social-icons { display: flex; gap: 1rem; margin-top: 1.5rem; }
+        .social-icon { width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--light); text-decoration: none; transition: all 0.3s ease; font-size: 1rem; }
+        .social-icon:hover { background: var(--accent); transform: translateY(-3px) rotate(10deg); box-shadow: var(--shadow-md); }
+        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.875rem; color: rgba(255, 255, 255, 0.6); }
+        .footer-bottom p { margin-bottom: 0.75rem; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) { 
+            .nav-list { gap: 1rem; } 
+            .nav-link { padding: 0.5rem 0.75rem; font-size: 0.9rem; } 
+            .category-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+            .solution-tab-headers { flex-direction: column; align-items: center; }
+            .comparison-table { font-size: 0.9rem; }
+            .comparison-table th, .comparison-table td { padding: 0.75rem 0.5rem; }
+            .matrix-column { min-width: 100px; }
+        }
         @media (max-width: 768px) {
-            .tech-hero {
-                padding: 120px 0 40px;
+            .mobile-menu-btn { display: block; }
+            .main-nav { 
+                position: fixed; 
+                top: var(--header-height); 
+                left: -100%; 
+                width: 300px; 
+                height: calc(100vh - var(--header-height)); 
+                background: var(--light); 
+                flex-direction: column; 
+                justify-content: flex-start; 
+                padding: 2rem; 
+                transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+                z-index: 1000; 
+                box-shadow: var(--shadow-lg); 
+                overflow-y: auto; 
             }
-            
-            .tech-title {
-                font-size: 2.5rem;
-            }
-            
-            .solution-tab-headers {
-                flex-direction: column;
-            }
-            
-            .solution-tab-header {
-                min-width: auto;
-                text-align: left;
-                padding: 1rem 1.5rem;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                border-right: none;
-            }
-            
-            .solution-tab-content {
-                padding: 2rem;
-            }
-            
-            .roadmap-phase {
-                padding: 1.5rem;
-            }
-            
-            .logo-brand img {
-                height: 40px;
-            }
+            .main-nav.active { left: 0; }
+            .nav-list { flex-direction: column; width: 100%; gap: 0; }
+            .nav-list li { width: 100%; border-bottom: 1px solid var(--gray); }
+            .nav-link { padding: 1.25rem 1rem; font-size: 1.1rem; display: flex; align-items: center; width: 100%; border-radius: 0; }
+            .nav-link i { width: 24px; text-align: center; margin-right: 1rem; font-size: 1.2rem; }
+            .nav-link:hover { background: linear-gradient(90deg, var(--primary), var(--primary-light)); color: var(--light); }
+            .hero-actions { flex-direction: column; align-items: center; }
+            .hero-actions .btn { width: 100%; max-width: 350px; margin: 0.5rem 0; }
+            .hero-title { font-size: 2.25rem; }
+            .hero-subtitle { font-size: 1.125rem; padding: 0 1rem; hyphens: auto; word-break: break-word; }
+            .category-grid { grid-template-columns: 1fr; }
+            .solution-card { padding: 1.75rem; margin-bottom: 1.5rem; }
+            .comparison-table { overflow-x: auto; display: block; white-space: nowrap; }
+            .comparison-table th, .comparison-table td { min-width: 100px; padding: 0.5rem; font-size: 0.85rem; }
         }
-        
-        @media (max-width: 480px) {
-            .category-card {
-                padding: 2rem;
-            }
-            
-            .tech-title {
-                font-size: 2rem;
-            }
-            
-            .solution-card {
-                padding: 1.5rem;
-            }
+        @media (max-width: 576px) {
+            .container { padding: 0 1rem; }
+            .section { padding: 3rem 0; }
+            h1 { font-size: 2rem; } h2 { font-size: 1.75rem; } h3 { font-size: 1.375rem; }
+            .hero { padding: calc(var(--header-height) + 1rem) 0 3rem; min-height: auto; }
+            .category-card { padding: 2rem 1.5rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header Harmonisé (identique à index.html) -->
     <header class="main-header">
         <div class="container header-container">
             <a href="index.html" class="logo-brand">
-                <img src="./assets/images/logo.png" alt="Logo de Digit-School Process">
+                <img src="./assets/images/logo-premium.png" alt="Logo Digit-School Process 2025" class="logo-img">
                 <div class="logo-text">
                     <div class="main">Digit-School Process</div>
-                    <div class="sub">Technologies Éducatives</div>
+                    <div class="sub">Excellence 2025</div>
                 </div>
             </a>
             
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu mobile">
-                <i class="fas fa-bars"></i>
-            </button>
+            <div class="main-nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Basculer le mode sombre">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu mobile">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
             
-            <nav class="main-nav" aria-label="Navigation principale">
-                <ul class="nav-list" id="navList">
+            <nav class="main-nav" aria-label="Navigation principale" id="mainNav">
+                <ul class="nav-list">
                     <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Accueil</a></li>
                     <li><a href="definitions.html" class="nav-link"><i class="fas fa-book"></i> Définitions</a></li>
                     <li><a href="avantages-risques.html" class="nav-link"><i class="fas fa-balance-scale"></i> Analyse</a></li>
                     <li><a href="precautions-lois.html" class="nav-link"><i class="fas fa-shield-alt"></i> Cadre Légal</a></li>
                     <li><a href="technologies.html" class="nav-link active"><i class="fas fa-robot"></i> Technologies</a></li>
-                    <li><a href="programme.html" class="nav-link"><i class="fas fa-calendar-alt"></i> Programme</a></li>
                     <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
             </nav>
+            
+            <div class="menu-overlay" id="menuOverlay"></div>
         </div>
     </header>
 
-    <!-- Hero -->
-    <section class="tech-hero">
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
         <div class="container">
-            <h1 class="tech-title">Technologies Éducatives</h1>
-            <p class="section-subtitle" style="color: rgba(255,255,255,0.9); max-width: 800px; margin: 0 auto 2rem;">
-                Panorama des technologies innovantes pour transformer l'enseignement et l'apprentissage au Bénin
-            </p>
-            <p style="font-size: 1.1rem; opacity: 0.8;">
-                De l'intelligence artificielle aux plateformes collaboratives : découvrez les outils qui façonnent l'éducation de demain
-            </p>
+            <div class="hero-content" data-aos="fade-up">
+                <h1 class="hero-title">
+                    Technologies Éducatives
+                    <span>IA & Innovation 2025</span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Panorama des outils innovants adaptés au Bénin : IA adaptative (tutorat intelligent), RV/RA low-cost (simulations UA), LMS open-source (Moodle localisé, Kisomo). Focus 2025 : Stratégie UA numérique (accès 70% via GPE KIX) et solutions offline pour faible connectivité (55% pénétration internet, Banque Mondiale).
+                </p>
+                
+                <div class="hero-actions">
+                    <a href="#categories" class="btn btn-lg">
+                        <i class="fas fa-microchip"></i> Explorer les Outils
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Catégories de Technologies -->
-    <section class="section tech-categories">
+    <!-- Classification Section -->
+    <section class="section tech-categories" id="categories">
         <div class="container">
-            <div class="section-title">
-                <h2>Catégories de Technologies Éducatives</h2>
-                <p class="section-subtitle">Classification des outils numériques selon leur fonction pédagogique</p>
+            <div class="section-title" data-aos="fade-up">
+                <h2>Classification des Outils Numériques</h2>
+                <p class="section-subtitle">Du cloud à l'IA : vue d'ensemble 2025 (UNESCO BILT Stratégie).</p>
             </div>
             
             <div class="category-grid">
-                <div class="category-card animate-fade-in-up">
+                <div class="category-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="category-icon">
-                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-cloud"></i>
                     </div>
-                    <h3>Intelligence Artificielle Éducative</h3>
-                    <p>
-                        Systèmes adaptatifs qui personnalisent les parcours d'apprentissage, fournissent 
-                        un feedback immédiat et assistent les enseignants dans leurs tâches pédagogiques.
-                    </p>
-                    
+                    <h3>Plateformes & Cloud Éducatif</h3>
+                    <p>Systèmes pour gestion cours/ressources ; ENT UA pour Afrique (2025).</p>
                     <ul class="tech-list">
-                        <li>Tuteurs intelligents et assistants pédagogiques</li>
-                        <li>Outils d'évaluation automatique et feedback adaptatif</li>
-                        <li>Analyse prédictive des difficultés d'apprentissage</li>
-                        <li>Génération automatique d'exercices et de contenu</li>
-                        <li>Reconnaissance vocale et traitement du langage naturel</li>
+                        <li>Moodle LMS (open-source)</li>
+                        <li>ENT national Bénin</li>
+                        <li>Cloud sécurisé (Kisomo)</li>
                     </ul>
-                    
-                    <div class="tech-example">
-                        <h4><i class="fas fa-lightbulb"></i> Exemple concret :</h4>
-                        <p>
-                            <strong>Adaptive Learning Platform</strong> - Système qui ajuste la difficulté 
-                            des exercices en temps réel selon les performances de l'élève, identifie 
-                            les lacunes et propose des ressources de remédiation ciblées.
-                        </p>
-                    </div>
                 </div>
                 
-                <div class="category-card animate-fade-in-up">
+                <div class="category-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="category-icon">
-                        <i class="fas fa-vr-cardboard"></i>
+                        <i class="fas fa-robot"></i>
                     </div>
-                    <h3>Réalité Augmentée & Virtuelle</h3>
-                    <p>
-                        Technologies immersives permettant d'explorer des concepts abstraits, de visiter 
-                        des lieux inaccessibles et de pratiquer des compétences dans des environnements simulés.
-                    </p>
-                    
+                    <h3>IA et Apprentissage Adaptatif</h3>
+                    <p>Personnalisation via données ; tutorat IA pour 150 jeunes Bénin (Africa Tech Up 2025).</p>
                     <ul class="tech-list">
-                        <li>Simulations scientifiques et historiques</li>
-                        <li>Visites virtuelles de musées et sites historiques</li>
-                        <li>Manipulation d'objets 3D en réalité augmentée</li>
-                        <li>Entraînement à des gestes techniques complexes</li>
-                        <li>Création de mondes éducatifs interactifs</li>
+                        <li>Recommandations contenu</li>
+                        <li>Chatbots tutorat</li>
+                        <li>Évaluation automatisée</li>
                     </ul>
-                    
-                    <div class="tech-example">
-                        <h4><i class="fas fa-lightbulb"></i> Exemple concret :</h4>
-                        <p>
-                            <strong>VR Biology Lab</strong> - Laboratoire virtuel où les élèves peuvent 
-                            disséquer des organes, observer des cellules en 3D et réaliser des expériences 
-                            sans risque ni équipement coûteux.
-                        </p>
-                    </div>
                 </div>
                 
-                <div class="category-card animate-fade-in-up">
+                <div class="category-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="category-icon">
-                        <i class="fas fa-chalkboard-teacher"></i>
+                        <i class="fas fa-cube"></i>
                     </div>
-                    <h3>Plateformes LMS & Environnements Numériques</h3>
-                    <p>
-                        Systèmes de gestion de l'apprentissage qui structurent les parcours pédagogiques, 
-                        distribuent les ressources et facilitent les interactions entre enseignants et apprenants.
-                    </p>
-                    
+                    <h3>Réalité Virtuelle/Augmentée</h3>
+                    <p>Expériences immersives ; co-création RV musées/écoles (CRIFPE 2025).</p>
                     <ul class="tech-list">
-                        <li>Plateformes open source (Moodle, Chamilo)</li>
-                        <li>Solutions cloud (Google Classroom, Microsoft Teams Éducation)</li>
-                        <li>Environnements numériques de travail (ENT)</li>
-                        <li>Systèmes de gestion de contenus éducatifs</li>
-                        <li>Portfolios numériques d'apprentissage</li>
+                        <li>Apps RA smartphone</li>
+                        <li>Simulations 3D sciences</li>
+                        <li>Multimédia production</li>
                     </ul>
-                    
-                    <div class="tech-example">
-                        <h4><i class="fas fa-lightbulb"></i> Exemple concret :</h4>
-                        <p>
-                            <strong>Moodle Localisé</strong> - Instance de Moodle adaptée au contexte 
-                            béninois, avec contenus en langues nationales, modules spécifiques pour 
-                            les programmes locaux et interface simplifiée pour faible débit.
-                        </p>
-                    </div>
                 </div>
                 
-                <div class="category-card animate-fade-in-up">
+                <div class="category-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="category-icon">
-                        <i class="fas fa-gamepad"></i>
+                        <i class="fas fa-network-wired"></i>
                     </div>
-                    <h3>Gamification & Apprentissage par le Jeu</h3>
-                    <p>
-                        Application des mécaniques de jeu dans des contextes éducatifs pour augmenter 
-                        la motivation, l'engagement et la rétention des connaissances.
-                    </p>
-                    
+                    <h3>Infrastructure Réseau & Matériel</h3>
+                    <p>Solutions physiques offline ; serveurs low-cost pour Afrique subsaharienne (UNESCO 2025).</p>
                     <ul class="tech-list">
-                        <li>Jeux éducatifs sérieux (serious games)</li>
-                        <li>Systèmes de badges et de récompenses</li>
-                        <li>Classements et défis collaboratifs</li>
-                        <li>Événements et compétitions éducatives</li>
-                        <li>Éléments narratifs dans les parcours d'apprentissage</li>
+                        <li>Tablettes low-cost</li>
+                        <li>Serveurs RACHEL/KA-LITE</li>
+                        <li>Projections interactifs</li>
                     </ul>
-                    
-                    <div class="tech-example">
-                        <h4><i class="fas fa-lightbulb"></i> Exemple concret :</h4>
-                        <p>
-                            <strong>MathQuest</strong> - Jeu éducatif où les élèves résolvent des 
-                            problèmes mathématiques pour avancer dans une aventure, débloquer des 
-                            compétences et collaborer avec leurs camarades.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="category-card animate-fade-in-up">
-                    <div class="category-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Outils Collaboratifs & Réseaux Sociaux Éducatifs</h3>
-                    <p>
-                        Plateformes facilitant le travail d'équipe, le partage de connaissances 
-                        et la construction collective de savoirs, localement et globalement.
-                    </p>
-                    
-                    <ul class="tech-list">
-                        <li>Outils de co-création de documents (Padlet, Miro)</li>
-                        <li>Forums et communautés d'apprentissage</li>
-                        <li>Outils de vidéoconférence éducative</li>
-                        <li>Plateformes de mentorat et de tutorat</li>
-                        <li>Réseaux sociaux éducatifs sécurisés</li>
-                    </ul>
-                    
-                    <div class="tech-example">
-                        <h4><i class="fas fa-lightbulb"></i> Exemple concret :</h4>
-                        <p>
-                            <strong>EduConnect</strong> - Réseau social éducatif béninois permettant 
-                            aux élèves de différentes écoles de collaborer sur des projets, 
-                            échanger des ressources et participer à des défis nationaux.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="category-card animate-fade-in-up">
-                    <div class="category-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Analytics & Pilotage Pédagogique</h3>
-                    <p>
-                        Outils d'analyse des données d'apprentissage permettant un suivi individualisé, 
-                        une évaluation formative continue et un pilotage éclairé des stratégies pédagogiques.
-                    </p>
-                    
-                    <ul class="tech-list">
-                        <li>Tableaux de bord de suivi des élèves</li>
-                        <li>Outils d'analyse des traces d'apprentissage</li>
-                        <li>Systèmes d'alerte précoce pour les décrocheurs</li>
-                        <li>Visualisation des progrès et compétences</li>
-                        <li>Analytics prédictif pour l'orientation</li>
-                    </ul>
-                    
-                    <div class="tech-example">
-                        <h4><i class="fas fa-lightbulb"></i> Exemple concret :</h4>
-                        <p>
-                            <strong>EduAnalytics Benin</strong> - Plateforme qui agrège les données 
-                            d'apprentissage de multiples sources, identifie les tendances et 
-                            fournit des recommandations personnalisées aux enseignants et directeurs.
-                        </p>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Solutions Adaptées au Bénin -->
-    <section class="section solutions-section">
+    <!-- Adapted Solutions Section -->
+    <section class="section adapted-solutions" id="adapted">
         <div class="container">
-            <div class="section-title">
-                <h2>Solutions Adaptées au Contexte Béninois</h2>
-                <p class="section-subtitle">Technologies accessibles, abordables et pertinentes pour les écoles béninoises</p>
+            <div class="section-title" data-aos="fade-up">
+                <h2>Solutions Adaptées au Bénin</h2>
+                <p class="section-subtitle">Technologies low-cost/offline pour connectivité limitée (Stratégie UA 2025).</p>
             </div>
             
             <div class="solution-tabs">
                 <div class="solution-tab-headers">
-                    <button class="solution-tab-header active" data-solution-tab="lowtech">
-                        <i class="fas fa-mobile-alt"></i> Solutions Basse Technologie
-                    </button>
-                    <button class="solution-tab-header" data-solution-tab="offline">
-                        <i class="fas fa-wifi-slash"></i> Solutions Hors Ligne
-                    </button>
-                    <button class="solution-tab-header" data-solution-tab="local">
-                        <i class="fas fa-flag"></i> Solutions Locales
-                    </button>
-                    <button class="solution-tab-header" data-solution-tab="cost">
-                        <i class="fas fa-coins"></i> Solutions Abordables
-                    </button>
+                    <button class="solution-tab-header active" data-solution-tab="low-tech">Faible Connectivité</button>
+                    <button class="solution-tab-header" data-solution-tab="intermediate-tech">Intermédiaire</button>
+                    <button class="solution-tab-header" data-solution-tab="high-tech">Haute Tech/IA</button>
                 </div>
                 
-                <!-- Tab 1: Basse Technologie -->
-                <div class="solution-tab-content active" id="lowtech">
-                    <h3 style="color: var(--primary); margin-bottom: 2rem;">
-                        <i class="fas fa-mobile-alt"></i> Solutions Optimisées pour Faibles Spécifications
-                    </h3>
-                    
-                    <div class="solution-grid">
-                        <div class="solution-card">
-                            <h4><i class="fas fa-sms"></i> Apprentissage par SMS</h4>
-                            <p>
-                                Plateforme permettant de diffuser des leçons courtes, des quiz et 
-                                des rappels par SMS, accessible même avec les téléphones les plus basiques.
-                            </p>
-                            <ul class="solution-features">
-                                <li>Fonctionne sur tous les téléphones</li>
-                                <li>Coût très réduit (SMS local)</li>
-                                <li>Pas besoin d'internet</li>
-                                <li>Interface simple et intuitive</li>
-                                <li>Contenus en langues nationales</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="solution-card">
-                            <h4><i class="fas fa-broadcast-tower"></i> Radio Éducative Interactive</h4>
-                            <p>
-                                Programmes radio éducatifs avec interaction par SMS ou appel vocal, 
-                                permettant une éducation à distance même dans les zones non couvertes.
-                            </p>
-                            <ul class="solution-features">
-                                <li>Couverture nationale par radio</li>
-                                <li>Interaction par téléphone basique</li>
-                                <li>Coûts d'équipement minimaux</li>
-                                <li>Format audio adapté à l'oralité</li>
-                                <li>Rediffusion en podcast</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="solution-card">
-                            <h4><i class="fas fa-sd-card"></i> Contenus sur Cartes Mémoire</h4>
-                            <p>
-                                Bibliothèques éducatives complètes sur cartes SD, transférables entre 
-                                appareils, fonctionnant sans connexion internet continue.
-                            </p>
-                            <ul class="solution-features">
-                                <li>Pas besoin de connexion permanente</li>
-                                <li>Coût unique de la carte mémoire</li>
-                                <li>Partage facile entre élèves</li>
-                                <li>Mise à jour périodique possible</li>
-                                <li>Compatibilité avec smartphones bas de gamme</li>
-                            </ul>
-                        </div>
+                <div class="solution-tab-content active" id="low-tech">
+                    <div class="solution-card" data-aos="fade-up">
+                        <h4><i class="fas fa-server"></i> Moodle Localisé / RACHEL</h4>
+                        <p>Serveurs physiques/Raspberry pour contenus offline ; idéal zones rurales (UNESCO BILT 2025).</p>
+                        <ul class="solution-features">
+                            <li>Internet minimal</li>
+                            <li>Batch téléchargements</li>
+                            <li>Cache intelligent</li>
+                        </ul>
                     </div>
-                </div>
-                
-                <!-- Tab 2: Hors Ligne -->
-                <div class="solution-tab-content" id="offline">
-                    <h3 style="color: var(--primary); margin-bottom: 2rem;">
-                        <i class="fas fa-wifi-slash"></i> Solutions Fonctionnant sans Internet Permanent
-                    </h3>
-                    
-                    <div class="solution-grid">
-                        <div class="solution-card">
-                            <h4><i class="fas fa-server"></i> Serveur Local Éducatif</h4>
-                            <p>
-                                Serveur Raspberry Pi hébergeant une plateforme éducative complète 
-                                accessible via le réseau local de l'école, sans besoin d'internet.
-                            </p>
-                            <ul class="solution-features">
-                                <li>Coût matériel inférieur à 100€</li>
-                                <li>Fonctionne sur courant faible</li>
-                                <li>Réseau WiFi local gratuit</li>
-                                <li>Contenus préchargés et personnalisables</li>
-                                <li>Maintenance technique simple</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="solution-card">
-                            <h4><i class="fas fa-sync-alt"></i> Synchronisation Périodique</h4>
-                            <p>
-                                Applications mobiles permettant de télécharger des contenus lors 
-                                de brèves connexions et de les consulter ensuite hors ligne.
-                            </p>
-                            <ul class="solution-features">
-                                <li>Utilisation internet minimale</li>
-                                <li>Téléchargement par batch optimisé</li>
-                                <li>Compression des données pour économiser</li>
-                                <li>Gestion intelligente du cache</li>
-                                <li>Synchronisation lors des connexions WiFi gratuites</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="solution-card">
-                            <h4><i class="fas fa-satellite-dish"></i> Réseau Mesh Communautaire</h4>
-                            <p>
-                                Réseau décentralisé où chaque appareil relaie le signal, permettant 
-                                de couvrir une communauté scolaire sans infrastructure centrale coûteuse.
-                            </p>
-                            <ul class="solution-features">
-                                <li>Pas d'infrastructure centrale coûteuse</li>
-                                <li>Résilience aux pannes</li>
-                                <li>Extension progressive du réseau</li>
-                                <li>Partage de connexion quand disponible</li>
-                                <li>Contrôle communautaire du réseau</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Tab 3: Solutions Locales -->
-                <div class="solution-tab-content" id="local">
-                    <h3 style="color: var(--primary); margin-bottom: 2rem;">
-                        <i class="fas fa-flag"></i> Technologies Développées Localement
-                    </h3>
-                    
-                    <div class="solution-grid">
-                        <div class="solution-card">
-                            <h4><i class="fas fa-language"></i> Plateformes en Langues Nationales</h4>
-                            <p>
-                                Solutions éducatives développées spécifiquement pour les langues 
-                                béninoises (Fon, Yoruba, Bariba, Dendi), avec interfaces et contenus adaptés.
-                            </p>
-                            <ul class="solution-features">
-                                <li>Interfaces dans les langues locales</li>
-                                <li>Contenus culturellement pertinents</li>
-                                <li>Reconnaissance vocale pour les langues nationales</li>
-                                <li>Communauté de traduction participative</li>
-                                <li>Adaptation aux réalités béninoises</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="solution-card">
-                            <h4><i class="fas fa-users-cog"></i> Fab Labs Éducatifs</h4>
-                            <p>
-                                Ateliers de fabrication numérique permettant aux élèves de concevoir 
-                                et produire leurs propres outils éducatifs avec des moyens locaux.
-                            </p>
-                            <ul class="solution-features">
-                                <li>Réutilisation de matériaux locaux</li>
-                                <li>Développement de compétences techniques</li>
-                                <li>Création d'outils adaptés aux besoins spécifiques</li>
-                                <li>Économie circulaire dans l'éducation</li>
-                                <li>Innovation ascendante (bottom-up)</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="solution-card">
-                            <h4><i class="fas fa-handshake"></i> Co-développement avec les Communautés</h4>
-                            <p>
-                                Méthodologie impliquant enseignants, élèves et parents dans la conception 
-                                des outils numériques éducatifs pour garantir leur pertinence et adoption.
-                            </p>
-                            <ul class="solution-features">
-                                <li>Design thinking participatif</li>
-                                <li>Tests utilisateurs dans les écoles réelles</li>
-                                <li>Adaptation continue basée sur les retours</li>
-                                <li>Formation des enseignants comme co-créateurs</li>
-                                <li>Modèles économiques solidaires</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Tab 4: Solutions Abordables -->
-                <div class="solution-tab-content" id="cost">
-                    <h3 style="color: var(--primary); margin-bottom: 2rem;">
-                        <i class="fas fa-coins"></i> Technologies à Coût Maîtrisé
-                    </h3>
-                    
-                    <div class="solution-grid">
-                        <div class="solution-card">
-                            <h4><i class="fas fa-recycle"></i> Réemploi d'Équipements</h4>
-                            <p>
-                                Programme de reconditionnement d'ordinateurs et tablettes d'occasion 
-                                pour les écoles, avec garantie et maintenance assurée localement.
-                            </p>
-                            <ul class="solution-features">
-                                <li>Coût réduit de 70% par rapport au neuf</li>
-                                <li>Création d'emplois locaux de maintenance</li>
-                                <li>Allongement de la durée de vie des équipements</li>
-                                <li>Formation des techniciens scolaires</li>
-                                <li>Économie circulaire appliquée au numérique éducatif</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="solution-card">
-                            <h4><i class="fas fa-hand-holding-usd"></i> Modèles de Financement Innovants</h4>
-                            <p>
-                                Approches créatives pour financer l'équipement numérique des écoles : 
-                                location avec option d'achat, micro-crédits, partenariats public-privé.
-                            </p>
-                            <ul class="solution-features">
-                                <li>Location d'équipements avec maintenance incluse</li>
-                                <li>Micro-paiements pour les familles</li>
-                                <li>Partenariats avec entreprises locales</li>
-                                <li>Financement participatif communautaire</li>
-                                <li>Échanges de services contre équipements</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="solution-card">
-                            <h4><i class="fas fa-solar-panel"></i> Solutions Énergétiques Adaptées</h4>
-                            <p>
-                                Systèmes d'alimentation électrique adaptés aux contraintes locales : 
-                                panneaux solaires, batteries longue autonomie, optimisation énergétique.
-                            </p>
-                            <ul class="solution-features">
-                                <li>Panneaux solaires pour écoles non connectées</li>
-                                <li>Batteries optimisées pour l'autonomie</li>
-                                <li>Équipements basse consommation</li>
-                                <li>Gestion intelligente de l'énergie</li>
-                                <li>Formation à l'entretien des systèmes</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Roadmap d'Adoption -->
-    <section class="section roadmap-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Roadmap d'Adoption Technologique</h2>
-                <p class="section-subtitle">Feuille de route progressive pour l'intégration des technologies en milieu scolaire béninois</p>
-            </div>
-            
-            <div class="roadmap-container">
-                <div class="roadmap-item animate-fade-in-up">
-                    <div class="roadmap-phase">
-                        <h4><i class="fas fa-calendar-check"></i> Phase 1 : Sensibilisation et Formation</h4>
-                        <div class="duration">Mois 1-3</div>
-                        <p>
-                            Formation des enseignants aux bases du numérique, sensibilisation des parents, 
-                            évaluation des infrastructures existantes et des besoins spécifiques.
-                        </p>
-                        <ul class="tech-list">
-                            <li>Ateliers d'initiation au numérique</li>
-                            <li>Évaluation des compétences existantes</li>
-                            <li>Visites d'écoles modèles</li>
-                            <li>Création de comités numériques</li>
+                    <div class="solution-card" data-aos="fade-up" data-aos-delay="100">
+                        <h4><i class="fas fa-satellite-dish"></i> Réseau Mesh</h4>
+                        <p>Réseaux maillés villageois ; résilience pannes (GPE KIX Afrique 2025).</p>
+                        <ul class="solution-features">
+                            <li>Coût initial faible</li>
+                            <li>Résilience aux pannes</li>
+                            <li>Partage connexion limitée</li>
                         </ul>
                     </div>
                 </div>
                 
-                <div class="roadmap-item animate-fade-in-up">
-                    <div class="roadmap-phase">
-                        <h4><i class="fas fa-tools"></i> Phase 2 : Infrastructure de Base</h4>
-                        <div class="duration">Mois 4-6</div>
-                        <p>
-                            Mise en place des infrastructures minimales : équipement, connexion, 
-                            sécurité de base. Déploiement de solutions simples et robustes.
-                        </p>
-                        <ul class="tech-list">
-                            <li>Installation de bornes WiFi</li>
-                            <li>Acquisition d'équipements reconditionnés</li>
-                            <li>Mise en place de serveurs locaux</li>
-                            <li>Sécurisation des réseaux</li>
+                <div class="solution-tab-content" id="intermediate-tech">
+                    <div class="solution-card" data-aos="fade-up">
+                        <h4><i class="fas fa-code-branch"></i> Plateformes Open Source</h4>
+                        <p>Logiciels libres adaptés localement ; évite licences (CRDI manuel innovations 2025).</p>
+                        <ul class="solution-features">
+                            <li>Coûts logiciels nuls</li>
+                            <li>Traduction/modification</li>
+                            <li>Contenus locaux</li>
+                        </ul>
+                        <div class="tech-example">
+                            <h4><i class="fas fa-lightbulb"></i> Exemple :</h4>
+                            <p>Moodle localisé : Interface langues nationales, modules programmes béninois, faible débit (Africa Tech Up).</p>
+                        </div>
+                    </div>
+                    <div class="solution-card" data-aos="fade-up" data-aos-delay="100">
+                        <h4><i class="fas fa-hand-holding-usd"></i> Financement Innovant</h4>
+                        <p>Location/achat, micro-crédits, PPP ; pour équipements (PND Bénin 2025).</p>
+                        <ul class="solution-features">
+                            <li>Location maintenance incluse</li>
+                            <li>Micro-paiements familles</li>
+                            <li>Partenariats locaux</li>
                         </ul>
                     </div>
                 </div>
                 
-                <div class="roadmap-item animate-fade-in-up">
-                    <div class="roadmap-phase">
-                        <h4><i class="fas fa-chalkboard-teacher"></i> Phase 3 : Intégration Pédagogique</h4>
-                        <div class="duration">Mois 7-12</div>
-                        <p>
-                            Intégration progressive des outils numériques dans les pratiques pédagogiques, 
-                            avec accompagnement personnalisé des enseignants.
-                        </p>
-                        <ul class="tech-list">
-                            <li>Utilisation de plateformes LMS simples</li>
-                            <li>Création de ressources numériques de base</li>
-                            <li>Expérimentation de méthodes hybrides</li>
-                            <li>Évaluation formative numérique</li>
+                <div class="solution-tab-content" id="high-tech">
+                    <div class="solution-card" data-aos="fade-up">
+                        <h4><i class="fas fa-robot"></i> IA Diagnostic/Orientation</h4>
+                        <p>Analyse performances ; parcours emploi local (formation IA 150 jeunes Bénin 2025).</p>
+                        <ul class="solution-features">
+                            <li>Optimisation apprentissage</li>
+                            <li>Adequation formation-emploi</li>
+                            <li>Infrastructure données</li>
                         </ul>
                     </div>
-                </div>
-                
-                <div class="roadmap-item animate-fade-in-up">
-                    <div class="roadmap-phase">
-                        <h4><i class="fas fa-rocket"></i> Phase 4 : Innovation et Créativité</h4>
-                        <div class="duration">Mois 13-24</div>
-                        <p>
-                            Développement de projets numériques créatifs, utilisation de technologies 
-                            avancées, participation à des réseaux éducatifs nationaux et internationaux.
-                        </p>
-                        <ul class="tech-list">
-                            <li>Projets inter-écoles par visioconférence</li>
-                            <li>Création de contenus multimédias</li>
-                            <li>Expérimentation de réalité augmentée</li>
-                            <li>Participation à des concours numériques</li>
+                    <div class="solution-card" data-aos="fade-up" data-aos-delay="100">
+                        <h4><i class="fas fa-vr-cardboard"></i> Laboratoires Virtuels</h4>
+                        <p>RV casques low-cost ; simulations sciences/histoire (co-création CRIFPE 2025).</p>
+                        <ul class="solution-features">
+                            <li>Engagement élèves élevé</li>
+                            <li>Coûts labo réduits</li>
+                            <li>Smartphones/tablettes base</li>
                         </ul>
                     </div>
                 </div>
@@ -1054,180 +473,218 @@
         </div>
     </section>
 
-    <!-- Comparatif des Solutions -->
-    <section class="section comparison-section">
+    <!-- Matrix Section -->
+    <section class="section comparison-section" id="matrix">
         <div class="container">
-            <div class="section-title">
-                <h2>Comparatif des Solutions Technologiques</h2>
-                <p class="section-subtitle">Analyse comparative des différentes options disponibles pour les écoles béninoises</p>
+            <div class="section-title" data-aos="fade-up">
+                <h2>Matrice d'Aide à la Décision</h2>
+                <p class="section-subtitle">Comparative 2025 pour contexte béninois (UNESCO/UA).</p>
             </div>
             
-            <table class="comparison-table">
+            <table class="comparison-table" data-aos="fade-up" data-aos-delay="100">
                 <thead>
                     <tr>
-                        <th>Type de Solution</th>
-                        <th>Avantages</th>
-                        <th>Limitations</th>
-                        <th>Coût Estimé</th>
-                        <th>Niveau de Complexité</th>
+                        <th>Technologie / Solution</th>
+                        <th><i class="fas fa-hand-holding-usd"></i> Coût Initial/Maintenance</th>
+                        <th><i class="fas fa-sitemap"></i> Complexité Mise en Œuvre</th>
+                        <th><i class="fas fa-signal"></i> Connectivité Requise</th>
+                        <th>Avantage Clé Afrique Ouest</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>SMS Éducatif</strong></td>
-                        <td>Très accessible, fonctionne partout, coût minimal</td>
-                        <td>Contenus limités, pas de multimédias</td>
-                        <td><span class="tech-badge badge-free">Très bas</span></td>
-                        <td><span class="tech-badge badge-open">Très simple</span></td>
+                        <td><strong>Plateforme LMS Cloud (SaaS)</strong></td>
+                        <td>Élevé (Licences + Données)</td>
+                        <td>Intermédiaire (Config)</td>
+                        <td>Élevé (Permanent)</td>
+                        <td>Mises à jour auto ; accessibilité globale.</td>
                     </tr>
                     <tr>
-                        <td><strong>Plateforme LMS Open Source</strong></td>
-                        <td>Gratuite, personnalisable, communauté active</td>
-                        <td>Nécessite maintenance technique</td>
-                        <td><span class="tech-badge badge-free">Gratuit</span></td>
-                        <td><span class="tech-badge badge-paid">Moyen</span></td>
+                        <td><strong>Moodle Localisé / RACHEL</strong></td>
+                        <td>Faible (Matériel local)</td>
+                        <td>Faible-Intermédiaire (Install)</td>
+                        <td>Très Faible (Offline)</td>
+                        <td><strong>Anti-fracture ; UA stratégie 2025.</strong></td>
                     </tr>
                     <tr>
-                        <td><strong>Solutions Cloud (Google/MS)</strong></td>
-                        <td>Facile à utiliser, maintenance incluse, collaborative</td>
-                        <td>Dépendance aux fournisseurs, données à l'étranger</td>
-                        <td><span class="tech-badge badge-free">Gratuit de base</span></td>
-                        <td><span class="tech-badge badge-open">Simple</span></td>
+                        <td><strong>Tablettes Low-Cost</strong></td>
+                        <td>Intermédiaire (Achat + Rechange)</td>
+                        <td>Faible (Pré-configuré)</td>
+                        <td>Faible (Offline possible)</td>
+                        <td>Mobilité individuelle élèves.</td>
                     </tr>
                     <tr>
-                        <td><strong>Serveur Local (Raspberry Pi)</strong></td>
-                        <td>Autonome, pas d'abonnement, contrôle total</td>
-                        <td>Maintenance locale nécessaire, capacité limitée</td>
-                        <td><span class="tech-badge badge-paid">100-200€</span></td>
-                        <td><span class="tech-badge badge-paid">Élevé</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Équipements Reconditionnés</strong></td>
-                        <td>Coût réduit, écologique, maintenance locale possible</td>
-                        <td>Durée de vie limitée, performances variables</td>
-                        <td><span class="tech-badge badge-free">30-50% du neuf</span></td>
-                        <td><span class="tech-badge badge-open">Variable</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Réseau Mesh Communautaire</strong></td>
-                        <td>Résilient, évolutif, contrôle communautaire</td>
-                        <td>Déploiement complexe, coordination nécessaire</td>
-                        <td><span class="tech-badge badge-paid">Variable</span></td>
-                        <td><span class="tech-badge badge-paid">Élevé</span></td>
+                        <td><strong>Outils IA Générative</strong></td>
+                        <td>Élevé (Abonnement)</td>
+                        <td>Faible (Simple)</td>
+                        <td>Très Élevé (API réel)</td>
+                        <td>Personnalisation extrême ; Africa Tech Up.</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer Harmonisé (identique à index.html) -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="./assets/images/logo-white.png" alt="Logo blanc de Digit-School Process">
+                        <img src="./assets/images/logo-premium-white.png" alt="Logo Digit-School Process 2025 Blanc">
                     </div>
                     <h4 class="footer-title">Digit-School Process 2025</h4>
-                    <p style="opacity: 0.9; line-height: 1.6;">
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 0.95rem;">
                         Organisé par l'école "Les Bulles de Joie"<br>
-                        Slogan : "Amour • Travail • Rigueur • Créativité"
+                        <span style="color: var(--gold); font-weight: 600;">
+                            Amour • Travail • Rigueur • Créativité • Excellence
+                        </span>
                     </p>
                     <div class="social-icons">
-                        <a href="https://facebook.com/lesbullesdejoie" target="_blank" aria-label="Facebook">
+                        <a href="https://facebook.com/lesbullesdejoie" target="_blank" aria-label="Facebook Les Bulles de Joie" class="social-icon">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="https://instagram.com/lesbullesdejoie" target="_blank" aria-label="Instagram">
+                        <a href="https://instagram.com/lesbullesdejoie" target="_blank" aria-label="Instagram Les Bulles de Joie" class="social-icon">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://www.tiktok.com/@cspblesbullesdejoie" target="_blank" aria-label="TikTok">
+                        <a href="https://www.tiktok.com/@cspblesbullesdejoie" target="_blank" aria-label="TikTok Les Bulles de Joie" class="social-icon">
                             <i class="fab fa-tiktok"></i>
                         </a>
-                        <a href="https://les-bulles-de-joie.onrender.com/" target="_blank" aria-label="Site web">
+                        <a href="https://les-bulles-de-joie.onrender.com/" target="_blank" aria-label="Site web Les Bulles de Joie" class="social-icon">
                             <i class="fas fa-globe"></i>
-                        </a>
-                        <a href="https://wa.me/2290197919452" target="_blank" aria-label="WhatsApp">
-                            <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
                 </div>
                 
                 <div class="footer-section">
-                    <h4 class="footer-title">Contact Rapide</h4>
+                    <h4 class="footer-title">Contact</h4>
                     <ul class="footer-links">
                         <li><a href="tel:+2290197919452"><i class="fas fa-phone"></i> +229 01 97 91 94 52</a></li>
                         <li><a href="mailto:lesbullesdejoie@gmail.com"><i class="fas fa-envelope"></i> lesbullesdejoie@gmail.com</a></li>
-                        <li><a href="mailto:codjosamuelstein@gmail.com"><i class="fas fa-user-tie"></i> codjosamuelstein@gmail.com</a></li>
                         <li><span><i class="fas fa-map-marker-alt"></i> Parakou - Zongo 2, Bénin</span></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4 class="footer-title">Navigation Technologie</h4>
+                    <h4 class="footer-title">Navigation</h4>
                     <ul class="footer-links">
-                        <li><a href="#tech-categories"><i class="fas fa-robot"></i> Catégories de technologies</a></li>
-                        <li><a href="#solutions"><i class="fas fa-mobile-alt"></i> Solutions adaptées</a></li>
-                        <li><a href="#roadmap"><i class="fas fa-road"></i> Roadmap d'adoption</a></li>
-                        <li><a href="#comparison"><i class="fas fa-balance-scale"></i> Comparatif des solutions</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Accueil</a></li>
+                        <li><a href="definitions.html"><i class="fas fa-chevron-right"></i> Définitions</a></li>
+                        <li><a href="avantages-risques.html"><i class="fas fa-chevron-right"></i> Analyse Stratégique</a></li>
+                        <li><a href="precautions-lois.html"><i class="fas fa-chevron-right"></i> Cadre Légal</a></li>
+                        <li><a href="technologies.html"><i class="fas fa-chevron-right"></i> Technologies</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4 class="footer-title">Ressources Technologiques</h4>
+                    <h4 class="footer-title">École d'Excellence</h4>
                     <ul class="footer-links">
-                        <li><a href="assets/documents/guide-technologies.pdf" target="_blank"><i class="fas fa-download"></i> Guide des technologies</a></li>
-                        <li><a href="assets/documents/catalogue-solutions.pdf" target="_blank"><i class="fas fa-book"></i> Catalogue de solutions</a></li>
-                        <li><a href="assets/documents/fiches-pratiques.pdf" target="_blank"><i class="fas fa-file-alt"></i> Fiches pratiques</a></li>
-                        <li><a href="assets/documents/contacts-fournisseurs.pdf" target="_blank"><i class="fas fa-address-book"></i> Contacts fournisseurs</a></li>
+                        <li><span><i class="fas fa-school"></i> Institution Agréée</span></li>
+                        <li><span><i class="fas fa-users"></i> 350+ Élèves</span></li>
+                        <li><span><i class="fas fa-star"></i> 4.9/5 Excellence Académique</span></li>
+                        <li><span><i class="fas fa-language"></i> Bilingue Français-Anglais</span></li>
+                        <li><span><i class="fas fa-award"></i> Prix d'Excellence 2023</span></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; <span class="current-year">2025</span> Digit-School Process | Organisé par l'école "Les Bulles de Joie" | Parakou, Bénin</p>
-                <p>Les technologies présentées sont testées et validées dans des écoles pilotes au Bénin.</p>
+                <p>&copy; 2025 Digit-School Process | Événement organisé par "Les Bulles de Joie" | Parakou, Bénin</p>
+                <p>Agréments : 2021 N°018/MASM/DC/SGM/DGAS/DFEA/SA/021SGG21 | 2022 N°045/MEMP/DC/SGM/DPP/SP/0223SGG22</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="js/main.js"></script>
-    
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Solution Tabs System
         document.addEventListener('DOMContentLoaded', function() {
-            const solutionTabHeaders = document.querySelectorAll('.solution-tab-header');
-            const solutionTabContents = document.querySelectorAll('.solution-tab-content');
-            
-            solutionTabHeaders.forEach(header => {
-                header.addEventListener('click', function() {
-                    const tabId = this.getAttribute('data-solution-tab');
-                    
-                    // Remove active class from all headers and contents
-                    solutionTabHeaders.forEach(h => h.classList.remove('active'));
-                    solutionTabContents.forEach(c => c.classList.remove('active'));
-                    
-                    // Add active class to clicked header and corresponding content
-                    this.classList.add('active');
-                    document.getElementById(tabId).classList.add('active');
+            AOS.init({ duration: 800, once: false, offset: 100, easing: 'ease-out-cubic', mirror: true });
+
+            // ========== HEADER HARMONISÉ (identique à index.html) ==========
+            // Dark Mode
+            const themeToggle = document.getElementById('themeToggle');
+            const html = document.documentElement;
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            html.setAttribute('data-theme', currentTheme);
+            themeToggle.querySelector('i').className = currentTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            themeToggle.addEventListener('click', () => {
+                const newTheme = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+                html.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                themeToggle.querySelector('i').className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            });
+
+            // Menu Mobile
+            const mobileBtn = document.getElementById('mobileMenuBtn');
+            const nav = document.getElementById('mainNav');
+            const overlay = document.getElementById('menuOverlay');
+            function toggleMenu() {
+                nav.classList.toggle('active');
+                overlay.classList.toggle('active');
+                mobileBtn.innerHTML = nav.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+                document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+            }
+            mobileBtn.addEventListener('click', toggleMenu);
+            overlay.addEventListener('click', toggleMenu);
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('active');
+                    overlay.classList.remove('active');
+                    mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    document.body.style.overflow = '';
                 });
             });
-            
-            // Animate elements with delay
-            const categoryCards = document.querySelectorAll('.category-card');
-            const solutionCards = document.querySelectorAll('.solution-card');
-            const roadmapItems = document.querySelectorAll('.roadmap-item');
-            
-            categoryCards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.1}s`;
+
+            // Header Scroll
+            const header = document.querySelector('.main-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) header.classList.add('scrolled');
+                else header.classList.remove('scrolled');
             });
-            
-            solutionCards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.1}s`;
+
+            // Smooth Scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
             });
-            
-            roadmapItems.forEach((item, index) => {
-                item.style.animationDelay = `${index * 0.2}s`;
+
+            // Tabs Functionality
+            const tabHeaders = document.querySelectorAll('.solution-tab-header');
+            const tabContents = document.querySelectorAll('.solution-tab-content');
+            tabHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const targetTab = header.dataset.solutionTab;
+                    tabHeaders.forEach(h => h.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    header.classList.add('active');
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+
+            // Resize Menu
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    nav.classList.remove('active');
+                    overlay.classList.remove('active');
+                    mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Interactive Elements
+            document.querySelectorAll('.category-card, .solution-card').forEach(el => {
+                el.addEventListener('click', (e) => {
+                    if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.closest('a') || e.target.closest('button')) {
+                        return;
+                    }
+                    el.style.transform = 'scale(0.98)';
+                    setTimeout(() => { el.style.transform = ''; }, 150);
+                });
             });
         });
     </script>
