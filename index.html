@@ -15,24 +15,16 @@
     <meta property="og:title" content="Digit-School Process 2025 | Excellence en Éducation Numérique">
     <meta property="og:description" content="L'événement référence sur la transformation numérique éducative au Bénin. Rejoignez-nous pour innover l'avenir de l'éducation.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="./assets/images/social-preview.jpg">
     <meta property="og:url" content="https://digit-school-process.bj">
     <meta property="og:locale" content="fr_BJ">
     
     <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Digit-School Process 2025">
     <meta name="twitter:description" content="Excellence numérique dans l'éducation béninoise – Innovation et transformation.">
-    <meta name="twitter:image" content="./assets/images/social-preview.jpg">
     
     <!-- Canonical -->
     <link rel="canonical" href="https://digit-school-process.bj">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -275,7 +267,13 @@
             gap: 2.5rem; margin-bottom: 2.5rem;
         }
         .footer-section { display: flex; flex-direction: column; }
-        .footer-logo img { height: 45px; width: auto; margin-bottom: 1.5rem; filter: brightness(0) invert(1); }
+        .footer-logo { margin-bottom: 1.5rem; }
+        .footer-logo-placeholder {
+            width: 200px; height: 50px; background: linear-gradient(90deg, var(--primary), var(--accent));
+            display: flex; align-items: center; justify-content: center; border-radius: var(--border-radius);
+            font-family: var(--font-heading); font-weight: 800; font-size: 1.8rem; color: var(--light);
+            letter-spacing: 1px;
+        }
         .footer-title {
             font-size: 1.25rem; color: var(--light); margin-bottom: 1.5rem;
             position: relative; padding-bottom: 0.75rem;
@@ -604,7 +602,7 @@
             <div class="footer-grid">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="./assets/images/logo-premium-white.png" alt="Logo Digit-School Process 2025 Blanc">
+                        <div class="footer-logo-placeholder">DSP 2025</div>
                     </div>
                     <h4 class="footer-title">Digit-School Process 2025</h4>
                     <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 0.95rem;">
