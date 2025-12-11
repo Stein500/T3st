@@ -15,7 +15,6 @@
     <meta property="og:title" content="Technologies Éducatives | IA & Innovation | Digit-School Process 2025">
     <meta property="og:description" content="Outils numériques adaptés au Bénin : IA, RV, LMS pour éducation inclusive.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="./assets/images/social-preview-technologies.jpg">
     <meta property="og:url" content="https://digit-school-process.bj/technologies.html">
     <meta property="og:locale" content="fr_BJ">
     
@@ -23,16 +22,9 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Technologies Éducatives 2025 | Digit-School Process">
     <meta name="twitter:description" content="IA adaptative, RV low-cost et LMS open-source pour l'éducation béninoise.">
-    <meta name="twitter:image" content="./assets/images/social-preview-technologies.jpg">
     
     <!-- Canonical -->
     <link rel="canonical" href="https://digit-school-process.bj/technologies.html">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -142,9 +134,9 @@
         .menu-overlay { display: none; position: fixed; top: var(--header-height); left: 0; width: 100%; height: calc(100vh - var(--header-height)); background: rgba(0, 0, 0, 0.6); z-index: 999; backdrop-filter: blur(5px); transition: opacity 0.3s ease; }
         .menu-overlay.active { display: block; opacity: 1; }
 
-        /* ===== HERO (Cyan Dynamique) ===== */
-        .hero { min-height: 70vh; padding: calc(var(--header-height) + 2rem) 0 4rem; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%), url('./assets/images/tech-bg.jpg'); background-size: cover; background-position: center; color: var(--light); display: flex; align-items: center; position: relative; overflow: hidden; }
-        .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 50px 50px; animation: floatParticles 25s linear infinite; z-index: 0; }
+        /* ===== HERO (Cyan Dynamique - Remplacement BG Image par Gradient + SVG) ===== */
+        .hero { min-height: 70vh; padding: calc(var(--header-height) + 2rem) 0 4rem; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%), radial-gradient(circle at 20% 80%, rgba(255,255,255,0.15) 1px, transparent 1px); background-size: cover, 50px 50px; background-position: center, 20% 80%; color: var(--light); display: flex; align-items: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: radial-gradient(circle at 40% 20%, rgba(255,255,255,0.1) 1px, transparent 1px), radial-gradient(circle at 80% 60%, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 60px 60px, 40px 40px; animation: floatParticles 25s linear infinite; z-index: 0; opacity: 0.8; }
         @keyframes floatParticles { 0% { transform: translateY(0) translateX(0) rotate(0deg); } 100% { transform: translateY(-50px) translateX(50px) rotate(360deg); } }
         .hero-content { text-align: center; max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
         .hero-title { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; color: var(--light); text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
@@ -195,11 +187,10 @@
         .matrix-column { text-align: center; min-width: 120px; }
         .comparison-table i { margin-right: 0.5rem; }
 
-        /* ===== FOOTER HARMONISÉ (IDENTIQUE À INDEX.HTML) ===== */
+        /* ===== FOOTER HARMONISÉ (IDENTIQUE À INDEX.HTML - Sans Image) ===== */
         .main-footer { background: var(--darkest); color: var(--light); padding: 4rem 0 2rem; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2.5rem; margin-bottom: 2.5rem; }
         .footer-section { display: flex; flex-direction: column; }
-        .footer-logo img { height: 45px; width: auto; margin-bottom: 1.5rem; filter: brightness(0) invert(1); }
         .footer-title { font-size: 1.25rem; color: var(--light); margin-bottom: 1.5rem; position: relative; padding-bottom: 0.75rem; }
         .footer-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: linear-gradient(90deg, var(--secondary), var(--accent)); }
         .footer-links { list-style: none; }
@@ -208,9 +199,6 @@
         .footer-links a:hover { color: var(--light); transform: translateX(5px); }
         .footer-links i { width: 18px; color: var(--secondary); font-size: 1rem; transition: color 0.3s ease; }
         .footer-links a:hover i { color: var(--accent); }
-        .social-icons { display: flex; gap: 1rem; margin-top: 1.5rem; }
-        .social-icon { width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--light); text-decoration: none; transition: all 0.3s ease; font-size: 1rem; }
-        .social-icon:hover { background: var(--accent); transform: translateY(-3px) rotate(10deg); box-shadow: var(--shadow-md); }
         .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.875rem; color: rgba(255, 255, 255, 0.6); }
         .footer-bottom p { margin-bottom: 0.75rem; }
 
@@ -530,9 +518,6 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="./assets/images/logo-premium-white.png" alt="Logo Digit-School Process 2025 Blanc">
-                    </div>
                     <h4 class="footer-title">Digit-School Process 2025</h4>
                     <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 0.95rem;">
                         Organisé par l'école "Les Bulles de Joie"<br>
@@ -540,20 +525,6 @@
                             Amour • Travail • Rigueur • Créativité • Excellence
                         </span>
                     </p>
-                    <div class="social-icons">
-                        <a href="https://facebook.com/lesbullesdejoie" target="_blank" aria-label="Facebook Les Bulles de Joie" class="social-icon">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://instagram.com/lesbullesdejoie" target="_blank" aria-label="Instagram Les Bulles de Joie" class="social-icon">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/@cspblesbullesdejoie" target="_blank" aria-label="TikTok Les Bulles de Joie" class="social-icon">
-                            <i class="fab fa-tiktok"></i>
-                        </a>
-                        <a href="https://les-bulles-de-joie.onrender.com/" target="_blank" aria-label="Site web Les Bulles de Joie" class="social-icon">
-                            <i class="fas fa-globe"></i>
-                        </a>
-                    </div>
                 </div>
                 
                 <div class="footer-section">
